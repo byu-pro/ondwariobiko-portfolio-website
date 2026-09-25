@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
-import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -81,7 +80,7 @@ function AboutPage() {
             <div className="relative aspect-[4/5] bg-neutral-900 border border-white/10 overflow-hidden group">
               <div className="absolute inset-0 grid place-items-center">
                 <img
-                  src={logoNeon.url}
+                  src="/assets/logowhite.png"
                   alt="ondwariobiko monogram"
                   width={280}
                   height={280}
