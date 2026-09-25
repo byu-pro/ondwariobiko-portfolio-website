@@ -337,7 +337,7 @@ const process = [
 ];
 
 const faqs = [
-  { q: "How much does a project cost?", a: "Every project is scoped individually after a free consultation. Logo & identity projects typically start from a fixed package; web projects depend on pages and features. You'll always get a clear, fixed quote before we start — no surprises." },
+  { q: "How much does a project cost?", a: "There's no fixed price list — every project is quoted individually around its scope, your goals and your budget. We discuss it together (the first hour is free), and you approve a clear quote before anything starts. No surprises." },
   { q: "How long does a typical project take?", a: "A logo and brand identity usually takes 2–4 weeks. A full website with design and development runs 4–8 weeks depending on scope. Rush timelines are possible — let's talk." },
   { q: "Do you work with clients outside Africa?", a: "Absolutely — I work remotely with clients worldwide across every timezone. Most of my collaborations happen entirely over calls and shared boards, and it works beautifully." },
   { q: "What do I actually receive at the end?", a: "For branding: full logo suites, colour and type systems, brand guidelines and all source files. For web: a live, fast, responsive website plus handover documentation. You own everything." },
