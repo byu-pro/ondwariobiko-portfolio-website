@@ -10,7 +10,7 @@ export function SiteFooter() {
           <span className="block text-stroke group-hover:text-neon transition-all duration-700 group-hover:translate-x-10">something ✺</span>
         </Link>
         <div className="mt-16 md:mt-24 flex flex-col md:flex-row justify-between gap-6 font-mono text-xs uppercase tracking-widest text-white/50">
-          <span>© 2026 ondwariobiko — Remote Worldwide</span>
+          <span>© 2026 ondwariobiko. All Rights Reserved.</span>
           <div className="flex flex-wrap gap-x-8 gap-y-3">
             <a href="mailto:hello@ondwariobiko.com" className="hover:text-neon transition-colors">Email</a>
             <a href="https://wa.me/254702255575" className="hover:text-neon transition-colors">WhatsApp</a>
