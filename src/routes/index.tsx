@@ -9,13 +9,13 @@ import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "John Obiko — Creative Director & Brand Designer | Nairobi" },
+      { title: "ondwariobiko — Creative Director & Brand Designer | Nairobi" },
       {
         name: "description",
         content:
-          "John Obiko is a Nairobi-based multi-disciplinary designer crafting premium brand identities, digital products, and UI/UX experiences. 10 years of practice.",
+          "ondwariobiko is a Nairobi-based multi-disciplinary designer crafting premium brand identities, digital products, and UI/UX experiences. 10 years of practice.",
       },
-      { property: "og:title", content: "John Obiko — Creative Director & Brand Designer" },
+      { property: "og:title", content: "ondwariobiko — Creative Director & Brand Designer" },
       {
         property: "og:description",
         content:
@@ -47,16 +47,21 @@ const projects = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-white text-black font-sans selection:bg-neon selection:text-black">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-neon selection:text-black">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 mix-blend-difference px-6 py-8 flex justify-between items-center text-white">
-        <img
-          src={logoWhite.url}
-          alt="John Obiko monogram"
-          width={32}
-          height={32}
-          className="size-7 object-contain"
-        />
+      <nav className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center text-white">
+        <a href="#top" className="flex items-center gap-4">
+          <img
+            src={logoWhite.url}
+            alt="ondwariobiko monogram"
+            width={56}
+            height={56}
+            className="size-14 object-contain"
+          />
+          <span className="hidden sm:block font-display text-xl uppercase tracking-tight leading-none">
+            ondwari<span className="text-neon">obiko</span>
+          </span>
+        </a>
         <div className="hidden md:flex gap-12 font-mono text-xs uppercase tracking-[0.2em]">
           <a href="#work" className="hover:text-neon transition-colors">
             Selected Work
@@ -74,13 +79,13 @@ function Index() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 px-6 overflow-hidden">
+      <section id="top" className="relative pt-44 pb-20 px-6 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <h1 className="font-display text-[clamp(4rem,15vw,14rem)] leading-[0.85] tracking-tighter uppercase mb-12">
             Creative <br />
             <span
               className="text-transparent"
-              style={{ WebkitTextStroke: "1px black" }}
+              style={{ WebkitTextStroke: "1px white" }}
             >
               Director
             </span>
@@ -89,14 +94,15 @@ function Index() {
           <div className="flex flex-col md:flex-row gap-12 items-end">
             <div className="md:w-1/2">
               <p className="text-2xl md:text-3xl font-light leading-tight max-w-xl mb-8">
-                John Obiko is a designer & developer crafting premium digital
-                identities and brand experiences from the heart of Nairobi.
+                <span className="text-neon">ondwariobiko</span> is a designer &
+                developer crafting premium digital identities and brand
+                experiences from the heart of Nairobi.
               </p>
               <div className="flex gap-4">
-                <div className="size-12 rounded-full border border-black grid place-items-center hover:bg-neon transition-colors cursor-pointer">
+                <div className="size-12 rounded-full border border-white grid place-items-center hover:bg-neon hover:border-neon hover:text-black transition-colors cursor-pointer">
                   <span className="text-xs font-mono">↓</span>
                 </div>
-                <span className="font-mono text-xs uppercase self-center tracking-widest">
+                <span className="font-mono text-xs uppercase self-center tracking-widest text-white/70">
                   Scroll to Explore Work
                 </span>
               </div>
@@ -115,7 +121,7 @@ function Index() {
       </section>
 
       {/* Logo Showcase Section */}
-      <section className="bg-black py-32 px-6">
+      <section className="bg-black py-32 px-6 border-t border-white/10">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
             {/* Black on White */}
@@ -125,7 +131,7 @@ function Index() {
                 alt="JO monogram in black on white"
                 width={128}
                 height={128}
-                className="w-32 h-32 object-contain"
+                className="w-40 h-40 object-contain"
               />
               <span className="mt-8 font-mono text-[10px] uppercase tracking-widest text-black/40">
                 Primary Monogram
@@ -138,7 +144,7 @@ function Index() {
                 alt="JO monogram in white on black"
                 width={128}
                 height={128}
-                className="w-32 h-32 object-contain"
+                className="w-40 h-40 object-contain"
               />
               <span className="mt-8 font-mono text-[10px] uppercase tracking-widest text-white/40">
                 Inverse Treatment
@@ -151,7 +157,7 @@ function Index() {
                 alt="JO monogram in black on neon yellow-green"
                 width={128}
                 height={128}
-                className="w-32 h-32 object-contain"
+                className="w-40 h-40 object-contain"
               />
               <span className="mt-8 font-mono text-[10px] uppercase tracking-widest text-black/40">
                 Signature Accent
@@ -170,7 +176,7 @@ function Index() {
               <br />
               Works
             </h2>
-            <div className="font-mono text-xs uppercase tracking-widest text-black/50 mb-4">
+            <div className="font-mono text-xs uppercase tracking-widest text-white/50 mb-4">
               01 — 02 / Projects
             </div>
           </div>
@@ -194,7 +200,7 @@ function Index() {
                     <h3 className="text-2xl font-bold uppercase mb-2">
                       {project.title}
                     </h3>
-                    <p className="font-mono text-xs uppercase tracking-widest text-black/50">
+                    <p className="font-mono text-xs uppercase tracking-widest text-white/50">
                       {project.tag}
                     </p>
                   </div>
@@ -245,20 +251,20 @@ function Index() {
       {/* Footer CTA */}
       <footer id="contact" className="py-40 px-6 scroll-mt-24">
         <div className="max-w-[1400px] mx-auto text-center">
-          <p className="font-mono text-xs uppercase tracking-widest mb-8 text-black/50">
+          <p className="font-mono text-xs uppercase tracking-widest mb-8 text-white/50">
             Have a vision?
           </p>
           <a
-            href="mailto:hello@johnobiko.studio"
+            href="mailto:hello@ondwariobiko.studio"
             className="font-display text-[clamp(2.5rem,8vw,8rem)] uppercase leading-none tracking-tighter hover:text-neon transition-colors block mb-20"
           >
             Let's build
             <br />
             something new
           </a>
-          <div className="flex flex-col md:flex-row justify-between items-center pt-20 border-t border-black/10 gap-8">
-            <div className="font-mono text-xs text-black/40">
-              © 2026 John Obiko Studio
+          <div className="flex flex-col md:flex-row justify-between items-center pt-20 border-t border-white/10 gap-8">
+            <div className="font-mono text-xs text-white/40">
+              © 2026 ondwariobiko
             </div>
             <div className="flex gap-8 font-mono text-xs uppercase tracking-widest">
               <a href="#" className="hover:text-neon">
