@@ -1,6 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import logoWhite from "@/assets/jo-logo-white.png.asset.json";
 
 const links = [
   { to: "/", label: "Index", hint: "Where it begins" },
@@ -45,7 +44,7 @@ export function SiteNav() {
     <>
       <header className={`fixed top-0 inset-x-0 z-[60] px-5 md:px-8 flex items-center justify-between transition-all duration-500 ${open ? "py-5 bg-transparent" : scrolled ? "py-3 bg-black/50 backdrop-blur-xl border-b border-white/10" : "py-5 bg-transparent border-b border-transparent"}`}>
         <Link to="/" className="flex items-center gap-4 group">
-          <img src={logoWhite.url} alt="ondwariobiko monogram" width={80} height={80} className={`object-contain ${open ? "rounded-full" : ""} ${scrolled && !open ? "size-14 md:size-16" : "size-16 md:size-20"}`} style={{ transition: "all 0.6s" }} />
+          <img src="/assets/logowhite.png" alt="ondwariobiko monogram" width={80} height={80} className={`object-contain ${open ? "rounded-full" : ""} ${scrolled && !open ? "size-14 md:size-16" : "size-16 md:size-20"}`} style={{ transition: "all 0.6s" }} />
           <span className={`hidden sm:block font-display text-2xl uppercase tracking-tight leading-none ${open ? "text-black" : "text-white"}`}>
             ondwari<span className={open ? "text-black/50" : "text-neon"}>obiko</span>
           </span>
