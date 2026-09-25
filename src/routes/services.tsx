@@ -27,12 +27,12 @@ function ServicesPage() {
       <section className="px-5 md:px-8 pb-24">
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-px bg-white/15 border border-white/15">
           {services.map((s, i) => (
-            <div key={s.t} className="group bg-black p-8 md:p-12 min-h-[380px] flex flex-col transition-colors duration-500 hover:bg-neon hover:text-black">
+            <div key={s.t} className="group bg-black p-6 sm:p-8 md:p-12 min-h-[320px] md:min-h-[380px] flex flex-col transition-colors duration-500 hover:bg-neon hover:text-black">
               <div className="flex justify-between font-mono text-xs">
                 <span className="text-neon group-hover:text-black">0{i + 1}</span>
                 <span className="text-3xl leading-none transition-transform duration-500 group-hover:rotate-90">✺</span>
               </div>
-              <h2 className="mt-auto font-display uppercase tracking-tighter text-5xl md:text-6xl leading-[0.9]">{s.t}</h2>
+              <h2 className="mt-auto font-display uppercase tracking-tighter text-4xl sm:text-5xl md:text-6xl leading-[0.9] transition-transform duration-500 group-hover:-translate-y-2">{s.t}</h2>
               <p className="mt-4 max-w-md text-white/60 group-hover:text-black/70">{s.d}</p>
               <div className="mt-6 flex gap-2 flex-wrap">
                 {s.items.map((x) => (
