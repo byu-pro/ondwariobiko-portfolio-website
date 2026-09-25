@@ -295,10 +295,10 @@ const offerings = [
 
 function BriefForm() {
   const [type, setType] = useState("Brand Identity");
-  const [budget, setBudget] = useState("$1k – $3k");
+  const [budget, setBudget] = useState("");
   const [timeline, setTimeline] = useState("Flexible — let's discuss");
   const send = () => {
-    const msg = encodeURIComponent(`Hi! I'd like to discuss a project.\n\n• Project: ${type}\n• Budget: ${budget}\n• Start: ${timeline}`);
+    const msg = encodeURIComponent(`Hi! I'd like to discuss a project.\n\n• Project: ${type}\n• Budget: ${budget || "To be discussed"}\n• Start: ${timeline}`);
     window.open(`https://wa.me/254702255575?text=${msg}`, "_blank");
   };
   const selectCls = "w-full bg-transparent border border-white/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-white focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-white/40 [&>option]:bg-black";
@@ -310,12 +310,7 @@ function BriefForm() {
           {["Logo Design", "Brand Identity", "Web Design & Build", "UI/UX Design", "Something else"].map((o) => <option key={o}>{o}</option>)}
         </select>
       </label>
-      <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Budget range</span>
-        <select value={budget} onChange={(e) => setBudget(e.target.value)} className={selectCls}>
-          {["Under $1k", "$1k – $3k", "$3k – $10k", "$10k+"].map((o) => <option key={o}>{o}</option>)}
-        </select>
-      </label>
+      <BudgetField value={budget} onChange={setBudget} />
       <label className="flex flex-col gap-2">
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">When would you like to start?</span>
         <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>
