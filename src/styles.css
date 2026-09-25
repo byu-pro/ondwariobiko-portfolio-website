@@ -67,7 +67,7 @@
 
 :root {
   --radius: 0.625rem;
-  --neon: oklch(0.93 0.26 110);
+  --neon: oklch(0.9 0.24 131);
   --font-display: "Syne", sans-serif;
   --font-sans: "Inter", sans-serif;
   --font-mono: "Space Grotesk", monospace;
@@ -151,3 +151,11 @@
     font-family: var(--font-sans);
   }
 }
+
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes menu-in { from { clip-path: circle(0% at calc(100% - 3rem) 3rem); } to { clip-path: circle(150% at calc(100% - 3rem) 3rem); } }
+@keyframes rise { from { transform: translateY(110%); } to { transform: translateY(0); } }
+@utility animate-marquee { animation: marquee 28s linear infinite; }
+@utility animate-menu-in { animation: menu-in 0.7s cubic-bezier(0.76, 0, 0.24, 1) both; }
+@utility animate-rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@utility text-stroke { -webkit-text-stroke: 1px currentColor; color: transparent; }
