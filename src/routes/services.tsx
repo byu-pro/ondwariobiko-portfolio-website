@@ -247,6 +247,32 @@ function ServicesPage() {
         </div>
       </section>
 
+      {/* A note on investment */}
+      <section className="px-5 md:px-8 py-20 md:py-28 border-t border-white/10 bg-neon text-black">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-20 items-start">
+          <div data-reveal>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-black/60 mb-4">No price lists</p>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.9]">
+              A note on<br />investment
+            </h2>
+          </div>
+          <div data-reveal className="flex flex-col gap-6">
+            <p className="font-display text-2xl sm:text-3xl leading-tight tracking-tight max-w-2xl">
+              Every project is scoped individually, because no two brands need the same thing.
+            </p>
+            <p className="text-black/70 leading-relaxed max-w-2xl">
+              Rather than fixed pricing, I quote after understanding your goals, timeline and the scope of work involved — and we shape it around a budget that works for you. That way you're only ever paying for what your brand actually needs, and you approve the full quote before anything begins.
+            </p>
+            <Link
+              to="/consultation"
+              className="inline-flex items-center gap-3 self-start bg-black text-neon font-mono text-xs uppercase tracking-[0.2em] px-8 py-5 hover:bg-white hover:text-black transition-colors duration-300"
+            >
+              Start with a free 1-hr consult ↗
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ block */}
       <section className="px-5 md:px-8 py-20 md:py-28 border-t border-white/10">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
@@ -282,7 +308,7 @@ function ServicesPage() {
               Tell me<br /><span className="text-stroke">What you need</span>
             </h2>
             <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
-              Pick a package, set a budget, name a timeline. Your answers open a WhatsApp chat with the brief already typed — I'll reply with a fixed quote within 24 hours.
+              Pick a service, share your budget, name a timeline. Your answers open a WhatsApp chat with the brief already typed — I'll reply with a tailored quote within 24 hours.
             </p>
             <Link
               to="/consultation"
