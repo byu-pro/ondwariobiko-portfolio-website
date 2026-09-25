@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MotionLayer } from "@/components/MotionLayer";
+import { FloatingConsult } from "@/components/ConsultButton";
 import { useRouterState } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -130,6 +131,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <FloatingConsult />
       </div>
     </QueryClientProvider>
   );

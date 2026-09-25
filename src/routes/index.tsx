@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import logoBlack from "@/assets/jo-logo-black.png.asset.json";
 import logoWhite from "@/assets/jo-logo-white.png.asset.json";
 import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
+import { ConsultButton } from "@/components/ConsultButton";
 import { heroImage, projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
@@ -39,8 +40,9 @@ function Index() {
                 <span className="size-14 rounded-full bg-neon text-black grid place-items-center transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">↗</span>
                 <span className="font-mono text-xs uppercase tracking-[0.25em] group-hover:text-neon transition-colors">See the work</span>
               </Link>
+              <div className="mt-6"><ConsultButton label="Free 1-hour consultation" /></div>
             </div>
-            <div className="md:w-1/2 w-full aspect-[4/5] overflow-hidden"><img src={heroImage} alt="Premium textured business cards with lime edges and JO monogram" width={800} height={1008} className="w-full h-full object-cover scale-110" data-parallax="-0.08" /></div>
+            <div className="md:w-1/2 w-full aspect-[4/5] overflow-hidden"><img src={heroImage} alt="Premium textured business cards with lime edges and JO monogram" width={800} height={1008} fetchPriority="high" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="-0.08" /></div>
           </div>
         </div>
       </section>
@@ -80,9 +82,9 @@ function Index() {
           </div>
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
             {projects.slice(0, 2).map((p, i) => (
-              <Link to="/work" key={p.title} className={`group ${i ? "md:mt-40" : ""}`}>
+              <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i ? "md:mt-40" : ""}`}>
                 <div className="overflow-hidden mb-6">
-                  <img src={p.image} alt={p.alt} width={1200} height={1500} loading="lazy" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={p.image} alt={p.alt} width={1200} height={1500} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="flex justify-between">
                   <h3 className="font-display text-2xl sm:text-3xl uppercase group-hover:text-neon transition-colors">{p.title}</h3>

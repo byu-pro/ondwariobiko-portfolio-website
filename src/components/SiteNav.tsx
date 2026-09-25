@@ -8,6 +8,7 @@ const links = [
   { to: "/services", label: "Services", hint: "What I craft" },
   { to: "/about", label: "About", hint: "The designer" },
   { to: "/contact", label: "Contact", hint: "Start a project" },
+  { to: "/consultation", label: "Free Call", hint: "1 hour, on me" },
 ] as const;
 
 function WorldClock() {
