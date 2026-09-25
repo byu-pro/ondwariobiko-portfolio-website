@@ -14,9 +14,9 @@ export function SiteFooter() {
           <div className="flex gap-8">
             <a href="mailto:hello@ondwariobiko.com" className="hover:text-neon transition-colors">Email</a>
             <a href="https://wa.me/254702255575" className="hover:text-neon transition-colors">WhatsApp</a>
-            {["Instagram", "LinkedIn"].map((s) => (
-              <a key={s} href="#" className="hover:text-neon transition-colors">{s}</a>
-            ))}
+            <a href="https://www.linkedin.com/in/ondwariobiko/" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors">LinkedIn</a>
+            <a href="https://www.behance.net/johnobiko" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors">Behance</a>
+            <a href="#" className="hover:text-neon transition-colors">Instagram</a>
           </div>
         </div>
       </div>
