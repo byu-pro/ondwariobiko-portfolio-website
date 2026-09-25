@@ -8,10 +8,10 @@ import { heroImage, projects } from "@/lib/projects";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ondwariobiko — Creative Director & Brand Designer | Nairobi" },
-      { name: "description", content: "ondwariobiko is a Nairobi-based designer crafting premium logos, brand identities, UI/UX and front-end experiences. 10 years of practice." },
+      { title: "ondwariobiko — Creative Director & Brand Designer | Remote Worldwide" },
+      { name: "description", content: "ondwariobiko is a designer working remotely worldwide, crafting premium logos, brand identities, UI/UX and front-end experiences. 10 years of practice." },
       { property: "og:title", content: "ondwariobiko — Creative Director & Brand Designer" },
-      { property: "og:description", content: "Nairobi-based designer crafting premium brand identities and digital experiences." },
+      { property: "og:description", content: "Designer working remotely worldwide, crafting premium brand identities and digital experiences." },
     ],
   }),
   component: Index,
@@ -49,7 +49,7 @@ function Index() {
         <div className="flex w-max animate-marquee font-display uppercase text-4xl tracking-tight whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, k) => (
             <span key={k} className="flex">
-              {["Bold Logos", "Brand Systems", "Interfaces", "Typography", "Made in Nairobi"].map((w) => (
+              {["Bold Logos", "Brand Systems", "Interfaces", "Typography", "Remote Worldwide"].map((w) => (
                 <span key={w} className="px-10">{w} ✺</span>
               ))}
             </span>

@@ -5,7 +5,7 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services — ondwariobiko | Logo, Branding, UI/UX, Front-end" },
-      { name: "description", content: "Logo design, brand identity systems, UI/UX design and front-end development from Nairobi designer ondwariobiko." },
+      { name: "description", content: "Logo design, brand identity systems, UI/UX design and front-end development from ondwariobiko. Working remotely worldwide." },
       { property: "og:title", content: "Services — ondwariobiko" },
       { property: "og:description", content: "Logo design, brand identity, UI/UX and front-end development." },
     ],

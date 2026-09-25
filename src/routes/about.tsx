@@ -5,17 +5,17 @@ import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — ondwariobiko | Nairobi Designer, 10 Years" },
-      { name: "description", content: "Meet ondwariobiko: a Nairobi-based logo and brand designer, UI/UX designer and front-end developer with 10 years of experience." },
+      { title: "About — ondwariobiko | Designer, 10 Years" },
+      { name: "description", content: "Meet ondwariobiko: a logo and brand designer, UI/UX designer and front-end developer working remotely worldwide with 10 years of experience." },
       { property: "og:title", content: "About ondwariobiko" },
-      { property: "og:description", content: "A decade of logos, brands and interfaces from Nairobi, Kenya." },
+      { property: "og:description", content: "A decade of logos, brands and interfaces, working with clients worldwide." },
     ],
   }),
   component: AboutPage,
 });
 
-const stats = [["10+", "Years of practice"], ["150+", "Brands launched"], ["NBO", "Based in Kenya"], ["∞", "Ideas generated"]];
-const timeline = [["2016", "Started freelancing — first logos for Nairobi startups"], ["2019", "Moved into full brand systems & art direction"], ["2022", "Added UI/UX and front-end development"], ["2026", "Independent studio, clients across 4 continents"]];
+const stats = [["10+", "Years of practice"], ["150+", "Brands launched"], ["4", "Continents served"], ["∞", "Ideas generated"]];
+const timeline = [["2016", "Started freelancing — first logos for local startups"], ["2019", "Moved into full brand systems & art direction"], ["2022", "Added UI/UX and front-end development"], ["2026", "Independent studio, working remotely worldwide"]];
 
 function AboutPage() {
   return (
@@ -28,7 +28,7 @@ function AboutPage() {
           </div>
           <div className="md:col-span-8">
             <p className="text-3xl md:text-5xl font-light leading-tight">
-              I'm <span className="text-neon">ondwariobiko</span> — a graphic & web designer from Nairobi. For ten years I've drawn logos and built brands that look like nobody else, then carried them into interfaces and code.
+              I'm <span className="text-neon">ondwariobiko</span> — a graphic & web designer working remotely worldwide. For ten years I've drawn logos and built brands that look like nobody else, then carried them into interfaces and code.
             </p>
             <div className="mt-16 border-t border-white/15">
               {timeline.map(([y, t]) => (
