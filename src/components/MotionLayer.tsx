@@ -44,7 +44,7 @@ export function MotionLayer() {
       if (bar.current) bar.current.style.transform = `scaleX(${h > 0 ? window.scrollY / h : 0})`;
       document.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
         const r = el.getBoundingClientRect();
-        const off = (r.top + r.height / 2 - window.innerHeight / 2) * Number(el.dataset.parallax || 0.1);
+        const off = (r.top + r.height / 2 - window.innerHeight / 2) * Number(el.dataset['parallax'] || 0.1);
         el.style.transform = `translate3d(0, ${off}px, 0)`;
       });
     };
