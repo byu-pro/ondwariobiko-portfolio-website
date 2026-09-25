@@ -10,11 +10,11 @@ const links = [
   { to: "/contact", label: "Contact", hint: "Start a project" },
 ] as const;
 
-function NairobiClock() {
+function WorldClock() {
   const [t, setT] = useState("");
   useEffect(() => {
     const tick = () =>
-      setT(new Date().toLocaleTimeString("en-GB", { timeZone: "Africa/Nairobi", hour: "2-digit", minute: "2-digit", second: "2-digit" }));
+      setT(new Date().toLocaleTimeString("en-GB", { timeZone: "UTC", hour: "2-digit", minute: "2-digit", second: "2-digit" }));
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
@@ -52,7 +52,7 @@ export function SiteNav() {
 
         <div className={`${open ? "lg:hidden" : ""} hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-white/60 border border-white/15 rounded-full px-4 py-2 backdrop-blur bg-black/40`}>
           <span className="size-1.5 rounded-full bg-neon animate-pulse" />
-          Available · NBO <NairobiClock />
+          Available · Remote <WorldClock /> UTC
         </div>
 
         <button
@@ -103,7 +103,7 @@ export function SiteNav() {
             <div className="flex w-max animate-marquee font-display uppercase text-2xl tracking-tight whitespace-nowrap">
               {Array.from({ length: 2 }).map((_, k) => (
                 <span key={k} className="flex">
-                  {["Logo Design", "Brand Identity", "UI/UX", "Front-end", "Art Direction", "Nairobi → World"].map((w) => (
+                  {["Logo Design", "Brand Identity", "UI/UX", "Front-end", "Art Direction", "Remote Worldwide"].map((w) => (
                     <span key={w} className="px-8">{w} ✺</span>
                   ))}
                 </span>

@@ -5,7 +5,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — ondwariobiko | Start a Project" },
-      { name: "description", content: "Start a logo, branding, UI/UX or web project with Nairobi designer ondwariobiko." },
+      { name: "description", content: "Start a logo, branding, UI/UX or web project with ondwariobiko. Working remotely worldwide." },
       { property: "og:title", content: "Contact ondwariobiko" },
       { property: "og:description", content: "Have a vision? Let's build something bold together." },
     ],
