@@ -15,7 +15,9 @@ export function MotionLayer() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
     let io: IntersectionObserver | null = null;
-    const raf = requestAnimationFrame(() => {
+    let raf = 0;
+    let timer = 0;
+    const scan = () => {
       const els = document.querySelectorAll<HTMLElement>(
         "main section > div > *, main article, footer > div > *, [data-reveal]",
       );
