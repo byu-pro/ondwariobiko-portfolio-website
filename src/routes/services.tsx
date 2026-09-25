@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 import { ConsultButton } from "@/components/ConsultButton";
+import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -324,13 +325,13 @@ function ServicesPage() {
 
 function InquiryForm() {
   const [pkg, setPkg] = useState("Brand Identity Package");
-  const [budget, setBudget] = useState("$3k – $10k");
+  const [budget, setBudget] = useState("");
   const [timeline, setTimeline] = useState("Flexible — let's discuss");
   const [scope, setScope] = useState("");
 
   const send = () => {
     const msg = encodeURIComponent(
-      `Hi! I'd like a quote.\n\n• Service: ${pkg}\n• Budget: ${budget}\n• Start: ${timeline}${scope ? `\n• Scope notes: ${scope}` : ""}`,
+      `Hi! I'd like a quote.\n\n• Service: ${pkg}\n• Budget: ${budget || "To be discussed"}\n• Start: ${timeline}${scope ? `\n• Scope notes: ${scope}` : ""}`,
     );
     window.open(`https://wa.me/254702255575?text=${msg}`, "_blank");
   };
@@ -347,12 +348,7 @@ function InquiryForm() {
           <option>Something else</option>
         </select>
       </label>
-      <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Budget range</span>
-        <select value={budget} onChange={(e) => setBudget(e.target.value)} className={selectCls}>
-          {["Under $1k", "$1k – $3k", "$3k – $10k", "$10k+"].map((o) => <option key={o}>{o}</option>)}
-        </select>
-      </label>
+      <BudgetField value={budget} onChange={setBudget} />
       <label className="flex flex-col gap-2">
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">When would you like to start?</span>
         <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>

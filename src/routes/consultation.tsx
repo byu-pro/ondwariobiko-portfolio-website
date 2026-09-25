@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/SiteFooter";
+import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/consultation")({
   head: () => ({
@@ -21,16 +22,14 @@ const perks = [
   ["Good fit?", "We both find out if working together makes sense"],
 ];
 const types = ["Logo", "Brand Identity", "UI/UX", "Website", "Not sure yet"];
-const budgets = ["< $1k", "$1k – $3k", "$3k – $10k", "$10k+"];
-
 function ConsultationPage() {
   const [type, setType] = useState<string>(types[0]!);
-  const [budget, setBudget] = useState<string>(budgets[1]!);
+  const [budget, setBudget] = useState<string>("");
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
-    const msg = `Hi ondwariobiko! I'd like to book a free 1-hour consultation.\n\nName: ${f.get("name")}\nEmail: ${f.get("email")}\nProject: ${type}\nBudget: ${budget}\nPreferred time: ${f.get("time") || "Flexible"}\n\n${f.get("message") || ""}`;
+    const msg = `Hi ondwariobiko! I'd like to book a free 1-hour consultation.\n\nName: ${f.get("name")}\nEmail: ${f.get("email")}\nProject: ${type}\nBudget: ${budget || "To be discussed"}\nPreferred time: ${f.get("time") || "Flexible"}\n\n${f.get("message") || ""}`;
     window.open(`https://wa.me/254702255575?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
   };
 
@@ -61,7 +60,7 @@ function ConsultationPage() {
               <input required type="email" name="email" placeholder="Email *" className={field} />
             </div>
             <Chips label="What do you need?" options={types} value={type} onChange={setType} />
-            <Chips label="Rough budget" options={budgets} value={budget} onChange={setBudget} />
+            <BudgetField value={budget} onChange={setBudget} />
             <input name="time" placeholder="Preferred day & time (your timezone)" className={field} />
             <textarea name="message" rows={4} placeholder="Tell me a little about your project…" className={`${field} resize-none`} />
             <button type="submit" className="group w-full sm:w-auto inline-flex items-center justify-between gap-6 rounded-full bg-neon text-black pl-8 pr-2 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-transform hover:scale-[1.02]">
