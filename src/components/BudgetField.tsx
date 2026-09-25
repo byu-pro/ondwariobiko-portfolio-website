@@ -5,7 +5,7 @@ import { useState } from "react";
  * Returns the composed string via onChange, e.g. "USD 1,500" or "KSh 80,000".
  */
 export function BudgetField({
-  label = "Your budget (any amount)",
+  label = "Your budget",
   value,
   onChange,
   dark = true,
@@ -55,7 +55,7 @@ export function BudgetField({
         />
       </div>
       <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-white/35">
-        Any amount works — we shape the scope around it
+        A rough range is fine — I scope to fit, and I'll be honest if a brief isn't a match
       </p>
     </fieldset>
   );
