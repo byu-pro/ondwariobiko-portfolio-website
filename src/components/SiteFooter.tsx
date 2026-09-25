@@ -12,7 +12,9 @@ export function SiteFooter() {
         <div className="mt-24 flex flex-col md:flex-row justify-between gap-6 font-mono text-xs uppercase tracking-widest text-white/50">
           <span>© 2026 ondwariobiko — Nairobi, Kenya</span>
           <div className="flex gap-8">
-            {["Instagram", "LinkedIn", "Dribbble", "Behance"].map((s) => (
+            <a href="mailto:hello@ondwariobiko.com" className="hover:text-neon transition-colors">Email</a>
+            <a href="https://wa.me/254702255575" className="hover:text-neon transition-colors">WhatsApp</a>
+            {["Instagram", "LinkedIn"].map((s) => (
               <a key={s} href="#" className="hover:text-neon transition-colors">{s}</a>
             ))}
           </div>
