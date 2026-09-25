@@ -31,7 +31,6 @@ const packages = [
       "Primary, secondary & icon/favicon versions",
       "AI, EPS, SVG, PNG + PDF mini-guide",
     ],
-    turnaround: "2–3 weeks",
     ideal: "Best for startups launching their first brand",
   },
   {
@@ -44,7 +43,6 @@ const packages = [
       "Visual language & art direction",
       "30–40 page brand guidelines PDF",
     ],
-    turnaround: "4–6 weeks",
     ideal: "Best for established businesses rebranding",
   },
   {
@@ -57,7 +55,6 @@ const packages = [
       "3 pose / expression variations",
       "AI, EPS, SVG, PNG delivery",
     ],
-    turnaround: "3–4 weeks",
     ideal: "Best for brands wanting a memorable personality",
   },
   {
@@ -70,7 +67,6 @@ const packages = [
       "Responsive build + animations",
       "1 round of post-launch tweaks",
     ],
-    turnaround: "4–8 weeks",
     ideal: "Best for founders who want one person owning it all",
   },
   {
@@ -83,7 +79,6 @@ const packages = [
       "Application examples",
       "30–50 page PDF guide",
     ],
-    turnaround: "2–3 weeks",
     ideal: "Best for teams scaling beyond the founder",
   },
   {
@@ -96,7 +91,6 @@ const packages = [
       "2 revision rounds",
       "Source + PDF delivery",
     ],
-    turnaround: "2–4 weeks",
     ideal: "Best for product brands ready to ship",
   },
 ];
@@ -113,7 +107,7 @@ const addons = [
 const serviceFaqs = [
   {
     q: "How long does a project take?",
-    a: "Logo systems land in 2–3 weeks, full brand identities in 4–6 weeks, and websites in 4–8 weeks depending on scope. You'll get a fixed timeline in your quote before we start.",
+    a: "There's no fixed timeline — it depends on the scope of work and what we agree together. Once we've discussed your project, I'll give you an honest estimate and we'll set milestones that work for both of us.",
   },
   {
     q: "How much does a project cost?",
@@ -169,7 +163,7 @@ function ServicesPage() {
               >
                 <div className="flex justify-between items-start font-mono text-xs">
                   <span className="text-neon group-hover:text-black">{p.n}</span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 group-hover:text-black/60">{p.turnaround}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 group-hover:text-black/60">Scoped per project</span>
                 </div>
 
                 <h3 className="mt-6 font-display uppercase tracking-tighter text-3xl sm:text-4xl leading-[0.9] transition-transform duration-500 group-hover:-translate-y-1">
@@ -261,7 +255,7 @@ function ServicesPage() {
               Every project is scoped individually, because no two brands need the same thing.
             </p>
             <p className="text-black/70 leading-relaxed max-w-2xl">
-              Rather than fixed pricing, I quote after understanding your goals, timeline and the scope of work involved — and we shape it around a budget that works for you. That way you're only ever paying for what your brand actually needs, and you approve the full quote before anything begins.
+              Rather than fixed pricing or fixed timelines, I quote after understanding your goals and the scope of work involved — and we shape it around a budget that works for you. That way you're only ever paying for what your brand actually needs, and you approve the full quote before anything begins.
             </p>
             <Link
               to="/consultation"
@@ -308,7 +302,7 @@ function ServicesPage() {
               Tell me<br /><span className="text-stroke">What you need</span>
             </h2>
             <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
-              Pick a service, share your budget, name a timeline. Your answers open a WhatsApp chat with the brief already typed — I'll reply with a tailored quote within 24 hours.
+              Pick a service, share your budget and when you'd like to start. Your answers open a WhatsApp chat with the brief already typed — I'll reply within 24 hours and we'll agree scope, quote and timeline together.
             </p>
             <Link
               to="/consultation"
@@ -331,12 +325,12 @@ function ServicesPage() {
 function InquiryForm() {
   const [pkg, setPkg] = useState("Brand Identity Package");
   const [budget, setBudget] = useState("$3k – $10k");
-  const [timeline, setTimeline] = useState("1–3 months");
+  const [timeline, setTimeline] = useState("Flexible — let's discuss");
   const [scope, setScope] = useState("");
 
   const send = () => {
     const msg = encodeURIComponent(
-      `Hi! I'd like a quote.\n\n• Service: ${pkg}\n• Budget: ${budget}\n• Timeline: ${timeline}${scope ? `\n• Scope notes: ${scope}` : ""}`,
+      `Hi! I'd like a quote.\n\n• Service: ${pkg}\n• Budget: ${budget}\n• Start: ${timeline}${scope ? `\n• Scope notes: ${scope}` : ""}`,
     );
     window.open(`https://wa.me/254702255575?text=${msg}`, "_blank");
   };
@@ -360,9 +354,9 @@ function InquiryForm() {
         </select>
       </label>
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Timeline</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">When would you like to start?</span>
         <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>
-          {["ASAP", "Within a month", "1–3 months", "Flexible"].map((o) => <option key={o}>{o}</option>)}
+          {["As soon as possible", "In the coming weeks", "In the next few months", "Flexible — let's discuss"].map((o) => <option key={o}>{o}</option>)}
         </select>
       </label>
       <label className="flex flex-col gap-2">

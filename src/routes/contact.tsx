@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const channels = [["Email", "hello@ondwariobiko.com", "mailto:hello@ondwariobiko.com"], ["WhatsApp", "+254 702 255 575", "https://wa.me/254702255575"], ["LinkedIn", "/in/ondwariobiko", "https://www.linkedin.com/in/ondwariobiko/"], ["Behance", "/johnobiko", "https://www.behance.net/johnobiko"], ["Instagram", "@ondwariobiko", "#"]];
+const channels = [["Email — best way to reach me", "hello@ondwariobiko.com", "mailto:hello@ondwariobiko.com"], ["WhatsApp — easiest for calls & video", "+254 702 255 575", "https://wa.me/254702255575"], ["LinkedIn", "/in/ondwariobiko", "https://www.linkedin.com/in/ondwariobiko/"], ["Behance", "/johnobiko", "https://www.behance.net/johnobiko"], ["Instagram", "@ondwariobiko", "#"]];
 
 function ContactPage() {
   return (
