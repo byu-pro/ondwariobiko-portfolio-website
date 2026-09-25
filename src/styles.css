@@ -159,3 +159,21 @@
 @utility animate-menu-in { animation: menu-in 0.7s cubic-bezier(0.76, 0, 0.24, 1) both; }
 @utility animate-rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
 @utility text-stroke { -webkit-text-stroke: 1px currentColor; -webkit-text-fill-color: transparent; }
+
+@keyframes page-in { from { opacity: 0; transform: translateY(24px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes float-y { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@utility animate-page-in { animation: page-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@utility animate-float { animation: float-y 6s ease-in-out infinite; }
+
+.reveal { opacity: 0; transform: translateY(48px); filter: blur(4px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1), filter 0.9s ease; }
+.reveal.is-in { opacity: 1; transform: none; filter: none; }
+
+.cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 80; border-radius: 9999px; }
+.cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: var(--neon); }
+.cursor-ring { width: 36px; height: 36px; margin: -18px 0 0 -18px; border: 1px solid var(--neon); mix-blend-mode: difference; transition: width .3s, height .3s, margin .3s, background-color .3s; }
+.cursor-ring.is-hot { width: 72px; height: 72px; margin: -36px 0 0 -36px; background: var(--neon); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

@@ -27,13 +27,13 @@ function AboutPage() {
             <img src={logoNeon.url} alt="ondwariobiko monogram on lime" width={240} height={240} className="w-3/5 object-contain animate-[spin_30s_linear_infinite]" />
           </div>
           <div className="md:col-span-8">
-            <p className="text-3xl md:text-5xl font-light leading-tight">
+            <p className="text-2xl sm:text-3xl md:text-5xl font-light leading-tight">
               I'm <span className="text-neon">ondwariobiko</span> — a graphic & web designer working remotely worldwide. For ten years I've drawn logos and built brands that look like nobody else, then carried them into interfaces and code.
             </p>
             <div className="mt-16 border-t border-white/15">
               {timeline.map(([y, t]) => (
-                <div key={y} className="group flex gap-8 py-6 border-b border-white/15 hover:pl-4 transition-all">
-                  <span className="font-display text-2xl text-neon w-24">{y}</span>
+                <div key={y} className="group flex gap-4 sm:gap-8 py-5 sm:py-6 border-b border-white/15 hover:pl-4 transition-all">
+                  <span className="font-display text-xl sm:text-2xl text-neon w-16 sm:w-24 shrink-0">{y}</span>
                   <span className="text-white/70 group-hover:text-white">{t}</span>
                 </div>
               ))}
@@ -41,11 +41,11 @@ function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="bg-neon text-black py-20 px-5 md:px-8">
+      <section className="bg-neon text-black py-14 md:py-20 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
           {stats.map(([n, l]) => (
             <div key={l}>
-              <div className="font-display text-6xl tracking-tighter">{n}</div>
+              <div className="font-display text-4xl sm:text-6xl tracking-tighter">{n}</div>
               <div className="font-mono text-[10px] uppercase tracking-widest mt-2">{l}</div>
             </div>
           ))}
