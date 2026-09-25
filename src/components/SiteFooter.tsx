@@ -16,6 +16,9 @@ export function SiteFooter() {
             <a href="https://wa.me/254702255575" className="hover:text-neon transition-colors">WhatsApp</a>
             <a href="https://www.linkedin.com/in/ondwariobiko/" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors">LinkedIn</a>
             <a href="https://www.behance.net/johnobiko" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors">Behance</a>
+            <Link to="/faq" className="hover:text-neon transition-colors">FAQ</Link>
+            <Link to="/testimonials" className="hover:text-neon transition-colors">Reviews</Link>
+            <Link to="/journal" className="hover:text-neon transition-colors">Journal</Link>
             <Link to="/terms" className="hover:text-neon transition-colors">Terms</Link>
             <Link to="/privacy" className="hover:text-neon transition-colors">Privacy</Link>
           </div>
