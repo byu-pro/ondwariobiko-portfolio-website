@@ -96,9 +96,98 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Client logos — auto-scrolling carousel */}
+      <section className="py-16 md:py-24 border-y border-white/10 overflow-hidden" data-reveal>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/40 text-center mb-10 px-5">
+          Trusted by ambitious brands <span className="text-neon">✺</span> 10+ countries
+        </p>
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-black to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-black to-transparent z-10" />
+          <div className="flex w-max animate-marquee-slow pause-on-hover items-center">
+            {Array.from({ length: 2 }).map((_, k) => (
+              <div key={k} className="flex items-center">
+                {clients.map((c) => (
+                  <span
+                    key={c.name}
+                    className={`mx-8 md:mx-14 whitespace-nowrap text-white/35 hover:text-neon transition-colors duration-500 ${c.style}`}
+                  >
+                    {c.name}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials + results */}
+      <section className="py-24 md:py-32 px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="mb-12 md:mb-16" data-reveal>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Word on the street</p>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">
+              Clients<br /><span className="text-stroke">Talk</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-1">
+            {testimonials.map((t, i) => (
+              <figure
+                key={t.name}
+                data-reveal
+                style={{ transitionDelay: `${i * 120}ms` }}
+                className="group relative border border-white/10 p-8 md:p-10 flex flex-col gap-8 hover:border-neon/60 hover:bg-white/[0.02] transition-colors duration-500"
+              >
+                <span className="font-display text-6xl text-neon leading-none select-none">“</span>
+                <blockquote className="text-lg md:text-xl font-light leading-snug flex-1">{t.quote}</blockquote>
+                <div className="border-t border-white/10 pt-6">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-neon mb-3">{t.result}</p>
+                  <figcaption>
+                    <p className="font-display uppercase tracking-tight">{t.name}</p>
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 mt-1">{t.role}</p>
+                  </figcaption>
+                </div>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
+
+const clients = [
+  { name: "AURA FINANCE", style: "font-display text-2xl md:text-4xl uppercase tracking-tight" },
+  { name: "mara·sands", style: "font-mono text-2xl md:text-3xl lowercase tracking-widest" },
+  { name: "KILELE", style: "font-display text-2xl md:text-4xl uppercase italic" },
+  { name: "savanna/os", style: "font-mono text-2xl md:text-3xl" },
+  { name: "NAIROBI°LAB", style: "font-display text-2xl md:text-4xl uppercase tracking-[0.2em]" },
+  { name: "JUMUIYA", style: "font-display text-2xl md:text-4xl uppercase" },
+  { name: "baobab&co", style: "font-mono text-2xl md:text-3xl lowercase" },
+  { name: "ZURI STUDIO", style: "font-display text-2xl md:text-4xl uppercase tracking-tighter" },
+];
+
+const testimonials = [
+  {
+    quote: "He didn't just design a logo — he rebuilt how we see ourselves. Investors noticed before our customers did.",
+    result: "+38% investor meetings after rebrand",
+    name: "Amara N.",
+    role: "CEO, Aura Finance",
+  },
+  {
+    quote: "The identity system works everywhere: a coffee bag, a billboard, an app icon. Nothing ever looks off-brand.",
+    result: "3 new retail partnerships in 6 months",
+    name: "David K.",
+    role: "Founder, Kilele Coffee",
+  },
+  {
+    quote: "Design and code from one brain. Our site shipped faster than our last agency's first draft.",
+    result: "2.1× conversion on the new platform",
+    name: "Lena M.",
+    role: "Product Lead, Savanna OS",
+  },
+];
 
 const words = ["Creative", "Logo", "Brand", "Visual", "UI/UX", "Digital", "Web", "Art"];
 
