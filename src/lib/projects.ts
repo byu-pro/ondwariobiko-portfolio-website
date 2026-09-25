@@ -13,6 +13,7 @@ export type Project = {
   n: string;
   title: string;
   tag: string;
+  cat: "Brand Identity" | "Logo & Packaging" | "Digital";
   year: string;
   image: string;
   alt: string;
@@ -38,6 +39,7 @@ export const projects: Project[] = [
     n: "01",
     title: "Aura Finance",
     tag: "UI/UX • Front-end",
+    cat: "Digital",
     year: "2023",
     image: projectAura,
     alt: "Aura Finance fintech app interface with dark mode and lime accents",
@@ -79,6 +81,7 @@ export const projects: Project[] = [
     n: "02",
     title: "Mara Sands",
     tag: "Identity • Brand Strategy",
+    cat: "Brand Identity",
     year: "2024",
     image: projectMara,
     alt: "Mara Sands luxury hotel brand identity on linen paper",
@@ -120,6 +123,7 @@ export const projects: Project[] = [
     n: "03",
     title: "Kilele Coffee",
     tag: "Logo • Packaging",
+    cat: "Logo & Packaging",
     year: "2025",
     image: projectKilele,
     alt: "Matte black specialty coffee bags with lime peak logo",
@@ -161,6 +165,7 @@ export const projects: Project[] = [
     n: "04",
     title: "Savanna OS",
     tag: "Product Design • Web",
+    cat: "Digital",
     year: "2026",
     image: projectSavanna,
     alt: "Savanna OS dark dashboard on laptop and phone",
