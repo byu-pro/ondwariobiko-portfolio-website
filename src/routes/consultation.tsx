@@ -21,7 +21,7 @@ const perks = [
   ["Clear plan", "Honest advice, scope, timeline & rough budget"],
   ["Good fit?", "We both find out if working together makes sense"],
 ];
-const types = ["Logo", "Brand Identity", "UI/UX", "Website", "Not sure yet"];
+const types = ["Logo", "Brand Identity", "UI/UX", "Website", "Other — custom", "Not sure yet"];
 function ConsultationPage() {
   const [type, setType] = useState<string>(types[0]!);
   const [budget, setBudget] = useState<string>("");
