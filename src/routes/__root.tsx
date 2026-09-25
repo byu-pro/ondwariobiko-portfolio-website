@@ -133,6 +133,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
         <FloatingConsult />
+        <BackToTop />
       </div>
     </QueryClientProvider>
   );
