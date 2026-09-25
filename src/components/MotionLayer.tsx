@@ -64,14 +64,14 @@ export function MotionLayer() {
       x = e.clientX; y = e.clientY;
       const hot = (e.target as HTMLElement).closest("a, button");
       ring.current?.classList.toggle("is-hot", !!hot);
+      if (!raf) raf = requestAnimationFrame(loop);
     };
     const loop = () => {
       rx += (x - rx) * 0.18; ry += (y - ry) * 0.18;
       if (dot.current) dot.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       if (ring.current) ring.current.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
-      raf = requestAnimationFrame(loop);
+      raf = Math.abs(x - rx) + Math.abs(y - ry) > 0.3 ? requestAnimationFrame(loop) : 0;
     };
-    loop();
     window.addEventListener("pointermove", move);
     return () => { cancelAnimationFrame(raf); window.removeEventListener("pointermove", move); document.documentElement.classList.remove("has-cursor"); };
   }, []);

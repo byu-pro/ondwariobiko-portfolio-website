@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="px-5 md:px-8 pt-20 md:pt-32 pb-10 border-t border-white/10">
       <div className="max-w-[1400px] mx-auto">
         <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/50 mb-6">Have a vision?</p>
-        <Link to="/contact" className="group block font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,11vw,10rem)]">
+        <Link to="/consultation" className="group block font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,11vw,10rem)]">
           <span className="block transition-all duration-500 group-hover:text-neon group-hover:translate-x-4">Let's build</span>
           <span className="block text-stroke group-hover:text-neon transition-all duration-700 group-hover:translate-x-10">something ✺</span>
         </Link>
