@@ -8,9 +8,9 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services — ondwariobiko | Logo, Branding, UI/UX, Front-end" },
-      { name: "description", content: "Logo systems, brand identity packages, mascot design and front-end builds from ondwariobiko. Clear scope, starting-at pricing, working remotely worldwide." },
+      { name: "description", content: "Logo systems, brand identity packages, mascot design and front-end builds from ondwariobiko. Clear scope, individually quoted, working remotely worldwide." },
       { property: "og:title", content: "Services — ondwariobiko" },
-      { property: "og:description", content: "Logo systems, brand identity packages, mascot design and front-end builds. Clear scope and starting-at pricing." },
+      { property: "og:description", content: "Logo systems, brand identity packages, mascot design and front-end builds. Clear scope, quoted around your project and budget." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -33,7 +33,6 @@ const packages = [
     ],
     turnaround: "2–3 weeks",
     ideal: "Best for startups launching their first brand",
-    price: "from $1,200",
   },
   {
     n: "02",
@@ -47,7 +46,6 @@ const packages = [
     ],
     turnaround: "4–6 weeks",
     ideal: "Best for established businesses rebranding",
-    price: "from $3,500",
   },
   {
     n: "03",
@@ -61,7 +59,6 @@ const packages = [
     ],
     turnaround: "3–4 weeks",
     ideal: "Best for brands wanting a memorable personality",
-    price: "from $2,000",
   },
   {
     n: "04",
@@ -75,7 +72,6 @@ const packages = [
     ],
     turnaround: "4–8 weeks",
     ideal: "Best for founders who want one person owning it all",
-    price: "from $4,000",
   },
   {
     n: "05",
@@ -89,7 +85,6 @@ const packages = [
     ],
     turnaround: "2–3 weeks",
     ideal: "Best for teams scaling beyond the founder",
-    price: "from $1,800",
   },
   {
     n: "06",
@@ -103,17 +98,16 @@ const packages = [
     ],
     turnaround: "2–4 weeks",
     ideal: "Best for product brands ready to ship",
-    price: "from $1,500",
   },
 ];
 
 const addons = [
-  { t: "Business Card Design", p: "from $300" },
-  { t: "Social Media Kit", p: "from $450" },
-  { t: "Packaging Mockups", p: "from $400" },
-  { t: "Stationery Suite", p: "from $600" },
-  { t: "Favicon & App Icon Set", p: "from $200" },
-  { t: "Pitch Deck Template", p: "from $500" },
+  "Business Card Design",
+  "Social Media Kit",
+  "Packaging Mockups",
+  "Stationery Suite",
+  "Favicon & App Icon Set",
+  "Pitch Deck Template",
 ];
 
 const serviceFaqs = [
@@ -122,12 +116,16 @@ const serviceFaqs = [
     a: "Logo systems land in 2–3 weeks, full brand identities in 4–6 weeks, and websites in 4–8 weeks depending on scope. You'll get a fixed timeline in your quote before we start.",
   },
   {
+    q: "How much does a project cost?",
+    a: "Every project is scoped and quoted individually — no fixed price lists. We discuss your goals, scope and budget, and I put together a quote that fits what your brand actually needs. You approve everything before we start.",
+  },
+  {
     q: "How many revisions are included?",
-    a: "Every package includes 2 rounds of revisions. Additional rounds are billable at a fixed hourly rate stated in your quote — so scope creep never sneaks up on you.",
+    a: "Every package includes 2 rounds of revisions. If we need more, we agree on it together upfront — so scope creep never sneaks up on you.",
   },
   {
     q: "Do you offer rush delivery?",
-    a: "Yes, when my schedule allows. Rush projects carry a 25% priority fee and I'll confirm the exact delivery date before you commit to anything.",
+    a: "Yes, when my schedule allows. Let me know your deadline and I'll confirm exactly what's possible before you commit to anything.",
   },
   {
     q: "What if I don't like any of the concepts?",
