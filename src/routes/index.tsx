@@ -25,7 +25,7 @@ function Index() {
           <div className="font-mono text-xs uppercase tracking-[0.25em] text-white/50 mb-6">
             <span className="text-neon">●</span> Logo · Brand · UI/UX · Front-end — Est. 2016
           </div>
-          <h1 className="font-display text-[clamp(3rem,15vw,14rem)] leading-[0.85] tracking-tighter uppercase mb-10 md:mb-12 break-words">
+          <h1 className="font-display text-[clamp(2.5rem,13.5vw,14rem)] leading-[0.85] tracking-tighter uppercase mb-10 md:mb-12 break-words">
             <RotatingWord /> <br />
             <span className="text-stroke">Designer</span>
             <span className="text-neon inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
