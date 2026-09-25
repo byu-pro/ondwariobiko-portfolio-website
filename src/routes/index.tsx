@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import logoBlack from "@/assets/jo-logo-black.png.asset.json";
 import logoWhite from "@/assets/jo-logo-white.png.asset.json";
 import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
-import { ConsultButton } from "@/components/ConsultButton";
 import { heroImage, projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
@@ -267,7 +266,66 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Final CTA — short brief form */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20">
+          <div data-reveal>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Start a project</p>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.85]">
+              Tell me<br /><span className="text-stroke">The Brief</span>
+            </h2>
+            <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
+              Three quick answers — that's all it takes to start the conversation. I'll reply within 24 hours.
+            </p>
+          </div>
+          <BriefForm />
+        </div>
+      </section>
     </>
+  );
+}
+
+const offerings = [
+  { t: "Logo Design", d: "Hand-drawn, vector-crafted marks built to outlive trends — full logo suite included." },
+  { t: "Brand Identity System", d: "Colour, type, voice and guidelines — a complete world your brand can grow into." },
+  { t: "Web Design & Build", d: "Designed and developed by the same hands. Fast, responsive, unmistakably yours." },
+  { t: "UI/UX Design", d: "Interfaces that feel inevitable — research-backed, prototype-tested, pixel-obsessed." },
+];
+
+function BriefForm() {
+  const [type, setType] = useState("Brand Identity");
+  const [budget, setBudget] = useState("$1k – $3k");
+  const [timeline, setTimeline] = useState("Within a month");
+  const send = () => {
+    const msg = encodeURIComponent(`Hi! I'd like to discuss a project.\n\n• Project: ${type}\n• Budget: ${budget}\n• Timeline: ${timeline}`);
+    window.open(`https://wa.me/254702255575?text=${msg}`, "_blank");
+  };
+  const selectCls = "w-full bg-transparent border border-white/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-white focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-white/40 [&>option]:bg-black";
+  return (
+    <div className="flex flex-col gap-6" data-reveal>
+      <label className="flex flex-col gap-2">
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Project type</span>
+        <select value={type} onChange={(e) => setType(e.target.value)} className={selectCls}>
+          {["Logo Design", "Brand Identity", "Web Design & Build", "UI/UX Design", "Something else"].map((o) => <option key={o}>{o}</option>)}
+        </select>
+      </label>
+      <label className="flex flex-col gap-2">
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Budget range</span>
+        <select value={budget} onChange={(e) => setBudget(e.target.value)} className={selectCls}>
+          {["Under $1k", "$1k – $3k", "$3k – $10k", "$10k+"].map((o) => <option key={o}>{o}</option>)}
+        </select>
+      </label>
+      <label className="flex flex-col gap-2">
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Timeline</span>
+        <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>
+          {["ASAP", "Within a month", "1–3 months", "Flexible"].map((o) => <option key={o}>{o}</option>)}
+        </select>
+      </label>
+      <button onClick={send} className="mt-2 bg-neon text-black font-mono text-xs uppercase tracking-[0.2em] px-8 py-5 hover:bg-white transition-colors duration-300 cursor-pointer">
+        Send via WhatsApp ↗
+      </button>
+    </div>
   );
 }
 
