@@ -2,16 +2,22 @@ import { Link } from "@tanstack/react-router";
 
 export function SiteFooter() {
   return (
-    <footer className="px-5 md:px-8 pt-20 md:pt-32 pb-10 border-t border-white/10">
+    <footer className="px-5 md:px-8 pt-20 md:pt-32 pb-28 md:pb-24 border-t border-white/10">
       <div className="max-w-[1400px] mx-auto">
         <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/50 mb-6">Have a vision?</p>
         <Link to="/consultation" className="group block font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,11vw,10rem)]">
           <span className="block transition-all duration-500 group-hover:text-neon group-hover:translate-x-4">Let's build</span>
           <span className="block text-stroke group-hover:text-neon transition-all duration-700 group-hover:translate-x-10">something ✺</span>
         </Link>
-        <div className="mt-16 md:mt-24 flex flex-col md:flex-row justify-between gap-6 font-mono text-xs uppercase tracking-widest text-white/50">
-          <span>© 2026 ondwariobiko. All Rights Reserved.</span>
-          <div className="flex flex-wrap gap-x-8 gap-y-3">
+        <div className="mt-16 md:mt-24 border-t border-white/15 pt-6 font-mono text-xs uppercase tracking-widest">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-white/80">
+            <span>© 2026 ondwariobiko. All Rights Reserved.</span>
+            <div className="flex gap-6 text-white">
+              <Link to="/terms" className="hover:text-neon transition-colors">Terms</Link>
+              <Link to="/privacy" className="hover:text-neon transition-colors">Privacy</Link>
+            </div>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-white/50">
             <a href="mailto:hello@ondwariobiko.com" className="hover:text-neon transition-colors">Email</a>
             <a href="https://wa.me/254702255575" className="hover:text-neon transition-colors">WhatsApp</a>
             <a href="https://www.linkedin.com/in/ondwariobiko/" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors">LinkedIn</a>
@@ -19,8 +25,6 @@ export function SiteFooter() {
             <Link to="/faq" className="hover:text-neon transition-colors">FAQ</Link>
             <Link to="/testimonials" className="hover:text-neon transition-colors">Reviews</Link>
             <Link to="/journal" className="hover:text-neon transition-colors">Journal</Link>
-            <Link to="/terms" className="hover:text-neon transition-colors">Terms</Link>
-            <Link to="/privacy" className="hover:text-neon transition-colors">Privacy</Link>
           </div>
         </div>
       </div>
