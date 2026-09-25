@@ -58,9 +58,9 @@ function Index() {
       <section className="py-16 md:py-24 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-1">
           {[
-            { src: "/assets/logoblack.png", bg: "bg-white", label: "Primary", c: "text-black/50" },
-            { src: "/assets/logowhite.png", bg: "bg-black border border-white/10", label: "Inverse", c: "text-white/50" },
-            { src: "/assets/logoblack.png", bg: "bg-neon", label: "Signature Lime", c: "text-black/50" },
+            { src: `${import.meta.env.BASE_URL}assets/logoblack.png`, bg: "bg-white", label: "Primary", c: "text-black/50" },
+            { src: `${import.meta.env.BASE_URL}assets/logowhite.png`, bg: "bg-black border border-white/10", label: "Inverse", c: "text-white/50" },
+            { src: `${import.meta.env.BASE_URL}assets/logoblack.png`, bg: "bg-neon", label: "Signature Lime", c: "text-black/50" },
           ].map((l) => (
             <div key={l.label} className={`group aspect-square ${l.bg} flex flex-col items-center justify-center`}>
               <img src={l.src} alt={`JO monogram — ${l.label}`} width={160} height={160} className="w-24 h-24 md:w-40 md:h-40 object-contain animate-float transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-12" />

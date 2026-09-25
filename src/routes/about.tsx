@@ -80,7 +80,7 @@ function AboutPage() {
             <div className="relative aspect-[4/5] bg-neutral-900 border border-white/10 overflow-hidden group">
               <div className="absolute inset-0 grid place-items-center">
                 <img
-                  src="/assets/logowhite.png"
+                  src={`${import.meta.env.BASE_URL}assets/logowhite.png`}
                   alt="ondwariobiko monogram"
                   width={280}
                   height={280}
