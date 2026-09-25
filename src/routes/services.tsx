@@ -8,9 +8,9 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services — ondwariobiko | Logo, Branding, UI/UX, Front-end" },
-      { name: "description", content: "Logo systems, brand identity packages, mascot design and front-end builds from ondwariobiko. Clear scope, starting-at pricing, working remotely worldwide." },
+      { name: "description", content: "Logo systems, brand identity packages, mascot design and front-end builds from ondwariobiko. Clear scope, individually quoted, working remotely worldwide." },
       { property: "og:title", content: "Services — ondwariobiko" },
-      { property: "og:description", content: "Logo systems, brand identity packages, mascot design and front-end builds. Clear scope and starting-at pricing." },
+      { property: "og:description", content: "Logo systems, brand identity packages, mascot design and front-end builds. Clear scope, quoted around your project and budget." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -33,7 +33,6 @@ const packages = [
     ],
     turnaround: "2–3 weeks",
     ideal: "Best for startups launching their first brand",
-    price: "from $1,200",
   },
   {
     n: "02",
@@ -47,7 +46,6 @@ const packages = [
     ],
     turnaround: "4–6 weeks",
     ideal: "Best for established businesses rebranding",
-    price: "from $3,500",
   },
   {
     n: "03",
@@ -61,7 +59,6 @@ const packages = [
     ],
     turnaround: "3–4 weeks",
     ideal: "Best for brands wanting a memorable personality",
-    price: "from $2,000",
   },
   {
     n: "04",
@@ -75,7 +72,6 @@ const packages = [
     ],
     turnaround: "4–8 weeks",
     ideal: "Best for founders who want one person owning it all",
-    price: "from $4,000",
   },
   {
     n: "05",
@@ -89,7 +85,6 @@ const packages = [
     ],
     turnaround: "2–3 weeks",
     ideal: "Best for teams scaling beyond the founder",
-    price: "from $1,800",
   },
   {
     n: "06",
@@ -103,17 +98,16 @@ const packages = [
     ],
     turnaround: "2–4 weeks",
     ideal: "Best for product brands ready to ship",
-    price: "from $1,500",
   },
 ];
 
 const addons = [
-  { t: "Business Card Design", p: "from $300" },
-  { t: "Social Media Kit", p: "from $450" },
-  { t: "Packaging Mockups", p: "from $400" },
-  { t: "Stationery Suite", p: "from $600" },
-  { t: "Favicon & App Icon Set", p: "from $200" },
-  { t: "Pitch Deck Template", p: "from $500" },
+  "Business Card Design",
+  "Social Media Kit",
+  "Packaging Mockups",
+  "Stationery Suite",
+  "Favicon & App Icon Set",
+  "Pitch Deck Template",
 ];
 
 const serviceFaqs = [
@@ -122,12 +116,16 @@ const serviceFaqs = [
     a: "Logo systems land in 2–3 weeks, full brand identities in 4–6 weeks, and websites in 4–8 weeks depending on scope. You'll get a fixed timeline in your quote before we start.",
   },
   {
+    q: "How much does a project cost?",
+    a: "Every project is scoped and quoted individually — no fixed price lists. We discuss your goals, scope and budget, and I put together a quote that fits what your brand actually needs. You approve everything before we start.",
+  },
+  {
     q: "How many revisions are included?",
-    a: "Every package includes 2 rounds of revisions. Additional rounds are billable at a fixed hourly rate stated in your quote — so scope creep never sneaks up on you.",
+    a: "Every package includes 2 rounds of revisions. If we need more, we agree on it together upfront — so scope creep never sneaks up on you.",
   },
   {
     q: "Do you offer rush delivery?",
-    a: "Yes, when my schedule allows. Rush projects carry a 25% priority fee and I'll confirm the exact delivery date before you commit to anything.",
+    a: "Yes, when my schedule allows. Let me know your deadline and I'll confirm exactly what's possible before you commit to anything.",
   },
   {
     q: "What if I don't like any of the concepts?",
@@ -171,7 +169,7 @@ function ServicesPage() {
               >
                 <div className="flex justify-between items-start font-mono text-xs">
                   <span className="text-neon group-hover:text-black">{p.n}</span>
-                  <span className="text-neon font-mono text-sm group-hover:text-black/70">{p.price}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 group-hover:text-black/60">{p.turnaround}</span>
                 </div>
 
                 <h3 className="mt-6 font-display uppercase tracking-tighter text-3xl sm:text-4xl leading-[0.9] transition-transform duration-500 group-hover:-translate-y-1">
@@ -188,10 +186,7 @@ function ServicesPage() {
                   ))}
                 </ul>
 
-                <div className="mt-auto pt-6 flex flex-col gap-1 border-t border-white/10 group-hover:border-black/15">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 group-hover:text-black/50">
-                    Turnaround · {p.turnaround}
-                  </span>
+                <div className="mt-auto pt-6 border-t border-white/10 group-hover:border-black/15">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neon group-hover:text-black">
                     {p.ideal}
                   </span>
@@ -238,16 +233,42 @@ function ServicesPage() {
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.9]">Add-ons</h2>
             </div>
             <p className="text-white/50 max-w-sm text-sm leading-relaxed">
-              Stack any of these onto a package — clients often upsell themselves here before we've even spoken.
+              Stack any of these onto a package — quoted together with your project so everything fits your budget.
             </p>
           </div>
           <div data-reveal className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/15 border border-white/15">
             {addons.map((a) => (
-              <div key={a.t} className="bg-black p-5 flex items-center justify-between group hover:bg-white/[0.04] transition-colors duration-300">
-                <span className="font-display text-lg sm:text-xl uppercase tracking-tight">{a.t}</span>
-                <span className="font-mono text-xs uppercase tracking-widest text-neon">{a.p}</span>
+              <div key={a} className="bg-black p-5 flex items-center justify-between group hover:bg-white/[0.04] transition-colors duration-300">
+                <span className="font-display text-lg sm:text-xl uppercase tracking-tight">{a}</span>
+                <span className="font-mono text-neon text-xl leading-none transition-transform duration-300 group-hover:rotate-45">+</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* A note on investment */}
+      <section className="px-5 md:px-8 py-20 md:py-28 border-t border-white/10 bg-neon text-black">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-20 items-start">
+          <div data-reveal>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-black/60 mb-4">No price lists</p>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.9]">
+              A note on<br />investment
+            </h2>
+          </div>
+          <div data-reveal className="flex flex-col gap-6">
+            <p className="font-display text-2xl sm:text-3xl leading-tight tracking-tight max-w-2xl">
+              Every project is scoped individually, because no two brands need the same thing.
+            </p>
+            <p className="text-black/70 leading-relaxed max-w-2xl">
+              Rather than fixed pricing, I quote after understanding your goals, timeline and the scope of work involved — and we shape it around a budget that works for you. That way you're only ever paying for what your brand actually needs, and you approve the full quote before anything begins.
+            </p>
+            <Link
+              to="/consultation"
+              className="inline-flex items-center gap-3 self-start bg-black text-neon font-mono text-xs uppercase tracking-[0.2em] px-8 py-5 hover:bg-white hover:text-black transition-colors duration-300"
+            >
+              Start with a free 1-hr consult ↗
+            </Link>
           </div>
         </div>
       </section>
@@ -287,7 +308,7 @@ function ServicesPage() {
               Tell me<br /><span className="text-stroke">What you need</span>
             </h2>
             <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
-              Pick a package, set a budget, name a timeline. Your answers open a WhatsApp chat with the brief already typed — I'll reply with a fixed quote within 24 hours.
+              Pick a service, share your budget, name a timeline. Your answers open a WhatsApp chat with the brief already typed — I'll reply with a tailored quote within 24 hours.
             </p>
             <Link
               to="/consultation"
