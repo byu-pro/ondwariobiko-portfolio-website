@@ -13,6 +13,7 @@ export type Project = {
   n: string;
   title: string;
   tag: string;
+  cat: "Brand Identity" | "Logo & Packaging" | "Digital";
   year: string;
   image: string;
   alt: string;
