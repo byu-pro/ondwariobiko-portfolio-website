@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
-import { ConsultButton } from "@/components/ConsultButton";
 import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
 
 export const Route = createFileRoute("/about")({
