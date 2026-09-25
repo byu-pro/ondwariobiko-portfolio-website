@@ -38,8 +38,17 @@ export function MotionLayer() {
         io?.observe(el);
       });
       window.scrollTo({ top: 0 });
-    });
-    return () => { cancelAnimationFrame(raf); io?.disconnect(); };
+    };
+    // Wait until the page has fully loaded (hydration settled) before
+    // mutating any DOM — otherwise React flags hydration mismatches.
+    if (document.readyState === "complete") {
+      timer = window.setTimeout(() => { raf = requestAnimationFrame(scan); }, 50);
+    } else {
+      const onLoad = () => { timer = window.setTimeout(() => { raf = requestAnimationFrame(scan); }, 50); };
+      window.addEventListener("load", onLoad, { once: true });
+      return () => { window.removeEventListener("load", onLoad); clearTimeout(timer); cancelAnimationFrame(raf); io?.disconnect(); };
+    }
+    return () => { clearTimeout(timer); cancelAnimationFrame(raf); io?.disconnect(); };
   }, [path]);
 
   // Scroll progress + parallax (initial tick deferred past hydration)
