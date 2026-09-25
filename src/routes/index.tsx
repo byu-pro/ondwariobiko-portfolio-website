@@ -183,6 +183,59 @@ function Index() {
         </div>
       </section>
 
+      {/* About snippet */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 items-end" data-reveal>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase tracking-tighter leading-[0.9]">
+            Ten years of craft.<br /><span className="text-stroke">Zero templates.</span>
+          </h2>
+          <div>
+            <p className="text-lg md:text-xl font-light leading-relaxed text-white/70 mb-8">
+              I'm a designer and front-end developer with 10 years of practice — every identity is drawn by hand and built in vector, every website coded by the same person who designed it. No templates, no AI shortcuts, no handoff losses.
+            </p>
+            <Link to="/about" className="font-mono text-xs uppercase tracking-[0.25em] text-neon hover:text-white transition-colors">More about me →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services overview */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex justify-between items-end mb-12 md:mb-16 gap-6 flex-wrap" data-reveal>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">What I<br /><span className="text-stroke">Offer</span></h2>
+            <Link to="/services" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-neon">Full services →</Link>
+          </div>
+          <div>
+            {offerings.map((o, i) => (
+              <Link
+                to="/services"
+                key={o.t}
+                data-reveal
+                style={{ transitionDelay: `${i * 80}ms` }}
+                className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-8 border-t border-white/10 last:border-b hover:bg-white/[0.02] transition-colors duration-300 px-2 md:px-6"
+              >
+                <div className="flex items-baseline gap-6">
+                  <span className="font-mono text-xs text-neon">0{i + 1}</span>
+                  <h3 className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tight group-hover:text-neon transition-colors duration-300">{o.t}</h3>
+                </div>
+                <p className="text-sm text-white/50 max-w-sm md:text-right">{o.d}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Results highlight */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10 bg-neon text-black">
+        <div className="max-w-[1400px] mx-auto" data-reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] mb-8">The result that matters</p>
+          <blockquote className="font-display text-3xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.95] max-w-5xl">
+            "Helped launch a fintech brand now serving customers in <span className="text-stroke-black">12 countries</span>."
+          </blockquote>
+          <p className="font-mono text-xs uppercase tracking-widest mt-8 text-black/60">Amara N. — CEO, Aura Finance</p>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
