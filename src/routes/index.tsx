@@ -296,9 +296,9 @@ const offerings = [
 function BriefForm() {
   const [type, setType] = useState("Brand Identity");
   const [budget, setBudget] = useState("$1k – $3k");
-  const [timeline, setTimeline] = useState("Within a month");
+  const [timeline, setTimeline] = useState("Flexible — let's discuss");
   const send = () => {
-    const msg = encodeURIComponent(`Hi! I'd like to discuss a project.\n\n• Project: ${type}\n• Budget: ${budget}\n• Timeline: ${timeline}`);
+    const msg = encodeURIComponent(`Hi! I'd like to discuss a project.\n\n• Project: ${type}\n• Budget: ${budget}\n• Start: ${timeline}`);
     window.open(`https://wa.me/254702255575?text=${msg}`, "_blank");
   };
   const selectCls = "w-full bg-transparent border border-white/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-white focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-white/40 [&>option]:bg-black";
@@ -317,9 +317,9 @@ function BriefForm() {
         </select>
       </label>
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Timeline</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">When would you like to start?</span>
         <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>
-          {["ASAP", "Within a month", "1–3 months", "Flexible"].map((o) => <option key={o}>{o}</option>)}
+          {["As soon as possible", "In the coming weeks", "In the next few months", "Flexible — let's discuss"].map((o) => <option key={o}>{o}</option>)}
         </select>
       </label>
       <button onClick={send} className="mt-2 bg-neon text-black font-mono text-xs uppercase tracking-[0.2em] px-8 py-5 hover:bg-white transition-colors duration-300 cursor-pointer">
@@ -338,7 +338,7 @@ const process = [
 
 const faqs = [
   { q: "How much does a project cost?", a: "There's no fixed price list — every project is quoted individually around its scope, your goals and your budget. We discuss it together (the first hour is free), and you approve a clear quote before anything starts. No surprises." },
-  { q: "How long does a typical project take?", a: "A logo and brand identity usually takes 2–4 weeks. A full website with design and development runs 4–8 weeks depending on scope. Rush timelines are possible — let's talk." },
+  { q: "How long does a typical project take?", a: "There's no fixed timeline — it depends on the scope and what we agree together. After our first conversation I'll give you an honest estimate, and we'll set milestones that work for both of us." },
   { q: "Do you work with clients outside Africa?", a: "Absolutely — I work remotely with clients worldwide across every timezone. Most of my collaborations happen entirely over calls and shared boards, and it works beautifully." },
   { q: "What do I actually receive at the end?", a: "For branding: full logo suites, colour and type systems, brand guidelines and all source files. For web: a live, fast, responsive website plus handover documentation. You own everything." },
   { q: "Can you redesign my existing brand or website?", a: "Yes — rebrands and redesigns are some of my favourite briefs. I'll audit what you have, keep what's working, and rebuild what isn't." },
