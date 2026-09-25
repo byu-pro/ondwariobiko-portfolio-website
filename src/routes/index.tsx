@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import logoBlack from "@/assets/jo-logo-black.png.asset.json";
 import logoWhite from "@/assets/jo-logo-white.png.asset.json";
 import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
@@ -25,7 +26,7 @@ function Index() {
             <span className="text-neon">●</span> Logo · Brand · UI/UX · Front-end — Est. 2016
           </div>
           <h1 className="font-display text-[clamp(4rem,15vw,14rem)] leading-[0.85] tracking-tighter uppercase mb-12">
-            Creative <br />
+            <RotatingWord /> <br />
             <span className="text-stroke">Director</span>
             <span className="text-neon">*</span>
           </h1>
@@ -94,5 +95,22 @@ function Index() {
         </div>
       </section>
     </>
+  );
+}
+
+const words = ["Creative", "Logo", "Brand", "Visual", "UI/UX", "Digital", "Web", "Art"];
+
+function RotatingWord() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setI((n) => (n + 1) % words.length), 2200);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <span className="relative inline-block overflow-hidden align-bottom h-[0.9em] min-w-[5ch]">
+      <span key={words[i]} className="block animate-rise text-neon">
+        {words[i]}
+      </span>
+    </span>
   );
 }
