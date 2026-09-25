@@ -278,6 +278,7 @@ function ServicesPage() {
             <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
               The exact questions that otherwise stall a quote request for days — answered up front.
             </p>
+            <Link to="/faq" className="mt-6 inline-block font-mono text-xs uppercase tracking-widest text-neon hover:underline">All questions ⟶</Link>
           </div>
           <div data-reveal>
             {serviceFaqs.map((f) => (
