@@ -26,21 +26,31 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   useEffect(() => setOpen(false), [pathname]);
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [open]);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-50 px-5 md:px-8 py-5 flex items-center justify-between">
+      <header className={`fixed top-0 inset-x-0 z-[60] px-5 md:px-8 flex items-center justify-between transition-all duration-500 ${open ? "py-5 bg-transparent" : scrolled ? "py-3 bg-black/50 backdrop-blur-xl border-b border-white/10" : "py-5 bg-transparent border-b border-transparent"}`}>
         <Link to="/" className="flex items-center gap-4 group">
-          <img src={logoWhite.url} alt="ondwariobiko monogram" width={80} height={80} className="size-16 md:size-20 object-contain transition-transform duration-700 group-hover:rotate-[360deg]" />
-          <span className="hidden sm:block font-display text-2xl uppercase tracking-tight leading-none text-white">
-            ondwari<span className="text-neon">obiko</span>
+          <img src={logoWhite.url} alt="ondwariobiko monogram" width={80} height={80} className={`object-contain ${open ? "rounded-full" : ""} ${scrolled && !open ? "size-14 md:size-16" : "size-16 md:size-20"}`} style={{ transition: "all 0.6s" }} />
+          <span className={`hidden sm:block font-display text-2xl uppercase tracking-tight leading-none ${open ? "text-black" : "text-white"}`}>
+            ondwari<span className={open ? "text-black/50" : "text-neon"}>obiko</span>
           </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-white/60 border border-white/15 rounded-full px-4 py-2 backdrop-blur bg-black/40">
+        <div className={`${open ? "lg:hidden" : ""} hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-white/60 border border-white/15 rounded-full px-4 py-2 backdrop-blur bg-black/40`}>
           <span className="size-1.5 rounded-full bg-neon animate-pulse" />
           Available · NBO <NairobiClock />
         </div>
@@ -63,8 +73,8 @@ export function SiteNav() {
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-[55] bg-neon text-black animate-menu-in flex flex-col">
-          <div className="flex-1 flex flex-col justify-center px-5 md:px-16 pt-28">
+        <div className="fixed inset-0 z-[55] bg-neon text-black animate-menu-in flex flex-col overflow-y-auto overscroll-contain" onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
+          <div className="flex-1 flex flex-col justify-center px-5 md:px-16 pt-32 pb-12">
             <ul>
               {links.map((l, i) => {
                 const active = pathname === l.to;
@@ -72,6 +82,7 @@ export function SiteNav() {
                   <li key={l.to} className="overflow-hidden border-b border-black/15">
                     <Link
                       to={l.to}
+                      onClick={() => setOpen(false)}
                       className="group flex items-baseline gap-6 py-2 md:py-3 animate-rise"
                       style={{ animationDelay: `${200 + i * 70}ms` }}
                     >
@@ -88,7 +99,7 @@ export function SiteNav() {
               })}
             </ul>
           </div>
-          <div className="overflow-hidden bg-black text-neon py-4">
+          <div className="shrink-0 overflow-hidden bg-black text-neon py-4">
             <div className="flex w-max animate-marquee font-display uppercase text-2xl tracking-tight whitespace-nowrap">
               {Array.from({ length: 2 }).map((_, k) => (
                 <span key={k} className="flex">
