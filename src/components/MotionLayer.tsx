@@ -54,7 +54,8 @@ export function MotionLayer() {
       });
     };
     const on = () => { if (!raf) raf = requestAnimationFrame(tick); };
-    raf = requestAnimationFrame(tick);
+    // No initial tick — mutating style before hydration settles causes
+    // hydration-mismatch warnings. Initial states are set inline in markup.
     window.addEventListener("scroll", on, { passive: true });
     window.addEventListener("resize", on);
     return () => { cancelAnimationFrame(raf); window.removeEventListener("scroll", on); window.removeEventListener("resize", on); };
