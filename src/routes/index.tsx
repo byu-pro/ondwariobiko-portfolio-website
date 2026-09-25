@@ -34,13 +34,12 @@ function Index() {
           <div className="flex flex-col md:flex-row gap-10 md:gap-12 md:items-end">
             <div className="md:w-1/2">
               <p className="text-xl sm:text-2xl md:text-3xl font-light leading-tight max-w-xl mb-8">
-                <span className="text-neon">ondwariobiko</span> designs logos and brand worlds that refuse to blend in — then builds them for the web.
+                Custom brand identities and websites for <span className="text-neon">ambitious founders</span> — designed and built by one pair of hands, remotely worldwide.
               </p>
               <Link to="/work" className="inline-flex items-center gap-4 group">
                 <span className="size-14 rounded-full bg-neon text-black grid place-items-center transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">↗</span>
                 <span className="font-mono text-xs uppercase tracking-[0.25em] group-hover:text-neon transition-colors">See the work</span>
               </Link>
-              <div className="mt-6"><ConsultButton label="Free 1-hour consultation" /></div>
             </div>
             <div className="md:w-1/2 w-full aspect-[4/5] overflow-hidden"><img src={heroImage} alt="Premium textured business cards with lime edges and JO monogram" width={800} height={1008} fetchPriority="high" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="-0.08" /></div>
           </div>
@@ -81,8 +80,8 @@ function Index() {
             <Link to="/work" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-neon">All projects →</Link>
           </div>
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-            {projects.slice(0, 2).map((p, i) => (
-              <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i ? "md:mt-40" : ""}`}>
+            {projects.slice(0, 4).map((p, i) => (
+              <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i % 2 ? "md:mt-40" : ""}`}>
                 <div className="overflow-hidden mb-6">
                   <img src={p.image} alt={p.alt} width={1200} height={1500} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
