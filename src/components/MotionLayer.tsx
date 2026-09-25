@@ -8,34 +8,39 @@ export function MotionLayer() {
   const dot = useRef<HTMLDivElement>(null);
   const ring = useRef<HTMLDivElement>(null);
 
-  // Reveal on scroll — re-scan on each page change
+  // Reveal on scroll — re-scan on each page change.
+  // Deferred a frame so DOM mutations never race React hydration (avoids
+  // hydration-mismatch warnings from class/style changes on SSR'd markup).
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const els = document.querySelectorAll<HTMLElement>(
-      "main section > div > *, main article, footer > div > *, [data-reveal]",
-    );
     if (reduce) return;
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-in");
-            io.unobserve(e.target);
-          }
-        }),
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-    );
-    els.forEach((el, i) => {
-      if (el.getBoundingClientRect().top < window.innerHeight * 0.9) return; // already visible
-      el.classList.add("reveal");
-      el.style.transitionDelay = `${(i % 4) * 70}ms`;
-      io.observe(el);
+    let io: IntersectionObserver | null = null;
+    const raf = requestAnimationFrame(() => {
+      const els = document.querySelectorAll<HTMLElement>(
+        "main section > div > *, main article, footer > div > *, [data-reveal]",
+      );
+      io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-in");
+              io?.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      );
+      els.forEach((el, i) => {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.9) return; // already visible
+        el.classList.add("reveal");
+        el.style.transitionDelay = `${(i % 4) * 70}ms`;
+        io?.observe(el);
+      });
+      window.scrollTo({ top: 0 });
     });
-    window.scrollTo({ top: 0 });
-    return () => io.disconnect();
+    return () => { cancelAnimationFrame(raf); io?.disconnect(); };
   }, [path]);
 
-  // Scroll progress + parallax
+  // Scroll progress + parallax (initial tick deferred past hydration)
   useEffect(() => {
     let raf = 0;
     const tick = () => {
@@ -49,10 +54,10 @@ export function MotionLayer() {
       });
     };
     const on = () => { if (!raf) raf = requestAnimationFrame(tick); };
-    tick();
+    raf = requestAnimationFrame(tick);
     window.addEventListener("scroll", on, { passive: true });
     window.addEventListener("resize", on);
-    return () => { window.removeEventListener("scroll", on); window.removeEventListener("resize", on); };
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("scroll", on); window.removeEventListener("resize", on); };
   }, [path]);
 
   // Custom cursor (fine pointers only)
