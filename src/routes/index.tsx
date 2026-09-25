@@ -232,7 +232,7 @@ function Index() {
           <blockquote className="font-display text-3xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.95] max-w-5xl">
             "Helped launch a fintech brand now serving customers in <span className="text-stroke-black">12 countries</span>."
           </blockquote>
-          <p className="font-mono text-xs uppercase tracking-widest mt-8 text-black/60">Amara N. — CEO, Aura Finance</p>
+          <Link to="/work/$slug" params={{ slug: "aura-finance" }} className="inline-block font-mono text-xs uppercase tracking-widest mt-8 text-black/60 hover:text-black transition-colors">Aura Finance — Read the case study →</Link>
         </div>
       </section>
 
@@ -333,11 +333,9 @@ const process = [
 ];
 
 const faqs = [
-  { q: "How much does a project cost?", a: "There's no fixed price list — every project is quoted individually around its scope, your goals and your budget. We discuss it together (the first hour is free), and you approve a clear quote before anything starts. No surprises." },
-  { q: "How long does a typical project take?", a: "There's no fixed timeline — it depends on the scope and what we agree together. After our first conversation I'll give you an honest estimate, and we'll set milestones that work for both of us." },
-  { q: "Do you work with clients outside Africa?", a: "Absolutely — I work remotely with clients worldwide across every timezone. Most of my collaborations happen entirely over calls and shared boards, and it works beautifully." },
-  { q: "What do I actually receive at the end?", a: "For branding: full logo suites, colour and type systems, brand guidelines and all source files. For web: a live, fast, responsive website plus handover documentation. You own everything." },
+  { q: "Do you do logos only, or websites too?", a: "Both. I design brand identities and I also design and code the websites that carry them — so your brand and your site come from the same hands and feel like one thing." },
   { q: "Can you redesign my existing brand or website?", a: "Yes — rebrands and redesigns are some of my favourite briefs. I'll audit what you have, keep what's working, and rebuild what isn't." },
+  { q: "How do we communicate during a project?", a: "Email is the main line for briefs, files and approvals. For calls and video walkthroughs we hop on WhatsApp — whatever timezone you're in." },
   { q: "What if I'm not sure what I need yet?", a: "That's exactly what the free 1-hour consultation is for. We'll talk through your goals and I'll tell you honestly what I'd recommend — even if that means starting smaller." },
 ];
 

@@ -100,22 +100,12 @@ function AboutPage() {
           <div className="md:col-span-7">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-neon mb-6">⟶ Who I am</p>
             <p className="text-2xl sm:text-3xl md:text-4xl font-light leading-snug">
-              I'm <span className="text-neon">ondwariobiko</span> — a graphic and web designer based in Kenya,
-              working with clients internationally. I specialise in flat vector logo design, mascot illustration
-              and full brand identity systems.
+              I'm <span className="text-neon">ondwariobiko</span> — a graphic and web designer working remotely with
+              clients worldwide. I specialise in flat vector logo design, mascot illustration and full brand identity
+              systems — and I <span className="text-neon font-display font-black">design and build</span> the websites
+              that bring them to life.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* The dual-discipline line — the differentiator, said plainly */}
-      <section className="px-5 md:px-8 pb-20 md:pb-32">
-        <div className="max-w-[1400px] mx-auto border-t border-white/15 pt-12">
-          <p className="text-2xl sm:text-3xl md:text-4xl font-light leading-snug max-w-[40ch]">
-            Unlike most brand designers, I also{" "}
-            <span className="text-neon font-display font-black">design and build</span> the websites that bring
-            those brands to life — across Figma and XD for design, and front-end development for the build.
-          </p>
         </div>
       </section>
 
@@ -185,10 +175,10 @@ function AboutPage() {
             <span className="text-neon font-display font-black">inevitable</span>, not arbitrary.
           </p>
           <Link
-            to="/services"
+            to="/work"
             className="inline-flex items-center gap-2 mt-8 font-mono text-xs uppercase tracking-[0.2em] text-neon hover:gap-4 transition-all"
           >
-            See my process ⟶
+            See it in the work ⟶
           </Link>
         </div>
       </section>
@@ -244,8 +234,6 @@ function AboutPage() {
           </div>
         </div>
       </section>
-
-      <ConsultButton />
     </>
   );
 }

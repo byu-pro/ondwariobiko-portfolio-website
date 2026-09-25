@@ -204,10 +204,10 @@ function ServicesPage() {
           <div data-reveal className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
             {[
               { k: "Concepts with rationale", v: "Every direction is presented with the thinking behind it — never guesswork." },
-              { k: "Fixed scope & quote", v: "You approve a clear, fixed quote before we start. No open-ended hourly billing." },
-              { k: "2 revision rounds", v: "Baked into every package. Extra rounds are stated upfront at a fixed rate." },
+              { k: "Clear, agreed scope", v: "You approve the scope and quote before we start. No open-ended hourly billing." },
+              { k: "Agreed revision rounds", v: "Revisions are set together in your quote, so expectations are clear on both sides." },
               { k: "All source files", v: "AI, EPS, SVG, PNG and a PDF guide. Yours to keep and hand off freely." },
-              { k: "One person, end to end", v: "The hands that design it build it — no handoff losses, no 'that's not what we designed.'" },
+              { k: "Honest updates", v: "Regular check-ins by email, and video calls on WhatsApp whenever it's easier to talk." },
               { k: "Support after launch", v: "You leave with a brand or site you can actually use, and a partner on call." },
             ].map((x) => (
               <div key={x.k}>
@@ -315,8 +315,6 @@ function ServicesPage() {
           <InquiryForm />
         </div>
       </section>
-
-      <ConsultButton />
     </>
   );
 }
