@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import logoBlack from "@/assets/jo-logo-black.png.asset.json";
 import logoWhite from "@/assets/jo-logo-white.png.asset.json";
 import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
-import { ConsultButton } from "@/components/ConsultButton";
 import { heroImage, projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
@@ -34,13 +33,12 @@ function Index() {
           <div className="flex flex-col md:flex-row gap-10 md:gap-12 md:items-end">
             <div className="md:w-1/2">
               <p className="text-xl sm:text-2xl md:text-3xl font-light leading-tight max-w-xl mb-8">
-                <span className="text-neon">ondwariobiko</span> designs logos and brand worlds that refuse to blend in — then builds them for the web.
+                Custom brand identities and websites for <span className="text-neon">ambitious founders</span> — designed and built by one pair of hands, remotely worldwide.
               </p>
               <Link to="/work" className="inline-flex items-center gap-4 group">
                 <span className="size-14 rounded-full bg-neon text-black grid place-items-center transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">↗</span>
                 <span className="font-mono text-xs uppercase tracking-[0.25em] group-hover:text-neon transition-colors">See the work</span>
               </Link>
-              <div className="mt-6"><ConsultButton label="Free 1-hour consultation" /></div>
             </div>
             <div className="md:w-1/2 w-full aspect-[4/5] overflow-hidden"><img src={heroImage} alt="Premium textured business cards with lime edges and JO monogram" width={800} height={1008} fetchPriority="high" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="-0.08" /></div>
           </div>
@@ -81,8 +79,8 @@ function Index() {
             <Link to="/work" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-neon">All projects →</Link>
           </div>
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-            {projects.slice(0, 2).map((p, i) => (
-              <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i ? "md:mt-40" : ""}`}>
+            {projects.slice(0, 4).map((p, i) => (
+              <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i % 2 ? "md:mt-40" : ""}`}>
                 <div className="overflow-hidden mb-6">
                   <img src={p.image} alt={p.alt} width={1200} height={1500} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
@@ -184,6 +182,59 @@ function Index() {
         </div>
       </section>
 
+      {/* About snippet */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 items-end" data-reveal>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase tracking-tighter leading-[0.9]">
+            Ten years of craft.<br /><span className="text-stroke">Zero templates.</span>
+          </h2>
+          <div>
+            <p className="text-lg md:text-xl font-light leading-relaxed text-white/70 mb-8">
+              I'm a designer and front-end developer with 10 years of practice — every identity is drawn by hand and built in vector, every website coded by the same person who designed it. No templates, no AI shortcuts, no handoff losses.
+            </p>
+            <Link to="/about" className="font-mono text-xs uppercase tracking-[0.25em] text-neon hover:text-white transition-colors">More about me →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services overview */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex justify-between items-end mb-12 md:mb-16 gap-6 flex-wrap" data-reveal>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">What I<br /><span className="text-stroke">Offer</span></h2>
+            <Link to="/services" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-neon">Full services →</Link>
+          </div>
+          <div>
+            {offerings.map((o, i) => (
+              <Link
+                to="/services"
+                key={o.t}
+                data-reveal
+                style={{ transitionDelay: `${i * 80}ms` }}
+                className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-8 border-t border-white/10 last:border-b hover:bg-white/[0.02] transition-colors duration-300 px-2 md:px-6"
+              >
+                <div className="flex items-baseline gap-6">
+                  <span className="font-mono text-xs text-neon">0{i + 1}</span>
+                  <h3 className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tight group-hover:text-neon transition-colors duration-300">{o.t}</h3>
+                </div>
+                <p className="text-sm text-white/50 max-w-sm md:text-right">{o.d}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Results highlight */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10 bg-neon text-black">
+        <div className="max-w-[1400px] mx-auto" data-reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] mb-8">The result that matters</p>
+          <blockquote className="font-display text-3xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.95] max-w-5xl">
+            "Helped launch a fintech brand now serving customers in <span className="text-stroke-black">12 countries</span>."
+          </blockquote>
+          <p className="font-mono text-xs uppercase tracking-widest mt-8 text-black/60">Amara N. — CEO, Aura Finance</p>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
@@ -215,7 +266,66 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Final CTA — short brief form */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20">
+          <div data-reveal>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Start a project</p>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.85]">
+              Tell me<br /><span className="text-stroke">The Brief</span>
+            </h2>
+            <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
+              Three quick answers — that's all it takes to start the conversation. I'll reply within 24 hours.
+            </p>
+          </div>
+          <BriefForm />
+        </div>
+      </section>
     </>
+  );
+}
+
+const offerings = [
+  { t: "Logo Design", d: "Hand-drawn, vector-crafted marks built to outlive trends — full logo suite included." },
+  { t: "Brand Identity System", d: "Colour, type, voice and guidelines — a complete world your brand can grow into." },
+  { t: "Web Design & Build", d: "Designed and developed by the same hands. Fast, responsive, unmistakably yours." },
+  { t: "UI/UX Design", d: "Interfaces that feel inevitable — research-backed, prototype-tested, pixel-obsessed." },
+];
+
+function BriefForm() {
+  const [type, setType] = useState("Brand Identity");
+  const [budget, setBudget] = useState("$1k – $3k");
+  const [timeline, setTimeline] = useState("Within a month");
+  const send = () => {
+    const msg = encodeURIComponent(`Hi! I'd like to discuss a project.\n\n• Project: ${type}\n• Budget: ${budget}\n• Timeline: ${timeline}`);
+    window.open(`https://wa.me/254702255575?text=${msg}`, "_blank");
+  };
+  const selectCls = "w-full bg-transparent border border-white/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-white focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-white/40 [&>option]:bg-black";
+  return (
+    <div className="flex flex-col gap-6" data-reveal>
+      <label className="flex flex-col gap-2">
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Project type</span>
+        <select value={type} onChange={(e) => setType(e.target.value)} className={selectCls}>
+          {["Logo Design", "Brand Identity", "Web Design & Build", "UI/UX Design", "Something else"].map((o) => <option key={o}>{o}</option>)}
+        </select>
+      </label>
+      <label className="flex flex-col gap-2">
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Budget range</span>
+        <select value={budget} onChange={(e) => setBudget(e.target.value)} className={selectCls}>
+          {["Under $1k", "$1k – $3k", "$3k – $10k", "$10k+"].map((o) => <option key={o}>{o}</option>)}
+        </select>
+      </label>
+      <label className="flex flex-col gap-2">
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Timeline</span>
+        <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>
+          {["ASAP", "Within a month", "1–3 months", "Flexible"].map((o) => <option key={o}>{o}</option>)}
+        </select>
+      </label>
+      <button onClick={send} className="mt-2 bg-neon text-black font-mono text-xs uppercase tracking-[0.2em] px-8 py-5 hover:bg-white transition-colors duration-300 cursor-pointer">
+        Send via WhatsApp ↗
+      </button>
+    </div>
   );
 }
 
