@@ -169,7 +169,7 @@ function ServicesPage() {
               >
                 <div className="flex justify-between items-start font-mono text-xs">
                   <span className="text-neon group-hover:text-black">{p.n}</span>
-                  <span className="text-neon font-mono text-sm group-hover:text-black/70">{p.price}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 group-hover:text-black/60">{p.turnaround}</span>
                 </div>
 
                 <h3 className="mt-6 font-display uppercase tracking-tighter text-3xl sm:text-4xl leading-[0.9] transition-transform duration-500 group-hover:-translate-y-1">
@@ -186,10 +186,7 @@ function ServicesPage() {
                   ))}
                 </ul>
 
-                <div className="mt-auto pt-6 flex flex-col gap-1 border-t border-white/10 group-hover:border-black/15">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 group-hover:text-black/50">
-                    Turnaround · {p.turnaround}
-                  </span>
+                <div className="mt-auto pt-6 border-t border-white/10 group-hover:border-black/15">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neon group-hover:text-black">
                     {p.ideal}
                   </span>
@@ -236,14 +233,14 @@ function ServicesPage() {
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.9]">Add-ons</h2>
             </div>
             <p className="text-white/50 max-w-sm text-sm leading-relaxed">
-              Stack any of these onto a package — clients often upsell themselves here before we've even spoken.
+              Stack any of these onto a package — quoted together with your project so everything fits your budget.
             </p>
           </div>
           <div data-reveal className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/15 border border-white/15">
             {addons.map((a) => (
-              <div key={a.t} className="bg-black p-5 flex items-center justify-between group hover:bg-white/[0.04] transition-colors duration-300">
-                <span className="font-display text-lg sm:text-xl uppercase tracking-tight">{a.t}</span>
-                <span className="font-mono text-xs uppercase tracking-widest text-neon">{a.p}</span>
+              <div key={a} className="bg-black p-5 flex items-center justify-between group hover:bg-white/[0.04] transition-colors duration-300">
+                <span className="font-display text-lg sm:text-xl uppercase tracking-tight">{a}</span>
+                <span className="font-mono text-neon text-xl leading-none transition-transform duration-300 group-hover:rotate-45">+</span>
               </div>
             ))}
           </div>
