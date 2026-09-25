@@ -32,7 +32,8 @@ export const Route = createFileRoute("/work/$slug")({
 function CaseStudy() {
   const { project: p } = Route.useLoaderData();
   const idx = projects.findIndex((x) => x.slug === p.slug);
-  const next = projects[(idx + 1) % projects.length];
+  const next = projects[(idx + 1) % projects.length]!;
+  const [g1, g2] = [p.gallery[0]!, p.gallery[1]!];
 
   return (
     <article>
@@ -113,7 +114,7 @@ function CaseStudy() {
 
       <section className="px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[16/9]">
-          <img src={p.gallery[0].src} alt={p.gallery[0].alt} width={1600} height={912} loading="lazy" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="0.06" />
+          <img src={g1.src} alt={g1.alt} width={1600} height={912} loading="lazy" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="0.06" />
         </div>
       </section>
 
@@ -146,7 +147,7 @@ function CaseStudy() {
 
       <section className="px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[16/9]">
-          <img src={p.gallery[1].src} alt={p.gallery[1].alt} width={1600} height={912} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+          <img src={g2.src} alt={g2.alt} width={1600} height={912} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
         </div>
       </section>
 
