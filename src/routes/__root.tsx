@@ -11,6 +11,8 @@ import { useEffect, type ReactNode } from "react";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { MotionLayer } from "@/components/MotionLayer";
+import { useRouterState } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -116,13 +118,15 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const path = useRouterState({ select: (s) => s.location.pathname });
 
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <div className="min-h-screen bg-black text-white font-sans selection:bg-neon selection:text-black overflow-x-hidden">
+        <MotionLayer />
         <SiteNav />
-        <main>
+        <main key={path} className="animate-page-in">
           <Outlet />
         </main>
         <SiteFooter />

@@ -22,10 +22,10 @@ function ContactPage() {
       <section className="px-5 md:px-8 pb-24">
         <div className="max-w-[1400px] mx-auto border-t border-white/15">
           {channels.map(([k, v, href]) => (
-            <a key={k} href={href} className="group relative overflow-hidden flex justify-between items-center py-8 border-b border-white/15">
+            <a key={k} href={href} className="group relative overflow-hidden flex flex-col sm:flex-row gap-2 justify-between sm:items-center py-6 md:py-8 border-b border-white/15">
               <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
               <span className="relative font-mono text-xs uppercase tracking-[0.25em] text-white/50 group-hover:text-black px-2">{k}</span>
-              <span className="relative font-display uppercase tracking-tighter text-2xl md:text-5xl group-hover:text-black px-2">{v} ↗</span>
+              <span className="relative font-display uppercase tracking-tighter text-xl sm:text-3xl md:text-5xl break-all sm:break-normal group-hover:text-black px-2 transition-transform duration-500 group-hover:-translate-x-2">{v} ↗</span>
             </a>
           ))}
         </div>
