@@ -21,6 +21,7 @@ const projectTypes = [
   "Mascot Design",
   "Website Design & Development",
   "Brand + Website (combined)",
+  "Other — custom / unique project",
   "Not sure yet",
 ];
 
