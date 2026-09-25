@@ -13,6 +13,7 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MotionLayer } from "@/components/MotionLayer";
 import { FloatingConsult } from "@/components/ConsultButton";
+import { BackToTop } from "@/components/BackToTop";
 import { useRouterState } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -132,6 +133,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
         <FloatingConsult />
+        <BackToTop />
       </div>
     </QueryClientProvider>
   );
