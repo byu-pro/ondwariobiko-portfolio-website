@@ -4,6 +4,7 @@ import logoBlack from "@/assets/jo-logo-black.png.asset.json";
 import logoWhite from "@/assets/jo-logo-white.png.asset.json";
 import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
 import { heroImage, projects } from "@/lib/projects";
+import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 import { ConsultButton } from "@/components/ConsultButton";
+import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -330,7 +331,7 @@ function InquiryForm() {
 
   const send = () => {
     const msg = encodeURIComponent(
-      `Hi! I'd like a quote.\n\n• Service: ${pkg}\n• Budget: ${budget}\n• Start: ${timeline}${scope ? `\n• Scope notes: ${scope}` : ""}`,
+      `Hi! I'd like a quote.\n\n• Service: ${pkg}\n• Budget: ${budget || "To be discussed"}\n• Start: ${timeline}${scope ? `\n• Scope notes: ${scope}` : ""}`,
     );
     window.open(`https://wa.me/254702255575?text=${msg}`, "_blank");
   };
