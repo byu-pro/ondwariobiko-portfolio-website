@@ -103,7 +103,7 @@ export function SiteNav() {
             <div className="flex w-max animate-marquee font-display uppercase text-2xl tracking-tight whitespace-nowrap">
               {Array.from({ length: 2 }).map((_, k) => (
                 <span key={k} className="flex">
-                  {["Logo Design", "Brand Identity", "UI/UX", "Front-end", "Art Direction", "Nairobi → World"].map((w) => (
+                  {["Logo Design", "Brand Identity", "UI/UX", "Front-end", "Art Direction", "Remote Worldwide"].map((w) => (
                     <span key={w} className="px-8">{w} ✺</span>
                   ))}
                 </span>
