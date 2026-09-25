@@ -122,33 +122,95 @@ function Index() {
         </div>
       </section>
 
-      {/* Testimonials + results */}
-      <section className="py-24 md:py-32 px-5 md:px-8">
+      {/* Testimonials — auto-scrolling */}
+      <section className="py-24 md:py-32 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8 mb-12 md:mb-16" data-reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Word on the street</p>
+          <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">
+            Clients<br /><span className="text-stroke">Talk</span>
+          </h2>
+        </div>
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-black to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-black to-transparent z-10" />
+          <div className="flex w-max animate-marquee-slow pause-on-hover">
+            {Array.from({ length: 2 }).map((_, k) => (
+              <div key={k} className="flex">
+                {testimonials.map((t) => (
+                  <figure
+                    key={t.name}
+                    className="w-[320px] sm:w-[420px] shrink-0 mx-3 border border-white/10 p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-white/[0.02] transition-colors duration-500"
+                  >
+                    <span className="font-display text-5xl text-neon leading-none select-none">“</span>
+                    <blockquote className="text-base md:text-lg font-light leading-snug flex-1">{t.quote}</blockquote>
+                    <div className="border-t border-white/10 pt-5">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-neon mb-2">{t.result}</p>
+                      <figcaption>
+                        <p className="font-display uppercase tracking-tight text-sm">{t.name}</p>
+                        <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 mt-1">{t.role}</p>
+                      </figcaption>
+                    </div>
+                  </figure>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-12 md:mb-16" data-reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Word on the street</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">How it works</p>
             <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">
-              Clients<br /><span className="text-stroke">Talk</span>
+              The<br /><span className="text-stroke">Process</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-1">
-            {testimonials.map((t, i) => (
-              <figure
-                key={t.name}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-1">
+            {process.map((p, i) => (
+              <div
+                key={p.n}
                 data-reveal
-                style={{ transitionDelay: `${i * 120}ms` }}
-                className="group relative border border-white/10 p-8 md:p-10 flex flex-col gap-8 hover:border-neon/60 hover:bg-white/[0.02] transition-colors duration-500"
+                style={{ transitionDelay: `${i * 100}ms` }}
+                className="group relative border border-white/10 p-8 hover:border-neon/60 transition-colors duration-500"
               >
-                <span className="font-display text-6xl text-neon leading-none select-none">“</span>
-                <blockquote className="text-lg md:text-xl font-light leading-snug flex-1">{t.quote}</blockquote>
-                <div className="border-t border-white/10 pt-6">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-neon mb-3">{t.result}</p>
-                  <figcaption>
-                    <p className="font-display uppercase tracking-tight">{t.name}</p>
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 mt-1">{t.role}</p>
-                  </figcaption>
-                </div>
-              </figure>
+                <span className="font-display text-6xl md:text-7xl text-stroke group-hover:text-neon group-hover:[-webkit-text-stroke:0] transition-all duration-500">{p.n}</span>
+                <h3 className="font-display text-xl md:text-2xl uppercase tracking-tight mt-6 mb-3">{p.t}</h3>
+                <p className="text-sm text-white/50 leading-relaxed">{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
+          <div data-reveal>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Before you ask</p>
+            <h2 className="font-display text-5xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.85]">
+              Frequent<br /><span className="text-stroke">Questions</span>
+            </h2>
+            <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
+              Still curious? Book a free 1-hour consultation and ask me anything — no strings attached.
+            </p>
+            <Link
+              to="/consultation"
+              className="inline-flex items-center gap-3 mt-8 bg-neon text-black font-mono text-xs uppercase tracking-[0.2em] px-8 py-4 hover:bg-white transition-colors duration-300"
+            >
+              Free 1-hr consult ↗
+            </Link>
+          </div>
+          <div data-reveal>
+            {faqs.map((f) => (
+              <details key={f.q} className="group border-b border-white/10">
+                <summary className="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display text-lg md:text-xl uppercase tracking-tight hover:text-neon transition-colors duration-300 [&::-webkit-details-marker]:hidden">
+                  {f.q}
+                  <span className="font-mono text-neon text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
+                </summary>
+                <p className="pb-6 text-white/50 leading-relaxed max-w-2xl">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>
@@ -156,6 +218,22 @@ function Index() {
     </>
   );
 }
+
+const process = [
+  { n: "01", t: "Discover", d: "A deep-dive call into your business, audience and ambitions. We define what success actually looks like before a single pixel moves." },
+  { n: "02", t: "Design", d: "Concepts, directions and iterations — presented with rationale, never guesswork. You see the thinking behind every choice." },
+  { n: "03", t: "Build", d: "For web projects I design and develop in the same breath — no handoff losses, no 'that's not what we designed'." },
+  { n: "04", t: "Launch", d: "Files, guidelines, support. You leave with a brand or site you can actually use — and a partner on call after." },
+];
+
+const faqs = [
+  { q: "How much does a project cost?", a: "Every project is scoped individually after a free consultation. Logo & identity projects typically start from a fixed package; web projects depend on pages and features. You'll always get a clear, fixed quote before we start — no surprises." },
+  { q: "How long does a typical project take?", a: "A logo and brand identity usually takes 2–4 weeks. A full website with design and development runs 4–8 weeks depending on scope. Rush timelines are possible — let's talk." },
+  { q: "Do you work with clients outside Africa?", a: "Absolutely — I work remotely with clients worldwide across every timezone. Most of my collaborations happen entirely over calls and shared boards, and it works beautifully." },
+  { q: "What do I actually receive at the end?", a: "For branding: full logo suites, colour and type systems, brand guidelines and all source files. For web: a live, fast, responsive website plus handover documentation. You own everything." },
+  { q: "Can you redesign my existing brand or website?", a: "Yes — rebrands and redesigns are some of my favourite briefs. I'll audit what you have, keep what's working, and rebuild what isn't." },
+  { q: "What if I'm not sure what I need yet?", a: "That's exactly what the free 1-hour consultation is for. We'll talk through your goals and I'll tell you honestly what I'd recommend — even if that means starting smaller." },
+];
 
 const clients = [
   { name: "AURA FINANCE", style: "font-display text-2xl md:text-4xl uppercase tracking-tight" },
