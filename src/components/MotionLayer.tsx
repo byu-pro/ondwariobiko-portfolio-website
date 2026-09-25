@@ -19,7 +19,7 @@ export function MotionLayer() {
     let timer = 0;
     const scan = () => {
       const els = document.querySelectorAll<HTMLElement>(
-        "main section > div > *, main article, footer > div > *, [data-reveal]",
+        "main section > div > *, main article, [data-reveal]",
       );
       io = new IntersectionObserver(
         (entries) =>
