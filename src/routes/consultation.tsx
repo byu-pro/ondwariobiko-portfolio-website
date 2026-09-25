@@ -24,8 +24,8 @@ const types = ["Logo", "Brand Identity", "UI/UX", "Website", "Not sure yet"];
 const budgets = ["< $1k", "$1k – $3k", "$3k – $10k", "$10k+"];
 
 function ConsultationPage() {
-  const [type, setType] = useState(types[0]);
-  const [budget, setBudget] = useState(budgets[1]);
+  const [type, setType] = useState<string>(types[0]!);
+  const [budget, setBudget] = useState<string>(budgets[1]!);
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
