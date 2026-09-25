@@ -27,7 +27,7 @@ function Index() {
           </div>
           <h1 className="font-display text-[clamp(4rem,15vw,14rem)] leading-[0.85] tracking-tighter uppercase mb-12">
             <RotatingWord /> <br />
-            <span className="text-stroke">Director</span>
+            <span className="text-stroke">Designer</span>
             <span className="text-neon">*</span>
           </h1>
           <div className="flex flex-col md:flex-row gap-12 items-end">
