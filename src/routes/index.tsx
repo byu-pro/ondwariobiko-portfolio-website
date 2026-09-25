@@ -1,285 +1,98 @@
-import { createFileRoute } from "@tanstack/react-router";
-import heroIdentity from "@/assets/hero-identity.jpg";
-import projectAura from "@/assets/project-aura-finance.jpg";
-import projectMara from "@/assets/project-mara-sands.jpg";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import logoBlack from "@/assets/jo-logo-black.png.asset.json";
 import logoWhite from "@/assets/jo-logo-white.png.asset.json";
 import logoNeon from "@/assets/jo-logo-neon.png.asset.json";
+import { heroImage, projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "ondwariobiko — Creative Director & Brand Designer | Nairobi" },
-      {
-        name: "description",
-        content:
-          "ondwariobiko is a Nairobi-based multi-disciplinary designer crafting premium brand identities, digital products, and UI/UX experiences. 10 years of practice.",
-      },
+      { name: "description", content: "ondwariobiko is a Nairobi-based designer crafting premium logos, brand identities, UI/UX and front-end experiences. 10 years of practice." },
       { property: "og:title", content: "ondwariobiko — Creative Director & Brand Designer" },
-      {
-        property: "og:description",
-        content:
-          "Nairobi-based multi-disciplinary designer crafting premium brand identities and digital experiences.",
-      },
+      { property: "og:description", content: "Nairobi-based designer crafting premium brand identities and digital experiences." },
     ],
   }),
   component: Index,
 });
 
-const projects = [
-  {
-    title: "Aura Finance",
-    tag: "UI/UX • Front-end Development",
-    year: "2023",
-    image: projectAura,
-    alt: "Aura Finance fintech mobile app interface with dark mode and neon accents",
-    offset: false,
-  },
-  {
-    title: "Mara Sands",
-    tag: "Identity • Brand Strategy",
-    year: "2024",
-    image: projectMara,
-    alt: "Mara Sands luxury hotel brand identity mockup on linen paper",
-    offset: true,
-  },
-];
-
 function Index() {
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-neon selection:text-black">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center text-white">
-        <a href="#top" className="flex items-center gap-4">
-          <img
-            src={logoWhite.url}
-            alt="ondwariobiko monogram"
-            width={56}
-            height={56}
-            className="size-14 object-contain"
-          />
-          <span className="hidden sm:block font-display text-xl uppercase tracking-tight leading-none">
-            ondwari<span className="text-neon">obiko</span>
-          </span>
-        </a>
-        <div className="hidden md:flex gap-12 font-mono text-xs uppercase tracking-[0.2em]">
-          <a href="#work" className="hover:text-neon transition-colors">
-            Selected Work
-          </a>
-          <a href="#about" className="hover:text-neon transition-colors">
-            Profile
-          </a>
-          <a href="#contact" className="hover:text-neon transition-colors">
-            Contact
-          </a>
-        </div>
-        <div className="text-[10px] font-mono uppercase tracking-widest border border-white/20 px-3 py-1 rounded-full">
-          Nairobi / 1.28° S
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section id="top" className="relative pt-44 pb-20 px-6 overflow-hidden">
+    <>
+      <section className="relative pt-40 pb-16 px-5 md:px-8 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
+          <div className="font-mono text-xs uppercase tracking-[0.25em] text-white/50 mb-6">
+            <span className="text-neon">●</span> Logo · Brand · UI/UX · Front-end — Est. 2016
+          </div>
           <h1 className="font-display text-[clamp(4rem,15vw,14rem)] leading-[0.85] tracking-tighter uppercase mb-12">
             Creative <br />
-            <span
-              className="text-transparent"
-              style={{ WebkitTextStroke: "1px white" }}
-            >
-              Director
-            </span>
+            <span className="text-stroke">Director</span>
+            <span className="text-neon">*</span>
           </h1>
-
           <div className="flex flex-col md:flex-row gap-12 items-end">
             <div className="md:w-1/2">
               <p className="text-2xl md:text-3xl font-light leading-tight max-w-xl mb-8">
-                <span className="text-neon">ondwariobiko</span> is a designer &
-                developer crafting premium digital identities and brand
-                experiences from the heart of Nairobi.
+                <span className="text-neon">ondwariobiko</span> designs logos and brand worlds that refuse to blend in — then builds them for the web.
               </p>
-              <div className="flex gap-4">
-                <div className="size-12 rounded-full border border-white grid place-items-center hover:bg-neon hover:border-neon hover:text-black transition-colors cursor-pointer">
-                  <span className="text-xs font-mono">↓</span>
-                </div>
-                <span className="font-mono text-xs uppercase self-center tracking-widest text-white/70">
-                  Scroll to Explore Work
-                </span>
-              </div>
+              <Link to="/work" className="inline-flex items-center gap-4 group">
+                <span className="size-14 rounded-full bg-neon text-black grid place-items-center transition-transform group-hover:rotate-45">↗</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em] group-hover:text-neon transition-colors">See the work</span>
+              </Link>
             </div>
-            <div className="md:w-1/2 w-full">
-              <img
-                src={heroIdentity}
-                alt="Premium textured business cards with neon green edges and JO monogram"
-                width={800}
-                height={1008}
-                className="w-full aspect-[4/5] object-cover"
-              />
-            </div>
+            <img src={heroImage} alt="Premium textured business cards with lime edges and JO monogram" width={800} height={1008} className="md:w-1/2 w-full aspect-[4/5] object-cover" />
           </div>
         </div>
       </section>
 
-      {/* Logo Showcase Section */}
-      <section className="bg-black py-32 px-6 border-t border-white/10">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-            {/* Black on White */}
-            <div className="aspect-square bg-white flex flex-col items-center justify-center p-12">
-              <img
-                src={logoBlack.url}
-                alt="JO monogram in black on white"
-                width={128}
-                height={128}
-                className="w-40 h-40 object-contain"
-              />
-              <span className="mt-8 font-mono text-[10px] uppercase tracking-widest text-black/40">
-                Primary Monogram
-              </span>
+      <div className="bg-neon text-black py-5 overflow-hidden -rotate-2 my-16 scale-105">
+        <div className="flex w-max animate-marquee font-display uppercase text-4xl tracking-tight whitespace-nowrap">
+          {Array.from({ length: 2 }).map((_, k) => (
+            <span key={k} className="flex">
+              {["Bold Logos", "Brand Systems", "Interfaces", "Typography", "Made in Nairobi"].map((w) => (
+                <span key={w} className="px-10">{w} ✺</span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <section className="py-24 px-5 md:px-8">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-1">
+          {[
+            { src: logoBlack.url, bg: "bg-white", label: "Primary", c: "text-black/50" },
+            { src: logoWhite.url, bg: "bg-black border border-white/10", label: "Inverse", c: "text-white/50" },
+            { src: logoNeon.url, bg: "bg-neon", label: "Signature Lime", c: "text-black/50" },
+          ].map((l) => (
+            <div key={l.label} className={`group aspect-square ${l.bg} flex flex-col items-center justify-center`}>
+              <img src={l.src} alt={`JO monogram — ${l.label}`} width={160} height={160} className="w-40 h-40 object-contain transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-12" />
+              <span className={`mt-8 font-mono text-[10px] uppercase tracking-widest ${l.c}`}>{l.label} Monogram</span>
             </div>
-            {/* White on Black */}
-            <div className="aspect-square bg-black border border-white/10 flex flex-col items-center justify-center p-12">
-              <img
-                src={logoWhite.url}
-                alt="JO monogram in white on black"
-                width={128}
-                height={128}
-                className="w-40 h-40 object-contain"
-              />
-              <span className="mt-8 font-mono text-[10px] uppercase tracking-widest text-white/40">
-                Inverse Treatment
-              </span>
-            </div>
-            {/* Black on Neon */}
-            <div className="aspect-square bg-neon flex flex-col items-center justify-center p-12">
-              <img
-                src={logoNeon.url}
-                alt="JO monogram in black on neon yellow-green"
-                width={128}
-                height={128}
-                className="w-40 h-40 object-contain"
-              />
-              <span className="mt-8 font-mono text-[10px] uppercase tracking-widest text-black/40">
-                Signature Accent
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section id="work" className="py-32 px-6 scroll-mt-24">
+      <section className="py-24 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex justify-between items-end mb-20">
-            <h2 className="font-display text-7xl uppercase tracking-tighter">
-              Selected
-              <br />
-              Works
-            </h2>
-            <div className="font-mono text-xs uppercase tracking-widest text-white/50 mb-4">
-              01 — 02 / Projects
-            </div>
+          <div className="flex justify-between items-end mb-16">
+            <h2 className="font-display text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">Featured<br /><span className="text-stroke">Work</span></h2>
+            <Link to="/work" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-neon">All projects →</Link>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
-            {projects.map((project) => (
-              <div
-                key={project.title}
-                className={`group cursor-pointer ${project.offset ? "md:mt-40" : ""}`}
-              >
-                <img
-                  src={project.image}
-                  alt={project.alt}
-                  width={1200}
-                  height={1504}
-                  loading="lazy"
-                  className="w-full aspect-[4/5] object-cover mb-6 transition-all duration-500 group-hover:opacity-90"
-                />
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-2xl font-bold uppercase mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="font-mono text-xs uppercase tracking-widest text-white/50">
-                      {project.tag}
-                    </p>
-                  </div>
-                  <span className="font-mono text-xs">{project.year}</span>
+          <div className="grid md:grid-cols-2 gap-12">
+            {projects.slice(0, 2).map((p, i) => (
+              <Link to="/work" key={p.title} className={`group ${i ? "md:mt-40" : ""}`}>
+                <div className="overflow-hidden mb-6">
+                  <img src={p.image} alt={p.alt} width={1200} height={1500} loading="lazy" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
-              </div>
+                <div className="flex justify-between">
+                  <h3 className="font-display text-3xl uppercase group-hover:text-neon transition-colors">{p.title}</h3>
+                  <span className="font-mono text-xs">{p.year}</span>
+                </div>
+                <p className="font-mono text-xs uppercase tracking-widest text-white/50 mt-2">{p.tag}</p>
+              </Link>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Stats / Info Section */}
-      <section id="about" className="bg-neon text-black py-24 px-6 scroll-mt-24">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div>
-            <div className="text-5xl font-display mb-2 tracking-tighter">
-              10+
-            </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest">
-              Years Experience
-            </div>
-          </div>
-          <div>
-            <div className="text-5xl font-display mb-2 tracking-tighter">
-              150+
-            </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest">
-              Brands Launched
-            </div>
-          </div>
-          <div>
-            <div className="text-5xl font-display mb-2 tracking-tighter">
-              NBO
-            </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest">
-              Based in Kenya
-            </div>
-          </div>
-          <div>
-            <div className="text-5xl font-display mb-2 tracking-tighter">∞</div>
-            <div className="font-mono text-[10px] uppercase tracking-widest">
-              Ideas Generated
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer CTA */}
-      <footer id="contact" className="py-40 px-6 scroll-mt-24">
-        <div className="max-w-[1400px] mx-auto text-center">
-          <p className="font-mono text-xs uppercase tracking-widest mb-8 text-white/50">
-            Have a vision?
-          </p>
-          <a
-            href="mailto:hello@ondwariobiko.studio"
-            className="font-display text-[clamp(2.5rem,8vw,8rem)] uppercase leading-none tracking-tighter hover:text-neon transition-colors block mb-20"
-          >
-            Let's build
-            <br />
-            something new
-          </a>
-          <div className="flex flex-col md:flex-row justify-between items-center pt-20 border-t border-white/10 gap-8">
-            <div className="font-mono text-xs text-white/40">
-              © 2026 ondwariobiko
-            </div>
-            <div className="flex gap-8 font-mono text-xs uppercase tracking-widest">
-              <a href="#" className="hover:text-neon">
-                Instagram
-              </a>
-              <a href="#" className="hover:text-neon">
-                LinkedIn
-              </a>
-              <a href="#" className="hover:text-neon">
-                Dribbble
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
