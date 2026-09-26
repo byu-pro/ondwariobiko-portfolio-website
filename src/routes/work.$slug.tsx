@@ -44,7 +44,7 @@ function CaseStudy() {
             <Link to="/work" className="hover:text-neon transition-colors">← All work</Link>
             <span><span className="text-neon">{p.n}</span> / {p.tag} / {p.year}</span>
           </div>
-          <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(3rem,12vw,11rem)]">
+          <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)]">
             <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
           </h1>
           <p className="mt-8 max-w-3xl text-xl sm:text-2xl md:text-4xl font-light leading-tight text-white/80">{p.headline}</p>
