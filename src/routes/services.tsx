@@ -159,7 +159,7 @@ function ServicesPage() {
               <div
                 key={p.t}
                 data-reveal
-                className="group bg-black p-6 sm:p-8 flex flex-col transition-colors duration-500 hover:bg-neon hover:text-black min-h-[460px]"
+                className="group bg-black p-6 sm:p-8 flex flex-col transition-colors duration-500 hover:bg-neon hover:text-black sm:min-h-[460px]"
               >
                 <div className="flex justify-between items-start font-mono text-xs">
                   <span className="text-neon group-hover:text-black">{p.n}</span>

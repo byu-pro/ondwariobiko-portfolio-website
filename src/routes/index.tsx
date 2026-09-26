@@ -135,7 +135,7 @@ function Index() {
                 {testimonials.map((t) => (
                   <figure
                     key={t.name}
-                    className="w-[320px] sm:w-[420px] shrink-0 mx-3 border border-white/10 p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-white/[0.02] transition-colors duration-500"
+                    className="w-[calc(100vw-40px)] max-w-[320px] sm:w-[420px] sm:max-w-none shrink-0 mx-2 sm:mx-3 border border-white/10 p-6 sm:p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-white/[0.02] transition-colors duration-500"
                   >
                     <span className="font-display text-5xl text-neon leading-none select-none">“</span>
                     <blockquote className="text-base md:text-lg font-light leading-snug flex-1">{t.quote}</blockquote>

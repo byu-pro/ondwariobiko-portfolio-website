@@ -18,7 +18,7 @@ export function SiteFooter() {
             </div>
           </div>
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-white/50">
-            <a href="mailto:hello@ondwariobiko.com" className="hover:text-neon transition-colors">Email</a>
+            <a href="mailto:ondwariobiko@gmail.com" className="hover:text-neon transition-colors">Email</a>
             <a href="https://wa.me/254702255575" className="hover:text-neon transition-colors">WhatsApp</a>
             <a href="https://www.linkedin.com/in/ondwariobiko/" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors">LinkedIn</a>
             <a href="https://www.behance.net/johnobiko" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors">Behance</a>
@@ -40,7 +40,7 @@ export function PageHero({ index, eyebrow, title, outline }: { index: string; ey
           <span><span className="text-neon">{index}</span> / {eyebrow}</span>
           <span>ondwariobiko®</span>
         </div>
-        <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(3.5rem,13vw,12rem)]">
+        <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,12rem)]">
           <span className="block overflow-hidden"><span className="block animate-rise">{title}</span></span>
           <span className="block overflow-hidden"><span className="block animate-rise text-stroke [animation-delay:120ms]">{outline}<span className="text-neon">.</span></span></span>
         </h1>
