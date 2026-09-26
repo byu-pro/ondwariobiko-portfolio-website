@@ -67,7 +67,7 @@ function ConsultationPage() {
               Request my free call
               <span className="size-12 rounded-full bg-black text-neon grid place-items-center transition-transform duration-500 group-hover:rotate-45">↗</span>
             </button>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">Opens WhatsApp with your details · Or email hello@ondwariobiko.com</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">Opens WhatsApp with your details · Or email ondwariobiko@gmail.com</p>
           </form>
         </div>
       </section>

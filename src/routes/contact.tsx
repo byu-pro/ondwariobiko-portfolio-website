@@ -66,10 +66,10 @@ function ContactPage() {
                 Prefer to reach out directly?
               </p>
               <div className="border-t border-white/15">
-                <a href="mailto:hello@ondwariobiko.com" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-white/15">
+                <a href="mailto:ondwariobiko@gmail.com" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-white/15">
                   <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
                   <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 group-hover:text-black px-2">Email — best way to reach me</span>
-                  <span className="relative font-display uppercase tracking-tighter text-xl sm:text-2xl group-hover:text-black px-2 transition-transform duration-500 group-hover:-translate-x-2">hello@ondwariobiko.com ↗</span>
+                  <span className="relative break-all font-display uppercase tracking-tighter text-xl sm:text-2xl group-hover:text-black px-2 transition-transform duration-500 group-hover:-translate-x-2">ondwariobiko@gmail.com ↗</span>
                 </a>
                 <a href="https://wa.me/254702255575" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-white/15">
                   <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
@@ -274,7 +274,7 @@ function InquiryForm() {
         <span className="size-12 rounded-full bg-black text-neon grid place-items-center transition-transform duration-500 group-hover:rotate-45">↗</span>
       </button>
       <p className="font-mono text-[10px] uppercase tracking-widest text-white/35">
-        Opens WhatsApp with your details pre-typed — or email hello@ondwariobiko.com directly.
+        Opens WhatsApp with your details pre-typed — or email ondwariobiko@gmail.com directly.
       </p>
     </form>
   );

@@ -125,7 +125,7 @@ const sections: Section[] = [
     n: "14",
     title: "Contact",
     body: [
-      "Questions about these Terms can be sent to hello@ondwariobiko.com.",
+      "Questions about these Terms can be sent to ondwariobiko@gmail.com.",
     ],
   },
 ];
@@ -166,8 +166,8 @@ function TermsPage() {
 
           <div className="mt-16 border-t border-white/10 pt-10">
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 mb-3">Still have questions?</p>
-            <a href="mailto:hello@ondwariobiko.com" className="group inline-flex items-center gap-3 font-display uppercase tracking-tighter text-2xl sm:text-3xl hover:text-neon transition-colors">
-              hello@ondwariobiko.com <span className="transition-transform duration-500 group-hover:translate-x-2">↗</span>
+            <a href="mailto:ondwariobiko@gmail.com" className="group inline-flex max-w-full flex-wrap items-center gap-3 break-all font-display uppercase tracking-tighter text-2xl sm:text-3xl hover:text-neon transition-colors">
+              ondwariobiko@gmail.com <span className="shrink-0 transition-transform duration-500 group-hover:translate-x-2">↗</span>
             </a>
           </div>
         </div>

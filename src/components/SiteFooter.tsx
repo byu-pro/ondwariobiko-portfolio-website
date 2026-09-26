@@ -18,7 +18,7 @@ export function SiteFooter() {
             </div>
           </div>
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-white/50">
-            <a href="mailto:hello@ondwariobiko.com" className="hover:text-neon transition-colors">Email</a>
+            <a href="mailto:ondwariobiko@gmail.com" className="hover:text-neon transition-colors">Email</a>
             <a href="https://wa.me/254702255575" className="hover:text-neon transition-colors">WhatsApp</a>
             <a href="https://www.linkedin.com/in/ondwariobiko/" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors">LinkedIn</a>
             <a href="https://www.behance.net/johnobiko" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors">Behance</a>
