@@ -14,6 +14,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { MotionLayer } from "@/components/MotionLayer";
 import { FloatingConsult } from "@/components/ConsultButton";
 import { BackToTop } from "@/components/BackToTop";
+import { Preloader } from "@/components/Preloader";
 import { useRouterState } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -126,6 +127,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <div className="min-h-screen bg-black text-white font-sans selection:bg-neon selection:text-black overflow-x-hidden">
+        <Preloader />
         <MotionLayer />
         <SiteNav />
         <main key={path} className="animate-page-in">
