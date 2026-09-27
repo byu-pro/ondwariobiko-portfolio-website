@@ -125,7 +125,7 @@
     ]
   },
   "public/assets/pelicansocial_thumbnail.png": {
-    "hash": "69b7c3fe1b6d9b67db6e41e1232d7e107d58b60d964849d58dd3af27ac8ad713",
+    "hash": "d5a51733c048dd362704e9a769e1fbc68b52104888cc9915505977fa56086ec5",
     "outputs": [
       "public/assets/pelicansocial_thumbnail.webp",
       "public/assets/pelicansocial_thumbnail-600.webp"
