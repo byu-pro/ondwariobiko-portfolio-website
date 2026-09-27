@@ -1,6 +1,6 @@
-import heroIdentity from "@/assets/hero-identity.jpg";
-import processSketches from "@/assets/process-sketches.jpg";
-import brandApps from "@/assets/brand-applications.jpg";
+import heroIdentity from "@/assets/hero-identity.webp";
+import processSketches from "@/assets/process-sketches.webp";
+import brandApps from "@/assets/brand-applications.webp";
 
 export const heroImage = heroIdentity;
 
@@ -10,7 +10,6 @@ export type Project = {
   title: string;
   tag: string;
   cat: "Brand Identity" | "Logo & Packaging" | "Digital";
-  year: string;
   image: string;
   alt: string;
   client: string;
@@ -51,8 +50,7 @@ export const projects: Project[] = [
     title: "Pelican Social Bar & Grill",
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
-    year: "TBC",
-    image: `${import.meta.env.BASE_URL}assets/pelicansocial_thumbnail.png`,
+    image: `${import.meta.env.BASE_URL}assets/pelicansocial_thumbnail.webp`,
     alt: "Pelican Social Bar and Grill brand identity",
     client: "Pelican Social Bar & Grill",
     role: brandRole,
@@ -83,8 +81,7 @@ export const projects: Project[] = [
     title: "Ikon Trailers",
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
-    year: "TBC",
-    image: `${import.meta.env.BASE_URL}assets/ikontrailerscom_thumbnail.png`,
+    image: `${import.meta.env.BASE_URL}assets/ikontrailerscom_thumbnail.webp`,
     alt: "Ikon Trailers brand identity",
     client: "Ikon Trailers.com",
     role: brandRole,
@@ -115,8 +112,7 @@ export const projects: Project[] = [
     title: "Iron Acre Land Co",
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
-    year: "TBC",
-    image: `${import.meta.env.BASE_URL}assets/ironacreco_thumbnail.png`,
+    image: `${import.meta.env.BASE_URL}assets/ironacreco_thumbnail.webp`,
     alt: "Iron Acre Land Co brand identity",
     client: "Iron Acre Land Co",
     role: brandRole,
@@ -147,8 +143,7 @@ export const projects: Project[] = [
     title: "Friends of Unionville",
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
-    year: "TBC",
-    image: `${import.meta.env.BASE_URL}assets/friendsofunionville_thumbnail.png`,
+    image: `${import.meta.env.BASE_URL}assets/friendsofunionville_thumbnail.webp`,
     alt: "Friends of Unionville brand identity",
     client: "Friends of Unionville",
     role: brandRole,
@@ -179,8 +174,7 @@ export const projects: Project[] = [
     title: "Sound Curves",
     tag: "UI/UX • Web",
     cat: "Digital",
-    year: "TBC",
-    image: `${import.meta.env.BASE_URL}assets/soundcurves_thumbnail.png`,
+    image: `${import.meta.env.BASE_URL}assets/soundcurves_thumbnail.webp`,
     alt: "Sound Curves website design",
     client: "Sound Curves",
     role: "UI/UX Designer & Web Developer",
@@ -216,8 +210,7 @@ export const projects: Project[] = [
     title: "Moods and Nerds",
     tag: "UI/UX • Web",
     cat: "Digital",
-    year: "TBC",
-    image: `${import.meta.env.BASE_URL}assets/moodnmeds_thumbnail.png`,
+    image: `${import.meta.env.BASE_URL}assets/moodnmeds_thumbnail.webp`,
     alt: "Moods and Nerds website design",
     client: "Moods and Nerds",
     role: "UI/UX Designer & Web Developer",
@@ -253,8 +246,7 @@ export const projects: Project[] = [
     title: "Yellow Dot Energy",
     tag: "UI/UX • Mobile App",
     cat: "Digital",
-    year: "TBC",
-    image: `${import.meta.env.BASE_URL}assets/yellowdot_thumbnail.png`,
+    image: `${import.meta.env.BASE_URL}assets/yellowdot_thumbnail.webp`,
     alt: "Yellow Dot Energy mobile app design",
     client: "Yellow Dot Energy",
     role: "UI/UX Designer",
@@ -290,8 +282,7 @@ export const projects: Project[] = [
     title: "Green Essential Turf & Mosquito",
     tag: "Logo Design",
     cat: "Logo & Packaging",
-    year: "TBC",
-    image: `${import.meta.env.BASE_URL}assets/greenessentials_thumbnail.png`,
+    image: `${import.meta.env.BASE_URL}assets/greenessentials_thumbnail.webp`,
     alt: "Green Essential Turf and Mosquito logo design",
     client: "Green Essential Turf & Mosquito",
     role: "Logo Designer",

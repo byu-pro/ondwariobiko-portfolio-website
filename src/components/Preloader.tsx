@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const LOGO = `${import.meta.env.BASE_URL}assets/logowhite.png`;
+const LOGO = `${import.meta.env.BASE_URL}assets/logowhite.webp`;
 
 /** Shared by every route; plays on entry or refresh, not internal navigation. */
 export function Preloader() {

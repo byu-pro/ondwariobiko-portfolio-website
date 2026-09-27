@@ -42,7 +42,7 @@ function CaseStudy() {
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-wrap gap-3 justify-between font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-8">
             <Link to="/work" className="hover:text-accent-ink transition-colors">← All work</Link>
-            <span><span className="text-accent-ink">{p.n}</span> / {p.tag} / {p.year}</span>
+            <span><span className="text-accent-ink">{p.n}</span> / {p.tag}</span>
           </div>
           <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)]">
             <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
@@ -53,14 +53,14 @@ function CaseStudy() {
 
       <section className="mt-12 md:mt-20 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[4/5] sm:aspect-[16/10] bg-ink/[0.03]">
-          <img src={p.image} alt={p.alt} width={1200} height={1500} fetchPriority="high" decoding="async" className="w-full h-full object-contain" />
+          <img src={p.image} srcSet={`${p.image.replace(".webp", "-600.webp")} 600w, ${p.image} 1200w`} sizes="(min-width: 1400px) 1120px, 90vw" alt={p.alt} width={1200} height={1500} fetchPriority="high" decoding="async" className="w-full h-full object-contain" />
         </div>
       </section>
 
       {/* Meta */}
       <section className="px-5 md:px-8 py-16 md:py-24">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-ink/15 border border-ink/15">
-          {[["Client", p.client], ["Role", p.role], ["Timeline", p.duration], ["Year", p.year]].map(([k, v]) => (
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-px bg-ink/15 border border-ink/15">
+          {[["Client", p.client], ["Role", p.role], ["Timeline", p.duration]].map(([k, v]) => (
             <div key={k} className="bg-surface p-5 md:p-8">
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">{k}</div>
               <div className="text-sm md:text-lg">{v}</div>

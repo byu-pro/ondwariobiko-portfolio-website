@@ -279,3 +279,18 @@ img { content-visibility: auto; }
 /* Transparent client artwork stays legible in both themes. */
 .client-logo { filter: brightness(0) invert(1); opacity: 0.7; }
 [data-theme="light"] .client-logo { filter: brightness(0); opacity: 0.65; }
+
+/* Two identical groups create a seamless, compositor-only logo loop. */
+.brand-loop { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
+.brand-loop__track { display: flex; width: max-content; animation: marquee 55s linear infinite; }
+.brand-loop__group { display: flex; flex-shrink: 0; list-style: none; padding: 0; margin: 0; }
+.brand-loop__item { width: 224px; height: 128px; padding: 24px 32px; display: flex; align-items: center; justify-content: center; }
+.brand-loop__item .client-logo { width: 160px; height: 80px; object-fit: contain; transition: transform 250ms ease, opacity 250ms ease; }
+.brand-loop__item:hover .client-logo { transform: scale(1.08); opacity: 1; }
+.brand-loop:hover .brand-loop__track, .brand-loop[data-paused="true"] .brand-loop__track { animation-play-state: paused; }
+@media (max-width: 639px) { .brand-loop__item { width: 192px; padding-inline: 16px; } }
+@media (prefers-reduced-motion: reduce) {
+  .brand-loop { overflow-x: auto; mask-image: none; }
+  .brand-loop__track { animation: none; }
+  .brand-loop__group[aria-hidden="true"], .brand-loop__toggle { display: none; }
+}

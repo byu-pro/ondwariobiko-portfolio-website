@@ -68,7 +68,7 @@ function WorkPage() {
             >
               <div className="overflow-hidden mb-6 border border-ink/10 group-hover:border-neon/50 transition-colors duration-500">
                 <img
-                  src={p.image}
+                  src={p.image} srcSet={`${p.image.replace(".webp", "-600.webp")} 600w, ${p.image} 1200w`} sizes="(min-width: 1400px) 650px, (min-width: 768px) 50vw, 100vw"
                   alt={p.alt}
                   width={1200}
                   height={1500}
@@ -81,7 +81,7 @@ function WorkPage() {
                 <h2 className="font-display text-2xl sm:text-3xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">
                   {p.title}
                 </h2>
-                <span className="font-mono text-xs text-ink/40 shrink-0">{p.year} ↗</span>
+                <span className="font-mono text-xs text-ink/40 shrink-0">↗</span>
               </div>
               <p className="font-mono text-xs uppercase tracking-widest text-ink/50 mt-2">
                 {p.client} — {p.tag}

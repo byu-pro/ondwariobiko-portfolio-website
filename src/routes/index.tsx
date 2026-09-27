@@ -16,6 +16,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [logosPaused, setLogosPaused] = useState(false);
   return (
     <>
       <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 overflow-hidden">
@@ -58,9 +59,9 @@ function Index() {
       <section className="py-16 md:py-24 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-1">
           {[
-            { src: `${import.meta.env.BASE_URL}assets/logoblack.png`, bg: "bg-white", label: "Primary", c: "text-black/50" },
-            { src: `${import.meta.env.BASE_URL}assets/logowhite.png`, bg: "bg-black border border-ink/10", label: "Inverse", c: "text-ink/50" },
-            { src: `${import.meta.env.BASE_URL}assets/logoblack.png`, bg: "bg-neon", label: "Signature Lime", c: "text-black/50" },
+            { src: `${import.meta.env.BASE_URL}assets/logoblack.webp`, bg: "bg-white", label: "Primary", c: "text-black/50" },
+            { src: `${import.meta.env.BASE_URL}assets/logowhite.webp`, bg: "bg-black border border-ink/10", label: "Inverse", c: "text-ink/50" },
+            { src: `${import.meta.env.BASE_URL}assets/logoblack.webp`, bg: "bg-neon", label: "Signature Lime", c: "text-black/50" },
           ].map((l) => (
             <div key={l.label} className={`group aspect-square ${l.bg} flex flex-col items-center justify-center`}>
               <img src={l.src} alt={`JO monogram — ${l.label}`} width={160} height={160} className="w-24 h-24 md:w-40 md:h-40 object-contain animate-float transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-12" />
@@ -80,11 +81,11 @@ function Index() {
             {projects.slice(0, 4).map((p, i) => (
               <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i % 2 ? "md:mt-40" : ""}`}>
                 <div className="overflow-hidden mb-6">
-                  <img src={p.image} alt={p.alt} width={1200} height={1500} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={p.image} srcSet={`${p.image.replace(".webp", "-600.webp")} 600w, ${p.image} 1200w`} sizes="(min-width: 1400px) 650px, (min-width: 768px) 50vw, 100vw" alt={p.alt} width={1200} height={1500} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="flex justify-between">
                   <h3 className="font-display text-2xl sm:text-3xl uppercase group-hover:text-accent-ink transition-colors">{p.title}</h3>
-                  <span className="font-mono text-xs">{p.year}</span>
+
                 </div>
                 <p className="font-mono text-xs uppercase tracking-widest text-ink/50 mt-2">{p.tag}</p>
               </Link>
@@ -99,21 +100,24 @@ function Index() {
           <h2 id="trusted-brands-heading" className="font-mono text-xs uppercase tracking-[0.3em] text-ink/60 text-center mb-10 md:mb-14">
             Trusted by ambitious brands <span className="text-accent-ink">✺</span> 10+ countries
           </h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-px bg-ink/10 border border-ink/10">
-            {clients.map((client) => (
-              <li key={client.src} className="flex items-center justify-center h-32 md:h-36 px-6 py-5 bg-surface">
-                <img
-                  src={client.src}
-                  alt={client.name}
-                  width={client.width}
-                  height={client.height}
-                  loading="lazy"
-                  decoding="async"
-                  className="client-logo max-w-full max-h-20 w-auto h-auto object-contain"
-                />
-              </li>
-            ))}
-          </ul>
+          <div className="brand-loop" data-paused={logosPaused}>
+            <div className="brand-loop__track">
+              {[0, 1].map((copy) => (
+                <ul key={copy} className="brand-loop__group" aria-hidden={copy === 1 ? true : undefined}>
+                  {clients.map((client) => (
+                    <li key={client.src} className="brand-loop__item" title={client.name}>
+                      <img src={client.src} alt={copy === 0 ? client.name : ""} width={160} height={80} loading="lazy" decoding="async" className="client-logo" />
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
+          </div>
+          <div className="mt-6 flex justify-center">
+            <button type="button" onClick={() => setLogosPaused(!logosPaused)} aria-pressed={logosPaused} className="brand-loop__toggle font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 hover:text-accent-ink px-4 py-2 border border-ink/20 focus-visible:outline-2 focus-visible:outline-offset-4">
+              {logosPaused ? "Play logos →" : "Pause logos Ⅱ"}
+            </button>
+          </div>
         </div>
       </section>
 
@@ -337,20 +341,20 @@ const faqs = [
 ];
 
 const clients = [
-  { name: "Bosch", src: `${import.meta.env.BASE_URL}assets/bosch.png`, width: 2171, height: 724 },
-  { name: "PropertyGuru", src: `${import.meta.env.BASE_URL}assets/propertyguru.png`, width: 2172, height: 724 },
-  { name: "99.co", src: `${import.meta.env.BASE_URL}assets/99co.png`, width: 2170, height: 725 },
-  { name: "Far East Organization", src: `${import.meta.env.BASE_URL}assets/fareast.png`, width: 2172, height: 724 },
-  { name: "EdgeProp", src: `${import.meta.env.BASE_URL}assets/edgeprop.png`, width: 2172, height: 724 },
-  { name: "Holland Village Residences", src: `${import.meta.env.BASE_URL}assets/hollandvillage.png`, width: 1925, height: 817 },
-  { name: "Ritter Sport", src: `${import.meta.env.BASE_URL}assets/rittersport.png`, width: 1536, height: 1024 },
-  { name: "Aquapet", src: `${import.meta.env.BASE_URL}assets/aquapet.png`, width: 1448, height: 1086 },
-  { name: "Beyond the Image", src: `${import.meta.env.BASE_URL}assets/beyondtheimage.png`, width: 1448, height: 1086 },
-  { name: "Fast Kat Connects", src: `${import.meta.env.BASE_URL}assets/fastkatconnect.png`, width: 1254, height: 1254 },
-  { name: "hi! hoteles", src: `${import.meta.env.BASE_URL}assets/hihoteles.png`, width: 1536, height: 1024 },
-  { name: "Legibra", src: `${import.meta.env.BASE_URL}assets/legibra.png`, width: 2172, height: 724 },
-  { name: "Ocean-Line Freight Forwarders", src: `${import.meta.env.BASE_URL}assets/oceanline.png`, width: 2172, height: 724 },
-  { name: "Paluxy River Potties", src: `${import.meta.env.BASE_URL}assets/paluxyriver.png`, width: 1536, height: 1024 },
+  { name: "Bosch", src: `${import.meta.env.BASE_URL}assets/bosch.webp`, width: 2171, height: 724 },
+  { name: "PropertyGuru", src: `${import.meta.env.BASE_URL}assets/propertyguru.webp`, width: 2172, height: 724 },
+  { name: "99.co", src: `${import.meta.env.BASE_URL}assets/99co.webp`, width: 2170, height: 725 },
+  { name: "Far East Organization", src: `${import.meta.env.BASE_URL}assets/fareast.webp`, width: 2172, height: 724 },
+  { name: "EdgeProp", src: `${import.meta.env.BASE_URL}assets/edgeprop.webp`, width: 2172, height: 724 },
+  { name: "Holland Village Residences", src: `${import.meta.env.BASE_URL}assets/hollandvillage.webp`, width: 1925, height: 817 },
+  { name: "Ritter Sport", src: `${import.meta.env.BASE_URL}assets/rittersport.webp`, width: 1536, height: 1024 },
+  { name: "Aquapet", src: `${import.meta.env.BASE_URL}assets/aquapet.webp`, width: 1448, height: 1086 },
+  { name: "Beyond the Image", src: `${import.meta.env.BASE_URL}assets/beyondtheimage.webp`, width: 1448, height: 1086 },
+  { name: "Fast Kat Connects", src: `${import.meta.env.BASE_URL}assets/fastkatconnect.webp`, width: 1254, height: 1254 },
+  { name: "hi! hoteles", src: `${import.meta.env.BASE_URL}assets/hihoteles.webp`, width: 1536, height: 1024 },
+  { name: "Legibra", src: `${import.meta.env.BASE_URL}assets/legibra.webp`, width: 2172, height: 724 },
+  { name: "Ocean-Line Freight Forwarders", src: `${import.meta.env.BASE_URL}assets/oceanline.webp`, width: 2172, height: 724 },
+  { name: "Paluxy River Potties", src: `${import.meta.env.BASE_URL}assets/paluxyriver.webp`, width: 1536, height: 1024 },
 ];
 
 const testimonials = [
