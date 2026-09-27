@@ -1,0 +1,202 @@
+{
+  "public/assets/99co.png": {
+    "hash": "8bd5c3699cb0887ca56d7003be4c743dd635b9047bf060db9ad1b1646f71884a",
+    "outputs": [
+      "public/assets/99co.webp"
+    ]
+  },
+  "public/assets/aquapet.png": {
+    "hash": "07cbd10ba6b2cb93e4a6d3146ae49ec5a09f84e083560007dd74470625ca8e60",
+    "outputs": [
+      "public/assets/aquapet.webp"
+    ]
+  },
+  "public/assets/beyondtheimage.png": {
+    "hash": "ffbbef00fabea263daa29317bac1fb71de63085a2f991f137671d0465c4e6a39",
+    "outputs": [
+      "public/assets/beyondtheimage.webp"
+    ]
+  },
+  "public/assets/bosch.png": {
+    "hash": "b49e7054fc86d5be03d5e3d794c41bca8235315b2a850d93a1dc55ea7e8a9c3c",
+    "outputs": [
+      "public/assets/bosch.webp"
+    ]
+  },
+  "public/assets/edgeprop.png": {
+    "hash": "e978d69f3e86166968f3cbb50ead6d1e7771735dc5f650d16cdc5c4dec73bfb0",
+    "outputs": [
+      "public/assets/edgeprop.webp"
+    ]
+  },
+  "public/assets/fareast.png": {
+    "hash": "45e332789f643cbb1eee3ee9a629c4783a5b937836562a9de1e88a7631b9e2f5",
+    "outputs": [
+      "public/assets/fareast.webp"
+    ]
+  },
+  "public/assets/fastkatconnect.png": {
+    "hash": "eba313fa3c5f6531e556136386b2c553250c30d1293bcb6abba8ebd8c8273ce4",
+    "outputs": [
+      "public/assets/fastkatconnect.webp"
+    ]
+  },
+  "public/assets/favicon.png": {
+    "hash": "7af9db6efd17ede2590a4cd06ff0dc806a579a75aa016b4343b0d6181fbd640d",
+    "outputs": [
+      "public/assets/favicon.webp"
+    ]
+  },
+  "public/assets/friendsofunionville_thumbnail.png": {
+    "hash": "4c64eabf6779cf1bcd844c01854dcd59212d2e3ccc8635b11356b7966db33e30",
+    "outputs": [
+      "public/assets/friendsofunionville_thumbnail.webp",
+      "public/assets/friendsofunionville_thumbnail-600.webp"
+    ]
+  },
+  "public/assets/greenessentials_thumbnail.png": {
+    "hash": "698707f55dd796fed8d7b321ada56013848a9a2cc7bc4a8a092f6ca4d7cc9d7a",
+    "outputs": [
+      "public/assets/greenessentials_thumbnail.webp",
+      "public/assets/greenessentials_thumbnail-600.webp"
+    ]
+  },
+  "public/assets/hihoteles.png": {
+    "hash": "35b9f53961636988acd2d84911c17c50f3c0be0ce3e539ca2fb9cadb4e81c337",
+    "outputs": [
+      "public/assets/hihoteles.webp"
+    ]
+  },
+  "public/assets/hollandvillage.png": {
+    "hash": "8fb6e786a268204263661675e9b54cb31487474a045a7690fdaedb32e272526e",
+    "outputs": [
+      "public/assets/hollandvillage.webp"
+    ]
+  },
+  "public/assets/ikontrailerscom_thumbnail.png": {
+    "hash": "3df5bed012a8898a0d30b1515518e40d66d3aaeefc50d7a61d2f07aa53910548",
+    "outputs": [
+      "public/assets/ikontrailerscom_thumbnail.webp",
+      "public/assets/ikontrailerscom_thumbnail-600.webp"
+    ]
+  },
+  "public/assets/ironacreco_thumbnail.png": {
+    "hash": "e2f8c77be21812728264c8732c61fc04d561f70aa04b24ab586e2bc2abc4d5e0",
+    "outputs": [
+      "public/assets/ironacreco_thumbnail.webp",
+      "public/assets/ironacreco_thumbnail-600.webp"
+    ]
+  },
+  "public/assets/legibra.png": {
+    "hash": "d9b9166a53e1bde068aa19e477f90bbe9612922577698cc89f9da73fc4d647b5",
+    "outputs": [
+      "public/assets/legibra.webp"
+    ]
+  },
+  "public/assets/logoblack.png": {
+    "hash": "f80bb7d10f177c6596d89075211199e052f5e7b8ee033350f2c824c9291432d3",
+    "outputs": [
+      "public/assets/logoblack.webp"
+    ]
+  },
+  "public/assets/logowhite.png": {
+    "hash": "e5b3bd14d9efb983a66083a385f80340e012d05db72ae6e02ec0c00c48dc508a",
+    "outputs": [
+      "public/assets/logowhite.webp"
+    ]
+  },
+  "public/assets/moodnmeds_thumbnail.png": {
+    "hash": "cd51480292fbc4c889028817aa02d9bea0b377b107da830187837d589f4c6a93",
+    "outputs": [
+      "public/assets/moodnmeds_thumbnail.webp",
+      "public/assets/moodnmeds_thumbnail-600.webp"
+    ]
+  },
+  "public/assets/oceanline.png": {
+    "hash": "b9596ca41efb6fa852945bd4bdb753c81f4d113241222ef2fa5b2de5251fc2ec",
+    "outputs": [
+      "public/assets/oceanline.webp"
+    ]
+  },
+  "public/assets/paluxyriver.png": {
+    "hash": "d08c6eea140f136857d43365215c815f615a9387d6ab489fde16bd8857d80d0b",
+    "outputs": [
+      "public/assets/paluxyriver.webp"
+    ]
+  },
+  "public/assets/pelicansocial_thumbnail.png": {
+    "hash": "69b7c3fe1b6d9b67db6e41e1232d7e107d58b60d964849d58dd3af27ac8ad713",
+    "outputs": [
+      "public/assets/pelicansocial_thumbnail.webp",
+      "public/assets/pelicansocial_thumbnail-600.webp"
+    ]
+  },
+  "public/assets/propertyguru.png": {
+    "hash": "f3579c9b43d9ebcaeacc464f437e7af92886dd8cabb1e1543338c1ade65969e4",
+    "outputs": [
+      "public/assets/propertyguru.webp"
+    ]
+  },
+  "public/assets/rittersport.png": {
+    "hash": "184772ee704a9266ee937ec5d06edd65e538acd7e2da050b9e62b002f117debd",
+    "outputs": [
+      "public/assets/rittersport.webp"
+    ]
+  },
+  "public/assets/soundcurves_thumbnail.png": {
+    "hash": "36fd3a2b2957dacc33429837e4586f610abc6fe9e1b31f4f69d37b05338faba1",
+    "outputs": [
+      "public/assets/soundcurves_thumbnail.webp",
+      "public/assets/soundcurves_thumbnail-600.webp"
+    ]
+  },
+  "public/assets/yellowdot_thumbnail.png": {
+    "hash": "28e8f9f334037519a6f17e65236bfae7bf18a1f4f2a3624f010824de2a950729",
+    "outputs": [
+      "public/assets/yellowdot_thumbnail.webp",
+      "public/assets/yellowdot_thumbnail-600.webp"
+    ]
+  },
+  "src/assets/brand-applications.jpg": {
+    "hash": "2800817117df88114a8eececb6cea9e462c2dd0a65b58bae1839466fc4bde2dd",
+    "outputs": [
+      "src/assets/brand-applications.webp"
+    ]
+  },
+  "src/assets/hero-identity.jpg": {
+    "hash": "19ecd6c1ef95e00aa1bbd122860c7c71b231c7fa4e9cc53f1b4613f658e540f0",
+    "outputs": [
+      "src/assets/hero-identity.webp"
+    ]
+  },
+  "src/assets/process-sketches.jpg": {
+    "hash": "29f654159240424bdad860df3ea17f23814a0084e9831fb81743f6ceecd78967",
+    "outputs": [
+      "src/assets/process-sketches.webp"
+    ]
+  },
+  "src/assets/project-aura-finance.jpg": {
+    "hash": "a597dc9276de48c84c1c840557059df3f0295226bc55469215162a1c2b9ee1e7",
+    "outputs": [
+      "src/assets/project-aura-finance.webp"
+    ]
+  },
+  "src/assets/project-kilele-coffee.jpg": {
+    "hash": "bd6331a98286f166d80f87fa01819de5e887bd0ffbc13194875df163247dd3ea",
+    "outputs": [
+      "src/assets/project-kilele-coffee.webp"
+    ]
+  },
+  "src/assets/project-mara-sands.jpg": {
+    "hash": "bf980e4746b67d97f243afe6daa3f9e55cf513b4310bc21e59c6ea8a14ded6a0",
+    "outputs": [
+      "src/assets/project-mara-sands.webp"
+    ]
+  },
+  "src/assets/project-savanna-os.jpg": {
+    "hash": "7994d10a84a6aac9faf9f5bf27991a0cb22f6c755a06fc4b7d96498646d08f57",
+    "outputs": [
+      "src/assets/project-savanna-os.webp"
+    ]
+  }
+}

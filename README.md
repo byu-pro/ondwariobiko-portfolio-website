@@ -22,3 +22,19 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Automatic image delivery
+
+Add PNG, JPEG, GIF, TIFF or AVIF originals to `public/assets` or `src/assets` (nested folders work). The Vite pipeline generates a same-named `.webp` automatically:
+
+- At startup and whenever originals are added/replaced while `bun run dev` is running.
+- Before every production build, including GitHub Pages and Lovable builds.
+- On demand with `bun run images:optimize`.
+
+Use the generated `.webp` in page code. Public URLs must use `import.meta.env.BASE_URL` so GitHub Pages works. Replacing the original under the same name regenerates the WebP; the original file is never altered. Commit `scripts/image-manifest.json` alongside local artwork changes. GitHub-only uploads are converted during the deployment build; generated files are included in the deployed site without a second Git commit.
+
+New/replaced originals use **lossless WebP at full resolution**, preserving transparency and colour profiles. Existing optimized images from the earlier conversion are registered in the manifest and retained until their originals change. `_thumbnail` files also receive a separate `-600.webp` responsive version; only this optional derivative is resized, preserving aspect ratio. Use `srcSet` to let browsers select the appropriate size.
+
+WebP inputs already have the delivery format and SVGs stay vector for sharpness at every size. Unsupported colour depths/spaces or conflicting filenames fail explicitly rather than silently reducing quality or overwriting artwork. Give each original a unique base name. Conversion alone cannot guarantee a smaller file (particularly for JPEGs) or a zero-impact page load; responsive sizing and lazy loading remain important. Lossless format documentation: https://sharp.pixelplumbing.com/api-output/#webp
+
+`bun run test:images` verifies conversion and replacement behavior and runs in deployment CI.
