@@ -16,7 +16,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [logosPaused, setLogosPaused] = useState(false);
   return (
     <>
       <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 overflow-hidden">
@@ -100,7 +99,7 @@ function Index() {
           <h2 id="trusted-brands-heading" className="font-mono text-xs uppercase tracking-[0.3em] text-ink/60 text-center mb-10 md:mb-14">
             Trusted by ambitious brands <span className="text-accent-ink">✺</span> 10+ countries
           </h2>
-          <div className="brand-loop" data-paused={logosPaused}>
+          <div className="brand-loop">
             <div className="brand-loop__track">
               {[0, 1].map((copy) => (
                 <ul key={copy} className="brand-loop__group" aria-hidden={copy === 1 ? true : undefined}>
@@ -112,11 +111,6 @@ function Index() {
                 </ul>
               ))}
             </div>
-          </div>
-          <div className="mt-6 flex justify-center">
-            <button type="button" onClick={() => setLogosPaused(!logosPaused)} aria-pressed={logosPaused} className="brand-loop__toggle font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 hover:text-accent-ink px-4 py-2 border border-ink/20 focus-visible:outline-2 focus-visible:outline-offset-4">
-              {logosPaused ? "Play logos →" : "Pause logos Ⅱ"}
-            </button>
           </div>
         </div>
       </section>
