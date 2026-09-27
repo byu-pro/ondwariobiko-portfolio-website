@@ -2,79 +2,72 @@ import { useEffect, useState } from "react";
 
 const LOGO = `${import.meta.env.BASE_URL}assets/logowhite.png`;
 
-/**
- * Branded preloader: counter + logo reveal, then a lime curtain wipe.
- * Shows once per browser session; respects reduced motion.
- */
+/** Shared by every route; plays on entry or refresh, not internal navigation. */
 export function Preloader() {
-  const [count, setCount] = useState(0);
-  const [leaving, setLeaving] = useState(false);
-  const [gone, setGone] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return sessionStorage.getItem("obiko_preloaded") === "1";
-  });
+  // Identical server/client initial markup; no browser storage during hydration.
+  const [phase, setPhase] = useState<"idle" | "enter" | "exit" | "done">("idle");
 
   useEffect(() => {
-    if (gone) return;
-    document.body.style.overflow = "hidden";
-    const start = performance.now();
-    const DURATION = 1600;
-    let raf = 0;
-    const tick = (now: number) => {
-      const p = Math.min(1, (now - start) / DURATION);
-      setCount(Math.round(p * 100));
-      if (p < 1) {
-        raf = requestAnimationFrame(tick);
-      } else {
-        setLeaving(true);
-        sessionStorage.setItem("obiko_preloaded", "1");
-        window.setTimeout(() => {
-          setGone(true);
-          document.body.style.overflow = "";
-        }, 900);
-      }
-    };
-    raf = requestAnimationFrame(tick);
-    return () => {
-      cancelAnimationFrame(raf);
-      document.body.style.overflow = "";
-    };
-  }, [gone]);
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (motion.matches) {
+      setPhase("done");
+      return;
+    }
 
-  if (gone) return null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    setPhase("enter");
+    const leave = window.setTimeout(() => setPhase("exit"), 1650);
+    const finish = window.setTimeout(() => {
+      setPhase("done");
+      document.body.style.overflow = previousOverflow;
+    }, 2450);
+    const skip = () => {
+      setPhase("done");
+      window.clearTimeout(leave);
+      window.clearTimeout(finish);
+      document.body.style.overflow = previousOverflow;
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape" || event.key === "Tab") skip();
+    };
+    const onMotion = () => { if (motion.matches) skip(); };
+    window.addEventListener("keydown", onKey);
+    motion.addEventListener("change", onMotion);
+    return () => {
+      window.clearTimeout(leave);
+      window.clearTimeout(finish);
+      window.removeEventListener("keydown", onKey);
+      motion.removeEventListener("change", onMotion);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, []);
+
+  if (phase === "done") return null;
 
   return (
-    <div
-      aria-hidden
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-transform duration-[900ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
-        leaving ? "-translate-y-full" : ""
-      }`}
-    >
-      {/* lime curtain that trails the black panel on exit */}
-      <div
-        className={`absolute inset-x-0 -bottom-6 h-6 bg-neon transition-transform duration-[900ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
-          leaving ? "-translate-y-0" : ""
-        }`}
-      />
-      <div className="relative overflow-hidden">
-        <img
-          src={LOGO}
-          alt=""
-          className="size-20 object-contain md:size-24 animate-preloader-logo"
-        />
-        {/* lime sweep across the logo */}
-        <span className="pointer-events-none absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-neon/40 to-transparent animate-preloader-sweep" />
+    <div className="brand-intro" data-phase={phase} aria-hidden="true">
+      <div className="brand-intro__curtain" />
+      <div className="brand-intro__panel">
+        <div className="brand-intro__top"><span>ONDWARIOBIKO®</span><span>DESIGN WITH INTENT</span></div>
+        <div className="brand-intro__identity">
+          <div className="brand-intro__orbit">
+            <span className="brand-intro__ring" />
+            <span className="brand-intro__cross brand-intro__cross--left">+</span>
+            <span className="brand-intro__cross brand-intro__cross--right">+</span>
+            <div className="brand-intro__mark">
+              <img src={LOGO} alt="" fetchPriority="high" decoding="async" />
+              <img className="brand-intro__echo" src={LOGO} alt="" />
+            </div>
+          </div>
+          <p className="brand-intro__name">ondwariobiko<span>®</span></p>
+          <p className="brand-intro__caption">STRATEGY. IDENTITY. IMPACT.</p>
+        </div>
+        <div className="brand-intro__bottom">
+          <span>INDEPENDENT DESIGNER</span><span className="brand-intro__signal">ENTERING THE STUDIO</span>
+          <div className="brand-intro__track"><span /></div>
+        </div>
       </div>
-      <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.5em] text-white/50">
-        ondwariobiko
-      </p>
-      <div className="mt-8 h-px w-40 overflow-hidden bg-white/10 md:w-56">
-        <div
-          className="h-full bg-neon transition-[width] duration-100 ease-linear"
-          style={{ width: `${count}%` }}
-        />
-      </div>
-      <p className="mt-3 font-mono text-xs tabular-nums text-neon">{count}%</p>
     </div>
   );
 }

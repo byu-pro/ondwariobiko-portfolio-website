@@ -14,3 +14,7 @@
 - Brand tokens live in src/styles.css: `--neon` (lime #A6FF00 (oklch 0.9 0.24 131) / oklch 0.93 0.26 110), `--font-display` (Syne), `--font-sans` (Inter), `--font-mono` (Space Grotesk). Fonts load via `<link>` in __root.tsx head, never @import in CSS.
 - Original brand artwork is maintained in `public/assets` and referenced with stable `/assets/...` URLs so replacing a same-named file through GitHub updates every use; use `logoblack.png`, `logowhite.png`, and `favicon.png` as the canonical logo files.
 
+
+## Local and GitHub workflow
+- Make website updates in this local repository before pushing. After each push, verify local HEAD and origin/main match and report deployment status. Preserve the existing theme and brand style.
+
