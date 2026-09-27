@@ -48,7 +48,7 @@ function CaseStudy() {
           </div>
           {p.wordmarkImage ? (
             <h1 className="overflow-hidden py-2 w-full flex justify-center">
-              <span className="block overflow-hidden">
+              <span className="block overflow-hidden w-full max-w-[1200px]">
                 <img
                   src={p.wordmarkImage}
                   alt={p.title}
@@ -56,7 +56,7 @@ function CaseStudy() {
                   height={800}
                   fetchPriority="high"
                   decoding="async"
-                  className="case-study-wordmark block animate-wordmark-reveal w-full max-w-[1200px] h-auto object-contain mx-auto"
+                  className="case-study-wordmark block animate-wordmark-rise w-full max-w-[1200px] h-auto object-contain mx-auto"
                 />
               </span>
             </h1>

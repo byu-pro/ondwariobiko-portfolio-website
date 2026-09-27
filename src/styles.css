@@ -271,7 +271,7 @@ img { content-visibility: auto; }
 [data-theme="light"] .monogram-passage__caption { color: #171914; }
 [data-theme="light"] .monogram-passage__index { color: #000000; }
 [data-theme="light"] .monogram-passage__edition { color: #55594c; }
-[data-theme="light"] .case-study-wordmark { filter: invert(1); }
+[data-theme="light"] .case-study-wordmark { filter: brightness(0); }
 .bg-neutral-900 { --ink: #fff; --accent-ink: var(--neon); }
 [data-theme="light"] [class*="focus:border-neon"]:focus { border-color: #000000; }
 [data-theme="light"] .cursor-ring { mix-blend-mode: normal; }
@@ -321,12 +321,11 @@ img { content-visibility: auto; }
 @keyframes portrait-breathe { from { transform: scale(1); } to { transform: scale(1.025); } }
 @media (prefers-reduced-motion: reduce) { .hero-portrait__image { animation: none; transform: none; } }
 
-@keyframes wordmark-reveal {
-  0% { opacity: 0; transform: translateY(36px) scale(0.94); filter: blur(12px); clip-path: inset(100% 0 0 0); }
-  60% { clip-path: inset(0 0 0 0); }
-  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); clip-path: inset(0 0 0 0); }
+@keyframes wordmark-rise {
+  0% { opacity: 0; transform: translateY(110%); }
+  100% { opacity: 1; transform: translateY(0); }
 }
-@utility animate-wordmark-reveal { animation: wordmark-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.case-study-wordmark { transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease; will-change: transform, filter; }
-.case-study-wordmark:hover { transform: scale(1.025); filter: drop-shadow(0 0 24px color-mix(in srgb, var(--neon) 45%, transparent)); }
-[data-theme="light"] .case-study-wordmark:hover { filter: invert(1) drop-shadow(0 0 24px #00000040); }
+@utility animate-wordmark-rise { animation: wordmark-rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.case-study-wordmark { transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1), filter 400ms ease; will-change: transform, filter; }
+.case-study-wordmark:hover { transform: scale(1.02); filter: brightness(0) invert(1) drop-shadow(0 0 24px color-mix(in srgb, var(--neon) 55%, transparent)); }
+[data-theme="light"] .case-study-wordmark:hover { transform: scale(1.02); filter: brightness(0) drop-shadow(0 0 24px rgba(0, 0, 0, 0.25)); }
