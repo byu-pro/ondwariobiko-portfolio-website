@@ -22,5 +22,5 @@
 ## Automatic image optimization
 - Add/edit canonical originals in `public/assets` or `src/assets`. Vite automatically generates WebP on dev startup, file changes, and every build; GitHub uploads are converted during deployment.
 - Reference generated `.webp` files in UI code, with `import.meta.env.BASE_URL` for public URLs. Keep originals and commit `scripts/image-manifest.json` when it changes. Do not manually edit generated WebP files belonging to originals.
-- New/replaced originals use lossless compression at full resolution. Keep SVG vector and existing WebP as-is. `_thumbnail` and `_profilepic` originals also generate an aspect-preserving 600px responsive variant. Do not promise all lossless files will be smaller.
+- New/replaced originals use lossless compression at full resolution. Keep SVG vector and existing WebP as-is. `_thumbnail`, `_profilepic`, and `_banner` originals also generate an aspect-preserving 600px responsive variant. Do not promise all lossless files will be smaller.
 - Run `bun run test:images` when changing the image pipeline. `bun run images:optimize` processes assets without starting the site.

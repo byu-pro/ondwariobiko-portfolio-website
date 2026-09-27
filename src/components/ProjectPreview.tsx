@@ -19,7 +19,7 @@ export function ProjectPreview({ project, detail = false }: { project: Project; 
       <div className="project-preview__images">
         <img
           src={detail && project.heroBanner ? project.heroBanner : project.image}
-          srcSet={detail && project.heroBanner ? undefined : `${project.image.replace(".webp", "-600.webp")} 600w, ${project.image} 1200w`}
+          srcSet={detail && project.heroBanner ? `${project.heroBanner.replace(".webp", "-600.webp")} 600w, ${project.heroBanner} 1200w` : `${project.image.replace(".webp", "-600.webp")} 600w, ${project.image} 1200w`}
           sizes={detail ? "(min-width: 1400px) 1400px, 100vw" : "(min-width: 1400px) 650px, (min-width: 768px) 50vw, 100vw"}
           alt={project.alt}
           width={detail ? 1920 : 1200}
