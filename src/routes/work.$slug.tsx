@@ -47,7 +47,7 @@ function CaseStudy() {
             <span><span className="text-accent-ink">{p.n}</span> / {p.tag}</span>
           </div>
           {p.wordmarkImage ? (
-            <h1 className="overflow-hidden py-2">
+            <h1 className="overflow-hidden py-2 w-full flex justify-center">
               <span className="block overflow-hidden">
                 <img
                   src={p.wordmarkImage}
@@ -56,16 +56,16 @@ function CaseStudy() {
                   height={800}
                   fetchPriority="high"
                   decoding="async"
-                  className="case-study-wordmark block animate-rise w-auto max-w-full h-auto max-h-[140px] sm:max-h-[240px] md:max-h-[340px] lg:max-h-[440px] object-contain object-left"
+                  className="case-study-wordmark block animate-rise w-auto max-w-full h-auto max-h-[140px] sm:max-h-[240px] md:max-h-[340px] lg:max-h-[440px] object-contain object-center mx-auto"
                 />
               </span>
             </h1>
           ) : (
-            <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)]">
+            <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)] text-center">
               <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
             </h1>
           )}
-          <p className="mt-8 max-w-3xl text-xl sm:text-2xl md:text-4xl font-light leading-tight text-ink/80">{p.headline}</p>
+          <p className="mt-8 max-w-3xl text-xl sm:text-2xl md:text-4xl font-light leading-tight text-ink/80 text-center mx-auto">{p.headline}</p>
         </div>
       </section>
 
