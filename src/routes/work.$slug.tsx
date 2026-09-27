@@ -79,13 +79,39 @@ function CaseStudy() {
 
       {/* Meta */}
       <section className="px-5 md:px-8 py-16 md:py-24">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-px bg-ink/15 border border-ink/15">
-          {[["Client", p.client], ["Role", p.role], ["Timeline", p.duration]].map(([k, v]) => (
-            <div key={k} className="bg-surface p-5 md:p-8">
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">{k}</div>
-              <div className="text-sm md:text-lg">{v}</div>
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-ink/15 border border-ink/15">
+          <div className="bg-surface p-5 md:p-8">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">Client</div>
+            <div className="text-sm md:text-lg font-medium">{p.client}</div>
+          </div>
+          <div className="bg-surface p-5 md:p-8">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">Location</div>
+            <div className="text-sm md:text-lg">{p.location || "Worldwide"}</div>
+          </div>
+          <div className="bg-surface p-5 md:p-8">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">Role & Timeline</div>
+            <div className="text-sm md:text-lg">{p.role} <span className="text-ink/50 text-xs block mt-1">({p.duration})</span></div>
+          </div>
+          <div className="bg-surface p-5 md:p-8 flex flex-col justify-between">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">Status / Website</div>
+            <div>
+              {p.liveUrl ? (
+                <a
+                  href={p.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest bg-neon text-black px-4 py-2 font-semibold hover:bg-neon/80 transition-colors"
+                >
+                  Visit Live Site ↗
+                </a>
+              ) : (
+                <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink/60 border border-ink/20 px-3 py-1.5 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                  {p.status || "In Development"}
+                </span>
+              )}
             </div>
-          ))}
+          </div>
         </div>
         <div className="max-w-[1400px] mx-auto mt-8 flex flex-wrap gap-2">
           {p.services.map((s) => (
