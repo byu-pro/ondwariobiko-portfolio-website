@@ -11,6 +11,7 @@ export type Project = {
   tag: string;
   cat: "Brand Identity" | "Logo & Packaging" | "Digital";
   image: string;
+  logoImage: string;
   alt: string;
   client: string;
   role: string;
@@ -51,6 +52,7 @@ export const projects: Project[] = [
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
     image: `${import.meta.env.BASE_URL}assets/pelicansocial_thumbnail.webp`,
+    logoImage: `${import.meta.env.BASE_URL}assets/pelicansocial_logo.webp`,
     alt: "Pelican Social Bar and Grill brand identity",
     client: "Pelican Social Bar & Grill",
     role: brandRole,
@@ -82,6 +84,7 @@ export const projects: Project[] = [
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
     image: `${import.meta.env.BASE_URL}assets/ikontrailerscom_thumbnail.webp`,
+    logoImage: `${import.meta.env.BASE_URL}assets/ikontrailers_logo.webp`,
     alt: "Ikon Trailers brand identity",
     client: "Ikon Trailers.com",
     role: brandRole,
@@ -113,6 +116,7 @@ export const projects: Project[] = [
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
     image: `${import.meta.env.BASE_URL}assets/ironacreco_thumbnail.webp`,
+    logoImage: `${import.meta.env.BASE_URL}assets/ironacrelandco_logo.webp`,
     alt: "Iron Acre Land Co brand identity",
     client: "Iron Acre Land Co",
     role: brandRole,
@@ -144,6 +148,7 @@ export const projects: Project[] = [
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
     image: `${import.meta.env.BASE_URL}assets/friendsofunionville_thumbnail.webp`,
+    logoImage: `${import.meta.env.BASE_URL}assets/friendsofunionvillecolor_logo.webp`,
     alt: "Friends of Unionville brand identity",
     client: "Friends of Unionville",
     role: brandRole,
@@ -175,6 +180,7 @@ export const projects: Project[] = [
     tag: "UI/UX • Web",
     cat: "Digital",
     image: `${import.meta.env.BASE_URL}assets/soundcurves_thumbnail.webp`,
+    logoImage: `${import.meta.env.BASE_URL}assets/soundcurves_website.webp`,
     alt: "Sound Curves website design",
     client: "Sound Curves",
     role: "UI/UX Designer & Web Developer",
@@ -205,19 +211,20 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "moods-and-nerds",
+    slug: "moods-n-meds",
     n: "06",
-    title: "Moods and Nerds",
+    title: "Moods n Meds",
     tag: "UI/UX • Web",
     cat: "Digital",
     image: `${import.meta.env.BASE_URL}assets/moodnmeds_thumbnail.webp`,
-    alt: "Moods and Nerds website design",
-    client: "Moods and Nerds",
+    logoImage: `${import.meta.env.BASE_URL}assets/moodsnmeds_website.webp`,
+    alt: "Moods n Meds website design",
+    client: "Moods n Meds",
     role: "UI/UX Designer & Web Developer",
     duration: "Scoped per project",
     services: ["UX Design", "UI Design", "Web Design", "Front-end Development"],
     headline: "A website with as much personality as its name.",
-    summary: "Website design and build for Moods and Nerds — playful, characterful and built to convert visitors into fans.",
+    summary: "Website design and build for Moods n Meds — playful, characterful and built to convert visitors into fans.",
     challenge: "Full case study details coming soon — this section will tell the real story of the brief and the challenge.",
     insight: "Case study insight coming soon.",
     process: [
@@ -234,7 +241,7 @@ export const projects: Project[] = [
     ],
     type: { display: "Syne Bold", body: "Inter Regular" },
     results: placeholderResults("Launch"),
-    quote: { text: "Client testimonial coming soon.", who: "Client, Moods and Nerds" },
+    quote: { text: "Client testimonial coming soon.", who: "Client, Moods n Meds" },
     gallery: [
       { src: processSketches, alt: "Wireframes and design exploration" },
       { src: brandApps, alt: "Website screens" },
@@ -247,6 +254,7 @@ export const projects: Project[] = [
     tag: "UI/UX • Mobile App",
     cat: "Digital",
     image: `${import.meta.env.BASE_URL}assets/yellowdot_thumbnail.webp`,
+    logoImage: `${import.meta.env.BASE_URL}assets/yellowdot_app.webp`,
     alt: "Yellow Dot Energy mobile app design",
     client: "Yellow Dot Energy",
     role: "UI/UX Designer",
@@ -283,6 +291,7 @@ export const projects: Project[] = [
     tag: "Logo Design",
     cat: "Logo & Packaging",
     image: `${import.meta.env.BASE_URL}assets/greenessentials_thumbnail.webp`,
+    logoImage: `${import.meta.env.BASE_URL}assets/greenessentials_logo.webp`,
     alt: "Green Essential Turf and Mosquito logo design",
     client: "Green Essential Turf & Mosquito",
     role: "Logo Designer",

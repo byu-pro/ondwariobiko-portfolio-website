@@ -1,3 +1,4 @@
+import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/SiteFooter";
@@ -67,15 +68,7 @@ function WorkPage() {
               className={`group ${i % 2 ? "sm:mt-24" : ""}`}
             >
               <div className="overflow-hidden mb-6 border border-ink/10 group-hover:border-neon/50 transition-colors duration-500">
-                <img
-                  src={p.image} srcSet={`${p.image.replace(".webp", "-600.webp")} 600w, ${p.image} 1200w`} sizes="(min-width: 1400px) 650px, (min-width: 768px) 50vw, 100vw"
-                  alt={p.alt}
-                  width={1200}
-                  height={1500}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                <ProjectPreview project={p} />
               </div>
               <div className="flex justify-between items-baseline gap-4">
                 <h2 className="font-display text-2xl sm:text-3xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">

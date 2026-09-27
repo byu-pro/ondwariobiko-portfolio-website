@@ -198,5 +198,53 @@
     "outputs": [
       "src/assets/project-savanna-os.webp"
     ]
+  },
+  "public/assets/friendsofunionvillecolor_logo.png": {
+    "hash": "c51f62e2727da6d635f1e32a3b6153dde3b6a167fb2a2ebacfb91ea4734722fd",
+    "outputs": [
+      "public/assets/friendsofunionvillecolor_logo.webp"
+    ]
+  },
+  "public/assets/greenessentials_logo.png": {
+    "hash": "e2020bf9bcabb3eb21f0948a3ff3d6f3451ae4ae7d1464205324bac6c9d542e8",
+    "outputs": [
+      "public/assets/greenessentials_logo.webp"
+    ]
+  },
+  "public/assets/ikontrailers_logo.png": {
+    "hash": "6a02312994c88f808f62f6fd9baf5b09cde414a776fb0c1932cd44fe3fecf371",
+    "outputs": [
+      "public/assets/ikontrailers_logo.webp"
+    ]
+  },
+  "public/assets/ironacrelandco_logo.png": {
+    "hash": "81fa4b557e4ec57b01c838baadf1dba837f64b34f12f5c531969f04b339928a0",
+    "outputs": [
+      "public/assets/ironacrelandco_logo.webp"
+    ]
+  },
+  "public/assets/pelicansocial_logo.png": {
+    "hash": "597c53eb5fefcb3a283268af17f5bc24c18f5d266a08fbc236f86cb61bb1fd3c",
+    "outputs": [
+      "public/assets/pelicansocial_logo.webp"
+    ]
+  },
+  "public/assets/soundcurves_website.png": {
+    "hash": "c29cdbd3f4437b69a1fccab9ad19d4221a1a01f1ca86089e5c378b088e934dd0",
+    "outputs": [
+      "public/assets/soundcurves_website.webp"
+    ]
+  },
+  "public/assets/moodsnmeds_website.png": {
+    "hash": "0b4281b9a39d941b8b86663e6d0a0656e7908bc655fea3100265c9402f0bdcc9",
+    "outputs": [
+      "public/assets/moodsnmeds_website.webp"
+    ]
+  },
+  "public/assets/yellowdot_app.png": {
+    "hash": "143ecc583e1898efa00ac88ce09350fe08c648ecdcd7f722a06f9c4e1d96df08",
+    "outputs": [
+      "public/assets/yellowdot_app.webp"
+    ]
   }
 }

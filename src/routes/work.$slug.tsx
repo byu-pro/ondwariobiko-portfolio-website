@@ -1,9 +1,11 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ProjectPreview } from "@/components/ProjectPreview";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { getProject, projects } from "@/lib/projects";
 import { ConsultButton } from "@/components/ConsultButton";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
+    if (params.slug === "moods-and-nerds") throw redirect({ to: "/work/$slug", params: { slug: "moods-n-meds" }, statusCode: 301 });
     const project = getProject(params.slug);
     if (!project) throw notFound();
     return { project };
@@ -53,7 +55,7 @@ function CaseStudy() {
 
       <section className="mt-12 md:mt-20 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[4/5] sm:aspect-[16/10] bg-ink/[0.03]">
-          <img src={p.image} srcSet={`${p.image.replace(".webp", "-600.webp")} 600w, ${p.image} 1200w`} sizes="(min-width: 1400px) 1120px, 90vw" alt={p.alt} width={1200} height={1500} fetchPriority="high" decoding="async" className="w-full h-full object-contain" />
+          <ProjectPreview key={p.slug} project={p} detail />
         </div>
       </section>
 

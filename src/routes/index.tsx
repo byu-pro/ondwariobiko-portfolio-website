@@ -1,3 +1,4 @@
+import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { heroImage, projects } from "@/lib/projects";
@@ -80,7 +81,7 @@ function Index() {
             {projects.slice(0, 4).map((p, i) => (
               <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i % 2 ? "md:mt-40" : ""}`}>
                 <div className="overflow-hidden mb-6">
-                  <img src={p.image} srcSet={`${p.image.replace(".webp", "-600.webp")} 600w, ${p.image} 1200w`} sizes="(min-width: 1400px) 650px, (min-width: 768px) 50vw, 100vw" alt={p.alt} width={1200} height={1500} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <ProjectPreview project={p} />
                 </div>
                 <div className="flex justify-between">
                   <h3 className="font-display text-2xl sm:text-3xl uppercase group-hover:text-accent-ink transition-colors">{p.title}</h3>

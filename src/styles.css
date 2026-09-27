@@ -293,3 +293,22 @@ img { content-visibility: auto; }
   .brand-loop__track { animation: none; }
   .brand-loop__group[aria-hidden="true"] { display: none; }
 }
+
+/* Mockup first, then the identity; opacity/transform keep the loop lightweight. */
+.project-preview { position: relative; width: 100%; overflow: hidden; }
+.project-preview--detail { height: 100%; }
+.project-preview__images { position: absolute; inset: 0; transition: transform 700ms ease; }
+.group:hover .project-preview:not(.project-preview--detail) .project-preview__images { transform: scale(1.025); }
+.project-preview img { width: 100%; height: 100%; object-fit: cover; }
+.project-preview--detail img { object-fit: contain; }
+.project-preview__logo { position: absolute; inset: 0; opacity: 0; animation: project-identity-reveal 10s cubic-bezier(.4,0,.2,1) infinite; animation-play-state: paused; }
+.project-preview[data-running="true"] .project-preview__logo { animation-play-state: running; }
+@keyframes project-identity-reveal {
+  0%, 36%, 100% { opacity: 0; transform: scale(1.025); }
+  48%, 82% { opacity: 1; transform: scale(1); }
+  94% { opacity: 0; transform: scale(1.015); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-preview__logo { animation: none; opacity: 0; }
+  .project-preview__images { transition: none; }
+}
