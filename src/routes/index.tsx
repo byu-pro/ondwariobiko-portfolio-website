@@ -230,7 +230,7 @@ function Index() {
           <blockquote className="font-display text-3xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.95] max-w-5xl">
             "Helped launch a fintech brand now serving customers in <span className="text-stroke-black">12 countries</span>."
           </blockquote>
-          <Link to="/work/$slug" params={{ slug: "aura-finance" }} className="inline-block font-mono text-xs uppercase tracking-widest mt-8 text-black/60 hover:text-black transition-colors">Aura Finance — Read the case study →</Link>
+          <Link to="/work" className="inline-block font-mono text-xs uppercase tracking-widest mt-8 text-black/60 hover:text-black transition-colors">Explore selected work →</Link>
         </div>
       </section>
 
