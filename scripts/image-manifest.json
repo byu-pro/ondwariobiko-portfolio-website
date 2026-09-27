@@ -253,5 +253,53 @@
       "public/assets/johnobiko_profilepic.webp",
       "public/assets/johnobiko_profilepic-600.webp"
     ]
+  },
+  "public/assets/friendsofunionville_herobanner.png": {
+    "hash": "ec8896d537e66dbe421ceb2cf430ee068574fdfa56bd1eba260210d465d24d99",
+    "outputs": [
+      "public/assets/friendsofunionville_herobanner.webp"
+    ]
+  },
+  "public/assets/greenessentials_herobanner.png": {
+    "hash": "11e6b32a3646ba702f833b299b9667642d6a7f82abc4f3a030472f30f544dfeb",
+    "outputs": [
+      "public/assets/greenessentials_herobanner.webp"
+    ]
+  },
+  "public/assets/ikontrailers_herobanner.png": {
+    "hash": "82c56d575e64ea54a333a99fb74c5a68985a370349e8854412e8bc6f26aad517",
+    "outputs": [
+      "public/assets/ikontrailers_herobanner.webp"
+    ]
+  },
+  "public/assets/ironacrelandco_herobanner.png": {
+    "hash": "31d05c9d8046ffd79d9235fc30b384e3dffb46b59e93c586166882ba6e82a99f",
+    "outputs": [
+      "public/assets/ironacrelandco_herobanner.webp"
+    ]
+  },
+  "public/assets/moodnmeds_herobanner.png": {
+    "hash": "74c3a7012de1d78fc3aff248706542e561d845492950e7489fa094ff29cc4ae8",
+    "outputs": [
+      "public/assets/moodnmeds_herobanner.webp"
+    ]
+  },
+  "public/assets/pelicansocial_casestudybanner.png": {
+    "hash": "0f98960ee0126bedd06556904cdfc74dd99b299a1fe2ede8f813b6d264aed7f3",
+    "outputs": [
+      "public/assets/pelicansocial_casestudybanner.webp"
+    ]
+  },
+  "public/assets/soundcurves_herobanner.png": {
+    "hash": "02f477c78bd1b14b97b0f03313d17139dfd2a57c598708bc88e325b97cd921d5",
+    "outputs": [
+      "public/assets/soundcurves_herobanner.webp"
+    ]
+  },
+  "public/assets/yellowdot_herobanner.png": {
+    "hash": "778d45cefccdb5e9f1cd1cf8836f67c2e915deab82301d75e93dfc9b29722db7",
+    "outputs": [
+      "public/assets/yellowdot_herobanner.webp"
+    ]
   }
 }

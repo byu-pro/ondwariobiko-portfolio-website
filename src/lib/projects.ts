@@ -9,6 +9,7 @@ export type Project = {
   tag: string;
   cat: "Brand Identity" | "Logo & Packaging" | "Digital";
   image: string;
+  heroBanner?: string;
   logoImage: string;
   alt: string;
   client: string;
@@ -45,6 +46,7 @@ const placeholderResults = (v: string) => [
 export const projects: Project[] = [
   {
     slug: "pelican-social-bar-and-grill",
+    heroBanner: `${import.meta.env.BASE_URL}assets/pelicansocial_casestudybanner.webp`,
     n: "01",
     title: "Pelican Social Bar & Grill",
     tag: "Identity • Brand Strategy",
@@ -77,6 +79,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ikon-trailers",
+    heroBanner: `${import.meta.env.BASE_URL}assets/ikontrailers_herobanner.webp`,
     n: "02",
     title: "Ikon Trailers",
     tag: "Identity • Brand Strategy",
@@ -109,6 +112,7 @@ export const projects: Project[] = [
   },
   {
     slug: "iron-acre-land-co",
+    heroBanner: `${import.meta.env.BASE_URL}assets/ironacrelandco_herobanner.webp`,
     n: "03",
     title: "Iron Acre Land Co",
     tag: "Identity • Brand Strategy",
@@ -141,6 +145,7 @@ export const projects: Project[] = [
   },
   {
     slug: "friends-of-unionville",
+    heroBanner: `${import.meta.env.BASE_URL}assets/friendsofunionville_herobanner.webp`,
     n: "04",
     title: "Friends of Unionville",
     tag: "Identity • Brand Strategy",
@@ -173,6 +178,7 @@ export const projects: Project[] = [
   },
   {
     slug: "sound-curves",
+    heroBanner: `${import.meta.env.BASE_URL}assets/soundcurves_herobanner.webp`,
     n: "05",
     title: "Sound Curves",
     tag: "UI/UX • Web",
@@ -210,6 +216,7 @@ export const projects: Project[] = [
   },
   {
     slug: "moods-n-meds",
+    heroBanner: `${import.meta.env.BASE_URL}assets/moodnmeds_herobanner.webp`,
     n: "06",
     title: "Moods n Meds",
     tag: "UI/UX • Web",
@@ -247,6 +254,7 @@ export const projects: Project[] = [
   },
   {
     slug: "yellow-dot-energy",
+    heroBanner: `${import.meta.env.BASE_URL}assets/yellowdot_herobanner.webp`,
     n: "07",
     title: "Yellow Dot Energy",
     tag: "UI/UX • Mobile App",
@@ -284,6 +292,7 @@ export const projects: Project[] = [
   },
   {
     slug: "green-essential-turf-and-mosquito",
+    heroBanner: `${import.meta.env.BASE_URL}assets/greenessentials_herobanner.webp`,
     n: "08",
     title: "Green Essential Turf & Mosquito",
     tag: "Logo Design",

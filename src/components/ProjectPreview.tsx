@@ -18,12 +18,12 @@ export function ProjectPreview({ project, detail = false }: { project: Project; 
     <div ref={container} className={`project-preview ${detail ? "project-preview--detail" : "aspect-[4/5]"}`} data-running={visible && logoReady}>
       <div className="project-preview__images">
         <img
-          src={project.image}
-          srcSet={`${project.image.replace(".webp", "-600.webp")} 600w, ${project.image} 1200w`}
-          sizes={detail ? "(min-width: 1400px) 1120px, 90vw" : "(min-width: 1400px) 650px, (min-width: 768px) 50vw, 100vw"}
+          src={detail && project.heroBanner ? project.heroBanner : project.image}
+          srcSet={detail && project.heroBanner ? undefined : `${project.image.replace(".webp", "-600.webp")} 600w, ${project.image} 1200w`}
+          sizes={detail ? "(min-width: 1400px) 1400px, 100vw" : "(min-width: 1400px) 650px, (min-width: 768px) 50vw, 100vw"}
           alt={project.alt}
-          width={1200}
-          height={1500}
+          width={detail ? 1920 : 1200}
+          height={detail ? 1200 : 1500}
           loading={detail ? "eager" : "lazy"}
           fetchPriority={detail ? "high" : "auto"}
           decoding="async"
