@@ -164,9 +164,9 @@ function Index() {
             ))}
           </div>
         </div>
-        <div className="max-w-[1400px] mx-auto px-5 md:px-8 mt-10" data-reveal>
-          <Link to="/testimonials" className="font-mono text-xs uppercase tracking-widest text-accent-ink hover:underline">More reviews ⟶</Link>
-        </div>
+
+
+
       </section>
       <section className="py-24 md:py-32 px-5 md:px-8 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto">

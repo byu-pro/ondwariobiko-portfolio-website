@@ -23,7 +23,6 @@ export function SiteFooter() {
             <a href="https://www.linkedin.com/in/ondwariobiko/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-ink transition-colors">LinkedIn</a>
             <a href="https://www.behance.net/johnobiko" target="_blank" rel="noopener noreferrer" className="hover:text-accent-ink transition-colors">Behance</a>
             <Link to="/faq" className="hover:text-accent-ink transition-colors">FAQ</Link>
-            <Link to="/testimonials" className="hover:text-accent-ink transition-colors">Reviews</Link>
             <Link to="/journal" className="hover:text-accent-ink transition-colors">Journal</Link>
           </div>
         </div>
