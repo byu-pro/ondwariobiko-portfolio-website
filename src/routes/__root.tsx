@@ -127,6 +127,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <div className="min-h-screen bg-black text-white font-sans selection:bg-neon selection:text-black overflow-x-hidden">
+        <Preloader />
         <MotionLayer />
         <SiteNav />
         <main key={path} className="animate-page-in">
