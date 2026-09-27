@@ -1,8 +1,6 @@
-import heroIdentity from "@/assets/hero-identity.webp";
 import processSketches from "@/assets/process-sketches.webp";
 import brandApps from "@/assets/brand-applications.webp";
 
-export const heroImage = heroIdentity;
 
 export type Project = {
   slug: string;

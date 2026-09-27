@@ -312,3 +312,9 @@ img { content-visibility: auto; }
   .project-preview__logo { animation: none; opacity: 0; }
   .project-preview__images { transition: none; }
 }
+
+/* A restrained portrait drift; preserve the face and honour reduced motion. */
+.hero-portrait { position: relative; }
+.hero-portrait__image { transform-origin: 50% 42%; animation: portrait-breathe 14s ease-in-out infinite alternate; }
+@keyframes portrait-breathe { from { transform: scale(1); } to { transform: scale(1.025); } }
+@media (prefers-reduced-motion: reduce) { .hero-portrait__image { animation: none; transform: none; } }

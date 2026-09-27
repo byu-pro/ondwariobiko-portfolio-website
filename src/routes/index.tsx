@@ -1,7 +1,7 @@
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { heroImage, projects } from "@/lib/projects";
+import { projects } from "@/lib/projects";
 import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/")({
@@ -39,7 +39,21 @@ function Index() {
                 <span className="font-mono text-xs uppercase tracking-[0.25em] group-hover:text-accent-ink transition-colors">See the work</span>
               </Link>
             </div>
-            <div className="md:w-1/2 w-full aspect-[4/5] overflow-hidden"><img src={heroImage} alt="Premium textured business cards with lime edges and JO monogram" width={800} height={1008} fetchPriority="high" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="-0.08" /></div>
+            <div className="hero-portrait md:w-1/2 w-full aspect-[4/5] overflow-hidden group">
+              <div className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-105">
+                <img
+                  src={`${import.meta.env.BASE_URL}assets/johnobiko_profilepic.webp`}
+                  srcSet={`${import.meta.env.BASE_URL}assets/johnobiko_profilepic-600.webp 600w, ${import.meta.env.BASE_URL}assets/johnobiko_profilepic.webp 1200w`}
+                  sizes="(min-width: 1400px) 660px, (min-width: 768px) 50vw, 100vw"
+                  alt="John Obiko — brand designer and front-end developer"
+                  width={1200}
+                  height={1500}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="hero-portrait__image w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

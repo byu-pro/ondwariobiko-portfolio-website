@@ -246,5 +246,12 @@
     "outputs": [
       "public/assets/yellowdot_app.webp"
     ]
+  },
+  "public/assets/johnobiko_profilepic.png": {
+    "hash": "dd3f4716e50315d3167ec43139c2b59d9217ce27f8e02c1f03b48fafaf608e9c",
+    "outputs": [
+      "public/assets/johnobiko_profilepic.webp",
+      "public/assets/johnobiko_profilepic-600.webp"
+    ]
   }
 }

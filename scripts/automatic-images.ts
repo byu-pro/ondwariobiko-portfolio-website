@@ -61,7 +61,7 @@ export async function optimizeImages(root: string): Promise<string[]> {
     await writeFile(path.join(root, output), webp);
     const outputs = [output];
     // Optional responsive derivative; the main WebP retains full resolution.
-    if (file.includes("_thumbnail") && (metadata.pages ?? 1) === 1) {
+    if ((file.includes("_thumbnail") || file.includes("_profilepic")) && (metadata.pages ?? 1) === 1) {
       const small = file.replace(raster, "-600.webp");
       await pipeline().resize({ width: 600, withoutEnlargement: true }).webp({ lossless: true, exact: true, effort: 6 }).toFile(path.join(root, small));
       outputs.push(small);
