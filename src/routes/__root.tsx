@@ -14,6 +14,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { MotionLayer } from "@/components/MotionLayer";
 import { FloatingConsult } from "@/components/ConsultButton";
 import { BackToTop } from "@/components/BackToTop";
+import { Preloader } from "@/components/Preloader";
 import { useRouterState } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
