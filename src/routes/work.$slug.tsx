@@ -42,13 +42,13 @@ function CaseStudy() {
       {/* Hero */}
       <section className="pt-32 md:pt-44 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-wrap gap-3 justify-between font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-8">
+          <div className="flex flex-wrap gap-3 justify-between font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-8 animate-page-in">
             <Link to="/work" className="hover:text-accent-ink transition-colors">← All work</Link>
             <span><span className="text-accent-ink">{p.n}</span> / {p.tag}</span>
           </div>
           {p.wordmarkImage ? (
-            <h1 className="overflow-hidden py-2 w-full flex justify-center">
-              <span className="block overflow-hidden w-full max-w-[1200px]">
+            <h1 className="overflow-hidden py-3 w-full flex justify-center">
+              <span className="block w-full max-w-[1200px] flex justify-center">
                 <img
                   src={p.wordmarkImage}
                   alt={p.title}
@@ -56,7 +56,7 @@ function CaseStudy() {
                   height={800}
                   fetchPriority="high"
                   decoding="async"
-                  className="case-study-wordmark block animate-wordmark-rise w-full max-w-[1200px] h-auto object-contain mx-auto"
+                  className="case-study-wordmark block animate-wordmark-hero w-full max-w-[1200px] h-auto object-contain mx-auto"
                 />
               </span>
             </h1>
@@ -65,7 +65,9 @@ function CaseStudy() {
               <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
             </h1>
           )}
-          <p className="mt-8 max-w-3xl text-xl sm:text-2xl md:text-4xl font-light leading-tight text-ink/80 text-center mx-auto">{p.headline}</p>
+          <p className="mt-8 max-w-3xl text-xl sm:text-2xl md:text-4xl font-light leading-tight text-ink/80 text-center mx-auto animate-headline-glide">
+            {p.headline}
+          </p>
         </div>
       </section>
 

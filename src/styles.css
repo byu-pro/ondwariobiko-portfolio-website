@@ -321,11 +321,50 @@ img { content-visibility: auto; }
 @keyframes portrait-breathe { from { transform: scale(1); } to { transform: scale(1.025); } }
 @media (prefers-reduced-motion: reduce) { .hero-portrait__image { animation: none; transform: none; } }
 
-@keyframes wordmark-rise {
-  0% { opacity: 0; transform: translateY(110%); }
-  100% { opacity: 1; transform: translateY(0); }
+@keyframes wordmark-hero-entrance {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 42px, 0) scale(0.93);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    filter: blur(14px);
+  }
+  35% {
+    opacity: 0.85;
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    filter: blur(0);
+  }
 }
-@utility animate-wordmark-rise { animation: wordmark-rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.case-study-wordmark { transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1), filter 400ms ease; will-change: transform, filter; }
-.case-study-wordmark:hover { transform: scale(1.02); filter: brightness(0) invert(1) drop-shadow(0 0 24px color-mix(in srgb, var(--neon) 55%, transparent)); }
-[data-theme="light"] .case-study-wordmark:hover { transform: scale(1.02); filter: brightness(0) drop-shadow(0 0 24px rgba(0, 0, 0, 0.25)); }
+
+@keyframes headline-glide {
+  0% { opacity: 0; transform: translate3d(0, 24px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@utility animate-wordmark-hero { animation: wordmark-hero-entrance 1.1s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@utility animate-headline-glide { animation: headline-glide 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
+
+.case-study-wordmark {
+  filter: brightness(0) invert(1);
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1), filter 500ms ease;
+  will-change: transform, filter;
+  transform-origin: center center;
+}
+
+.case-study-wordmark:hover {
+  transform: translate3d(0, -6px, 0) scale(1.018);
+  filter: brightness(0) invert(1) drop-shadow(0 0 36px oklch(0.9 0.24 131 / 0.45)) drop-shadow(0 0 12px oklch(0.9 0.24 131 / 0.25));
+}
+
+[data-theme="light"] .case-study-wordmark {
+  filter: brightness(0) !important;
+}
+
+[data-theme="light"] .case-study-wordmark:hover {
+  transform: translate3d(0, -6px, 0) scale(1.018);
+  filter: brightness(0) drop-shadow(0 18px 36px rgba(0, 0, 0, 0.18)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1)) !important;
+}
