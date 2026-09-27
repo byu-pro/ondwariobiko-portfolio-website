@@ -60,8 +60,6 @@ export function Preloader() {
               <img className="brand-intro__echo" src={LOGO} alt="" />
             </div>
           </div>
-          <p className="brand-intro__name">ondwariobiko<span>®</span></p>
-          <p className="brand-intro__caption">STRATEGY. IDENTITY. IMPACT.</p>
         </div>
         <div className="brand-intro__bottom">
           <span>INDEPENDENT DESIGNER</span><span className="brand-intro__signal">ENTERING THE STUDIO</span>
