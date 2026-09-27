@@ -52,8 +52,8 @@ function CaseStudy() {
       </section>
 
       <section className="mt-12 md:mt-20 px-5 md:px-8">
-        <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[4/5] sm:aspect-[16/10]">
-          <img src={p.image} alt={p.alt} width={1024} height={1280} fetchPriority="high" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="-0.06" />
+        <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[4/5] sm:aspect-[16/10] bg-ink/[0.03]">
+          <img src={p.image} alt={p.alt} width={1200} height={1500} fetchPriority="high" decoding="async" className="w-full h-full object-contain" />
         </div>
       </section>
 

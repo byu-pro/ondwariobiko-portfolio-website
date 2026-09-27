@@ -248,7 +248,7 @@ img { content-visibility: auto; }
   --color-accent-ink: var(--accent-ink);
 }
 :root { --surface: #000; --ink: #fff; --accent-ink: var(--neon); color-scheme: dark; }
-:root[data-theme="light"] { --surface: #f7f7f2; --ink: #171914; --accent-ink: #426500; color-scheme: light; --background: #f7f7f2; --foreground: #171914; }
+:root[data-theme="light"] { --surface: #f7f7f2; --ink: #171914; --accent-ink: #000000; color-scheme: light; --background: #f7f7f2; --foreground: #171914; }
 .bg-black { --ink: #fff; --accent-ink: var(--neon); }
 .bg-neon { --accent-ink: #171914; }
 .theme-toggle { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); border-radius: 50%; color: var(--ink); background: var(--surface); cursor: pointer; }
@@ -256,22 +256,26 @@ img { content-visibility: auto; }
 .theme-toggle:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 4px; }
 [data-menu-open="true"] .theme-toggle { background: transparent; color: black; border-color: #0005; }
 [data-theme="light"] [data-menu-open="false"] .nav-logo { filter: invert(1); }
-[data-theme="light"] .cursor-dot, [data-theme="light"] .cursor-ring { --neon: #426500; }
+[data-theme="light"] .cursor-dot, [data-theme="light"] .cursor-ring { --neon: #000000; }
 /* Increase small-text contrast without changing the dark theme's original hierarchy. */
 [data-theme="light"] [class*="text-ink/3"], [data-theme="light"] [class*="text-ink/4"], [data-theme="light"] [class*="text-ink/5"] { color: color-mix(in srgb, var(--ink) 70%, transparent); }
 [data-theme="light"] input::placeholder, [data-theme="light"] textarea::placeholder { color: #65685f; }
 [data-theme="light"] .brand-intro__panel { background: #f7f7f2; color: #171914; }
 [data-theme="light"] .brand-intro__mark img { filter: invert(1); }
 [data-theme="light"] .brand-intro__top, [data-theme="light"] .brand-intro__bottom, [data-theme="light"] .brand-intro__caption { color: #55594c; }
-[data-theme="light"] .brand-intro__signal, [data-theme="light"] .brand-intro__cross { color: #426500; }
+[data-theme="light"] .brand-intro__signal, [data-theme="light"] .brand-intro__cross { color: #000000; }
 [data-theme="light"] .brand-intro__ring { border-color: #17191425; }
 [data-theme="light"] .brand-intro__track { background: #17191425; }
 [data-theme="light"] .monogram-passage__aperture { box-shadow: 0 0 0 150vmax #f7f7f2; }
 [data-theme="light"] .monogram-passage__art img { filter: invert(1); }
 [data-theme="light"] .monogram-passage__caption { color: #171914; }
-[data-theme="light"] .monogram-passage__index { color: #426500; }
+[data-theme="light"] .monogram-passage__index { color: #000000; }
 [data-theme="light"] .monogram-passage__edition { color: #55594c; }
 .bg-neutral-900 { --ink: #fff; --accent-ink: var(--neon); }
-[data-theme="light"] [class*="focus:border-neon"]:focus { border-color: #426500; }
+[data-theme="light"] [class*="focus:border-neon"]:focus { border-color: #000000; }
 [data-theme="light"] .cursor-ring { mix-blend-mode: normal; }
-[data-theme="light"] .cursor-ring.is-hot { background: #42650015; }
+[data-theme="light"] .cursor-ring.is-hot { background: #00000015; }
+
+/* Transparent client artwork stays legible in both themes. */
+.client-logo { filter: brightness(0) invert(1); opacity: 0.7; }
+[data-theme="light"] .client-logo { filter: brightness(0); opacity: 0.65; }

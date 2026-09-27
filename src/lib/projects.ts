@@ -1,8 +1,4 @@
 import heroIdentity from "@/assets/hero-identity.jpg";
-import projectAura from "@/assets/project-aura-finance.jpg";
-import projectMara from "@/assets/project-mara-sands.jpg";
-import projectKilele from "@/assets/project-kilele-coffee.jpg";
-import projectSavanna from "@/assets/project-savanna-os.jpg";
 import processSketches from "@/assets/process-sketches.jpg";
 import brandApps from "@/assets/brand-applications.jpg";
 
@@ -56,7 +52,7 @@ export const projects: Project[] = [
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
     year: "TBC",
-    image: projectMara,
+    image: `${import.meta.env.BASE_URL}assets/pelicansocial_thumbnail.png`,
     alt: "Pelican Social Bar and Grill brand identity",
     client: "Pelican Social Bar & Grill",
     role: brandRole,
@@ -88,7 +84,7 @@ export const projects: Project[] = [
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
     year: "TBC",
-    image: projectSavanna,
+    image: `${import.meta.env.BASE_URL}assets/ikontrailerscom_thumbnail.png`,
     alt: "Ikon Trailers brand identity",
     client: "Ikon Trailers.com",
     role: brandRole,
@@ -120,7 +116,7 @@ export const projects: Project[] = [
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
     year: "TBC",
-    image: projectKilele,
+    image: `${import.meta.env.BASE_URL}assets/ironacreco_thumbnail.png`,
     alt: "Iron Acre Land Co brand identity",
     client: "Iron Acre Land Co",
     role: brandRole,
@@ -152,7 +148,7 @@ export const projects: Project[] = [
     tag: "Identity • Brand Strategy",
     cat: "Brand Identity",
     year: "TBC",
-    image: heroIdentity,
+    image: `${import.meta.env.BASE_URL}assets/friendsofunionville_thumbnail.png`,
     alt: "Friends of Unionville brand identity",
     client: "Friends of Unionville",
     role: brandRole,
@@ -184,7 +180,7 @@ export const projects: Project[] = [
     tag: "UI/UX • Web",
     cat: "Digital",
     year: "TBC",
-    image: projectAura,
+    image: `${import.meta.env.BASE_URL}assets/soundcurves_thumbnail.png`,
     alt: "Sound Curves website design",
     client: "Sound Curves",
     role: "UI/UX Designer & Web Developer",
@@ -221,7 +217,7 @@ export const projects: Project[] = [
     tag: "UI/UX • Web",
     cat: "Digital",
     year: "TBC",
-    image: projectSavanna,
+    image: `${import.meta.env.BASE_URL}assets/moodnmeds_thumbnail.png`,
     alt: "Moods and Nerds website design",
     client: "Moods and Nerds",
     role: "UI/UX Designer & Web Developer",
@@ -258,7 +254,7 @@ export const projects: Project[] = [
     tag: "UI/UX • Mobile App",
     cat: "Digital",
     year: "TBC",
-    image: projectAura,
+    image: `${import.meta.env.BASE_URL}assets/yellowdot_thumbnail.png`,
     alt: "Yellow Dot Energy mobile app design",
     client: "Yellow Dot Energy",
     role: "UI/UX Designer",
@@ -295,7 +291,7 @@ export const projects: Project[] = [
     tag: "Logo Design",
     cat: "Logo & Packaging",
     year: "TBC",
-    image: projectKilele,
+    image: `${import.meta.env.BASE_URL}assets/greenessentials_thumbnail.png`,
     alt: "Green Essential Turf and Mosquito logo design",
     client: "Green Essential Turf & Mosquito",
     role: "Logo Designer",

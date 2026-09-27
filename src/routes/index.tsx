@@ -93,28 +93,27 @@ function Index() {
         </div>
       </section>
 
-      {/* Client logos — auto-scrolling carousel */}
-      <section className="py-16 md:py-24 border-y border-ink/10 overflow-hidden" data-reveal>
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-ink/40 text-center mb-10 px-5">
-          Trusted by ambitious brands <span className="text-accent-ink">✺</span> 10+ countries
-        </p>
-        <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-surface to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-surface to-transparent z-10" />
-          <div className="flex w-max animate-marquee-slow pause-on-hover items-center">
-            {Array.from({ length: 2 }).map((_, k) => (
-              <div key={k} className="flex items-center">
-                {clients.map((c) => (
-                  <span
-                    key={c.name}
-                    className={`mx-8 md:mx-14 whitespace-nowrap text-ink/35 hover:text-accent-ink transition-colors duration-500 ${c.style}`}
-                  >
-                    {c.name}
-                  </span>
-                ))}
-              </div>
+      {/* Client logos */}
+      <section className="py-16 md:py-24 px-5 md:px-8 border-y border-ink/10" aria-labelledby="trusted-brands-heading">
+        <div className="max-w-[1400px] mx-auto">
+          <h2 id="trusted-brands-heading" className="font-mono text-xs uppercase tracking-[0.3em] text-ink/60 text-center mb-10 md:mb-14">
+            Trusted by ambitious brands <span className="text-accent-ink">✺</span> 10+ countries
+          </h2>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-px bg-ink/10 border border-ink/10">
+            {clients.map((client) => (
+              <li key={client.src} className="flex items-center justify-center h-32 md:h-36 px-6 py-5 bg-surface">
+                <img
+                  src={client.src}
+                  alt={client.name}
+                  width={client.width}
+                  height={client.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="client-logo max-w-full max-h-20 w-auto h-auto object-contain"
+                />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -338,14 +337,20 @@ const faqs = [
 ];
 
 const clients = [
-  { name: "AURA FINANCE", style: "font-display text-2xl md:text-4xl uppercase tracking-tight" },
-  { name: "mara·sands", style: "font-mono text-2xl md:text-3xl lowercase tracking-widest" },
-  { name: "KILELE", style: "font-display text-2xl md:text-4xl uppercase italic" },
-  { name: "savanna/os", style: "font-mono text-2xl md:text-3xl" },
-  { name: "NAIROBI°LAB", style: "font-display text-2xl md:text-4xl uppercase tracking-[0.2em]" },
-  { name: "JUMUIYA", style: "font-display text-2xl md:text-4xl uppercase" },
-  { name: "baobab&co", style: "font-mono text-2xl md:text-3xl lowercase" },
-  { name: "ZURI STUDIO", style: "font-display text-2xl md:text-4xl uppercase tracking-tighter" },
+  { name: "Bosch", src: `${import.meta.env.BASE_URL}assets/bosch.png`, width: 2171, height: 724 },
+  { name: "PropertyGuru", src: `${import.meta.env.BASE_URL}assets/propertyguru.png`, width: 2172, height: 724 },
+  { name: "99.co", src: `${import.meta.env.BASE_URL}assets/99co.png`, width: 2170, height: 725 },
+  { name: "Far East Organization", src: `${import.meta.env.BASE_URL}assets/fareast.png`, width: 2172, height: 724 },
+  { name: "EdgeProp", src: `${import.meta.env.BASE_URL}assets/edgeprop.png`, width: 2172, height: 724 },
+  { name: "Holland Village Residences", src: `${import.meta.env.BASE_URL}assets/hollandvillage.png`, width: 1925, height: 817 },
+  { name: "Ritter Sport", src: `${import.meta.env.BASE_URL}assets/rittersport.png`, width: 1536, height: 1024 },
+  { name: "Aquapet", src: `${import.meta.env.BASE_URL}assets/aquapet.png`, width: 1448, height: 1086 },
+  { name: "Beyond the Image", src: `${import.meta.env.BASE_URL}assets/beyondtheimage.png`, width: 1448, height: 1086 },
+  { name: "Fast Kat Connects", src: `${import.meta.env.BASE_URL}assets/fastkatconnect.png`, width: 1254, height: 1254 },
+  { name: "hi! hoteles", src: `${import.meta.env.BASE_URL}assets/hihoteles.png`, width: 1536, height: 1024 },
+  { name: "Legibra", src: `${import.meta.env.BASE_URL}assets/legibra.png`, width: 2172, height: 724 },
+  { name: "Ocean-Line Freight Forwarders", src: `${import.meta.env.BASE_URL}assets/oceanline.png`, width: 2172, height: 724 },
+  { name: "Paluxy River Potties", src: `${import.meta.env.BASE_URL}assets/paluxyriver.png`, width: 1536, height: 1024 },
 ];
 
 const testimonials = [
