@@ -10,6 +10,7 @@ export type Project = {
   cat: "Brand Identity" | "Logo & Packaging" | "Digital";
   image: string;
   heroBanner?: string;
+  wordmarkImage?: string;
   logoImage: string;
   alt: string;
   client: string;
@@ -46,6 +47,7 @@ const placeholderResults = (v: string) => [
 export const projects: Project[] = [
   {
     slug: "pelican-social-bar-and-grill",
+    wordmarkImage: `${import.meta.env.BASE_URL}assets/pelicansocial_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/pelicansocial_casestudybanner.webp`,
     n: "01",
     title: "Pelican Social Bar & Grill",
@@ -79,6 +81,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ikon-trailers",
+    wordmarkImage: `${import.meta.env.BASE_URL}assets/ikontrailers_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/ikontrailers_herobanner.webp`,
     n: "02",
     title: "Ikon Trailers",
@@ -112,6 +115,7 @@ export const projects: Project[] = [
   },
   {
     slug: "iron-acre-land-co",
+    wordmarkImage: `${import.meta.env.BASE_URL}assets/ironacre_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/ironacrelandco_herobanner.webp`,
     n: "03",
     title: "Iron Acre Land Co",
@@ -145,6 +149,7 @@ export const projects: Project[] = [
   },
   {
     slug: "friends-of-unionville",
+    wordmarkImage: `${import.meta.env.BASE_URL}assets/friendsofunionville_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/friendsofunionville_herobanner.webp`,
     n: "04",
     title: "Friends of Unionville",
@@ -178,6 +183,7 @@ export const projects: Project[] = [
   },
   {
     slug: "sound-curves",
+    wordmarkImage: `${import.meta.env.BASE_URL}assets/soundcurves_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/soundcurves_herobanner.webp`,
     n: "05",
     title: "Sound Curves",
@@ -216,6 +222,7 @@ export const projects: Project[] = [
   },
   {
     slug: "moods-n-meds",
+    wordmarkImage: `${import.meta.env.BASE_URL}assets/moodnmeds_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/moodnmeds_herobanner.webp`,
     n: "06",
     title: "Moods n Meds",
@@ -254,6 +261,7 @@ export const projects: Project[] = [
   },
   {
     slug: "yellow-dot-energy",
+    wordmarkImage: `${import.meta.env.BASE_URL}assets/yellowdot_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/yellowdot_herobanner.webp`,
     n: "07",
     title: "Yellow Dot Energy",
@@ -292,6 +300,7 @@ export const projects: Project[] = [
   },
   {
     slug: "green-essential-turf-and-mosquito",
+    wordmarkImage: `${import.meta.env.BASE_URL}assets/greenessentil_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/greenessentials_herobanner.webp`,
     n: "08",
     title: "Green Essential Turf & Mosquito",

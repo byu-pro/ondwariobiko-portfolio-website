@@ -271,6 +271,7 @@ img { content-visibility: auto; }
 [data-theme="light"] .monogram-passage__caption { color: #171914; }
 [data-theme="light"] .monogram-passage__index { color: #000000; }
 [data-theme="light"] .monogram-passage__edition { color: #55594c; }
+[data-theme="light"] .case-study-wordmark { filter: invert(1); }
 .bg-neutral-900 { --ink: #fff; --accent-ink: var(--neon); }
 [data-theme="light"] [class*="focus:border-neon"]:focus { border-color: #000000; }
 [data-theme="light"] .cursor-ring { mix-blend-mode: normal; }

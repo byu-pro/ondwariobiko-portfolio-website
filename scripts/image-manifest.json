@@ -309,5 +309,11 @@
       "public/assets/yellowdot_herobanner.webp",
       "public/assets/yellowdot_herobanner-600.webp"
     ]
+  },
+  "public/assets/yellowdot_wordmark.png": {
+    "hash": "bce175f35f3ee384c5fcd2aa8f0526c5c7959e8fb8072251d7b88489385d309e",
+    "outputs": [
+      "public/assets/yellowdot_wordmark.webp"
+    ]
   }
 }
