@@ -320,3 +320,13 @@ img { content-visibility: auto; }
 .hero-portrait__image { transform-origin: 50% 42%; animation: portrait-breathe 14s ease-in-out infinite alternate; }
 @keyframes portrait-breathe { from { transform: scale(1); } to { transform: scale(1.025); } }
 @media (prefers-reduced-motion: reduce) { .hero-portrait__image { animation: none; transform: none; } }
+
+@keyframes wordmark-reveal {
+  0% { opacity: 0; transform: translateY(36px) scale(0.94); filter: blur(12px); clip-path: inset(100% 0 0 0); }
+  60% { clip-path: inset(0 0 0 0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); clip-path: inset(0 0 0 0); }
+}
+@utility animate-wordmark-reveal { animation: wordmark-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.case-study-wordmark { transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease; will-change: transform, filter; }
+.case-study-wordmark:hover { transform: scale(1.025); filter: drop-shadow(0 0 24px color-mix(in srgb, var(--neon) 45%, transparent)); }
+[data-theme="light"] .case-study-wordmark:hover { filter: invert(1) drop-shadow(0 0 24px #00000040); }
