@@ -46,9 +46,25 @@ function CaseStudy() {
             <Link to="/work" className="hover:text-accent-ink transition-colors">← All work</Link>
             <span><span className="text-accent-ink">{p.n}</span> / {p.tag}</span>
           </div>
-          <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)]">
-            <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
-          </h1>
+          {p.wordmarkImage ? (
+            <h1 className="overflow-hidden py-2">
+              <span className="block overflow-hidden">
+                <img
+                  src={p.wordmarkImage}
+                  alt={p.title}
+                  width={2800}
+                  height={800}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="case-study-wordmark block animate-rise w-auto max-w-full h-auto max-h-[140px] sm:max-h-[240px] md:max-h-[340px] lg:max-h-[440px] object-contain object-left"
+                />
+              </span>
+            </h1>
+          ) : (
+            <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)]">
+              <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
+            </h1>
+          )}
           <p className="mt-8 max-w-3xl text-xl sm:text-2xl md:text-4xl font-light leading-tight text-ink/80">{p.headline}</p>
         </div>
       </section>
