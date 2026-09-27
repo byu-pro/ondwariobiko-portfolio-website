@@ -8,14 +8,14 @@ export function ProjectPreview({ project, detail = false }: { project: Project; 
   const [visible, setVisible] = useState(false);
   const [logoReady, setLogoReady] = useState(false);
   useEffect(() => {
-    // Cached images may finish before React hydrates and attaches onLoad.
+    if (detail) return;
     if (logo.current?.complete && logo.current.naturalWidth > 0) setLogoReady(true);
     const observer = new IntersectionObserver(([entry]) => setVisible(entry?.isIntersecting ?? false));
     if (container.current) observer.observe(container.current);
     return () => observer.disconnect();
-  }, []);
+  }, [detail]);
   return (
-    <div ref={container} className={`project-preview ${detail ? "project-preview--detail" : "aspect-[4/5]"}`} data-running={visible && logoReady}>
+    <div ref={container} className={`project-preview ${detail ? "project-preview--detail" : "aspect-[4/5]"}`} data-running={!detail && visible && logoReady}>
       <div className="project-preview__images">
         <img
           src={detail && project.heroBanner ? project.heroBanner : project.image}
@@ -29,19 +29,21 @@ export function ProjectPreview({ project, detail = false }: { project: Project; 
           decoding="async"
           className="project-preview__mockup"
         />
-        <img
-          ref={logo}
-          src={project.logoImage}
-          alt=""
-          aria-hidden="true"
-          width={1200}
-          height={1500}
-          loading="lazy"
-          decoding="async"
-          onLoad={() => setLogoReady(true)}
-          onError={() => setLogoReady(false)}
-          className="project-preview__logo"
-        />
+        {!detail && (
+          <img
+            ref={logo}
+            src={project.logoImage}
+            alt=""
+            aria-hidden="true"
+            width={1200}
+            height={1500}
+            loading="lazy"
+            decoding="async"
+            onLoad={() => setLogoReady(true)}
+            onError={() => setLogoReady(false)}
+            className="project-preview__logo"
+          />
+        )}
       </div>
     </div>
   );
