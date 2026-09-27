@@ -65,10 +65,10 @@ export const projects: Project[] = [
     insight: "Modern Caribbean hospitality thrives when it balances effortless beach-side relaxation with artisanal culinary care. The brand system highlights scratch-made quality within a laid-back boho-chic aesthetic.",
     process: brandProcess,
     palette: [
-      { name: "Pelican Navy", hex: "#1B2A38" },
-      { name: "Caribbean Teal", hex: "#2A9D8F" },
-      { name: "Sunset Sand", hex: "#F5EFE6" },
-      { name: "Accent Lime", hex: "#A6FF00" },
+      { name: "Pelican Teal", hex: "#09414A" },
+      { name: "Sunset Coral", hex: "#EF806A" },
+      { name: "Caribbean Sand", hex: "#EFC18E" },
+      { name: "Ocean Turquoise", hex: "#37B0B5" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
     results: [
@@ -107,10 +107,10 @@ export const projects: Project[] = [
     insight: "In commercial heavy equipment, authority is built on scale, simplicity, and steel-clad confidence. The mark must read instantly at 70 mph on Texas highways and on digital buyer portals.",
     process: brandProcess,
     palette: [
-      { name: "Asphalt Black", hex: "#0E0E10" },
-      { name: "Steel Grey", hex: "#3A3D40" },
-      { name: "Armor Silver", hex: "#9E9E9E" },
-      { name: "Accent Lime", hex: "#A6FF00" },
+      { name: "Ikon Red", hex: "#FE0000" },
+      { name: "Industrial Black", hex: "#0E0E10" },
+      { name: "Armor Red Accent", hex: "#FE4242" },
+      { name: "Steel White", hex: "#FFFFFF" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
     results: [
@@ -149,10 +149,10 @@ export const projects: Project[] = [
     insight: "Landowners and excavation contractors respect clarity and durability. A bold geometric emblem combining steel and earth creates immediate authority on job sites.",
     process: brandProcess,
     palette: [
-      { name: "Iron Charcoal", hex: "#1A1A1A" },
-      { name: "Earth Umber", hex: "#3D352E" },
-      { name: "Raw Steel", hex: "#8D99AE" },
-      { name: "Accent Lime", hex: "#A6FF00" },
+      { name: "Iron Black", hex: "#040807" },
+      { name: "Slate Steel", hex: "#464948" },
+      { name: "Raw Silver", hex: "#DADBDA" },
+      { name: "Pure White", hex: "#FFFFFF" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
     results: [
@@ -191,10 +191,10 @@ export const projects: Project[] = [
     insight: "Unionville's identity was born at a historic crossroads. An organic green and crimson palette paired with warm typography highlights togetherness, scenic beauty, and local pride.",
     process: brandProcess,
     palette: [
-      { name: "Crossroads Green", hex: "#1E4D2B" },
-      { name: "Historic Brick", hex: "#8B261D" },
-      { name: "Village Linen", hex: "#F4EAD4" },
-      { name: "Accent Lime", hex: "#A6FF00" },
+      { name: "Deep Forest", hex: "#163932" },
+      { name: "Historic Brick", hex: "#AE461F" },
+      { name: "Village Sun", hex: "#FCAD37" },
+      { name: "Linen Sand", hex: "#E7E1D6" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
     results: [
@@ -379,10 +379,10 @@ export const projects: Project[] = [
       { t: "Deliver", d: "Full file kit for print, vehicles and digital use." },
     ],
     palette: [
-      { name: "Turf Green", hex: "#1E4620" },
-      { name: "Pest Shield Teal", hex: "#0F5257" },
-      { name: "Fresh Grass Lime", hex: "#4CAF50" },
-      { name: "Accent Lime", hex: "#A6FF00" },
+      { name: "Turf Dark Green", hex: "#193B28" },
+      { name: "Mosquito Defense Blue", hex: "#1D324A" },
+      { name: "Lawn Leaf Green", hex: "#457342" },
+      { name: "Clean Grey", hex: "#E6E5E5" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
     results: [
