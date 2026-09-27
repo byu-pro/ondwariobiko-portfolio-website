@@ -56,7 +56,7 @@ function CaseStudy() {
                   height={800}
                   fetchPriority="high"
                   decoding="async"
-                  className="case-study-wordmark block animate-wordmark-reveal w-auto max-w-full h-auto max-h-[140px] sm:max-h-[240px] md:max-h-[340px] lg:max-h-[440px] object-contain object-center mx-auto"
+                  className="case-study-wordmark block animate-wordmark-reveal w-full max-w-[1200px] h-auto object-contain mx-auto"
                 />
               </span>
             </h1>
