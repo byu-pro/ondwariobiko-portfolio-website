@@ -136,12 +136,12 @@ function TermsPage() {
       <PageHero index="✺" eyebrow="The fine print" title="Terms" outline="of Service" />
       <section className="px-5 md:px-8 pb-24">
         <div className="max-w-[900px] mx-auto">
-          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 mb-10">
+          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-10">
             Last updated: September 25, 2026
           </p>
 
           <aside className="border-l-2 border-neon pl-5 mb-14">
-            <p className="text-white/70 leading-relaxed">
+            <p className="text-ink/70 leading-relaxed">
               This is a strong starting template, not formal legal advice. Before publishing,
               consider a quick review by a local lawyer or a templated legal review service —
               especially since projects span different legal jurisdictions.
@@ -150,23 +150,23 @@ function TermsPage() {
 
           <div className="space-y-12">
             {sections.map((s) => (
-              <div key={s.n} className="border-t border-white/10 pt-8">
+              <div key={s.n} className="border-t border-ink/10 pt-8">
                 <div className="flex items-baseline gap-4 mb-4">
-                  <span className="font-mono text-xs text-neon">{s.n}</span>
+                  <span className="font-mono text-xs text-accent-ink">{s.n}</span>
                   <h2 className="font-display uppercase tracking-tighter text-2xl sm:text-3xl leading-[0.95]">{s.title}</h2>
                 </div>
                 <div className="space-y-3">
                   {s.body.map((p, i) => (
-                    <p key={i} className="text-white/70 leading-relaxed max-w-[65ch]">{p}</p>
+                    <p key={i} className="text-ink/70 leading-relaxed max-w-[65ch]">{p}</p>
                   ))}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 border-t border-white/10 pt-10">
-            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 mb-3">Still have questions?</p>
-            <a href="mailto:ondwariobiko@gmail.com" className="group inline-flex max-w-full flex-wrap items-center gap-3 break-all font-display uppercase tracking-tighter text-2xl sm:text-3xl hover:text-neon transition-colors">
+          <div className="mt-16 border-t border-ink/10 pt-10">
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-3">Still have questions?</p>
+            <a href="mailto:ondwariobiko@gmail.com" className="group inline-flex max-w-full flex-wrap items-center gap-3 break-all font-display uppercase tracking-tighter text-2xl sm:text-3xl hover:text-accent-ink transition-colors">
               ondwariobiko@gmail.com <span className="shrink-0 transition-transform duration-500 group-hover:translate-x-2">↗</span>
             </a>
           </div>

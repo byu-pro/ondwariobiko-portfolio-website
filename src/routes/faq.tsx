@@ -64,17 +64,17 @@ function FaqPage() {
           {groups.map((g, gi) => (
             <div key={g.title} className="grid md:grid-cols-12 gap-8 md:gap-12" data-reveal>
               <div className="md:col-span-4">
-                <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-3">0{gi + 1}</p>
+                <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-3">0{gi + 1}</p>
                 <h2 className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-[0.9]">{g.title}</h2>
               </div>
-              <div className="md:col-span-8 divide-y divide-white/10 border-y border-white/10">
+              <div className="md:col-span-8 divide-y divide-white/10 border-y border-ink/10">
                 {g.items.map((f) => (
                   <details key={f.q} className="group py-6 md:py-8">
                     <summary className="flex items-center justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                      <span className="font-display text-lg md:text-2xl uppercase tracking-tight group-hover:text-neon transition-colors duration-300">{f.q}</span>
-                      <span className="shrink-0 font-display text-3xl text-neon transition-transform duration-300 group-open:rotate-45 select-none">+</span>
+                      <span className="font-display text-lg md:text-2xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">{f.q}</span>
+                      <span className="shrink-0 font-display text-3xl text-accent-ink transition-transform duration-300 group-open:rotate-45 select-none">+</span>
                     </summary>
-                    <p className="mt-4 max-w-2xl text-white/60 font-light leading-relaxed">{f.a}</p>
+                    <p className="mt-4 max-w-2xl text-ink/60 font-light leading-relaxed">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -86,12 +86,12 @@ function FaqPage() {
       <section className="px-5 md:px-8 pb-24 md:pb-32">
         <div className="max-w-[1400px] mx-auto border border-neon/40 bg-neon/[0.03] p-8 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-8" data-reveal>
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-3">Still curious?</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-3">Still curious?</p>
             <h2 className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-[0.9]">Ask me directly —<br />no obligation.</h2>
           </div>
           <div className="flex flex-wrap gap-4">
             <Link to="/consultation" className="px-8 py-4 bg-neon text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300">Free 1-hr consult</Link>
-            <Link to="/contact" className="px-8 py-4 border border-white/20 font-mono text-xs uppercase tracking-widest hover:border-neon hover:text-neon transition-colors duration-300">Send a brief</Link>
+            <Link to="/contact" className="px-8 py-4 border border-ink/20 font-mono text-xs uppercase tracking-widest hover:border-neon hover:text-accent-ink transition-colors duration-300">Send a brief</Link>
           </div>
         </div>
       </section>

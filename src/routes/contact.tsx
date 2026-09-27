@@ -47,7 +47,7 @@ function ContactPage() {
             <span className="text-stroke">Tell me about your project</span> —
             I'll reply within 24–48 hours.
           </p>
-          <p className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-white/50">
+          <p className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-ink/50">
             Remote worldwide · working across time zones, from first concept to final delivery
           </p>
         </div>
@@ -62,37 +62,37 @@ function ContactPage() {
           <aside className="lg:col-span-5 space-y-12">
             {/* 4 — alternative contact methods */}
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 mb-4">
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-4">
                 Prefer to reach out directly?
               </p>
-              <div className="border-t border-white/15">
-                <a href="mailto:ondwariobiko@gmail.com" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-white/15">
+              <div className="border-t border-ink/15">
+                <a href="mailto:ondwariobiko@gmail.com" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-ink/15">
                   <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
-                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 group-hover:text-black px-2">Email — best way to reach me</span>
+                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 group-hover:text-black px-2">Email — best way to reach me</span>
                   <span className="relative break-all font-display uppercase tracking-tighter text-xl sm:text-2xl group-hover:text-black px-2 transition-transform duration-500 group-hover:-translate-x-2">ondwariobiko@gmail.com ↗</span>
                 </a>
-                <a href="https://wa.me/254702255575" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-white/15">
+                <a href="https://wa.me/254702255575" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-ink/15">
                   <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
-                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 group-hover:text-black px-2">WhatsApp — easiest for calls & video</span>
+                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 group-hover:text-black px-2">WhatsApp — easiest for calls & video</span>
                   <span className="relative font-display uppercase tracking-tighter text-xl sm:text-2xl group-hover:text-black px-2 transition-transform duration-500 group-hover:-translate-x-2">+254 702 255 575 ↗</span>
                 </a>
-                <a href="https://www.behance.net/johnobiko" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-white/15">
+                <a href="https://www.behance.net/johnobiko" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-ink/15">
                   <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
-                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 group-hover:text-black px-2">Behance</span>
+                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 group-hover:text-black px-2">Behance</span>
                   <span className="relative font-display uppercase tracking-tighter text-xl sm:text-2xl group-hover:text-black px-2 transition-transform duration-500 group-hover:-translate-x-2">/johnobiko ↗</span>
                 </a>
-                <a href="https://www.linkedin.com/in/ondwariobiko/" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-white/15">
+                <a href="https://www.linkedin.com/in/ondwariobiko/" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-ink/15">
                   <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
-                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 group-hover:text-black px-2">LinkedIn</span>
+                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 group-hover:text-black px-2">LinkedIn</span>
                   <span className="relative font-display uppercase tracking-tighter text-xl sm:text-2xl group-hover:text-black px-2 transition-transform duration-500 group-hover:-translate-x-2">/in/ondwariobiko ↗</span>
                 </a>
               </div>
             </div>
 
             {/* 5 — what happens next */}
-            <div className="border border-white/15 rounded-2xl p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-neon mb-4">What happens next</p>
-              <p className="text-white/80 leading-relaxed">
+            <div className="border border-ink/15 rounded-2xl p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-4">What happens next</p>
+              <p className="text-ink/80 leading-relaxed">
                 I'll review your project details and follow up within 24–48 hours — either with
                 clarifying questions or a proposed next step, like a quick call or a custom quote.
               </p>
@@ -103,8 +103,8 @@ function ContactPage() {
               <blockquote className="font-display uppercase tracking-tighter text-2xl sm:text-3xl leading-[0.95]">
                 "Helped us launch a fintech brand now serving customers in 12 countries."
               </blockquote>
-              <figcaption className="mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">
-                — Founder, Aura Finance <span className="text-neon">*</span>
+              <figcaption className="mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
+                — Founder, Aura Finance <span className="text-accent-ink">*</span>
               </figcaption>
             </figure>
           </aside>
@@ -154,13 +154,13 @@ function InquiryForm() {
   };
 
   const fieldClass =
-    "w-full bg-transparent border-b border-white/20 py-3 text-lg text-white outline-none focus:border-neon transition-colors placeholder:text-white/30";
+    "w-full bg-transparent border-b border-ink/20 py-3 text-lg text-ink outline-none focus:border-neon transition-colors placeholder:text-ink/30";
   const labelClass =
-    "font-mono text-[10px] uppercase tracking-[0.25em] text-white/50";
+    "font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50";
 
   return (
     <form onSubmit={submit} className="lg:col-span-7 space-y-8">
-      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">
+      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
         Project inquiry
       </p>
 
@@ -210,9 +210,9 @@ function InquiryForm() {
             onChange={(e) => setType(e.target.value)}
             className={`${fieldClass} appearance-none cursor-pointer`}
           >
-            <option value="" className="bg-black">Select…</option>
+            <option value="" className="bg-surface">Select…</option>
             {projectTypes.map((t) => (
-              <option key={t} value={t} className="bg-black">{t}</option>
+              <option key={t} value={t} className="bg-surface">{t}</option>
             ))}
           </select>
         </label>
@@ -228,9 +228,9 @@ function InquiryForm() {
             onChange={(e) => setStart(e.target.value)}
             className={`${fieldClass} appearance-none cursor-pointer`}
           >
-            <option value="" className="bg-black">Select…</option>
+            <option value="" className="bg-surface">Select…</option>
             {startOptions.map((s) => (
-              <option key={s} value={s} className="bg-black">{s}</option>
+              <option key={s} value={s} className="bg-surface">{s}</option>
             ))}
           </select>
         </label>
@@ -241,9 +241,9 @@ function InquiryForm() {
             onChange={(e) => setSource(e.target.value)}
             className={`${fieldClass} appearance-none cursor-pointer`}
           >
-            <option value="" className="bg-black">Select…</option>
+            <option value="" className="bg-surface">Select…</option>
             {sources.map((s) => (
-              <option key={s} value={s} className="bg-black">{s}</option>
+              <option key={s} value={s} className="bg-surface">{s}</option>
             ))}
           </select>
         </label>
@@ -258,12 +258,12 @@ function InquiryForm() {
           value={details}
           onChange={(e) => setDetails(e.target.value)}
           placeholder="What are you building, and what problem should this design solve?"
-          className="w-full bg-transparent border-b border-white/20 py-3 text-lg text-white outline-none focus:border-neon transition-colors placeholder:text-white/30 resize-none"
+          className="w-full bg-transparent border-b border-ink/20 py-3 text-lg text-ink outline-none focus:border-neon transition-colors placeholder:text-ink/30 resize-none"
         />
       </label>
 
       {error && (
-        <p className="font-mono text-xs text-neon">{error}</p>
+        <p className="font-mono text-xs text-accent-ink">{error}</p>
       )}
 
       <button
@@ -271,9 +271,9 @@ function InquiryForm() {
         className="group inline-flex items-center justify-between gap-6 rounded-full bg-neon text-black pl-8 pr-2 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-transform hover:scale-[1.02]"
       >
         <span>Send the brief</span>
-        <span className="size-12 rounded-full bg-black text-neon grid place-items-center transition-transform duration-500 group-hover:rotate-45">↗</span>
+        <span className="size-12 rounded-full bg-black text-accent-ink grid place-items-center transition-transform duration-500 group-hover:rotate-45">↗</span>
       </button>
-      <p className="font-mono text-[10px] uppercase tracking-widest text-white/35">
+      <p className="font-mono text-[10px] uppercase tracking-widest text-ink/35">
         Opens WhatsApp with your details pre-typed — or email ondwariobiko@gmail.com directly.
       </p>
     </form>
@@ -294,19 +294,19 @@ const contactFaqs = [
 
 function ContactFaq() {
   return (
-    <section className="px-5 md:px-8 pb-24 border-t border-white/10 pt-16">
+    <section className="px-5 md:px-8 pb-24 border-t border-ink/10 pt-16">
       <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-10">
-        <p className="lg:col-span-4 font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">
+        <p className="lg:col-span-4 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
           Before you ask
         </p>
         <div className="lg:col-span-8 space-y-3">
           {contactFaqs.map((f) => (
-            <details key={f.q} className="group border-b border-white/15 py-6">
+            <details key={f.q} className="group border-b border-ink/15 py-6">
               <summary className="flex items-center justify-between gap-4 cursor-pointer list-none">
                 <span className="font-display uppercase tracking-tighter text-xl sm:text-2xl leading-[0.95]">{f.q}</span>
-                <span className="font-mono text-neon text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
+                <span className="font-mono text-accent-ink text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
               </summary>
-              <p className="mt-4 max-w-[60ch] text-white/70 leading-relaxed">{f.a}</p>
+              <p className="mt-4 max-w-[60ch] text-ink/70 leading-relaxed">{f.a}</p>
             </details>
           ))}
         </div>

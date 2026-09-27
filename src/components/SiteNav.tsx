@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { to: "/", label: "Index", hint: "Where it begins" },
@@ -42,25 +43,26 @@ export function SiteNav() {
 
   return (
     <>
-      <header className={`fixed top-0 inset-x-0 z-[60] px-5 md:px-8 flex items-center justify-between transition-all duration-500 ${open ? "py-5 bg-transparent" : scrolled ? "py-3 bg-black/50 backdrop-blur-xl border-b border-white/10" : "py-5 bg-transparent border-b border-transparent"}`}>
+      <header data-menu-open={open} className={`fixed top-0 inset-x-0 z-[60] px-5 md:px-8 flex items-center justify-between transition-all duration-500 ${open ? "py-5 bg-transparent" : scrolled ? "py-3 bg-surface/50 backdrop-blur-xl border-b border-ink/10" : "py-5 bg-transparent border-b border-transparent"}`}>
         <Link to="/" className="flex items-center gap-4 group">
-          <img src={`${import.meta.env.BASE_URL}assets/${open ? "logoblack.png" : "logowhite.png"}`} alt="ondwariobiko monogram" width={64} height={64} className={`object-contain ${open ? "rounded-full" : ""} ${scrolled && !open ? "size-11 md:size-12" : "size-12 md:size-14"}`} style={{ transition: "all 0.6s" }} />
-          <span className={`hidden sm:block font-display text-2xl uppercase tracking-tight leading-none ${open ? "text-black" : "text-white"}`}>
-            ondwari<span className={open ? "text-black/50" : "text-neon"}>obiko</span>
+          <img src={`${import.meta.env.BASE_URL}assets/${open ? "logoblack.png" : "logowhite.png"}`} alt="ondwariobiko monogram" width={64} height={64} className={`nav-logo object-contain ${open ? "rounded-full" : ""} ${scrolled && !open ? "size-11 md:size-12" : "size-12 md:size-14"}`} style={{ transition: "all 0.6s" }} />
+          <span className={`hidden sm:block font-display text-2xl uppercase tracking-tight leading-none ${open ? "text-black" : "text-ink"}`}>
+            ondwari<span className={open ? "text-black/50" : "text-accent-ink"}>obiko</span>
           </span>
         </Link>
 
-        <div className={`${open ? "lg:hidden" : ""} hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-white/60 border border-white/15 rounded-full px-4 py-2 backdrop-blur bg-black/40`}>
+        <div className={`${open ? "lg:hidden" : ""} hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60 border border-ink/15 rounded-full px-4 py-2 backdrop-blur bg-surface/40`}>
           <span className="size-1.5 rounded-full bg-neon animate-pulse" />
           Available · Remote <WorldClock /> UTC
         </div>
 
+        <div className="flex items-center gap-3"><ThemeToggle />
         <button
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close menu" : "Open menu"}
           className="relative z-[60] flex items-center gap-3 group"
         >
-          <span className={`font-mono text-xs uppercase tracking-[0.25em] transition-colors ${open ? "text-black" : "text-white group-hover:text-neon"}`}>
+          <span className={`font-mono text-xs uppercase tracking-[0.25em] transition-colors ${open ? "text-black" : "text-ink group-hover:text-accent-ink"}`}>
             {open ? "Close" : "Menu"}
           </span>
           <span className={`size-14 rounded-full grid place-items-center transition-all duration-500 ${open ? "bg-black rotate-90" : "bg-neon group-hover:scale-110"}`}>
@@ -69,7 +71,7 @@ export function SiteNav() {
               <span className={`absolute left-0 h-0.5 transition-all duration-500 ${open ? "top-1.5 w-5 -rotate-45 bg-neon" : "top-2.5 w-3 bg-black"}`} />
             </span>
           </span>
-        </button>
+        </button></div>
       </header>
 
       {open && (
@@ -99,7 +101,7 @@ export function SiteNav() {
               })}
             </ul>
           </div>
-          <div className="shrink-0 overflow-hidden bg-black text-neon py-4">
+          <div className="shrink-0 overflow-hidden bg-black text-accent-ink py-4">
             <div className="flex w-max animate-marquee font-display uppercase text-2xl tracking-tight whitespace-nowrap">
               {Array.from({ length: 2 }).map((_, k) => (
                 <span key={k} className="flex">

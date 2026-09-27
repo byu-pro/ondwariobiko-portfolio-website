@@ -24,7 +24,7 @@ export function BudgetField({
 
   return (
     <fieldset>
-      <legend className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50 mb-4">{label}</legend>
+      <legend className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-4">{label}</legend>
       <div className="flex flex-wrap items-center gap-2">
         {(["USD", "KSh"] as const).map((c) => (
           <button
@@ -35,7 +35,7 @@ export function BudgetField({
               emit(c, amount);
             }}
             className={`rounded-full border px-4 py-2 text-sm transition-colors ${
-              currency === c ? "bg-neon text-black border-neon" : "border-white/20 hover:border-neon hover:text-neon"
+              currency === c ? "bg-neon text-black border-neon" : "border-ink/20 hover:border-neon hover:text-accent-ink"
             }`}
           >
             {c}
@@ -51,10 +51,10 @@ export function BudgetField({
             emit(currency, v);
           }}
           placeholder={currency === "USD" ? "e.g. 1,500" : "e.g. 80,000"}
-          className={`flex-1 min-w-[140px] bg-transparent border-b border-white/20 py-2 text-lg outline-none focus:border-neon transition-colors placeholder:text-white/30 ${dark ? "text-white" : ""}`}
+          className={`flex-1 min-w-[140px] bg-transparent border-b border-ink/20 py-2 text-lg outline-none focus:border-neon transition-colors placeholder:text-ink/30 ${dark ? "text-ink" : ""}`}
         />
       </div>
-      <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-white/35">
+      <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-ink/35">
         A rough range is fine — I scope to fit, and I'll be honest if a brief isn't a match
       </p>
     </fieldset>

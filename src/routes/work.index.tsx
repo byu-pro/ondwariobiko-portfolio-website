@@ -28,7 +28,7 @@ function WorkPage() {
       {/* Intro line */}
       <section className="px-5 md:px-8 pb-12">
         <div className="max-w-[1400px] mx-auto" data-reveal>
-          <p className="text-lg md:text-2xl font-light leading-relaxed text-white/70 max-w-3xl">
+          <p className="text-lg md:text-2xl font-light leading-relaxed text-ink/70 max-w-3xl">
             A selection of brand identities, logo systems and digital products for clients across
             fintech, hospitality, coffee and SaaS — each one a full story, not just a pretty picture.
           </p>
@@ -38,13 +38,13 @@ function WorkPage() {
       {/* Filter bar */}
       <section className="px-5 md:px-8 pb-12 md:pb-16 sticky top-[72px] z-30">
         <div className="max-w-[1400px] mx-auto">
-          <div className="inline-flex flex-wrap gap-1 bg-black/60 backdrop-blur-xl border border-white/10 p-1">
+          <div className="inline-flex flex-wrap gap-1 bg-surface/60 backdrop-blur-xl border border-ink/10 p-1">
             {filters.map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
                 className={`font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] px-4 md:px-6 py-3 transition-colors duration-300 cursor-pointer ${
-                  filter === f ? "bg-neon text-black" : "text-white/50 hover:text-white"
+                  filter === f ? "bg-neon text-black" : "text-ink/50 hover:text-ink"
                 }`}
               >
                 {f}
@@ -66,7 +66,7 @@ function WorkPage() {
               style={{ transitionDelay: `${(i % 2) * 120}ms` }}
               className={`group ${i % 2 ? "sm:mt-24" : ""}`}
             >
-              <div className="overflow-hidden mb-6 border border-white/10 group-hover:border-neon/50 transition-colors duration-500">
+              <div className="overflow-hidden mb-6 border border-ink/10 group-hover:border-neon/50 transition-colors duration-500">
                 <img
                   src={p.image}
                   alt={p.alt}
@@ -78,12 +78,12 @@ function WorkPage() {
                 />
               </div>
               <div className="flex justify-between items-baseline gap-4">
-                <h2 className="font-display text-2xl sm:text-3xl uppercase tracking-tight group-hover:text-neon transition-colors duration-300">
+                <h2 className="font-display text-2xl sm:text-3xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">
                   {p.title}
                 </h2>
-                <span className="font-mono text-xs text-white/40 shrink-0">{p.year} ↗</span>
+                <span className="font-mono text-xs text-ink/40 shrink-0">{p.year} ↗</span>
               </div>
-              <p className="font-mono text-xs uppercase tracking-widest text-white/50 mt-2">
+              <p className="font-mono text-xs uppercase tracking-widest text-ink/50 mt-2">
                 {p.client} — {p.tag}
               </p>
             </Link>
@@ -93,8 +93,8 @@ function WorkPage() {
 
       {/* Closing CTA */}
       <section className="px-5 md:px-8 pb-24 md:pb-32">
-        <div className="max-w-[1400px] mx-auto border border-white/10 p-10 md:p-20 text-center" data-reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-6">Have a similar project in mind?</p>
+        <div className="max-w-[1400px] mx-auto border border-ink/10 p-10 md:p-20 text-center" data-reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-6">Have a similar project in mind?</p>
           <h2 className="font-display text-4xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85] mb-10">
             Let's <span className="text-stroke">Talk</span>
           </h2>

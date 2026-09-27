@@ -67,26 +67,26 @@ function TestimonialsPage() {
 
       <section className="px-5 md:px-8 pb-24 md:pb-32">
         <div className="max-w-[1400px] mx-auto">
-          <p className="max-w-2xl text-white/60 font-light leading-relaxed mb-14 md:mb-20" data-reveal>
+          <p className="max-w-2xl text-ink/60 font-light leading-relaxed mb-14 md:mb-20" data-reveal>
             Every project ends with a debrief — here's what clients say after the dust settles. Results are theirs; the words are theirs too.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {reviews.map((r) => (
               <figure
                 key={r.name}
-                className="border border-white/10 p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-white/[0.02] transition-colors duration-500"
+                className="border border-ink/10 p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-ink/[0.02] transition-colors duration-500"
                 data-reveal
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="font-display text-5xl text-neon leading-none select-none">“</span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40 border border-white/10 px-3 py-1.5">{r.project}</span>
+                  <span className="font-display text-5xl text-accent-ink leading-none select-none">“</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40 border border-ink/10 px-3 py-1.5">{r.project}</span>
                 </div>
                 <blockquote className="text-base md:text-lg font-light leading-snug flex-1">{r.quote}</blockquote>
-                <div className="border-t border-white/10 pt-5">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-neon mb-2">{r.result}</p>
+                <div className="border-t border-ink/10 pt-5">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-2">{r.result}</p>
                   <figcaption>
                     <p className="font-display uppercase tracking-tight text-sm">{r.name}</p>
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 mt-1">{r.role}</p>
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-ink/40 mt-1">{r.role}</p>
                   </figcaption>
                 </div>
               </figure>
@@ -98,12 +98,12 @@ function TestimonialsPage() {
       <section className="px-5 md:px-8 pb-24 md:pb-32">
         <div className="max-w-[1400px] mx-auto border border-neon/40 bg-neon/[0.03] p-8 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-8" data-reveal>
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-3">Your story next?</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-3">Your story next?</p>
             <h2 className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-[0.9]">Let's make something<br />worth talking about.</h2>
           </div>
           <div className="flex flex-wrap gap-4">
             <Link to="/consultation" className="px-8 py-4 bg-neon text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors duration-300">Free 1-hr consult</Link>
-            <Link to="/work" className="px-8 py-4 border border-white/20 font-mono text-xs uppercase tracking-widest hover:border-neon hover:text-neon transition-colors duration-300">See the work</Link>
+            <Link to="/work" className="px-8 py-4 border border-ink/20 font-mono text-xs uppercase tracking-widest hover:border-neon hover:text-accent-ink transition-colors duration-300">See the work</Link>
           </div>
         </div>
       </section>

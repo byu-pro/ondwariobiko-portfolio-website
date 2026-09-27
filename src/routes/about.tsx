@@ -60,11 +60,11 @@ function AboutPage() {
       {/* 1 — Opening hook: philosophy, not a bio dump */}
       <section className="px-5 md:px-8 pt-16 md:pt-28 pb-20 md:pb-32">
         <div className="max-w-[1400px] mx-auto">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-neon mb-8">⟶ The philosophy</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-ink mb-8">⟶ The philosophy</p>
           <h2 className="font-display font-black text-[8vw] sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tight max-w-[16ch]">
-            Every logo I draw starts with a <span className="text-neon">pencil</span>, not a font.
+            Every logo I draw starts with a <span className="text-accent-ink">pencil</span>, not a font.
           </h2>
-          <p className="mt-10 max-w-[52ch] text-lg sm:text-xl text-white/70 leading-relaxed">
+          <p className="mt-10 max-w-[52ch] text-lg sm:text-xl text-ink/70 leading-relaxed">
             For over ten years I've built brand identities and websites for clients around the world — combining
             hand-drawn craftsmanship with the technical precision of a front-end developer. No templates, no
             generators, no shortcuts. Just marks made deliberately, built to last.
@@ -77,7 +77,7 @@ function AboutPage() {
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-10 md:gap-16 items-center">
           {/* photo placeholder — replace with a real portrait */}
           <div className="md:col-span-5">
-            <div className="relative aspect-[4/5] bg-neutral-900 border border-white/10 overflow-hidden group">
+            <div className="relative aspect-[4/5] bg-neutral-900 border border-ink/10 overflow-hidden group">
               <div className="absolute inset-0 grid place-items-center">
                 <img
                   src={`${import.meta.env.BASE_URL}assets/logowhite.png`}
@@ -89,18 +89,18 @@ function AboutPage() {
               </div>
               <div className="absolute inset-0 ring-1 ring-inset ring-neon/20" />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">
                   ⟶ Real photo goes here
                 </p>
               </div>
             </div>
           </div>
           <div className="md:col-span-7">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-neon mb-6">⟶ Who I am</p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-ink mb-6">⟶ Who I am</p>
             <p className="text-2xl sm:text-3xl md:text-4xl font-light leading-snug">
-              I'm <span className="text-neon">ondwariobiko</span> — a graphic and web designer working remotely with
+              I'm <span className="text-accent-ink">ondwariobiko</span> — a graphic and web designer working remotely with
               clients worldwide. I specialise in flat vector logo design, mascot illustration and full brand identity
-              systems — and I <span className="text-neon font-display font-black">design and build</span> the websites
+              systems — and I <span className="text-accent-ink font-display font-black">design and build</span> the websites
               that bring them to life.
             </p>
           </div>
@@ -110,18 +110,18 @@ function AboutPage() {
       {/* 3 — What makes the work different: craft pillars */}
       <section className="px-5 md:px-8 pb-20 md:pb-32">
         <div className="max-w-[1400px] mx-auto">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-neon mb-10">⟶ What makes it different</p>
-          <div className="grid md:grid-cols-3 gap-px bg-white/15 border border-white/15">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-ink mb-10">⟶ What makes it different</p>
+          <div className="grid md:grid-cols-3 gap-px bg-ink/15 border border-ink/15">
             {pillars.map((p) => (
               <div
                 key={p.n}
-                className="group bg-black p-8 md:p-10 min-h-[280px] flex flex-col transition-colors hover:bg-neon hover:text-black"
+                className="group bg-surface p-8 md:p-10 min-h-[280px] flex flex-col transition-colors hover:bg-neon hover:text-black"
               >
-                <span className="font-display text-5xl text-neon group-hover:text-black transition-colors mb-6">
+                <span className="font-display text-5xl text-accent-ink group-hover:text-black transition-colors mb-6">
                   {p.n}
                 </span>
                 <h3 className="font-display font-bold text-xl mb-4 leading-tight">{p.title}</h3>
-                <p className="text-sm text-white/60 group-hover:text-black/80 leading-relaxed transition-colors">
+                <p className="text-sm text-ink/60 group-hover:text-black/80 leading-relaxed transition-colors">
                   {p.body}
                 </p>
               </div>
@@ -133,16 +133,16 @@ function AboutPage() {
       {/* 4 — Experience / credibility markers + platform badges */}
       <section className="px-5 md:px-8 pb-20 md:pb-32">
         <div className="max-w-[1400px] mx-auto">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-neon mb-10">⟶ Track record</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-ink mb-10">⟶ Track record</p>
 
           {/* stat band */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16 border-y border-white/15 py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16 border-y border-ink/15 py-12">
             {markers.map(([n, l]) => (
               <div key={l}>
-                <div className="font-display font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter text-neon">
+                <div className="font-display font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter text-accent-ink">
                   {n}
                 </div>
-                <div className="font-mono text-[10px] uppercase tracking-widest mt-3 text-white/50">{l}</div>
+                <div className="font-mono text-[10px] uppercase tracking-widest mt-3 text-ink/50">{l}</div>
               </div>
             ))}
           </div>
@@ -152,10 +152,10 @@ function AboutPage() {
             {platforms.map((pl) => (
               <div
                 key={pl.name}
-                className="border border-white/15 p-6 flex items-center justify-between hover:border-neon transition-colors"
+                className="border border-ink/15 p-6 flex items-center justify-between hover:border-neon transition-colors"
               >
                 <span className="font-display font-bold text-lg">{pl.name}</span>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-neon border border-neon/40 px-2 py-1 rounded-full">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-accent-ink border border-neon/40 px-2 py-1 rounded-full">
                   {pl.badge}
                 </span>
               </div>
@@ -170,11 +170,11 @@ function AboutPage() {
           <p className="text-xl sm:text-2xl md:text-3xl font-light leading-snug max-w-[48ch]">
             I approach every project the same way — understanding the brief deeply, sketching multiple directions
             by hand, and refining until the result feels{" "}
-            <span className="text-neon font-display font-black">inevitable</span>, not arbitrary.
+            <span className="text-accent-ink font-display font-black">inevitable</span>, not arbitrary.
           </p>
           <Link
             to="/work"
-            className="inline-flex items-center gap-2 mt-8 font-mono text-xs uppercase tracking-[0.2em] text-neon hover:gap-4 transition-all"
+            className="inline-flex items-center gap-2 mt-8 font-mono text-xs uppercase tracking-[0.2em] text-accent-ink hover:gap-4 transition-all"
           >
             See it in the work ⟶
           </Link>
@@ -184,12 +184,12 @@ function AboutPage() {
       {/* tools strip */}
       <section className="px-5 md:px-8 pb-20 md:pb-32">
         <div className="max-w-[1400px] mx-auto">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40 mb-6">⟶ Tools of the trade</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40 mb-6">⟶ Tools of the trade</p>
           <div className="flex flex-wrap gap-3">
             {tools.map((t) => (
               <span
                 key={t}
-                className="font-mono text-sm border border-white/15 px-4 py-2 rounded-full text-white/70 hover:border-neon hover:text-neon transition-colors"
+                className="font-mono text-sm border border-ink/15 px-4 py-2 rounded-full text-ink/70 hover:border-neon hover:text-accent-ink transition-colors"
               >
                 {t}
               </span>
@@ -201,8 +201,8 @@ function AboutPage() {
       {/* 6 — Personal touch */}
       <section className="px-5 md:px-8 pb-20 md:pb-32">
         <div className="max-w-[1400px] mx-auto">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-neon mb-6">⟶ On the detail</p>
-          <p className="text-2xl sm:text-3xl md:text-4xl font-light italic leading-snug max-w-[44ch] text-white/80">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-ink mb-6">⟶ On the detail</p>
+          <p className="text-2xl sm:text-3xl md:text-4xl font-light italic leading-snug max-w-[44ch] text-ink/80">
             "I care about getting the details right — for me, a good brand isn't just something that looks good,
             it's something that works hard for the business behind it."
           </p>
@@ -211,10 +211,10 @@ function AboutPage() {
 
       {/* 8 — Closing CTA */}
       <section className="px-5 md:px-8 pb-28 md:pb-40">
-        <div className="max-w-[1400px] mx-auto border-t border-white/15 pt-16 text-center">
+        <div className="max-w-[1400px] mx-auto border-t border-ink/15 pt-16 text-center">
           <h2 className="font-display font-black text-5xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight">
             Have a project<br />
-            in <span className="text-neon">mind?</span>
+            in <span className="text-accent-ink">mind?</span>
           </h2>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -225,7 +225,7 @@ function AboutPage() {
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 border border-white/25 text-white font-mono text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:border-neon hover:text-neon transition-all"
+              className="inline-flex items-center gap-2 border border-ink/25 text-ink font-mono text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:border-neon hover:text-accent-ink transition-all"
             >
               See services
             </Link>

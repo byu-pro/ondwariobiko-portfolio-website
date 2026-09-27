@@ -145,8 +145,8 @@ function ServicesPage() {
       {/* Opening framing line */}
       <section className="px-5 md:px-8 pb-10 md:pb-16">
         <div className="max-w-[1400px] mx-auto">
-          <p data-reveal className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-white/80 max-w-3xl">
-            Custom brand identities and logo systems for founders who want something <span className="text-neon">built to last, not templated.</span> Hand-drawn, concept-driven, no AI shortcuts — and the same hands that design it build it.
+          <p data-reveal className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight tracking-tight text-ink/80 max-w-3xl">
+            Custom brand identities and logo systems for founders who want something <span className="text-accent-ink">built to last, not templated.</span> Hand-drawn, concept-driven, no AI shortcuts — and the same hands that design it build it.
           </p>
         </div>
       </section>
@@ -154,34 +154,34 @@ function ServicesPage() {
       {/* Core service packages */}
       <section className="px-5 md:px-8 pb-24">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/15 border border-white/15">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/15 border border-ink/15">
             {packages.map((p) => (
               <div
                 key={p.t}
                 data-reveal
-                className="group bg-black p-6 sm:p-8 flex flex-col transition-colors duration-500 hover:bg-neon hover:text-black sm:min-h-[460px]"
+                className="group bg-surface p-6 sm:p-8 flex flex-col transition-colors duration-500 hover:bg-neon hover:text-black sm:min-h-[460px]"
               >
                 <div className="flex justify-between items-start font-mono text-xs">
-                  <span className="text-neon group-hover:text-black">{p.n}</span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 group-hover:text-black/60">Scoped per project</span>
+                  <span className="text-accent-ink group-hover:text-black">{p.n}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40 group-hover:text-black/60">Scoped per project</span>
                 </div>
 
                 <h3 className="mt-6 font-display uppercase tracking-tighter text-3xl sm:text-4xl leading-[0.9] transition-transform duration-500 group-hover:-translate-y-1">
                   {p.t}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/60 group-hover:text-black/70">{p.blurb}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink/60 group-hover:text-black/70">{p.blurb}</p>
 
                 <ul className="mt-5 flex flex-col gap-2">
                   {p.includes.map((x) => (
-                    <li key={x} className="flex items-start gap-2 text-sm text-white/70 group-hover:text-black/80">
-                      <span className="text-neon group-hover:text-black mt-1 shrink-0">→</span>
+                    <li key={x} className="flex items-start gap-2 text-sm text-ink/70 group-hover:text-black/80">
+                      <span className="text-accent-ink group-hover:text-black mt-1 shrink-0">→</span>
                       {x}
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-auto pt-6 border-t border-white/10 group-hover:border-black/15">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neon group-hover:text-black">
+                <div className="mt-auto pt-6 border-t border-ink/10 group-hover:border-black/15">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-ink group-hover:text-black">
                     {p.ideal}
                   </span>
                 </div>
@@ -192,10 +192,10 @@ function ServicesPage() {
       </section>
 
       {/* What's included / process reassurance band */}
-      <section className="px-5 md:px-8 py-20 md:py-28 border-y border-white/10 bg-white/[0.02]">
+      <section className="px-5 md:px-8 py-20 md:py-28 border-y border-ink/10 bg-ink/[0.02]">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-20">
           <div data-reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">No surprises</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-4">No surprises</p>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.9]">
               What you<br /><span className="text-stroke">always get</span>
             </h2>
@@ -210,8 +210,8 @@ function ServicesPage() {
               { k: "Support after launch", v: "You leave with a brand or site you can actually use, and a partner on call." },
             ].map((x) => (
               <div key={x.k}>
-                <h4 className="font-display text-lg uppercase tracking-tight text-neon">{x.k}</h4>
-                <p className="mt-2 text-sm text-white/55 leading-relaxed">{x.v}</p>
+                <h4 className="font-display text-lg uppercase tracking-tight text-accent-ink">{x.k}</h4>
+                <p className="mt-2 text-sm text-ink/55 leading-relaxed">{x.v}</p>
               </div>
             ))}
           </div>
@@ -223,18 +223,18 @@ function ServicesPage() {
         <div className="max-w-[1400px] mx-auto">
           <div data-reveal className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-3">Optional extras</p>
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-3">Optional extras</p>
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.9]">Add-ons</h2>
             </div>
-            <p className="text-white/50 max-w-sm text-sm leading-relaxed">
+            <p className="text-ink/50 max-w-sm text-sm leading-relaxed">
               Stack any of these onto a package — quoted together with your project so everything fits your budget.
             </p>
           </div>
-          <div data-reveal className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/15 border border-white/15">
+          <div data-reveal className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/15 border border-ink/15">
             {addons.map((a) => (
-              <div key={a} className="bg-black p-5 flex items-center justify-between group hover:bg-white/[0.04] transition-colors duration-300">
+              <div key={a} className="bg-surface p-5 flex items-center justify-between group hover:bg-ink/[0.04] transition-colors duration-300">
                 <span className="font-display text-lg sm:text-xl uppercase tracking-tight">{a}</span>
-                <span className="font-mono text-neon text-xl leading-none transition-transform duration-300 group-hover:rotate-45">+</span>
+                <span className="font-mono text-accent-ink text-xl leading-none transition-transform duration-300 group-hover:rotate-45">+</span>
               </div>
             ))}
           </div>
@@ -242,7 +242,7 @@ function ServicesPage() {
       </section>
 
       {/* A note on investment */}
-      <section className="px-5 md:px-8 py-20 md:py-28 border-t border-white/10 bg-neon text-black">
+      <section className="px-5 md:px-8 py-20 md:py-28 border-t border-ink/10 bg-neon text-black">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-20 items-start">
           <div data-reveal>
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-black/60 mb-4">No price lists</p>
@@ -259,7 +259,7 @@ function ServicesPage() {
             </p>
             <Link
               to="/consultation"
-              className="inline-flex items-center gap-3 self-start bg-black text-neon font-mono text-xs uppercase tracking-[0.2em] px-8 py-5 hover:bg-white hover:text-black transition-colors duration-300"
+              className="inline-flex items-center gap-3 self-start bg-black text-accent-ink font-mono text-xs uppercase tracking-[0.2em] px-8 py-5 hover:bg-white hover:text-black transition-colors duration-300"
             >
               Start with a free 1-hr consult ↗
             </Link>
@@ -268,26 +268,26 @@ function ServicesPage() {
       </section>
 
       {/* FAQ block */}
-      <section className="px-5 md:px-8 py-20 md:py-28 border-t border-white/10">
+      <section className="px-5 md:px-8 py-20 md:py-28 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
           <div data-reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Before you ask</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-4">Before you ask</p>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.85]">
               Service<br /><span className="text-stroke">Questions</span>
             </h2>
-            <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
+            <p className="mt-6 text-ink/50 max-w-sm leading-relaxed">
               The exact questions that otherwise stall a quote request for days — answered up front.
             </p>
-            <Link to="/faq" className="mt-6 inline-block font-mono text-xs uppercase tracking-widest text-neon hover:underline">All questions ⟶</Link>
+            <Link to="/faq" className="mt-6 inline-block font-mono text-xs uppercase tracking-widest text-accent-ink hover:underline">All questions ⟶</Link>
           </div>
           <div data-reveal>
             {serviceFaqs.map((f) => (
-              <details key={f.q} className="group border-b border-white/10">
-                <summary className="flex items-center justify-between gap-6 py-5 cursor-pointer list-none font-display text-base md:text-lg uppercase tracking-tight hover:text-neon transition-colors duration-300 [&::-webkit-details-marker]:hidden">
+              <details key={f.q} className="group border-b border-ink/10">
+                <summary className="flex items-center justify-between gap-6 py-5 cursor-pointer list-none font-display text-base md:text-lg uppercase tracking-tight hover:text-accent-ink transition-colors duration-300 [&::-webkit-details-marker]:hidden">
                   {f.q}
-                  <span className="font-mono text-neon text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
+                  <span className="font-mono text-accent-ink text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
                 </summary>
-                <p className="pb-6 text-white/50 leading-relaxed max-w-2xl">{f.a}</p>
+                <p className="pb-6 text-ink/50 leading-relaxed max-w-2xl">{f.a}</p>
               </details>
             ))}
           </div>
@@ -295,19 +295,19 @@ function ServicesPage() {
       </section>
 
       {/* Closing CTA — tailored project inquiry form */}
-      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20">
           <div data-reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Request a quote</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-4">Request a quote</p>
             <h2 className="font-display text-5xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.85]">
               Tell me<br /><span className="text-stroke">What you need</span>
             </h2>
-            <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
+            <p className="mt-6 text-ink/50 max-w-sm leading-relaxed">
               Pick a service, share your budget and when you'd like to start. Your answers open a WhatsApp chat with the brief already typed — I'll reply within 24 hours and we'll agree scope, quote and timeline together.
             </p>
             <Link
               to="/consultation"
-              className="inline-flex items-center gap-3 mt-8 text-white/60 hover:text-neon transition-colors duration-300 font-mono text-xs uppercase tracking-[0.2em]"
+              className="inline-flex items-center gap-3 mt-8 text-ink/60 hover:text-accent-ink transition-colors duration-300 font-mono text-xs uppercase tracking-[0.2em]"
             >
               Or book a free 1-hr consult ↗
             </Link>
@@ -335,12 +335,12 @@ function InquiryForm() {
   };
 
   const selectCls =
-    "w-full bg-transparent border border-white/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-white focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-white/40 [&>option]:bg-black";
+    "w-full bg-transparent border border-ink/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-ink focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-ink/40 [&>option]:bg-surface";
 
   return (
     <div className="flex flex-col gap-6" data-reveal>
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Which service?</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Which service?</span>
         <select value={pkg} onChange={(e) => setPkg(e.target.value)} className={selectCls}>
           {packages.map((p) => <option key={p.t}>{p.t}</option>)}
           <option>Something else</option>
@@ -348,19 +348,19 @@ function InquiryForm() {
       </label>
       <BudgetField value={budget} onChange={setBudget} />
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">When would you like to start?</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">When would you like to start?</span>
         <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>
           {["As soon as possible", "In the coming weeks", "In the next few months", "Flexible — let's discuss"].map((o) => <option key={o}>{o}</option>)}
         </select>
       </label>
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Anything else? (optional)</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Anything else? (optional)</span>
         <textarea
           value={scope}
           onChange={(e) => setScope(e.target.value)}
           rows={3}
           placeholder="A line about your project, audience, or references…"
-          className="w-full bg-transparent border border-white/15 px-5 py-4 font-sans text-sm text-white placeholder:text-white/25 focus:border-neon outline-none transition-colors resize-none"
+          className="w-full bg-transparent border border-ink/15 px-5 py-4 font-sans text-sm text-ink placeholder:text-ink/25 focus:border-neon outline-none transition-colors resize-none"
         />
       </label>
       <button

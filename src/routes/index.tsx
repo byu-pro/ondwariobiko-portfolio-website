@@ -20,22 +20,22 @@ function Index() {
     <>
       <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-white/50 mb-6">
-            <span className="text-neon">●</span> Logo · Brand · UI/UX · Front-end — Est. 2016
+          <div className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">
+            <span className="text-accent-ink">●</span> Logo · Brand · UI/UX · Front-end — Est. 2016
           </div>
           <h1 className="font-display text-[clamp(2.5rem,13.5vw,14rem)] leading-[0.85] tracking-tighter uppercase mb-10 md:mb-12 break-words">
             <RotatingWord /> <br />
             <span className="text-stroke">Designer</span>
-            <span className="text-neon inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
+            <span className="text-accent-ink inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
           </h1>
           <div className="flex flex-col md:flex-row gap-10 md:gap-12 md:items-end">
             <div className="md:w-1/2">
               <p className="text-xl sm:text-2xl md:text-3xl font-light leading-tight max-w-xl mb-8">
-                Custom brand identities and websites for <span className="text-neon">ambitious founders</span> — designed and built by one pair of hands, remotely worldwide.
+                Custom brand identities and websites for <span className="text-accent-ink">ambitious founders</span> — designed and built by one pair of hands, remotely worldwide.
               </p>
               <Link to="/work" className="inline-flex items-center gap-4 group">
                 <span className="size-14 rounded-full bg-neon text-black grid place-items-center transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">↗</span>
-                <span className="font-mono text-xs uppercase tracking-[0.25em] group-hover:text-neon transition-colors">See the work</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em] group-hover:text-accent-ink transition-colors">See the work</span>
               </Link>
             </div>
             <div className="md:w-1/2 w-full aspect-[4/5] overflow-hidden"><img src={heroImage} alt="Premium textured business cards with lime edges and JO monogram" width={800} height={1008} fetchPriority="high" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="-0.08" /></div>
@@ -59,7 +59,7 @@ function Index() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-1">
           {[
             { src: `${import.meta.env.BASE_URL}assets/logoblack.png`, bg: "bg-white", label: "Primary", c: "text-black/50" },
-            { src: `${import.meta.env.BASE_URL}assets/logowhite.png`, bg: "bg-black border border-white/10", label: "Inverse", c: "text-white/50" },
+            { src: `${import.meta.env.BASE_URL}assets/logowhite.png`, bg: "bg-black border border-ink/10", label: "Inverse", c: "text-ink/50" },
             { src: `${import.meta.env.BASE_URL}assets/logoblack.png`, bg: "bg-neon", label: "Signature Lime", c: "text-black/50" },
           ].map((l) => (
             <div key={l.label} className={`group aspect-square ${l.bg} flex flex-col items-center justify-center`}>
@@ -74,7 +74,7 @@ function Index() {
         <div className="max-w-[1400px] mx-auto">
           <div className="flex justify-between items-end mb-12 md:mb-16 gap-6 flex-wrap">
             <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">Featured<br /><span className="text-stroke">Work</span></h2>
-            <Link to="/work" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-neon">All projects →</Link>
+            <Link to="/work" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-accent-ink">All projects →</Link>
           </div>
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
             {projects.slice(0, 4).map((p, i) => (
@@ -83,10 +83,10 @@ function Index() {
                   <img src={p.image} alt={p.alt} width={1200} height={1500} loading="lazy" decoding="async" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="flex justify-between">
-                  <h3 className="font-display text-2xl sm:text-3xl uppercase group-hover:text-neon transition-colors">{p.title}</h3>
+                  <h3 className="font-display text-2xl sm:text-3xl uppercase group-hover:text-accent-ink transition-colors">{p.title}</h3>
                   <span className="font-mono text-xs">{p.year}</span>
                 </div>
-                <p className="font-mono text-xs uppercase tracking-widest text-white/50 mt-2">{p.tag}</p>
+                <p className="font-mono text-xs uppercase tracking-widest text-ink/50 mt-2">{p.tag}</p>
               </Link>
             ))}
           </div>
@@ -94,20 +94,20 @@ function Index() {
       </section>
 
       {/* Client logos — auto-scrolling carousel */}
-      <section className="py-16 md:py-24 border-y border-white/10 overflow-hidden" data-reveal>
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/40 text-center mb-10 px-5">
-          Trusted by ambitious brands <span className="text-neon">✺</span> 10+ countries
+      <section className="py-16 md:py-24 border-y border-ink/10 overflow-hidden" data-reveal>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-ink/40 text-center mb-10 px-5">
+          Trusted by ambitious brands <span className="text-accent-ink">✺</span> 10+ countries
         </p>
         <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-black to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-black to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-surface to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-surface to-transparent z-10" />
           <div className="flex w-max animate-marquee-slow pause-on-hover items-center">
             {Array.from({ length: 2 }).map((_, k) => (
               <div key={k} className="flex items-center">
                 {clients.map((c) => (
                   <span
                     key={c.name}
-                    className={`mx-8 md:mx-14 whitespace-nowrap text-white/35 hover:text-neon transition-colors duration-500 ${c.style}`}
+                    className={`mx-8 md:mx-14 whitespace-nowrap text-ink/35 hover:text-accent-ink transition-colors duration-500 ${c.style}`}
                   >
                     {c.name}
                   </span>
@@ -121,29 +121,29 @@ function Index() {
       {/* Testimonials — auto-scrolling */}
       <section className="py-24 md:py-32 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-5 md:px-8 mb-12 md:mb-16" data-reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Word on the street</p>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-4">Word on the street</p>
           <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">
             Clients<br /><span className="text-stroke">Talk</span>
           </h2>
         </div>
         <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-black to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-black to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-surface to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-surface to-transparent z-10" />
           <div className="flex w-max animate-marquee-slow pause-on-hover">
             {Array.from({ length: 2 }).map((_, k) => (
               <div key={k} className="flex">
                 {testimonials.map((t) => (
                   <figure
                     key={t.name}
-                    className="w-[calc(100vw-40px)] max-w-[320px] sm:w-[420px] sm:max-w-none shrink-0 mx-2 sm:mx-3 border border-white/10 p-6 sm:p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-white/[0.02] transition-colors duration-500"
+                    className="w-[calc(100vw-40px)] max-w-[320px] sm:w-[420px] sm:max-w-none shrink-0 mx-2 sm:mx-3 border border-ink/10 p-6 sm:p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-ink/[0.02] transition-colors duration-500"
                   >
-                    <span className="font-display text-5xl text-neon leading-none select-none">“</span>
+                    <span className="font-display text-5xl text-accent-ink leading-none select-none">“</span>
                     <blockquote className="text-base md:text-lg font-light leading-snug flex-1">{t.quote}</blockquote>
-                    <div className="border-t border-white/10 pt-5">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-neon mb-2">{t.result}</p>
+                    <div className="border-t border-ink/10 pt-5">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-2">{t.result}</p>
                       <figcaption>
                         <p className="font-display uppercase tracking-tight text-sm">{t.name}</p>
-                        <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 mt-1">{t.role}</p>
+                        <p className="font-mono text-[10px] uppercase tracking-widest text-ink/40 mt-1">{t.role}</p>
                       </figcaption>
                     </div>
                   </figure>
@@ -153,13 +153,13 @@ function Index() {
           </div>
         </div>
         <div className="max-w-[1400px] mx-auto px-5 md:px-8 mt-10" data-reveal>
-          <Link to="/testimonials" className="font-mono text-xs uppercase tracking-widest text-neon hover:underline">More reviews ⟶</Link>
+          <Link to="/testimonials" className="font-mono text-xs uppercase tracking-widest text-accent-ink hover:underline">More reviews ⟶</Link>
         </div>
       </section>
-      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-12 md:mb-16" data-reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">How it works</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-4">How it works</p>
             <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">
               The<br /><span className="text-stroke">Process</span>
             </h2>
@@ -170,11 +170,11 @@ function Index() {
                 key={p.n}
                 data-reveal
                 style={{ transitionDelay: `${i * 100}ms` }}
-                className="group relative border border-white/10 p-8 hover:border-neon/60 transition-colors duration-500"
+                className="group relative border border-ink/10 p-8 hover:border-neon/60 transition-colors duration-500"
               >
-                <span className="font-display text-6xl md:text-7xl text-stroke group-hover:text-neon group-hover:[-webkit-text-stroke:0] transition-all duration-500">{p.n}</span>
+                <span className="font-display text-6xl md:text-7xl text-stroke group-hover:text-accent-ink group-hover:[-webkit-text-stroke:0] transition-all duration-500">{p.n}</span>
                 <h3 className="font-display text-xl md:text-2xl uppercase tracking-tight mt-6 mb-3">{p.t}</h3>
-                <p className="text-sm text-white/50 leading-relaxed">{p.d}</p>
+                <p className="text-sm text-ink/50 leading-relaxed">{p.d}</p>
               </div>
             ))}
           </div>
@@ -182,26 +182,26 @@ function Index() {
       </section>
 
       {/* About snippet */}
-      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 items-end" data-reveal>
           <h2 className="font-display text-4xl sm:text-5xl md:text-7xl uppercase tracking-tighter leading-[0.9]">
             Ten years of craft.<br /><span className="text-stroke">Zero templates.</span>
           </h2>
           <div>
-            <p className="text-lg md:text-xl font-light leading-relaxed text-white/70 mb-8">
+            <p className="text-lg md:text-xl font-light leading-relaxed text-ink/70 mb-8">
               I'm a designer and front-end developer with 10 years of practice — every identity is drawn by hand and built in vector, every website coded by the same person who designed it. No templates, no AI shortcuts, no handoff losses.
             </p>
-            <Link to="/about" className="font-mono text-xs uppercase tracking-[0.25em] text-neon hover:text-white transition-colors">More about me →</Link>
+            <Link to="/about" className="font-mono text-xs uppercase tracking-[0.25em] text-accent-ink hover:text-ink transition-colors">More about me →</Link>
           </div>
         </div>
       </section>
 
       {/* Services overview */}
-      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex justify-between items-end mb-12 md:mb-16 gap-6 flex-wrap" data-reveal>
             <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">What I<br /><span className="text-stroke">Offer</span></h2>
-            <Link to="/services" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-neon">Full services →</Link>
+            <Link to="/services" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-accent-ink">Full services →</Link>
           </div>
           <div>
             {offerings.map((o, i) => (
@@ -210,13 +210,13 @@ function Index() {
                 key={o.t}
                 data-reveal
                 style={{ transitionDelay: `${i * 80}ms` }}
-                className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-8 border-t border-white/10 last:border-b hover:bg-white/[0.02] transition-colors duration-300 px-2 md:px-6"
+                className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-8 border-t border-ink/10 last:border-b hover:bg-ink/[0.02] transition-colors duration-300 px-2 md:px-6"
               >
                 <div className="flex items-baseline gap-6">
-                  <span className="font-mono text-xs text-neon">0{i + 1}</span>
-                  <h3 className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tight group-hover:text-neon transition-colors duration-300">{o.t}</h3>
+                  <span className="font-mono text-xs text-accent-ink">0{i + 1}</span>
+                  <h3 className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">{o.t}</h3>
                 </div>
-                <p className="text-sm text-white/50 max-w-sm md:text-right">{o.d}</p>
+                <p className="text-sm text-ink/50 max-w-sm md:text-right">{o.d}</p>
               </Link>
             ))}
           </div>
@@ -224,7 +224,7 @@ function Index() {
       </section>
 
       {/* Results highlight */}
-      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10 bg-neon text-black">
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-ink/10 bg-neon text-black">
         <div className="max-w-[1400px] mx-auto" data-reveal>
           <p className="font-mono text-xs uppercase tracking-[0.3em] mb-8">The result that matters</p>
           <blockquote className="font-display text-3xl sm:text-5xl md:text-6xl uppercase tracking-tighter leading-[0.95] max-w-5xl">
@@ -235,14 +235,14 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
           <div data-reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Before you ask</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-4">Before you ask</p>
             <h2 className="font-display text-5xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.85]">
               Frequent<br /><span className="text-stroke">Questions</span>
             </h2>
-            <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
+            <p className="mt-6 text-ink/50 max-w-sm leading-relaxed">
               Still curious? Book a free 1-hour consultation and ask me anything — no strings attached.
             </p>
             <Link
@@ -254,12 +254,12 @@ function Index() {
           </div>
           <div data-reveal>
             {faqs.map((f) => (
-              <details key={f.q} className="group border-b border-white/10">
-                <summary className="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display text-lg md:text-xl uppercase tracking-tight hover:text-neon transition-colors duration-300 [&::-webkit-details-marker]:hidden">
+              <details key={f.q} className="group border-b border-ink/10">
+                <summary className="flex items-center justify-between gap-6 py-6 cursor-pointer list-none font-display text-lg md:text-xl uppercase tracking-tight hover:text-accent-ink transition-colors duration-300 [&::-webkit-details-marker]:hidden">
                   {f.q}
-                  <span className="font-mono text-neon text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
+                  <span className="font-mono text-accent-ink text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
                 </summary>
-                <p className="pb-6 text-white/50 leading-relaxed max-w-2xl">{f.a}</p>
+                <p className="pb-6 text-ink/50 leading-relaxed max-w-2xl">{f.a}</p>
               </details>
             ))}
           </div>
@@ -267,14 +267,14 @@ function Index() {
       </section>
 
       {/* Final CTA — short brief form */}
-      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-white/10">
+      <section className="py-24 md:py-32 px-5 md:px-8 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20">
           <div data-reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-neon mb-4">Start a project</p>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-4">Start a project</p>
             <h2 className="font-display text-5xl sm:text-6xl md:text-7xl uppercase tracking-tighter leading-[0.85]">
               Tell me<br /><span className="text-stroke">The Brief</span>
             </h2>
-            <p className="mt-6 text-white/50 max-w-sm leading-relaxed">
+            <p className="mt-6 text-ink/50 max-w-sm leading-relaxed">
               Three quick answers — that's all it takes to start the conversation. I'll reply within 24 hours.
             </p>
           </div>
@@ -300,18 +300,18 @@ function BriefForm() {
     const msg = encodeURIComponent(`Hi! I'd like to discuss a project.\n\n• Project: ${type}\n• Budget: ${budget || "To be discussed"}\n• Start: ${timeline}`);
     window.open(`https://wa.me/254702255575?text=${msg}`, "_blank");
   };
-  const selectCls = "w-full bg-transparent border border-white/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-white focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-white/40 [&>option]:bg-black";
+  const selectCls = "w-full bg-transparent border border-ink/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-ink focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-ink/40 [&>option]:bg-surface";
   return (
     <div className="flex flex-col gap-6" data-reveal>
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Project type</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Project type</span>
         <select value={type} onChange={(e) => setType(e.target.value)} className={selectCls}>
           {["Logo Design", "Brand Identity", "Web Design & Build", "UI/UX Design", "Something else"].map((o) => <option key={o}>{o}</option>)}
         </select>
       </label>
       <BudgetField value={budget} onChange={setBudget} />
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">When would you like to start?</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">When would you like to start?</span>
         <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>
           {["As soon as possible", "In the coming weeks", "In the next few months", "Flexible — let's discuss"].map((o) => <option key={o}>{o}</option>)}
         </select>
@@ -379,7 +379,7 @@ function RotatingWord() {
   }, []);
   return (
     <span className="relative inline-block overflow-hidden align-bottom h-[0.9em] min-w-[5ch]">
-      <span key={words[i]} className="block animate-rise text-neon">
+      <span key={words[i]} className="block animate-rise text-accent-ink">
         {words[i]}
       </span>
     </span>
