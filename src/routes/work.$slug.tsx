@@ -54,7 +54,7 @@ function CaseStudy() {
       </section>
 
       <section className="mt-12 md:mt-20 px-5 md:px-8">
-        <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[16/10] bg-ink/[0.03]">
+        <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[4/3] sm:aspect-[16/10] bg-ink/[0.03]">
           <ProjectPreview key={p.slug} project={p} detail />
         </div>
       </section>

@@ -300,6 +300,7 @@ img { content-visibility: auto; }
 .project-preview__images { position: absolute; inset: 0; transition: transform 700ms ease; }
 .group:hover .project-preview:not(.project-preview--detail) .project-preview__images { transform: scale(1.025); }
 .project-preview img { width: 100%; height: 100%; object-fit: cover; }
+.project-preview--detail .project-preview__mockup { object-fit: cover; object-position: left center; }
 .project-preview--detail .project-preview__logo { object-fit: contain; }
 .project-preview__logo { position: absolute; inset: 0; opacity: 0; animation: project-identity-reveal 10s cubic-bezier(.4,0,.2,1) infinite; animation-play-state: paused; }
 .project-preview[data-running="true"] .project-preview__logo { animation-play-state: running; }
