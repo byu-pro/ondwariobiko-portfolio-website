@@ -65,7 +65,7 @@ function CaseStudy() {
               <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
             </h1>
           )}
-          <p className="mt-8 max-w-3xl text-xl sm:text-2xl md:text-4xl font-light leading-tight text-ink/80 text-center mx-auto animate-headline-glide">
+          <p className="mt-8 max-w-3xl font-display uppercase tracking-tight text-xl sm:text-2xl md:text-4xl font-bold leading-tight text-accent-ink text-center mx-auto animate-headline-glide">
             {p.headline}
           </p>
         </div>
