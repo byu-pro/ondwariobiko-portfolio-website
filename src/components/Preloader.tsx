@@ -4,8 +4,8 @@ const LOGO = `${import.meta.env.BASE_URL}assets/logowhite.webp`;
 
 /** Shared by every route; plays on entry or refresh, not internal navigation. */
 export function Preloader() {
-  // Identical server/client initial markup; no browser storage during hydration.
-  const [phase, setPhase] = useState<"idle" | "enter" | "exit" | "done">("idle");
+  // Initialized to 'enter' so the preloader panel covers the viewport on first paint.
+  const [phase, setPhase] = useState<"idle" | "enter" | "exit" | "done">("enter");
 
   useEffect(() => {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
