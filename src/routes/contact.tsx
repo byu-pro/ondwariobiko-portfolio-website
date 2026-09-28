@@ -6,9 +6,9 @@ import { BudgetField } from "@/components/BudgetField";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — ondwariobiko | Start a Project" },
-      { name: "description", content: "Start a logo, branding, UI/UX or web project with ondwariobiko. Working remotely worldwide — replies within 24–48 hours." },
-      { property: "og:title", content: "Contact ondwariobiko" },
+      { title: "Contact — John Obiko | Start a Project" },
+      { name: "description", content: "Start a logo, branding, UI/UX or web project with John Obiko. Working remotely worldwide — replies within 24–48 hours." },
+      { property: "og:title", content: "Contact John Obiko" },
       { property: "og:description", content: "Have a vision? Let's build something bold together." },
     ],
   }),

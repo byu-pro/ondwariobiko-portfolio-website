@@ -7,9 +7,9 @@ import { BudgetField } from "@/components/BudgetField";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ondwariobiko — Creative Director & Brand Designer | Remote Worldwide" },
-      { name: "description", content: "ondwariobiko is a designer working remotely worldwide, crafting premium logos, brand identities, UI/UX and front-end experiences. 10 years of practice." },
-      { property: "og:title", content: "ondwariobiko — Creative Director & Brand Designer" },
+      { title: "John Obiko — Creative Director & Brand Designer | Remote Worldwide" },
+      { name: "description", content: "John Obiko is a designer based in Nairobi, Kenya, working worldwide, crafting premium logos, brand identities, UI/UX and front-end experiences. 10 years of practice." },
+      { property: "og:title", content: "John Obiko — Creative Director & Brand Designer" },
       { property: "og:description", content: "Designer working remotely worldwide, crafting premium brand identities and digital experiences." },
     ],
   }),

@@ -6,9 +6,9 @@ import { BudgetField } from "@/components/BudgetField";
 export const Route = createFileRoute("/consultation")({
   head: () => ({
     meta: [
-      { title: "Free 1-Hour Consultation — ondwariobiko" },
-      { name: "description", content: "Book a free one-hour consultation with ondwariobiko to discuss your logo, brand, UI/UX or web project and see if we're a good fit." },
-      { property: "og:title", content: "Book a Free 1-Hour Consultation — ondwariobiko" },
+      { title: "Free 1-Hour Consultation — John Obiko" },
+      { name: "description", content: "Book a free one-hour consultation with John Obiko to discuss your logo, brand, UI/UX or web project and see if we're a good fit." },
+      { property: "og:title", content: "Book a Free 1-Hour Consultation — John Obiko" },
       { property: "og:description", content: "No cost, no pressure. Talk through your project and find out if we're the right fit." },
     ],
   }),
@@ -29,7 +29,7 @@ function ConsultationPage() {
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
-    const msg = `Hi ondwariobiko! I'd like to book a free 1-hour consultation.\n\nName: ${f.get("name")}\nEmail: ${f.get("email")}\nProject: ${type}\nBudget: ${budget || "To be discussed"}\nPreferred time: ${f.get("time") || "Flexible"}\n\n${f.get("message") || ""}`;
+    const msg = `Hi John! I'd like to book a free 1-hour consultation.\n\nName: ${f.get("name")}\nEmail: ${f.get("email")}\nProject: ${type}\nBudget: ${budget || "To be discussed"}\nPreferred time: ${f.get("time") || "Flexible"}\n\n${f.get("message") || ""}`;
     window.open(`https://wa.me/254702255575?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
   };
 

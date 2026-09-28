@@ -5,9 +5,9 @@ import { PageHero } from "@/components/SiteFooter";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — ondwariobiko | Logo & Brand Designer, 10 Years" },
-      { name: "description", content: "Meet ondwariobiko: a hand-drawn logo and brand designer, UI/UX designer and front-end developer working remotely worldwide for over ten years." },
-      { property: "og:title", content: "About ondwariobiko" },
+      { title: "About — John Obiko | Logo & Brand Designer, 10 Years" },
+      { name: "description", content: "Meet John Obiko: a hand-drawn logo and brand designer, UI/UX designer and front-end developer working remotely worldwide for over ten years." },
+      { property: "og:title", content: "About John Obiko" },
       { property: "og:description", content: "A decade of hand-drawn logos, brand systems and interfaces — built remotely for clients worldwide." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -94,7 +94,7 @@ function AboutPage() {
               <div className="absolute inset-0 ring-1 ring-inset ring-neon/20" />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                 <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/80">
-                  John Obiko · Based in Kenya, working worldwide
+                  John Obiko · Nairobi, Kenya · Working worldwide
                 </p>
               </div>
             </div>
@@ -102,7 +102,7 @@ function AboutPage() {
           <div className="md:col-span-7">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-ink mb-6">⟶ Who I am</p>
             <p className="text-2xl sm:text-3xl md:text-4xl font-light leading-snug">
-              I'm <span className="text-accent-ink">ondwariobiko</span> — a graphic and web designer working remotely with
+              I'm <span className="text-accent-ink">John Obiko</span> — a graphic and web designer based in Nairobi, Kenya, working with
               clients worldwide. I specialise in flat vector logo design, mascot illustration and full brand identity
               systems — and I <span className="text-accent-ink font-display font-black">design and build</span> the websites
               that bring them to life.
