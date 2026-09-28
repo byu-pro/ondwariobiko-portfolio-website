@@ -25,6 +25,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(true);
   const [hovered, setHovered] = useState(false);
+  const [loadedIndices, setLoadedIndices] = useState<Set<number>>(() => new Set([0, 1, slides.length - 1]));
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -33,6 +34,16 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
     preference.addEventListener("change", sync);
     return () => preference.removeEventListener("change", sync);
   }, []);
+
+  useEffect(() => {
+    setLoadedIndices((prev) => {
+      const next = new Set(prev);
+      next.add(active);
+      next.add((active + 1) % slides.length);
+      next.add((active - 1 + slides.length) % slides.length);
+      return next.size === prev.size ? prev : next;
+    });
+  }, [active]);
 
   useEffect(() => {
     if (!playing || hovered) return;
@@ -57,35 +68,41 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
         <span className="text-ink/60">John Obiko / Design</span>
       </div>
       <div className="relative aspect-[4/5] md:aspect-[16/9] overflow-hidden bg-ink/5">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.file}
-            role="group"
-            aria-roledescription="slide"
-            aria-label={`${index + 1} of ${slides.length}: ${slide.name}`}
-            aria-hidden={active !== index}
-            className="absolute inset-0 transition-opacity duration-1000 ease-in-out motion-reduce:transition-none"
-            style={{ opacity: active === index ? 1 : 0 }}
-          >
-            <picture className="block w-full h-full">
-              <source
-                media="(max-width: 767px)"
-                srcSet={`${import.meta.env.BASE_URL}assets/${slide.mobileFile}`}
-                width={1200}
-                height={1500}
-              />
-              <img
-                src={`${import.meta.env.BASE_URL}assets/${slide.file}`}
-                alt={`${slide.name} logo design`}
-                width={1920}
-                height={1080}
-                fetchPriority={index === 0 ? "high" : "auto"}
-                decoding="async"
-                className="w-full h-full object-cover md:object-contain p-0 md:p-12"
-              />
-            </picture>
-          </div>
-        ))}
+        {slides.map((slide, index) => {
+          const isCurrent = active === index;
+          const isRendered = loadedIndices.has(index);
+          return (
+            <div
+              key={slide.file}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${index + 1} of ${slides.length}: ${slide.name}`}
+              aria-hidden={!isCurrent}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out motion-reduce:transition-none ${isCurrent ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"}`}
+            >
+              {isRendered && (
+                <picture className="block w-full h-full">
+                  <source
+                    media="(max-width: 767px)"
+                    srcSet={`${import.meta.env.BASE_URL}assets/${slide.mobileFile}`}
+                    width={1200}
+                    height={1500}
+                  />
+                  <img
+                    src={`${import.meta.env.BASE_URL}assets/${slide.file}`}
+                    alt={`${slide.name} logo design`}
+                    width={1920}
+                    height={1080}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={isCurrent ? "high" : "low"}
+                    decoding="async"
+                    className="w-full h-full object-cover p-0"
+                  />
+                </picture>
+              )}
+            </div>
+          );
+        })}
       </div>
       <div className="px-4 sm:px-5 py-4 bg-surface border-t border-ink/10">
         <div className="flex items-start justify-between gap-3 min-h-12" aria-live={playing ? "off" : "polite"}>
