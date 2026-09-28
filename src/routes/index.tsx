@@ -70,18 +70,62 @@ function Index() {
         </div>
       </div>
 
-      <section className="py-16 md:py-24 px-5 md:px-8">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-1">
+      <section className="py-16 md:py-24 px-5 md:px-8" aria-labelledby="capabilities-heading">
+        <div className="max-w-[1400px] mx-auto">
+          <h2 id="capabilities-heading" className="scroll-mt-28 font-display text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight max-w-2xl mb-10">
+            What I can do for your business
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
           {[
-            { src: `${import.meta.env.BASE_URL}assets/logoblack.webp`, bg: "bg-white", label: "Primary", c: "text-black/50" },
-            { src: `${import.meta.env.BASE_URL}assets/logowhite.webp`, bg: "bg-black border border-ink/10", label: "Inverse", c: "text-ink/50" },
-            { src: `${import.meta.env.BASE_URL}assets/logoblack.webp`, bg: "bg-neon", label: "Signature Lime", c: "text-black/50" },
-          ].map((l) => (
-            <div key={l.label} className={`group aspect-square ${l.bg} flex flex-col items-center justify-center`}>
-              <img src={l.src} alt={`JO monogram — ${l.label}`} width={160} height={160} className="w-24 h-24 md:w-40 md:h-40 object-contain animate-float transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-12" />
-              <span className={`mt-8 font-mono text-[10px] uppercase tracking-widest ${l.c}`}>{l.label} Monogram</span>
-            </div>
+            {
+              image: "greenessentials_logo.webp",
+              label: "Logo design",
+              description: "A distinctive mark people remember.",
+              client: "Green Essentials",
+              slug: "green-essentials-turf-and-mosquito",
+              alt: "Green Essentials logo combining grass and a mosquito",
+            },
+            {
+              image: "pelicansocial_casestudybanner-600.webp",
+              label: "Brand identity",
+              description: "A consistent identity across every touchpoint.",
+              client: "Pelican Social",
+              slug: "pelican-social-bar-and-grill",
+              alt: "Pelican Social identity with its pelican illustration, wordmark and coastal colours",
+            },
+            {
+              image: "soundcurves_herobanner-600.webp",
+              label: "Web & digital",
+              description: "Clear, usable digital experiences.",
+              client: "Sound Curves",
+              slug: "sound-curves",
+              alt: "Sound Curves earphone storefront displayed on a desktop monitor",
+            },
+          ].map((service) => (
+            <Link
+              key={service.slug}
+              to="/work/$slug"
+              params={{ slug: service.slug }}
+              className="group min-w-0 focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-ink"
+            >
+              <div className="aspect-[8/5] overflow-hidden mb-5">
+                <img
+                  src={`${import.meta.env.BASE_URL}assets/${service.image}`}
+                  alt={service.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-[center_60%] motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                />
+              </div>
+              <h3 className="font-display text-2xl uppercase tracking-tight group-hover:text-accent-ink transition-colors">{service.label}</h3>
+              <p className="text-ink/70 mt-2 leading-relaxed">{service.description}</p>
+              <div className="mt-5 pt-4 border-t border-ink/15 flex items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest">
+                <span>{service.client} · Case study</span>
+                <span aria-hidden="true" className="text-accent-ink text-xl">↗</span>
+              </div>
+            </Link>
           ))}
+          </div>
         </div>
       </section>
 
