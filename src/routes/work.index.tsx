@@ -31,7 +31,7 @@ function WorkPage() {
         <div className="max-w-[1400px] mx-auto" data-reveal>
           <p className="text-lg md:text-2xl font-light leading-relaxed text-ink/70 max-w-3xl">
             A selection of brand identities, logo systems and digital products for clients across
-            fintech, hospitality, coffee and SaaS — each one a full story, not just a pretty picture.
+            hospitality, industry, community organisations and digital products — explore the brief, design decisions and final identity behind each project.
           </p>
         </div>
       </section>

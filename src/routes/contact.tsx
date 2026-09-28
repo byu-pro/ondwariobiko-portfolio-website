@@ -270,7 +270,7 @@ function InquiryForm() {
         type="submit"
         className="group inline-flex items-center justify-between gap-6 rounded-full bg-neon text-black pl-8 pr-2 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-transform hover:scale-[1.02]"
       >
-        <span>Send the brief</span>
+        <span>Continue in WhatsApp</span>
         <span className="size-12 rounded-full bg-black text-accent-ink grid place-items-center transition-transform duration-500 group-hover:rotate-45">↗</span>
       </button>
       <p className="font-mono text-[10px] uppercase tracking-widest text-ink/35">

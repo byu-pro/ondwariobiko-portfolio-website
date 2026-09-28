@@ -32,7 +32,7 @@ function Index() {
           <div className="flex flex-col md:flex-row gap-10 md:gap-12 md:items-end">
             <div className="md:w-1/2">
               <p className="text-xl sm:text-2xl md:text-3xl font-light leading-tight max-w-xl mb-8">
-                Custom brand identities and websites for <span className="text-accent-ink">ambitious founders</span> — designed and built by one pair of hands, remotely worldwide.
+                Distinctive brand identities and websites for <span className="text-accent-ink">businesses ready for their next chapter</span>. Work directly with your designer, from first conversation to final delivery.
               </p>
               <Link to="/work" className="inline-flex items-center gap-4 group">
                 <span className="size-14 rounded-full bg-neon text-black grid place-items-center transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">↗</span>
@@ -186,7 +186,7 @@ function Index() {
           </h2>
           <div>
             <p className="text-lg md:text-xl font-light leading-relaxed text-ink/70 mb-8">
-              I'm a designer and front-end developer with 10 years of practice — every identity is drawn by hand and built in vector, every website coded by the same person who designed it. No templates, no AI shortcuts, no handoff losses.
+              I'm a brand designer and front-end developer with 10 years of practice. I connect the identity your customers recognise with the website they use — with one person responsible for the design from concept to delivery.
             </p>
             <Link to="/about" className="font-mono text-xs uppercase tracking-[0.25em] text-accent-ink hover:text-ink transition-colors">More about me →</Link>
           </div>
@@ -272,7 +272,7 @@ function Index() {
               Tell me<br /><span className="text-stroke">The Brief</span>
             </h2>
             <p className="mt-6 text-ink/50 max-w-sm leading-relaxed">
-              Three quick answers — that's all it takes to start the conversation. I'll reply within 24 hours.
+              Three quick answers to start the conversation. I'll reply within 24–48 hours.
             </p>
           </div>
           <BriefForm />

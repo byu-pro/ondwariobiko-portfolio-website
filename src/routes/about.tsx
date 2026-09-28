@@ -30,8 +30,8 @@ const pillars = [
   },
   {
     n: "03",
-    title: "No AI shortcuts",
-    body: "In a market flooded with AI-generated logos, every concept I produce is drawn, considered and refined by hand. Built to hold up under real-world use — not just look good in a preview.",
+    title: "Built for everyday use",
+    body: "Every identity is considered across the places your customers encounter it — from a small screen to signage and print. You receive practical files and guidance to keep the brand consistent.",
   },
 ];
 
@@ -75,22 +75,26 @@ function AboutPage() {
       {/* 2 + 7 — Who I am, with photo */}
       <section className="px-5 md:px-8 pb-20 md:pb-32">
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-10 md:gap-16 items-center">
-          {/* photo placeholder — replace with a real portrait */}
+          {/* Portrait */}
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] bg-neutral-900 border border-ink/10 overflow-hidden group">
               <div className="absolute inset-0 grid place-items-center">
                 <img
-                  src={`${import.meta.env.BASE_URL}assets/logowhite.webp`}
-                  alt="ondwariobiko monogram"
-                  width={280}
-                  height={280}
-                  className="w-2/5 object-contain opacity-80 transition-transform duration-700 group-hover:scale-110"
+                  src={`${import.meta.env.BASE_URL}assets/johnobiko_profilepic.webp`}
+                  srcSet={`${import.meta.env.BASE_URL}assets/johnobiko_profilepic-600.webp 600w, ${import.meta.env.BASE_URL}assets/johnobiko_profilepic.webp 1200w`}
+                  sizes="(min-width: 768px) 42vw, 100vw"
+                  alt="John Obiko — brand designer and front-end developer"
+                  width={1200}
+                  height={1500}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute inset-0 ring-1 ring-inset ring-neon/20" />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">
-                  ⟶ Real photo goes here
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/80">
+                  John Obiko · Based in Kenya, working worldwide
                 </p>
               </div>
             </div>
