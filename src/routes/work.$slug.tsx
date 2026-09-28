@@ -1,3 +1,4 @@
+import { InteractiveWordmark } from "@/components/InteractiveWordmark";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { getProject, projects } from "@/lib/projects";
@@ -48,19 +49,7 @@ function CaseStudy() {
             <span><span className="text-accent-ink">{p.n}</span> / {p.tag}</span>
           </div>
           {p.wordmarkImage ? (
-            <h1 className="overflow-hidden py-3 w-full flex justify-center">
-              <span className="block w-full max-w-[1200px] flex justify-center">
-                <img
-                  src={p.wordmarkImage}
-                  alt={p.title}
-                  width={2800}
-                  height={800}
-                  fetchPriority="high"
-                  decoding="async"
-                  className="case-study-wordmark block animate-wordmark-hero w-full max-w-[1200px] h-auto object-contain mx-auto"
-                />
-              </span>
-            </h1>
+            <InteractiveWordmark key={p.slug} src={p.wordmarkImage} title={p.title} slug={p.slug} />
           ) : (
             <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)] text-center">
               <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
@@ -160,9 +149,21 @@ function CaseStudy() {
       </section>
 
       <section className="px-5 md:px-8">
+        {p.processImage ? (
+          <figure className="max-w-[1400px] mx-auto">
+            <figcaption className="flex flex-wrap items-end justify-between gap-4 border-t border-ink/15 pt-6 mb-6">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-2">Behind the mark</p>
+                <h3 className="font-display uppercase text-2xl md:text-4xl tracking-tight">From sketch to signature.</h3>
+              </div>
+            </figcaption>
+            <img src={p.processImage} alt={`${p.title} logo development: original pencil sketch, refined vector outline and final black logo, shown side by side.`} width={1920} height={1200} loading="lazy" decoding="async" className="block w-full h-auto bg-white" />
+          </figure>
+        ) : (
         <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[16/9]">
           <img src={g1.src} alt={g1.alt} width={1600} height={912} loading="lazy" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="0.06" />
         </div>
+        )}
       </section>
 
       {/* Palette + type */}

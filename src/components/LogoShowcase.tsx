@@ -107,8 +107,8 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
       <div className="px-4 sm:px-5 py-4 bg-surface border-t border-ink/10">
         <div className="flex items-start justify-between gap-3 min-h-12" aria-live={playing ? "off" : "polite"}>
           <div>
-            <p className="font-display text-lg sm:text-xl uppercase leading-tight">{slides[active].name}</p>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1">{slides[active].category}</p>
+            <p className="font-display text-lg sm:text-xl uppercase leading-tight">{slides[active]?.name}</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1">{slides[active]?.category}</p>
           </div>
         </div>
         <div className="flex items-center justify-between gap-3 mt-3 pt-3 border-t border-ink/10">

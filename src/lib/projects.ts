@@ -10,6 +10,7 @@ export type Project = {
   image: string;
   heroBanner?: string;
   wordmarkImage?: string;
+  processImage?: string;
   logoImage: string;
   alt: string;
   client: string;
@@ -43,6 +44,7 @@ const brandProcess = [
 export const projects: Project[] = [
   {
     slug: "pelican-social-bar-and-grill",
+    processImage: `${import.meta.env.BASE_URL}assets/pelicansocial_process.webp`,
     wordmarkImage: `${import.meta.env.BASE_URL}assets/pelicansocial_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/pelicansocial_casestudybanner.webp`,
     n: "01",
@@ -86,6 +88,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ikon-trailers",
+    processImage: `${import.meta.env.BASE_URL}assets/ikontrailers_process.webp`,
     wordmarkImage: `${import.meta.env.BASE_URL}assets/ikontrailers_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/ikontrailers_herobanner.webp`,
     n: "02",
@@ -129,6 +132,7 @@ export const projects: Project[] = [
   },
   {
     slug: "iron-acre-land-co",
+    processImage: `${import.meta.env.BASE_URL}assets/ironacrelandco_process.webp`,
     wordmarkImage: `${import.meta.env.BASE_URL}assets/ironacre_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/ironacrelandco_herobanner.webp`,
     n: "03",
@@ -172,6 +176,7 @@ export const projects: Project[] = [
   },
   {
     slug: "friends-of-unionville",
+    processImage: `${import.meta.env.BASE_URL}assets/friendsofunionville_process.webp`,
     wordmarkImage: `${import.meta.env.BASE_URL}assets/friendsofunionville_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/friendsofunionville_herobanner.webp`,
     n: "04",
@@ -357,6 +362,7 @@ export const projects: Project[] = [
   },
   {
     slug: "green-essentials-turf-and-mosquito",
+    processImage: `${import.meta.env.BASE_URL}assets/greenessentials_process.webp`,
     wordmarkImage: `${import.meta.env.BASE_URL}assets/greenessentil_wordmark.svg`,
     heroBanner: `${import.meta.env.BASE_URL}assets/greenessentials_herobanner.webp`,
     n: "08",

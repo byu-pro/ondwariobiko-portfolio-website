@@ -18,6 +18,8 @@ export default defineConfig({
     prerender: {
       enabled: true,
       crawlLinks: true,
+      // Full-size artwork links are static files, not application routes.
+      filter: (page: { path: string }) => !page.path.includes("/assets/"),
     },
   },
 });

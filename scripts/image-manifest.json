@@ -537,5 +537,35 @@
     "outputs": [
       "public/assets/otherworkcarousel/thinkingandfeelingpodcast_mobile.webp"
     ]
+  },
+  "public/assets/friendsofunionville_process.png": {
+    "hash": "97fbca277268a900b34f8f536903c289789d250848f69bdba7d87bb405396df2",
+    "outputs": [
+      "public/assets/friendsofunionville_process.webp"
+    ]
+  },
+  "public/assets/greenessentials_process.png": {
+    "hash": "916345d4963833634b96c7844ce0419dde16e11d1abe1d682c4a0b98fcad6c0c",
+    "outputs": [
+      "public/assets/greenessentials_process.webp"
+    ]
+  },
+  "public/assets/ikontrailers_process.png": {
+    "hash": "f482d045559d34906878a7e8afdc4517d2fdaf69e444cc3ebfcbf5d8ebf03677",
+    "outputs": [
+      "public/assets/ikontrailers_process.webp"
+    ]
+  },
+  "public/assets/ironacrelandco_process.png": {
+    "hash": "1bd6e2e7297a89febe6b103c1f355e2ee73b278ed34222c919232880a1d5c5e5",
+    "outputs": [
+      "public/assets/ironacrelandco_process.webp"
+    ]
+  },
+  "public/assets/pelicansocial_process.png": {
+    "hash": "d9ff81f0c8de1e7927e5547d0f2cadd07e431b58e0240616559b5d39fd03e401",
+    "outputs": [
+      "public/assets/pelicansocial_process.webp"
+    ]
   }
 }
