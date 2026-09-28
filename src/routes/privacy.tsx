@@ -1,15 +1,9 @@
+import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — ondwariobiko" },
-      { name: "description", content: "Privacy Policy for ondwariobiko.com — what information is collected, how it's used, and your rights." },
-      { property: "og:title", content: "Privacy Policy — ondwariobiko" },
-      { property: "og:description", content: "What information is collected, how it's used, and your rights when you visit or contact ondwariobiko." },
-    ],
-  }),
+  head: () => seoHead("privacy", "Privacy Policy — ondwariobiko", "Privacy Policy for ondwariobiko.com — what information is collected, how it's used, and your rights."),
   component: PrivacyPage,
 });
 

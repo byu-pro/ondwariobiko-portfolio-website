@@ -1,17 +1,11 @@
+import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/SiteFooter";
 import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — John Obiko | Start a Project" },
-      { name: "description", content: "Start a logo, branding, UI/UX or web project with John Obiko. Working remotely worldwide — replies within 24–48 hours." },
-      { property: "og:title", content: "Contact John Obiko" },
-      { property: "og:description", content: "Have a vision? Let's build something bold together." },
-    ],
-  }),
+  head: () => seoHead("contact", "Contact — John Obiko | Start a Project", "Start a logo, branding, UI/UX or web project with John Obiko. Working remotely worldwide — replies within 24–48 hours."),
   component: ContactPage,
 });
 

@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo";
 import { InteractiveWordmark } from "@/components/InteractiveWordmark";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
@@ -13,16 +14,9 @@ export const Route = createFileRoute("/work/$slug")({
     return { project };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Project not found — ondwariobiko" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData) return { meta: [{ title: "Project not found" }, { name: "robots", content: "noindex" }] };
     const p = loaderData.project;
-    return {
-      meta: [
-        { title: `${p.title} Case Study — ondwariobiko` },
-        { name: "description", content: p.summary },
-        { property: "og:title", content: `${p.title} — Case Study by ondwariobiko` },
-        { property: "og:description", content: p.headline },
-      ],
-    };
+    return seoHead(`work/${p.slug}`, `${p.title} — ${p.cat === "Digital" ? "Web & UI/UX Design" : "Logo & Brand Design"} | John Obiko`, p.summary, p.image);
   },
   notFoundComponent: () => (
     <section className="pt-44 pb-24 px-5 text-center">

@@ -1,17 +1,9 @@
+import { seoHead } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/journal")({
-  head: () => ({
-    meta: [
-      { title: "Journal — ondwariobiko" },
-      { name: "description", content: "Notes on brand strategy, logo design craft, and the process behind the work — from the desk of ondwariobiko." },
-      { property: "og:title", content: "Journal — ondwariobiko" },
-      { property: "og:description", content: "Notes on brand strategy, logo design craft, and the process behind the work — from the desk of ondwariobiko." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-  }),
+  head: () => seoHead("journal", "Journal — ondwariobiko", "Notes on brand strategy, logo design craft, and the process behind the work — from the desk of ondwariobiko."),
   component: JournalPage,
 });
 

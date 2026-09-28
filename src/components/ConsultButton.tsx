@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 export function ConsultButton({ label = "Book a free 1-hour consultation", className = "" }: { label?: string; className?: string }) {
   return (
-    <Link to="/consultation" className={`group inline-flex items-center gap-4 rounded-full bg-neon text-black pl-6 pr-2 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-transform duration-300 hover:scale-[1.03] ${className}`}>
+    <Link to="/consultation" className={`consult-button group inline-flex items-center gap-4 rounded-full bg-neon text-black pl-6 pr-2 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-transform duration-300 hover:scale-[1.03] ${className}`}>
       <span>{label}</span>
       <span className="size-10 rounded-full bg-black text-accent-ink grid place-items-center shrink-0 transition-transform duration-500 group-hover:rotate-45">↗</span>
     </Link>
@@ -12,7 +12,7 @@ export function ConsultButton({ label = "Book a free 1-hour consultation", class
 /** Floating pill, bottom-right on every page. */
 export function FloatingConsult() {
   return (
-    <Link to="/contact" aria-label="Start a project" className="group fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center gap-2 sm:gap-3 rounded-full bg-neon text-black pl-3 sm:pl-4 pr-1.5 py-1.5 shadow-sm transition-transform duration-300 hover:scale-105">
+    <Link to="/contact" aria-label="Start a project" className="floating-consult group fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center gap-2 sm:gap-3 rounded-full bg-neon text-black pl-3 sm:pl-4 pr-1.5 py-1.5 shadow-sm transition-transform duration-300 hover:scale-105">
       <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em]">Start a project</span>
       <span className="size-9 rounded-full bg-black text-accent-ink grid place-items-center transition-transform duration-500 group-hover:rotate-45">↗</span>
     </Link>

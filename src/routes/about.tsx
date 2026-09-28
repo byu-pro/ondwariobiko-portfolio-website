@@ -1,18 +1,10 @@
+import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — John Obiko | Logo & Brand Designer, 10 Years" },
-      { name: "description", content: "Meet John Obiko: a hand-drawn logo and brand designer, UI/UX designer and front-end developer working remotely worldwide for over ten years." },
-      { property: "og:title", content: "About John Obiko" },
-      { property: "og:description", content: "A decade of hand-drawn logos, brand systems and interfaces — built remotely for clients worldwide." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => seoHead("about", "About — John Obiko | Logo & Brand Designer, 10 Years", "Meet John Obiko: a hand-drawn logo and brand designer, UI/UX designer and front-end developer working remotely worldwide for over ten years."),
   component: AboutPage,
 });
 

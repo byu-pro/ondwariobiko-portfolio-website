@@ -39,7 +39,7 @@ export function PageHero({ index, eyebrow, title, outline }: { index: string; ey
           <span><span className="text-accent-ink">{index}</span> / {eyebrow}</span>
           <span>ondwariobiko®</span>
         </div>
-        <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,12rem)]">
+        <h1 className="page-hero-title font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,12rem)]">
           <span className="block overflow-hidden"><span className="block animate-rise">{title}</span></span>
           <span className="block overflow-hidden"><span className="block animate-rise text-stroke [animation-delay:120ms]">{outline}<span className="text-accent-ink">.</span></span></span>
         </h1>

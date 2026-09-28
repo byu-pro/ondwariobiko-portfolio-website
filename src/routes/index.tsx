@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo";
 import { LogoShowcase } from "@/components/LogoShowcase";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -6,14 +7,7 @@ import { projects } from "@/lib/projects";
 import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "John Obiko — Creative Director & Brand Designer | Remote Worldwide" },
-      { name: "description", content: "John Obiko is a designer based in Nairobi, Kenya, working worldwide, crafting premium logos, brand identities, UI/UX and front-end experiences. 10 years of practice." },
-      { property: "og:title", content: "John Obiko — Creative Director & Brand Designer" },
-      { property: "og:description", content: "Designer working remotely worldwide, crafting premium brand identities and digital experiences." },
-    ],
-  }),
+  head: () => seoHead("", "John Obiko | Graphic, Logo & Brand Designer Worldwide", "Freelance graphic designer John Obiko creates custom logos, brand identities and websites for businesses worldwide. Based in Nairobi, working remotely with you."),
   component: Index,
 });
 
@@ -34,7 +28,7 @@ function Index() {
             <LogoShowcase />
             <div>
               <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-[1.05] max-w-4xl mb-8">
-                Distinctive brand identities and websites for <span className="text-accent-ink">businesses ready for their next chapter</span>. Work directly with your designer, from first conversation to final delivery.
+                Graphic design, custom logos and brand identities for <span className="text-accent-ink">businesses ready for their next chapter</span>. Work directly with John Obiko, a freelance graphic and brand designer in Nairobi serving clients worldwide, from first conversation to final delivery.
               </p>
               <Link to="/work" className="inline-flex items-center gap-4 group">
                 <span className="size-14 rounded-full bg-neon text-black grid place-items-center transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">↗</span>

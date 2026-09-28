@@ -1,15 +1,9 @@
+import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/terms")({
-  head: () => ({
-    meta: [
-      { title: "Terms of Service — ondwariobiko" },
-      { name: "description", content: "Terms of Service for design and development work with ondwariobiko. How projects, payment, revisions and ownership work." },
-      { property: "og:title", content: "Terms of Service — ondwariobiko" },
-      { property: "og:description", content: "How projects, payment, revisions and ownership work when we work together." },
-    ],
-  }),
+  head: () => seoHead("terms", "Terms of Service — ondwariobiko", "Terms of Service for design and development work with ondwariobiko. How projects, payment, revisions and ownership work."),
   component: TermsPage,
 });
 

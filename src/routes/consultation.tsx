@@ -1,17 +1,11 @@
+import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/SiteFooter";
 import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/consultation")({
-  head: () => ({
-    meta: [
-      { title: "Free 1-Hour Consultation — John Obiko" },
-      { name: "description", content: "Book a free one-hour consultation with John Obiko to discuss your logo, brand, UI/UX or web project and see if we're a good fit." },
-      { property: "og:title", content: "Book a Free 1-Hour Consultation — John Obiko" },
-      { property: "og:description", content: "No cost, no pressure. Talk through your project and find out if we're the right fit." },
-    ],
-  }),
+  head: () => seoHead("consultation", "Free 1-Hour Consultation — John Obiko", "Book a free one-hour consultation with John Obiko to discuss your logo, brand, UI/UX or web project and see if we're a good fit."),
   component: ConsultationPage,
 });
 

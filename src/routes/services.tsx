@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
@@ -5,16 +6,7 @@ import { PageHero } from "@/components/SiteFooter";
 import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — ondwariobiko | Logo, Branding, UI/UX, Front-end" },
-      { name: "description", content: "Logo systems, brand identity packages, mascot design and front-end builds from ondwariobiko. Clear scope, individually quoted, working remotely worldwide." },
-      { property: "og:title", content: "Services — ondwariobiko" },
-      { property: "og:description", content: "Logo systems, brand identity packages, mascot design and front-end builds. Clear scope, quoted around your project and budget." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => seoHead("services", "Logo Design & Brand Identity Services | John Obiko", "Hire John Obiko for custom logo design, graphic design, brand identity and web design. Personal collaboration for startups and businesses worldwide."),
   component: ServicesPage,
 });
 

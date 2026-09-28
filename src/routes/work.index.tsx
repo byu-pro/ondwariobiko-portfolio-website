@@ -1,3 +1,4 @@
+import { seoHead } from "@/lib/seo";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
@@ -5,14 +6,7 @@ import { PageHero } from "@/components/SiteFooter";
 import { projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/work/")({
-  head: () => ({
-    meta: [
-      { title: "Work — ondwariobiko | Logos, Brands & Interfaces" },
-      { name: "description", content: "Selected logo, brand identity, UI/UX and front-end projects by ondwariobiko." },
-      { property: "og:title", content: "Selected Work — ondwariobiko" },
-      { property: "og:description", content: "Logos, brand systems and digital products designed remotely worldwide." },
-    ],
-  }),
+  head: () => seoHead("work", "Logo & Brand Design Portfolio | John Obiko", "Selected logo, brand identity, UI/UX and front-end projects by ondwariobiko."),
   component: WorkPage,
 });
 

@@ -1,17 +1,9 @@
+import { seoHead } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/faq")({
-  head: () => ({
-    meta: [
-      { title: "FAQ — ondwariobiko" },
-      { name: "description", content: "Answers to the questions clients ask most — pricing, process, timelines, files, and working together remotely." },
-      { property: "og:title", content: "FAQ — ondwariobiko" },
-      { property: "og:description", content: "Answers to the questions clients ask most — pricing, process, timelines, files, and working together remotely." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-  }),
+  head: () => seoHead("faq", "FAQ — ondwariobiko", "Answers to the questions clients ask most — pricing, process, timelines, files, and working together remotely."),
   component: FaqPage,
 });
 
