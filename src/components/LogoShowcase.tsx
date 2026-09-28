@@ -10,13 +10,13 @@ const slides = [
 
 export function LogoShowcase({ className = "" }: { className?: string }) {
   const [active, setActive] = useState(0);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => setPlaying(!preference.matches);
-    sync();
+    if (preference.matches) setPlaying(false);
+    const sync = (e: MediaQueryListEvent) => setPlaying(!e.matches);
     preference.addEventListener("change", sync);
     return () => preference.removeEventListener("change", sync);
   }, []);
@@ -25,11 +25,10 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
     if (!playing || hovered) return;
     const timer = window.setInterval(() => setActive((current) => (current + 1) % slides.length), 5000);
     return () => window.clearInterval(timer);
-  }, [playing, hovered]);
+  }, [playing, hovered, active]);
 
   const select = (index: number) => {
     setActive(index);
-    setPlaying(false);
   };
 
   return (
@@ -39,7 +38,6 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
       aria-roledescription="carousel"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onFocusCapture={(event) => { if (!(event.target as HTMLElement).hasAttribute("data-playback")) setPlaying(false); }}
     >
       <div className="flex items-center justify-between gap-4 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.2em]">
         <span><span className="text-accent-ink" aria-hidden="true">✺ </span> Selected identities</span>
