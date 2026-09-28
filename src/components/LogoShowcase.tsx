@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 
 const slides = [
-  { file: "otherworkcarousel/acceptionalacres.webp", name: "Acceptional Acres", category: "Real Estate & Land" },
-  { file: "otherworkcarousel/cabanabarandgrill.webp", name: "Cabana Bar & Grill", category: "Hospitality & Dining" },
-  { file: "otherworkcarousel/emergencylandingvetservices.webp", name: "Emergency Landing Vet Services", category: "Veterinary & Healthcare" },
-  { file: "otherworkcarousel/fishcreekministries.webp", name: "Fish Creek Ministries", category: "Community & Non-Profit" },
-  { file: "otherworkcarousel/gridlockgang.webp", name: "Gridlock Gang", category: "Apparel & Lifestyle" },
-  { file: "otherworkcarousel/lepetit.webp", name: "Le Petit", category: "Boutique & Retail" },
-  { file: "otherworkcarousel/madevsisble.webp", name: "Made Visible", category: "Creative Agency" },
-  { file: "otherworkcarousel/maxvaluecollectibles.webp", name: "Max Value Collectibles", category: "Collectibles & Retail" },
-  { file: "otherworkcarousel/pand.webp", name: "P & D", category: "Brand Identity" },
-  { file: "otherworkcarousel/peelgoodproject.webp", name: "Peel Good Project", category: "Wellness & Skincare" },
-  { file: "otherworkcarousel/praevo.webp", name: "Praevo", category: "Technology & Software" },
-  { file: "otherworkcarousel/RitzenhoffCristalGmbH_fathersdayglassillustration.webp", name: "Ritzenhoff Cristal", category: "Illustration & Glassware" },
-  { file: "otherworkcarousel/spassartapartment.webp", name: "Spassart Apartment", category: "Hospitality & Living" },
-  { file: "otherworkcarousel/sugarmama.webp", name: "Sugar Mama", category: "Bakery & Confectionery" },
-  { file: "otherworkcarousel/thegrillingthrone.webp", name: "The Grilling Throne", category: "Culinary & Lifestyle" },
-  { file: "otherworkcarousel/theloadedmusketpub.webp", name: "The Loaded Musket Pub", category: "Pub & Hospitality" },
-  { file: "otherworkcarousel/themahjabout.webp", name: "The Mahj About", category: "Entertainment & Gaming" },
-  { file: "otherworkcarousel/thinkingandfeelingpodcast.webp", name: "Thinking & Feeling Podcast", category: "Media & Audio" },
+  { file: "otherworkcarousel/acceptionalacres.webp", mobileFile: "otherworkcarousel/acceptionalacres_mobile.webp", name: "Acceptional Acres", category: "Real Estate & Land" },
+  { file: "otherworkcarousel/cabanabarandgrill.webp", mobileFile: "otherworkcarousel/cabanabarandgrill_mobile.webp", name: "Cabana Bar & Grill", category: "Hospitality & Dining" },
+  { file: "otherworkcarousel/emergencylandingvetservices.webp", mobileFile: "otherworkcarousel/emergencylandingvetservices_mobile.webp", name: "Emergency Landing Vet Services", category: "Veterinary & Healthcare" },
+  { file: "otherworkcarousel/fishcreekministries.webp", mobileFile: "otherworkcarousel/fishcreekministries_mobile.webp", name: "Fish Creek Ministries", category: "Community & Non-Profit" },
+  { file: "otherworkcarousel/gridlockgang.webp", mobileFile: "otherworkcarousel/gridlockgang_mobile.webp", name: "Gridlock Gang", category: "Apparel & Lifestyle" },
+  { file: "otherworkcarousel/lepetit.webp", mobileFile: "otherworkcarousel/lepetit_mobile.webp", name: "Le Petit", category: "Boutique & Retail" },
+  { file: "otherworkcarousel/madevsisble.webp", mobileFile: "otherworkcarousel/madevsisble_mobile.webp", name: "Made Visible", category: "Creative Agency" },
+  { file: "otherworkcarousel/maxvaluecollectibles.webp", mobileFile: "otherworkcarousel/maxvaluecollectibles_mobile.webp", name: "Max Value Collectibles", category: "Collectibles & Retail" },
+  { file: "otherworkcarousel/pand.webp", mobileFile: "otherworkcarousel/pand_mobile.webp", name: "P & D", category: "Brand Identity" },
+  { file: "otherworkcarousel/peelgoodproject.webp", mobileFile: "otherworkcarousel/peelgoodproject_mobile.webp", name: "Peel Good Project", category: "Wellness & Skincare" },
+  { file: "otherworkcarousel/praevo.webp", mobileFile: "otherworkcarousel/praevo_mobile.webp", name: "Praevo", category: "Technology & Software" },
+  { file: "otherworkcarousel/RitzenhoffCristalGmbH_fathersdayglassillustration.webp", mobileFile: "otherworkcarousel/RitzenhoffCristalGmbH_fathersdayglassillustration_mobile.webp", name: "Ritzenhoff Cristal", category: "Illustration & Glassware" },
+  { file: "otherworkcarousel/spassartapartment.webp", mobileFile: "otherworkcarousel/spassartapartment_mobile.webp", name: "Spassart Apartment", category: "Hospitality & Living" },
+  { file: "otherworkcarousel/sugarmama.webp", mobileFile: "otherworkcarousel/sugarmama_mobile.webp", name: "Sugar Mama", category: "Bakery & Confectionery" },
+  { file: "otherworkcarousel/thegrillingthrone.webp", mobileFile: "otherworkcarousel/thegrillingthrone_mobile.webp", name: "The Grilling Throne", category: "Culinary & Lifestyle" },
+  { file: "otherworkcarousel/theloadedmusketpub.webp", mobileFile: "otherworkcarousel/theloadedmusketpub_mobile.webp", name: "The Loaded Musket Pub", category: "Pub & Hospitality" },
+  { file: "otherworkcarousel/themahjabout.webp", mobileFile: "otherworkcarousel/themahjabout_mobile.webp", name: "The Mahj About", category: "Entertainment & Gaming" },
+  { file: "otherworkcarousel/thinkingandfeelingpodcast.webp", mobileFile: "otherworkcarousel/thinkingandfeelingpodcast_mobile.webp", name: "Thinking & Feeling Podcast", category: "Media & Audio" },
 ];
 
 export function LogoShowcase({ className = "" }: { className?: string }) {
@@ -67,15 +67,23 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
             className="absolute inset-0 transition-opacity duration-1000 ease-in-out motion-reduce:transition-none"
             style={{ opacity: active === index ? 1 : 0 }}
           >
-            <img
-              src={`${import.meta.env.BASE_URL}assets/${slide.file}`}
-              alt={`${slide.name} logo design`}
-              width={1920}
-              height={1080}
-              fetchPriority={index === 0 ? "high" : "auto"}
-              decoding="async"
-              className="w-full h-full object-cover md:object-contain p-0 md:p-12"
-            />
+            <picture className="block w-full h-full">
+              <source
+                media="(max-width: 767px)"
+                srcSet={`${import.meta.env.BASE_URL}assets/${slide.mobileFile}`}
+                width={1200}
+                height={1500}
+              />
+              <img
+                src={`${import.meta.env.BASE_URL}assets/${slide.file}`}
+                alt={`${slide.name} logo design`}
+                width={1920}
+                height={1080}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                decoding="async"
+                className="w-full h-full object-cover md:object-contain p-0 md:p-12"
+              />
+            </picture>
           </div>
         ))}
       </div>

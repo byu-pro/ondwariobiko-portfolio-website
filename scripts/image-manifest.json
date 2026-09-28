@@ -429,5 +429,113 @@
     "outputs": [
       "public/assets/otherworkcarousel/favicon.webp"
     ]
+  },
+  "public/assets/otherworkcarousel/RitzenhoffCristalGmbH_fathersdayglassillustration_mobile.png": {
+    "hash": "2262db4dd9b1cfa207ddcc806d3f8bc6f20f1868541184bec10fa339fa503b47",
+    "outputs": [
+      "public/assets/otherworkcarousel/RitzenhoffCristalGmbH_fathersdayglassillustration_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/acceptionalacres_mobile.png": {
+    "hash": "d3c797d93758cb11939a1daf4bf2b443646a2f512ba79725b6ed8dad9227dbf2",
+    "outputs": [
+      "public/assets/otherworkcarousel/acceptionalacres_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/cabanabarandgrill_mobile.png": {
+    "hash": "356ab6e0cbec36f94323dfc1db9cc5c252eca300f6e332d9370ee9e1e2e4555f",
+    "outputs": [
+      "public/assets/otherworkcarousel/cabanabarandgrill_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/emergencylandingvetservices_mobile.png": {
+    "hash": "ea874663db973f9435a2bff78f578968410e632ae1cf42223c8e3e5f993c9aee",
+    "outputs": [
+      "public/assets/otherworkcarousel/emergencylandingvetservices_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/fishcreekministries_mobile.png": {
+    "hash": "38f655af9e2a193656f2e05c4c0006c052df5fdabe7ceb0f2f784ae629108d40",
+    "outputs": [
+      "public/assets/otherworkcarousel/fishcreekministries_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/gridlockgang_mobile.png": {
+    "hash": "f8522b8322e2508a0d9bacb628788a8d85508d6b70d83ecf62671c7661a54e4f",
+    "outputs": [
+      "public/assets/otherworkcarousel/gridlockgang_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/lepetit_mobile.png": {
+    "hash": "1f091618b8d3db8176a6174b111335ec74cf9ceb2e8366ce7feeb4be1b09e69f",
+    "outputs": [
+      "public/assets/otherworkcarousel/lepetit_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/madevsisble_mobile.png": {
+    "hash": "6639072ff7a91a0996163b2b5c40591a8c8b2329cec88dab5738613b86d9fbe7",
+    "outputs": [
+      "public/assets/otherworkcarousel/madevsisble_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/maxvaluecollectibles_mobile.png": {
+    "hash": "ad9f145c8093a98ddbe35627ae8cdcd3ac739a11017707817b32986b54d173f8",
+    "outputs": [
+      "public/assets/otherworkcarousel/maxvaluecollectibles_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/pand_mobile.png": {
+    "hash": "38c9780d6aa3628c97d928712220433cf27cd40e03378bc28ee9f1da81fd54e6",
+    "outputs": [
+      "public/assets/otherworkcarousel/pand_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/peelgoodproject_mobile.png": {
+    "hash": "53141580d816ff00d159916cfce92d5660bc8bdceb268fe2a4138d2041fbce96",
+    "outputs": [
+      "public/assets/otherworkcarousel/peelgoodproject_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/praevo_mobile.png": {
+    "hash": "a374328c6b63b5acfeac66e4dc7fda7d2a008a026d93067f4d75da8a8c6730ba",
+    "outputs": [
+      "public/assets/otherworkcarousel/praevo_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/spassartapartment_mobile.png": {
+    "hash": "0168b85310af79b4ced6fcace2ceabdd79905ee1d0d25775d50eb29e587765a3",
+    "outputs": [
+      "public/assets/otherworkcarousel/spassartapartment_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/sugarmama_mobile.png": {
+    "hash": "9ff42da3ccd257f69ff0fb3044dd75da410574b0d6bff93f9ae4595767ea5858",
+    "outputs": [
+      "public/assets/otherworkcarousel/sugarmama_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/thegrillingthrone_mobile.png": {
+    "hash": "267bcfcab0f7adbd22357a94ca7895b24c1454a7d510547e42d4a3cc75fa3d1f",
+    "outputs": [
+      "public/assets/otherworkcarousel/thegrillingthrone_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/theloadedmusketpub_mobile.png": {
+    "hash": "fc5702ffaf48f8f0e3013f2e1485a0d06fb87203df2bde6f7b4e50c69e9b35b4",
+    "outputs": [
+      "public/assets/otherworkcarousel/theloadedmusketpub_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/themahjabout_mobile.png": {
+    "hash": "86cde8c14c4010c955d94da76be016eb9682d77764d36b428a77f72c58d1f36f",
+    "outputs": [
+      "public/assets/otherworkcarousel/themahjabout_mobile.webp"
+    ]
+  },
+  "public/assets/otherworkcarousel/thinkingandfeelingpodcast_mobile.png": {
+    "hash": "5eebeb0242742d79e9e9a6298fa1d39927da24f88f8b8d09ba1eb85a153d7c37",
+    "outputs": [
+      "public/assets/otherworkcarousel/thinkingandfeelingpodcast_mobile.webp"
+    ]
   }
 }
