@@ -31,8 +31,8 @@ function Index() {
             <span className="text-accent-ink inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
           </h1>
           <div className="flex flex-col gap-10 md:gap-12">
-            <div className="order-1 md:order-2 md:w-1/2">
-              <p className="text-xl sm:text-2xl md:text-3xl font-light leading-tight max-w-xl mb-8">
+            <div className="order-1 md:order-2">
+              <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-[1.05] max-w-4xl mb-8">
                 Distinctive brand identities and websites for <span className="text-accent-ink">businesses ready for their next chapter</span>. Work directly with your designer, from first conversation to final delivery.
               </p>
               <Link to="/work" className="inline-flex items-center gap-4 group">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const slides = [
-  { file: "pelicansocial_logo.webp", name: "Pelican Social Bar & Grill", category: "Hospitality" },
+  { file: "pelicansocial_logo.webp", name: "Pelican Social", category: "Hospitality" },
   { file: "ikontrailers_logo.webp", name: "Ikon Trailers", category: "Industry" },
   { file: "friendsofunionvillecolor_logo.webp", name: "Friends of Unionville", category: "Community" },
   { file: "ironacrelandco_logo.webp", name: "Iron Acre Land Co", category: "Land & development" },
@@ -66,23 +66,23 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
           </div>
         ))}
       </div>
-      <div className="px-5 sm:px-6 py-5 bg-surface border-t border-ink/10">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4" aria-live={playing ? "off" : "polite"}>
+      <div className="px-4 sm:px-5 py-4 bg-surface">
+        <div className="flex items-start justify-between gap-3 min-h-14" aria-live={playing ? "off" : "polite"}>
           <div>
-            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight leading-tight">{slides[active].name}</h3>
-            <p className="font-mono text-xs uppercase tracking-widest text-ink/60 mt-2">{slides[active].category}</p>
+            <p className="font-display text-lg leading-tight">{slides[active].name}</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1">{slides[active].category}</p>
           </div>
-          <span className="font-mono text-sm text-ink/60 tabular-nums self-start sm:self-auto">0{active + 1} / 05</span>
+          <span className="font-mono text-xs text-ink/60 tabular-nums">0{active + 1} / 05</span>
         </div>
-        <div className="flex items-center justify-between gap-3 mt-4 pt-4 border-t border-ink/10">
-          <div className="flex gap-1.5" aria-label="Choose a logo">
+        <div className="flex items-center justify-between gap-3 mt-3">
+          <div className="flex gap-1" aria-label="Choose a logo">
             {slides.map((slide, index) => (
               <button key={slide.file} type="button" onClick={() => select(index)} aria-label={`Show ${slide.name}`} aria-pressed={active === index} className="min-w-8 min-h-11 flex items-center justify-center focus-visible:outline-2 focus-visible:outline-ink">
-                <span className={`block h-1.5 w-8 transition-colors ${active === index ? "bg-accent-ink" : "bg-ink/20"}`} />
+                <span className={`block h-1 w-6 transition-colors ${active === index ? "bg-accent-ink" : "bg-ink/20"}`} />
               </button>
             ))}
           </div>
-          <button data-playback type="button" onClick={() => setPlaying((current) => !current)} aria-label={playing ? "Pause logo slideshow" : "Play logo slideshow"} className="min-h-11 px-3 font-mono text-xs uppercase tracking-widest hover:text-accent-ink focus-visible:outline-2 focus-visible:outline-ink">
+          <button data-playback type="button" onClick={() => setPlaying((current) => !current)} aria-label={playing ? "Pause logo slideshow" : "Play logo slideshow"} className="min-h-11 px-2 font-mono text-[10px] uppercase tracking-widest hover:text-accent-ink focus-visible:outline-2 focus-visible:outline-ink">
             {playing ? "Pause Ⅱ" : "Play ▷"}
           </button>
         </div>
