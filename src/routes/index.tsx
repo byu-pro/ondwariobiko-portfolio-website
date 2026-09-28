@@ -70,65 +70,6 @@ function Index() {
         </div>
       </div>
 
-      <section className="py-16 md:py-24 px-5 md:px-8" aria-labelledby="capabilities-heading">
-        <div className="max-w-[1400px] mx-auto">
-          <h2 id="capabilities-heading" className="scroll-mt-28 font-display text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight max-w-2xl mb-10">
-            What I can do for your business
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
-          {[
-            {
-              image: "greenessentials_logo.webp",
-              label: "Logo design",
-              description: "A distinctive mark people remember.",
-              client: "Green Essentials",
-              slug: "green-essentials-turf-and-mosquito",
-              alt: "Green Essentials logo combining grass and a mosquito",
-            },
-            {
-              image: "pelicansocial_casestudybanner-600.webp",
-              label: "Brand identity",
-              description: "A consistent identity across every touchpoint.",
-              client: "Pelican Social",
-              slug: "pelican-social-bar-and-grill",
-              alt: "Pelican Social identity with its pelican illustration, wordmark and coastal colours",
-            },
-            {
-              image: "soundcurves_herobanner-600.webp",
-              label: "Web & digital",
-              description: "Clear, usable digital experiences.",
-              client: "Sound Curves",
-              slug: "sound-curves",
-              alt: "Sound Curves earphone storefront displayed on a desktop monitor",
-            },
-          ].map((service) => (
-            <Link
-              key={service.slug}
-              to="/work/$slug"
-              params={{ slug: service.slug }}
-              className="group min-w-0 focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-ink"
-            >
-              <div className="aspect-[8/5] overflow-hidden mb-5">
-                <img
-                  src={`${import.meta.env.BASE_URL}assets/${service.image}`}
-                  alt={service.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover object-[center_60%] motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
-                />
-              </div>
-              <h3 className="font-display text-2xl uppercase tracking-tight group-hover:text-accent-ink transition-colors">{service.label}</h3>
-              <p className="text-ink/70 mt-2 leading-relaxed">{service.description}</p>
-              <div className="mt-5 pt-4 border-t border-ink/15 flex items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest">
-                <span>{service.client} · Case study</span>
-                <span aria-hidden="true" className="text-accent-ink text-xl">↗</span>
-              </div>
-            </Link>
-          ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-24 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex justify-between items-end mb-12 md:mb-16 gap-6 flex-wrap">
