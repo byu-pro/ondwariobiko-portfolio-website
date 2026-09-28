@@ -169,7 +169,7 @@ function CaseStudy() {
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
             <div className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6"><span className="text-accent-ink">●</span> Colour system</div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
               {p.palette.map((c) => (
                 <div key={c.hex} className="group">
                   <div className="aspect-[3/4] border border-ink/15 transition-transform duration-500 group-hover:-translate-y-3" style={{ backgroundColor: c.hex }} />

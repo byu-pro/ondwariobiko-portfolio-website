@@ -65,10 +65,11 @@ export const projects: Project[] = [
     insight: "Modern Caribbean hospitality thrives when it balances effortless beach-side relaxation with artisanal culinary care. The brand system highlights scratch-made quality within a laid-back boho-chic aesthetic.",
     process: brandProcess,
     palette: [
-      { name: "Pelican Teal", hex: "#09414A" },
+      { name: "Pelican Navy", hex: "#09414A" },
+      { name: "Ocean Teal", hex: "#15636F" },
+      { name: "Seaside Turquoise", hex: "#37B0B5" },
       { name: "Sunset Coral", hex: "#EF806A" },
       { name: "Caribbean Sand", hex: "#EFC18E" },
-      { name: "Ocean Turquoise", hex: "#37B0B5" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
     results: [
@@ -109,8 +110,9 @@ export const projects: Project[] = [
     palette: [
       { name: "Ikon Red", hex: "#FE0000" },
       { name: "Industrial Black", hex: "#0E0E10" },
-      { name: "Armor Red Accent", hex: "#FE4242" },
-      { name: "Steel White", hex: "#FFFFFF" },
+      { name: "Crimson Red", hex: "#FE4040" },
+      { name: "Steel Silver", hex: "#8E9399" },
+      { name: "Pure White", hex: "#FFFFFF" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
     results: [
@@ -150,9 +152,10 @@ export const projects: Project[] = [
     process: brandProcess,
     palette: [
       { name: "Iron Black", hex: "#040807" },
-      { name: "Slate Steel", hex: "#464948" },
-      { name: "Raw Silver", hex: "#DADBDA" },
+      { name: "Slate Steel", hex: "#434645" },
+      { name: "Raw Silver", hex: "#C1C2C2" },
       { name: "Pure White", hex: "#FFFFFF" },
+      { name: "Earth Bronze", hex: "#556B2F" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
     results: [
@@ -191,9 +194,11 @@ export const projects: Project[] = [
     insight: "Unionville's identity was born at a historic crossroads. An organic green and crimson palette paired with warm typography highlights togetherness, scenic beauty, and local pride.",
     process: brandProcess,
     palette: [
-      { name: "Deep Forest", hex: "#163932" },
+      { name: "Crossroads Slate", hex: "#69899F" },
       { name: "Historic Brick", hex: "#AE461F" },
       { name: "Village Sun", hex: "#FCAD37" },
+      { name: "Deep Forest", hex: "#163932" },
+      { name: "Harvest Gold", hex: "#AA8A41" },
       { name: "Linen Sand", hex: "#E7E1D6" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
@@ -380,9 +385,10 @@ export const projects: Project[] = [
     ],
     palette: [
       { name: "Turf Dark Green", hex: "#193B28" },
-      { name: "Mosquito Defense Blue", hex: "#1D324A" },
       { name: "Lawn Leaf Green", hex: "#457342" },
-      { name: "Clean Grey", hex: "#E6E5E5" },
+      { name: "Mosquito Defense Blue", hex: "#1D324A" },
+      { name: "Shield Soft Grey", hex: "#B3BBB6" },
+      { name: "Canvas Off-White", hex: "#E6E5E5" },
     ],
     type: { display: "Syne ExtraBold", body: "Inter Regular" },
     results: [
