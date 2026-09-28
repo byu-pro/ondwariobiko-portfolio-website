@@ -6,6 +6,7 @@ import { ConsultButton } from "@/components/ConsultButton";
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
     if (params.slug === "moods-and-nerds") throw redirect({ to: "/work/$slug", params: { slug: "moods-n-meds" }, statusCode: 301 });
+    if (params.slug === "green-essential-turf-and-mosquito") throw redirect({ to: "/work/$slug", params: { slug: "green-essentials-turf-and-mosquito" }, statusCode: 301 });
     const project = getProject(params.slug);
     if (!project) throw notFound();
     return { project };
