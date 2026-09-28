@@ -3,7 +3,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/journal")({
-  head: () => seoHead("journal", "Journal — ondwariobiko", "Notes on brand strategy, logo design craft, and the process behind the work — from the desk of ondwariobiko."),
+  head: () =>
+    seoHead(
+      "journal",
+      "Graphic Design & Brand Identity Journal | John Obiko",
+      "Insights, design process breakdowns, and practical articles on logo design, brand strategy, typography, and visual identity systems by John Obiko.",
+      "assets/pelicansocial_thumbnail.webp",
+      [],
+      "graphic design blog, logo design articles, brand strategy insights, visual identity process"
+    ),
   component: JournalPage,
 });
 

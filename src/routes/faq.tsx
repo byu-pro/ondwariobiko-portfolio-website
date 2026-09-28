@@ -1,50 +1,60 @@
-import { seoHead } from "@/lib/seo";
+import { faqSchema, seoHead } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
-
-export const Route = createFileRoute("/faq")({
-  head: () => seoHead("faq", "FAQ — ondwariobiko", "Answers to the questions clients ask most — pricing, process, timelines, files, and working together remotely."),
-  component: FaqPage,
-});
 
 const groups = [
   {
     title: "Pricing & Scope",
     items: [
-      { q: "How much does a project cost?", a: "Every project is quoted individually. No two brands need the same thing, so I scope and price around your goals, timeline and budget — you only pay for what your brand actually needs. Share your brief and I'll come back with a tailored quote." },
-      { q: "Do you have packages or fixed prices?", a: "No fixed price lists. The service packages on the Services page describe what's included, but the investment is always agreed together after we discuss scope." },
-      { q: "How does payment work?", a: "Typically a deposit before work begins, with the balance on completion before final files are delivered. Exact terms are agreed in writing before we start — see the Terms page for the full picture." },
+      { q: "How much does a graphic design or logo design project cost?", a: "Every project is quoted individually based on scope, deliverables, timeline, and budget. Share your project brief to receive an exact tailored quote with no surprise fees." },
+      { q: "Do you have fixed package prices for logo and brand design?", a: "The Services page outlines core scope frameworks (Logo Systems, Brand Identity Packages, Mascot Illustration, Web Design), but final investment is agreed upon after discussing your specific goals." },
+      { q: "How does payment work for freelance design services?", a: "Typically a deposit before work begins, with the balance on completion before final files are delivered. Exact terms are agreed in writing before we start." },
       { q: "What if my budget is small?", a: "Tell me what you're working with. I'll be honest about what it can cover — sometimes that means starting with a focused scope (like a logo system first, website later) rather than stretching thin." },
     ],
   },
   {
     title: "Process & Timelines",
     items: [
-      { q: "How long does a project take?", a: "It depends on scope and what we agree together — a logo system and a full brand-plus-website are very different beasts. I'll give you a realistic timeline with your quote, and we lock it in before work starts." },
-      { q: "What does the process look like?", a: "Discover → Design → Build → Launch. We start with a deep-dive on your goals and audience, I develop concepts with written rationale, we refine together through agreed revision rounds, and I deliver every file you need." },
-      { q: "How many concepts and revisions do I get?", a: "Concepts and revision rounds are specified per project before work starts, so there are no surprises. Revisions beyond the agreed scope can be added — we discuss and agree before any extra work begins." },
-      { q: "What if I don't like the first concepts?", a: "Concepts come with rationale, not just pretty pictures — but if a direction genuinely isn't landing, that's what the refinement stage is for. The discovery work up front makes this rare." },
-      { q: "Do you offer rush delivery?", a: "Sometimes, depending on my current workload. If you have a hard deadline, mention it in your brief and I'll tell you honestly whether it's doable." },
+      { q: "How long does a logo or brand identity project take?", a: "It depends on scope and what we agree together — a logo system and a full brand-plus-website are different beasts. Focused logo projects take 2–3 weeks, while full brand identities with websites take 4–6 weeks." },
+      { q: "What does the graphic design process look like?", a: "Discover → Design → Build → Launch. We start with a deep-dive on your goals and audience, I develop hand-drawn vector concepts with written rationale, we refine together through agreed revision rounds, and I deliver master files." },
+      { q: "How many concepts and revisions do I get?", a: "Concepts and revision rounds (typically 3 concepts and 2 revision rounds) are specified per project before work starts, so there are no surprises." },
+      { q: "What if I don't like the first concepts?", a: "Concepts come with rationale, not just pretty pictures — but if a direction genuinely isn't landing, that's what the refinement stage is for. Discovery work up front makes this rare." },
+      { q: "Do you offer rush delivery for logo design?", a: "Sometimes, depending on my current workload. If you have a hard deadline, mention it in your brief and I'll tell you honestly whether it's doable." },
     ],
   },
   {
     title: "Working Together",
     items: [
-      { q: "Do you work with clients outside Kenya?", a: "Yes — I work remotely with clients worldwide, across time zones. Email is the main line for briefs, files and approvals; for calls and video walkthroughs we hop on WhatsApp." },
-      { q: "Do you do logos only, or websites too?", a: "Both. I design brand identities and I also design and code the websites that carry them — so your brand and your site come from the same hands and feel like one thing." },
-      { q: "Can you redesign my existing brand or website?", a: "Yes — rebrands and redesigns are some of my favourite briefs. I'll audit what you have, keep what's working, and rebuild what isn't." },
+      { q: "Do you work with clients outside Kenya?", a: "Yes — I work remotely with clients worldwide across time zones (US, UK, Europe, Australia, Africa). Email is the main line for briefs, files and approvals; for calls we hop on WhatsApp or Zoom." },
+      { q: "Do you do logos only, or websites too?", a: "Both. I design custom brand identities and I also design and code the websites that carry them — so your brand and site come from the same hands and feel like one cohesive system." },
+      { q: "Can you redesign my existing brand or website?", a: "Yes — rebrands and logo redesigns are some of my favourite briefs. I'll audit what you have, keep what's working, and rebuild what isn't." },
       { q: "What if I'm not sure what I need yet?", a: "That's exactly what the free 1-hour consultation is for. We'll talk through your goals and I'll tell you honestly what I'd recommend — even if that means starting smaller." },
     ],
   },
   {
     title: "Files & Ownership",
     items: [
-      { q: "What files do I receive?", a: "Everything you need to use your brand anywhere: vector source files (AI, SVG, EPS), web and print exports (PNG, JPG, PDF), and brand guidelines where the scope includes them." },
-      { q: "Who owns the final design?", a: "You do — once final payment is received, full ownership and usage rights to the approved deliverables are yours. Unused concepts and sketches remain my intellectual property." },
+      { q: "What files do I receive upon project completion?", a: "Everything you need to use your brand anywhere: vector master source files (AI, SVG, EPS), web and print exports (PNG, JPG, PDF), favicons, and brand guidelines where included." },
+      { q: "Who owns the final logo and brand design?", a: "You do — once final payment is received, full 100% ownership and copyright usage rights to approved deliverables are yours." },
       { q: "Will my project appear in your portfolio?", a: "I may show completed work in my portfolio and social channels — unless you ask for confidentiality in writing before the project wraps." },
     ],
   },
 ];
+
+const flatFaqs = groups.flatMap((g) => g.items);
+
+export const Route = createFileRoute("/faq")({
+  head: () =>
+    seoHead(
+      "faq",
+      "Graphic & Logo Design FAQ | Frequently Asked Questions | John Obiko",
+      "Find answers to common questions about hiring freelance graphic designer John Obiko: logo design pricing, process, revisions, file deliverables, and remote collaboration.",
+      "assets/pelicansocial_thumbnail.webp",
+      [faqSchema(flatFaqs)],
+      "graphic design FAQ, logo design cost, brand designer process, freelance logo designer timeline, vector logo files",
+    ),
+  component: FaqPage,
+});
 
 function FaqPage() {
   return (

@@ -6,7 +6,15 @@ import { PageHero } from "@/components/SiteFooter";
 import { projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/work/")({
-  head: () => seoHead("work", "Logo & Brand Design Portfolio | John Obiko", "Selected logo, brand identity, UI/UX and front-end projects by ondwariobiko."),
+  head: () =>
+    seoHead(
+      "work",
+      "Logo & Brand Identity Portfolio | John Obiko — Graphic Designer",
+      "Explore recent custom logo design, brand identity systems, packaging, and digital design projects by freelance graphic designer John Obiko.",
+      "assets/pelicansocial_thumbnail.webp",
+      [],
+      "graphic design portfolio, logo design portfolio, brand identity case studies, custom logos, visual design work"
+    ),
   component: WorkPage,
 });
 

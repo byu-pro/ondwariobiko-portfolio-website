@@ -7,7 +7,15 @@ import { projects } from "@/lib/projects";
 import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/")({
-  head: () => seoHead("", "John Obiko | Graphic, Logo & Brand Designer Worldwide", "Freelance graphic designer John Obiko creates custom logos, brand identities and websites for businesses worldwide. Based in Nairobi, working remotely with you."),
+  head: () =>
+    seoHead(
+      "",
+      "John Obiko | Freelance Graphic Designer, Logo Designer & Brand Specialist",
+      "Independent graphic designer & custom logo designer John Obiko crafts concept-driven brand identities, vector mascot illustrations, and websites for clients worldwide.",
+      "assets/pelicansocial_thumbnail.webp",
+      [],
+      "graphic designer, logo designer, brand designer, freelance graphic designer, custom logo design, brand identity designer, visual designer"
+    ),
   component: Index,
 });
 

@@ -5,7 +5,15 @@ import { PageHero } from "@/components/SiteFooter";
 import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/contact")({
-  head: () => seoHead("contact", "Contact — John Obiko | Start a Project", "Start a logo, branding, UI/UX or web project with John Obiko. Working remotely worldwide — replies within 24–48 hours."),
+  head: () =>
+    seoHead(
+      "contact",
+      "Hire a Graphic Designer & Logo Designer | Contact John Obiko",
+      "Get in touch with freelance graphic designer and logo designer John Obiko to discuss custom logo design, brand identity systems, or website projects. 24-hour response.",
+      "assets/pelicansocial_thumbnail.webp",
+      [],
+      "hire graphic designer, hire logo designer, hire brand designer, contact John Obiko, freelance designer for hire"
+    ),
   component: ContactPage,
 });
 

@@ -5,7 +5,15 @@ import { PageHero } from "@/components/SiteFooter";
 import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/consultation")({
-  head: () => seoHead("consultation", "Free 1-Hour Consultation — John Obiko", "Book a free one-hour consultation with John Obiko to discuss your logo, brand, UI/UX or web project and see if we're a good fit."),
+  head: () =>
+    seoHead(
+      "consultation",
+      "Free Logo & Brand Design Consultation | Book 1-on-1 with John Obiko",
+      "Schedule a free 60-minute brand identity and logo design consultation with graphic designer John Obiko to discuss project scope, timeline, and strategy.",
+      "assets/pelicansocial_thumbnail.webp",
+      [],
+      "logo design consultation, brand strategy consultation, graphic designer consultation, freelance design strategy call"
+    ),
   component: ConsultationPage,
 });
 

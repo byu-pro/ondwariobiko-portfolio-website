@@ -4,7 +4,15 @@ import { Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/about")({
-  head: () => seoHead("about", "About — John Obiko | Logo & Brand Designer, 10 Years", "Meet John Obiko: a hand-drawn logo and brand designer, UI/UX designer and front-end developer working remotely worldwide for over ten years."),
+  head: () =>
+    seoHead(
+      "about",
+      "About John Obiko | Freelance Graphic Designer & Custom Logo Designer",
+      "Meet John Obiko: an independent graphic designer, custom logo designer, and brand identity specialist with 10+ years of experience working remotely for clients worldwide.",
+      "assets/johnobiko_profilepic.webp",
+      [],
+      "about John Obiko, freelance graphic designer, logo designer bio, brand identity developer, Nairobi graphic designer"
+    ),
   component: AboutPage,
 });
 

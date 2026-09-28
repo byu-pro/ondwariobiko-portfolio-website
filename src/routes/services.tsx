@@ -1,4 +1,4 @@
-import { seoHead } from "@/lib/seo";
+import { faqSchema, seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
@@ -6,7 +6,15 @@ import { PageHero } from "@/components/SiteFooter";
 import { BudgetField } from "@/components/BudgetField";
 
 export const Route = createFileRoute("/services")({
-  head: () => seoHead("services", "Logo Design & Brand Identity Services | John Obiko", "Hire John Obiko for custom logo design, graphic design, brand identity and web design. Personal collaboration for startups and businesses worldwide."),
+  head: () =>
+    seoHead(
+      "services",
+      "Logo Design, Brand Identity & Graphic Design Services | John Obiko",
+      "Comprehensive freelance graphic design services: custom logo design, brand identity systems, mascot illustration, brand guidelines, and web design for growing businesses.",
+      "assets/pelicansocial_thumbnail.webp",
+      [faqSchema(serviceFaqs)],
+      "graphic design services, custom logo design, brand identity package, mascot design, brand guidelines, freelance logo designer, visual identity designer"
+    ),
   component: ServicesPage,
 });
 
