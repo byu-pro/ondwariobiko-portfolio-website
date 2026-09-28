@@ -61,7 +61,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
               height={1500}
               fetchPriority={index === 0 ? "high" : "auto"}
               decoding="async"
-              className="w-full h-full object-contain p-6 sm:p-8 md:p-12"
+              className="w-full h-full object-cover md:object-contain p-0 md:p-12"
             />
           </div>
         ))}
