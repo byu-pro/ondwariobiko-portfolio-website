@@ -30,8 +30,8 @@ function Index() {
             <span className="text-stroke">Designer</span>
             <span className="text-accent-ink inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
           </h1>
-          <div className="flex flex-col md:flex-row gap-10 md:gap-12 md:items-end">
-            <div className="md:w-1/2">
+          <div className="flex flex-col gap-10 md:gap-12">
+            <div className="order-1 md:order-2 md:w-1/2">
               <p className="text-xl sm:text-2xl md:text-3xl font-light leading-tight max-w-xl mb-8">
                 Distinctive brand identities and websites for <span className="text-accent-ink">businesses ready for their next chapter</span>. Work directly with your designer, from first conversation to final delivery.
               </p>
@@ -40,7 +40,7 @@ function Index() {
                 <span className="font-mono text-xs uppercase tracking-[0.25em] group-hover:text-accent-ink transition-colors">See the work</span>
               </Link>
             </div>
-            <LogoShowcase />
+            <LogoShowcase className="order-2 md:order-1" />
           </div>
         </div>
       </section>

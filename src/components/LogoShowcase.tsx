@@ -8,7 +8,7 @@ const slides = [
   { file: "greenessentials_logo.webp", name: "Green Essentials", category: "Lawn & landscape" },
 ];
 
-export function LogoShowcase() {
+export function LogoShowcase({ className = "" }: { className?: string }) {
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -34,7 +34,7 @@ export function LogoShowcase() {
 
   return (
     <section
-      className="w-full md:w-1/2 min-w-0 border border-ink/15"
+      className={`w-full min-w-0 border border-ink/15 ${className}`}
       aria-label="Selected logo designs"
       aria-roledescription="carousel"
       onMouseEnter={() => setHovered(true)}
@@ -45,7 +45,7 @@ export function LogoShowcase() {
         <span><span className="text-accent-ink" aria-hidden="true">✺ </span> Selected identities</span>
         <span className="text-ink/60">John Obiko / Design</span>
       </div>
-      <div className="relative aspect-[4/5] overflow-hidden bg-ink/5">
+      <div className="relative aspect-[4/5] md:aspect-[16/9] overflow-hidden bg-ink/5">
         {slides.map((slide, index) => (
           <div
             key={slide.file}
@@ -63,7 +63,7 @@ export function LogoShowcase() {
               height={1500}
               fetchPriority={index === 0 ? "high" : "auto"}
               decoding="async"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain p-6 sm:p-8 md:p-12"
             />
           </div>
         ))}
