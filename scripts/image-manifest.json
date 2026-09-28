@@ -423,5 +423,11 @@
     "outputs": [
       "public/assets/otherworkcarousel/thinkingandfeelingpodcast.webp"
     ]
+  },
+  "public/assets/otherworkcarousel/favicon.png": {
+    "hash": "7c1d0b7645b0ba8051f292a6897f906490676ac3c47badffb3094e3ef69917c0",
+    "outputs": [
+      "public/assets/otherworkcarousel/favicon.webp"
+    ]
   }
 }

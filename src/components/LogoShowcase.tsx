@@ -56,7 +56,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
         <span><span className="text-accent-ink" aria-hidden="true">✺ </span> Selected identities</span>
         <span className="text-ink/60">John Obiko / Design</span>
       </div>
-      <div className="relative aspect-[16/9] overflow-hidden bg-ink/5">
+      <div className="relative aspect-[4/5] md:aspect-[16/9] overflow-hidden bg-ink/5">
         {slides.map((slide, index) => (
           <div
             key={slide.file}
@@ -74,7 +74,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
               height={1080}
               fetchPriority={index === 0 ? "high" : "auto"}
               decoding="async"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover md:object-contain p-0 md:p-12"
             />
           </div>
         ))}
@@ -85,12 +85,9 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
             <p className="font-display text-lg sm:text-xl uppercase leading-tight">{slides[active].name}</p>
             <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1">{slides[active].category}</p>
           </div>
-          <span className="font-mono text-xs text-ink/60 tabular-nums">
-            {String(active + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
-          </span>
         </div>
         <div className="flex items-center justify-between gap-3 mt-3 pt-3 border-t border-ink/10">
-          <div className="flex items-center gap-1 overflow-x-auto no-scrollbar max-w-[60%] sm:max-w-none" aria-label="Choose a logo">
+          <div className="flex items-center gap-1 overflow-x-auto no-scrollbar max-w-[75%] sm:max-w-none" aria-label="Choose a logo">
             {slides.map((slide, index) => (
               <button
                 key={slide.file}
@@ -104,33 +101,15 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
               </button>
             ))}
           </div>
-          <div className="flex items-center gap-1.5 shrink-0">
-            <button
-              type="button"
-              onClick={() => select((active - 1 + slides.length) % slides.length)}
-              aria-label="Previous logo"
-              className="size-8 rounded-full border border-ink/15 grid place-items-center font-mono text-xs hover:border-accent-ink hover:text-accent-ink transition-colors focus-visible:outline-2 focus-visible:outline-ink"
-            >
-              ←
-            </button>
-            <button
-              type="button"
-              onClick={() => select((active + 1) % slides.length)}
-              aria-label="Next logo"
-              className="size-8 rounded-full border border-ink/15 grid place-items-center font-mono text-xs hover:border-accent-ink hover:text-accent-ink transition-colors focus-visible:outline-2 focus-visible:outline-ink"
-            >
-              →
-            </button>
-            <button
-              data-playback
-              type="button"
-              onClick={() => setPlaying((current) => !current)}
-              aria-label={playing ? "Pause logo slideshow" : "Play logo slideshow"}
-              className="min-h-8 px-2 font-mono text-[10px] uppercase tracking-widest border border-ink/15 hover:border-accent-ink hover:text-accent-ink transition-colors focus-visible:outline-2 focus-visible:outline-ink"
-            >
-              {playing ? "Pause Ⅱ" : "Play ▷"}
-            </button>
-          </div>
+          <button
+            data-playback
+            type="button"
+            onClick={() => setPlaying((current) => !current)}
+            aria-label={playing ? "Pause logo slideshow" : "Play logo slideshow"}
+            className="min-h-8 px-2.5 font-mono text-[10px] uppercase tracking-widest border border-ink/15 hover:border-accent-ink hover:text-accent-ink transition-colors focus-visible:outline-2 focus-visible:outline-ink shrink-0"
+          >
+            {playing ? "Pause Ⅱ" : "Play ▷"}
+          </button>
         </div>
       </div>
     </section>
