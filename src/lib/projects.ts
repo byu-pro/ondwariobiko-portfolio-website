@@ -15,10 +15,11 @@ export type Project = {
   alt: string;
   client: string;
   location?: string;
+  audience?: string;
   liveUrl?: string;
   status?: string;
   role: string;
-  duration: string;
+  duration?: string;
   services: string[];
   headline: string;
   summary: string;
@@ -28,8 +29,9 @@ export type Project = {
   palette: { name: string; hex: string }[];
   type: { display: string; body: string };
   results: { k: string; v: string }[];
-  quote: { text: string; who: string };
-  gallery: { src: string; alt: string }[];
+  resultsHeading?: string;
+  quote?: { text: string; who: string };
+  gallery: { src: string; alt: string; caption?: string }[];
 };
 
 const brandRole = "Brand Strategist & Identity Designer";
@@ -407,6 +409,52 @@ export const projects: Project[] = [
     gallery: [
       { src: processSketches, alt: "Logo sketches and exploration" },
       { src: brandApps, alt: "Brand applications" },
+    ],
+  },
+  {
+    slug: "steplight",
+    n: "09",
+    title: "Steplight",
+    tag: "Website Design • B2B SaaS",
+    cat: "Digital",
+    image: `${import.meta.env.BASE_URL}assets/steplight_thumbnail.webp`,
+    heroBanner: `${import.meta.env.BASE_URL}assets/steplight_herobanner.webp`,
+    logoImage: `${import.meta.env.BASE_URL}assets/steplight_cover.webp`,
+    alt: "Steplight website design direction with a navy and teal product walkthrough interface",
+    client: "Steplight",
+    audience: "Customer Success & Onboarding teams",
+    status: "Design direction",
+    role: "Website & UI/UX Designer",
+    services: ["Website Design", "Information Architecture", "UI Design", "Responsive Design", "Design System"],
+    headline: "A clear path from product screens to self-serve onboarding.",
+    summary: "A two-page website design direction for Steplight, a B2B SaaS product that turns real software screens into interactive, self-guided walkthroughs. The homepage and services page share a restrained visual system built around product interfaces, clear explanations and two direct conversion paths.",
+    challenge: "Help Directors and VPs of Customer Success, Customer Education and Onboarding at software companies of 50–500 people understand the product during a working day. The brief calls for a distinctive, desktop-first experience that earns attention through clarity, without customer logos, testimonials or unverified performance claims.",
+    insight: "Show the product doing the explaining. A walkthrough, a progress table and a clear sequence of steps can communicate the offer more directly than decorative imagery or marketing claims.",
+    process: [
+      { t: "Understand", d: "Frame the buyer’s questions: what the product does, how it works, what it costs and when hands-on services help." },
+      { t: "Structure", d: "Map the homepage and services page around product explanation, pricing, FAQs and clear signup or call-booking paths." },
+      { t: "Design", d: "Use navy and slate grounds, a single teal accent, readable sans-serif type and bordered interface panels to establish the direction." },
+      { t: "Adapt", d: "Plan shared navigation, dropdowns, accordions and responsive components, keeping the desktop evaluation experience central." },
+    ],
+    palette: [
+      { name: "Navy", hex: "#1C2B39" },
+      { name: "Deep Slate", hex: "#234046" },
+      { name: "Teal", hex: "#0B7484" },
+      { name: "Off-White", hex: "#F4F8F9" },
+      { name: "White", hex: "#FFFFFF" },
+      { name: "Hairline", hex: "#D5E1E4" },
+    ],
+    type: { display: "Sans-serif · Tight tracking", body: "Sans-serif · 17px" },
+    resultsHeading: "Scope",
+    results: [
+      { k: "2", v: "Pages, one design system" },
+      { k: "1", v: "Teal accent colour" },
+      { k: "3", v: "Steps in the how-it-works section" },
+      { k: "2", v: "Signup & book-a-call paths" },
+    ],
+    gallery: [
+      { src: `${import.meta.env.BASE_URL}assets/steplight_architecture.webp`, alt: "Steplight homepage and services page content architecture from the project brief", caption: "Page architecture based on the brief: two distinct journeys supported by one shared design system." },
+      { src: `${import.meta.env.BASE_URL}assets/steplight_interface.webp`, alt: "Illustrative Steplight walkthrough and customer progress panel design direction", caption: "Illustrative interface direction, not a shipped product screenshot. Final product copy and screens remain to be supplied." },
     ],
   },
 ];

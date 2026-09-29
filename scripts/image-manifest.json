@@ -567,5 +567,113 @@
     "outputs": [
       "public/assets/pelicansocial_process.webp"
     ]
+  },
+  "public/assets/soundcurves/Home Page.jpg": {
+    "hash": "3e650cc6576e675739e28a7a94541736bd6d616a90337cc1af40e7fd96bac114",
+    "outputs": [
+      "public/assets/soundcurves/Home Page.webp"
+    ]
+  },
+  "public/assets/soundcurves/Landing Page 1.jpg": {
+    "hash": "d66b1c12428c5fcf769cb537117fa0c4032f5aa1743447ed21f9e333996f6370",
+    "outputs": [
+      "public/assets/soundcurves/Landing Page 1.webp"
+    ]
+  },
+  "public/assets/soundcurves/Product Page.jpg": {
+    "hash": "9a78f876244d050e570cd3d430b76eeb3c9e9d0399883c927eb02fd39cd6fb1b",
+    "outputs": [
+      "public/assets/soundcurves/Product Page.webp"
+    ]
+  },
+  "public/assets/soundcurves/Technology Page.jpg": {
+    "hash": "3a9029634f7d403f5ec049711ffcd4a206ca28682d77d711abec687f8ec7afe3",
+    "outputs": [
+      "public/assets/soundcurves/Technology Page.webp"
+    ]
+  },
+  "public/assets/soundcurves/soundcurves-home-desktop-mobile-presentation-600dpi.png": {
+    "hash": "56414aaf2301f4f76ae18668f4c6d106bc85cfcb62168278f257088f449a79a6",
+    "outputs": [
+      "public/assets/soundcurves/soundcurves-home-desktop-mobile-presentation-600dpi.webp"
+    ]
+  },
+  "public/assets/soundcurves/soundcurves-home-mobile-390w-4x-300dpi.png": {
+    "hash": "2f706c456a3f15630ab2601be5c7a57700f29caab8dccddeeab67fd6c1cd1a0c",
+    "outputs": []
+  },
+  "public/assets/soundcurves/soundcurves-landing-page-1-desktop-mobile-presentation-600dpi.png": {
+    "hash": "ad08e42e706f09e7c1598bf5775dd804fb1f32f54e4494f61ed45aa81e22d2d9",
+    "outputs": [
+      "public/assets/soundcurves/soundcurves-landing-page-1-desktop-mobile-presentation-600dpi.webp"
+    ]
+  },
+  "public/assets/soundcurves/soundcurves-landing-page-1-mobile.png": {
+    "hash": "8f507b6557bb387c30b0d25ec90d5a49e762fe15d84cbb8ecd05d70f51cacbc4",
+    "outputs": []
+  },
+  "public/assets/soundcurves/soundcurves-product-desktop-mobile-presentation-600dpi.png": {
+    "hash": "155101b8c14c3b351442726ce6d49533124d76426907cb14e6bb7b17beeac9cd",
+    "outputs": [
+      "public/assets/soundcurves/soundcurves-product-desktop-mobile-presentation-600dpi.webp"
+    ]
+  },
+  "public/assets/soundcurves/soundcurves-product-mobile.png": {
+    "hash": "11da28abb75028520e272c20f8b99aebc6aae5eaa4a8955ca0934e913cf4a0de",
+    "outputs": []
+  },
+  "public/assets/soundcurves/soundcurves-technology-desktop-mobile-presentation-600dpi.png": {
+    "hash": "5c723853dfa84f4976c7a90dc6e61b99ef63ae01830e70563da02ba386ad6756",
+    "outputs": [
+      "public/assets/soundcurves/soundcurves-technology-desktop-mobile-presentation-600dpi.webp"
+    ]
+  },
+  "public/assets/soundcurves/soundcurves-technology-mobile.png": {
+    "hash": "abb18e21e1ee83aab9e4f86d10718e87ab1df61b9ced172f51713697b77c3452",
+    "outputs": []
+  },
+  "public/assets/steplight/Steplight_Homepage_native_300dpi.png": {
+    "hash": "05defe0be4ca605885a784997c3ec26ce18203e22cb64a0fabe4dbff6e7f9fcc",
+    "outputs": [
+      "public/assets/steplight/Steplight_Homepage_native_300dpi.webp"
+    ]
+  },
+  "public/assets/steplight/Steplight_Services_native_300dpi.png": {
+    "hash": "f5944652b5cd2651fc40c45ebdbc44e71f3aa6a494c6354ad1980bb40eab9ecd",
+    "outputs": [
+      "public/assets/steplight/Steplight_Services_native_300dpi.webp"
+    ]
+  },
+  "public/assets/steplight_architecture.png": {
+    "hash": "c4c88972f87c88894ebf1591ef6b0af863e421cc8e9b6478ab3c2ebdd5208270",
+    "outputs": [
+      "public/assets/steplight_architecture.webp"
+    ]
+  },
+  "public/assets/steplight_cover.png": {
+    "hash": "25a307871d0eaeacb3fc924bb7cf91f470c4c47b7676816e7341bdf62f4be263",
+    "outputs": [
+      "public/assets/steplight_cover.webp"
+    ]
+  },
+  "public/assets/steplight_herobanner.png": {
+    "hash": "da4caa4869c67745c3cb249b03db1bf100ee58fe067c922d3c1b8467bc78e6d4",
+    "outputs": [
+      "public/assets/steplight_herobanner.webp",
+      "public/assets/steplight_herobanner-600.webp"
+    ]
+  },
+  "public/assets/steplight_interface.png": {
+    "hash": "c4c325871e7742fb458197455a0be26d52d0157e347e69faa92bdf279cc664a2",
+    "outputs": [
+      "public/assets/steplight_interface.webp"
+    ]
+  },
+  "public/assets/steplight_thumbnail.png": {
+    "hash": "5078630b05effbedee6fa347be61439c75d09e9df8224ca5a271385a70bac4c3",
+    "outputs": [
+      "public/assets/steplight_thumbnail.webp",
+      "public/assets/steplight_thumbnail-600.webp"
+    ]
   }
 }

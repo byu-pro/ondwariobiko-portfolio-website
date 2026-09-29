@@ -62,6 +62,31 @@ test("existing standalone WebP is never overwritten", async () => {
   await assert.rejects(optimizeImages(root), /Unmanaged WebP/);
 });
 
+test("oversized presentation masters stay unchanged and do not block compatible assets", async () => {
+  const root = await fixture();
+  const source = path.join(root, 'public/assets/tall.png');
+  const original = await sharp({ create: { width: 1, height: 16384, channels: 3, background: '#ffffff' } }).png().toBuffer();
+  await writeFile(source, original);
+  await sharp({ create: { width: 8, height: 8, channels: 3, background: '#0b7484' } }).png().toFile(path.join(root, 'public/assets/valid.png'));
+  assert.equal((await optimizeImages(root)).length, 2);
+  assert.deepEqual(await readFile(source), original);
+  await assert.rejects(readFile(source.replace('.png', '.webp')), { code: 'ENOENT' });
+  assert.equal((await sharp(await readFile(path.join(root, 'public/assets/valid.webp'))).metadata()).width, 8);
+  assert.equal((await optimizeImages(root)).length, 0);
+});
+
+test("a later failure preserves the manifest for completed conversions", async () => {
+  const root = await fixture();
+  await sharp({ create: { width: 4, height: 4, channels: 3, background: '#0b7484' } }).png().toFile(path.join(root, 'public/assets/a.png'));
+  const broken = path.join(root, 'public/assets/z.png');
+  await writeFile(broken, 'not an image');
+  await assert.rejects(optimizeImages(root));
+  const manifest = JSON.parse(await readFile(path.join(root, 'scripts/image-manifest.json'), 'utf8'));
+  assert.deepEqual(manifest['public/assets/a.png'].outputs, ['public/assets/a.webp']);
+  await sharp({ create: { width: 4, height: 4, channels: 3, background: '#ffffff' } }).png().toFile(broken);
+  assert.deepEqual(await optimizeImages(root), ['public/assets/z.png']);
+});
+
 test("dev server converts files added after startup", async () => {
   const { createServer } = await import('vite');
   const { automaticImages } = await import('./automatic-images.ts');

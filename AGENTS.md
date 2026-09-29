@@ -24,3 +24,10 @@
 - Reference generated `.webp` files in UI code, with `import.meta.env.BASE_URL` for public URLs. Keep originals and commit `scripts/image-manifest.json` when it changes. Do not manually edit generated WebP files belonging to originals.
 - New/replaced originals use lossless compression at full resolution. Keep SVG vector and existing WebP as-is. `_thumbnail`, `_profilepic`, and `_banner` originals also generate an aspect-preserving 600px responsive variant. Do not promise all lossless files will be smaller.
 - Run `bun run test:images` when changing the image pipeline. `bun run images:optimize` processes assets without starting the site.
+- Presentation originals exceeding WebP's 16,383px edge limit stay in their original format at full resolution. Their manifest entries have no generated outputs; use compatible website assets separately.
+
+## SoundCurves design exports
+- For mobile page designs, rebuild headings, body copy, buttons, captions, and footer links as editable SVG text and render them at export resolution. Use original artwork crops; do not generate or upscale flattened text to simulate clarity.
+- Keep one stable PNG per mobile page and one white-background desktop/mobile presentation PNG. Replace these files on revision, update the corresponding SVG master, and regenerate the affected presentation. Do not create numbered duplicate exports.
+- Export mobile masters at 6x logical size with 600 DPI metadata. DPI does not improve the resolution of original photographs.
+- The homepage PNG retains its existing `soundcurves-home-mobile-390w-4x-300dpi.png` filename for compatibility, but its current renderer exports at 6x and 600 DPI. Presentation renderers should use the SVG master directly for crisp type.

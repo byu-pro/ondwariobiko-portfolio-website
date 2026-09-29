@@ -56,6 +56,19 @@ export async function optimizeImages(root: string): Promise<string[]> {
     if ((metadata.depth && metadata.depth !== "uchar") || metadata.space === "cmyk") {
       throw new Error(`${file}: export an 8-bit RGB source first; WebP cannot preserve this source colour depth/space losslessly.`);
     }
+    // WebP cannot encode an edge over 16,383px. Keep tall presentation masters
+    // at full resolution instead of resizing their artwork or blocking the site.
+    if ((metadata.width ?? 0) > 16383 || (metadata.pageHeight ?? metadata.height ?? 0) > 16383) {
+      if (previous?.outputs.length) {
+        throw new Error(`${file}: the replacement exceeds WebP's 16,383px limit. Use a separate filename for the full-resolution master to avoid stale generated assets.`);
+      }
+      manifest[file] = { hash, outputs: [] };
+      changed.push(file);
+      await mkdir(path.dirname(manifestPath), { recursive: true });
+      await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
+      console.warn(`[images] ${file}: retained as original; dimensions exceed WebP's 16,383px limit.`);
+      continue;
+    }
     const pipeline = () => sharp(input, { animated: true }).rotate().keepIccProfile();
     const webp = await pipeline().webp({ lossless: true, exact: true, effort: 6 }).toBuffer();
     await writeFile(path.join(root, output), webp);
@@ -67,6 +80,9 @@ export async function optimizeImages(root: string): Promise<string[]> {
       outputs.push(small);
     }
     manifest[file] = { hash, outputs };
+    // Persist completed conversions even if a later original cannot be encoded.
+    await mkdir(path.dirname(manifestPath), { recursive: true });
+    await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
     changed.push(file);
     console.info(`[images] ${file} -> ${output} (lossless, ${webp.length.toLocaleString()} bytes)`);
   }

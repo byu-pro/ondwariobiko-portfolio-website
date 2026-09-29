@@ -22,7 +22,9 @@ export const Route = createFileRoute("/work/$slug")({
       p.summary,
       p.image,
       [creativeWorkSchema(p.title, p.summary, p.image, p.slug, p.cat)],
-      `${p.title} logo design, ${p.client} brand identity, ${p.tag}, graphic design case study`
+      p.cat === "Digital"
+        ? `${p.title} website design, ${p.client} UI/UX design, ${p.tag}, digital design case study`
+        : `${p.title} logo design, ${p.client} brand identity, ${p.tag}, graphic design case study`
     );
   },
   notFoundComponent: () => (
@@ -76,12 +78,12 @@ function CaseStudy() {
             <div className="text-sm md:text-lg font-medium">{p.client}</div>
           </div>
           <div className="bg-surface p-5 md:p-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">Location</div>
-            <div className="text-sm md:text-lg">{p.location || "Worldwide"}</div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">{p.audience ? "Audience" : "Location"}</div>
+            <div className="text-sm md:text-lg">{p.audience || p.location || "Worldwide"}</div>
           </div>
           <div className="bg-surface p-5 md:p-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">Role & Timeline</div>
-            <div className="text-sm md:text-lg">{p.role} <span className="text-ink/50 text-xs block mt-1">({p.duration})</span></div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">{p.duration ? "Role & Timeline" : "Role"}</div>
+            <div className="text-sm md:text-lg">{p.role} {p.duration && <span className="text-ink/50 text-xs block mt-1">({p.duration})</span>}</div>
           </div>
           <div className="bg-surface p-5 md:p-8 flex flex-col justify-between">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-3">Status / Website</div>
@@ -161,9 +163,12 @@ function CaseStudy() {
             <img src={p.processImage} alt={`${p.title} logo development: original pencil sketch, refined vector outline and final black logo, shown side by side.`} width={1920} height={1200} loading="lazy" decoding="async" className="block w-full h-auto bg-white" />
           </figure>
         ) : (
-        <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[16/9]">
-          <img src={g1.src} alt={g1.alt} width={1600} height={912} loading="lazy" decoding="async" className="w-full h-full object-cover scale-110" data-parallax="0.06" />
-        </div>
+        <figure className="max-w-[1400px] mx-auto">
+          <div className="overflow-hidden aspect-[16/9]">
+            <img src={g1.src} alt={g1.alt} width={1600} height={900} loading="lazy" decoding="async" className={`w-full h-full object-cover ${g1.caption ? "" : "scale-110"}`} data-parallax={g1.caption ? undefined : "0.06"} />
+          </div>
+          {g1.caption && <figcaption className="mt-4 text-sm leading-relaxed text-ink/60">{g1.caption}</figcaption>}
+        </figure>
         )}
       </section>
 
@@ -195,15 +200,18 @@ function CaseStudy() {
       </section>
 
       <section className="px-5 md:px-8">
-        <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[16/9]">
-          <img src={g2.src} alt={g2.alt} width={1600} height={912} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
-        </div>
+        <figure className="max-w-[1400px] mx-auto">
+          <div className="overflow-hidden aspect-[16/9]">
+            <img src={g2.src} alt={g2.alt} width={1600} height={900} loading="lazy" decoding="async" className={`w-full h-full object-cover ${g2.caption ? "" : "transition-transform duration-1000 hover:scale-105"}`} />
+          </div>
+          {g2.caption && <figcaption className="mt-4 text-sm leading-relaxed text-ink/60">{g2.caption}</figcaption>}
+        </figure>
       </section>
 
       {/* Results */}
       <section className="px-5 md:px-8 py-16 md:py-28">
         <div className="max-w-[1400px] mx-auto">
-          <h2 className="font-display uppercase text-5xl md:text-8xl tracking-tighter leading-[0.85] mb-12">The<br /><span className="text-stroke">Impact</span></h2>
+          <h2 className="font-display uppercase text-5xl md:text-8xl tracking-tighter leading-[0.85] mb-12">The<br /><span className="text-stroke">{p.resultsHeading || "Impact"}</span></h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 border-t border-ink/15 pt-10">
             {p.results.map((r) => (
               <div key={r.v}>
@@ -212,12 +220,12 @@ function CaseStudy() {
               </div>
             ))}
           </div>
-          <blockquote className="mt-20 md:mt-28 max-w-4xl">
+          {p.quote && <blockquote className="mt-20 md:mt-28 max-w-4xl">
             <span className="font-display text-7xl md:text-9xl text-accent-ink leading-none">“</span>
             <p className="text-2xl md:text-4xl font-light leading-tight -mt-6">{p.quote.text}</p>
             <footer className="mt-6 font-mono text-xs uppercase tracking-[0.25em] text-ink/50">— {p.quote.who}</footer>
-          </blockquote>
-          <div className="mt-16"><ConsultButton label="Want results like this? Book a free 1-hour consult" /></div>
+          </blockquote>}
+          <div className="mt-16"><ConsultButton label={p.resultsHeading === "Scope" ? "Have a similar project? Book a free 1-hour consult" : "Want results like this? Book a free 1-hour consult"} /></div>
         </div>
       </section>
 
