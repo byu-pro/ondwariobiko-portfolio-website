@@ -114,7 +114,7 @@ function PrivacyPage() {
       <section className="px-5 md:px-8 pb-24">
         <div className="max-w-[900px] mx-auto">
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-14">
-            Last updated: September 25, 2026
+            Last updated: October 3, 2026
           </p>
 
           <div className="space-y-12">
