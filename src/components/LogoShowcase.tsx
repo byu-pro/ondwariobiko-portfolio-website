@@ -123,21 +123,16 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
   const running = playing && visible && pageVisible;
 
   useEffect(() => {
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (preference.matches) setPlaying(false);
-    const sync = (event: MediaQueryListEvent) => setPlaying(!event.matches);
     const visibility = () => setPageVisible(!document.hidden);
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(Boolean(entry?.isIntersecting)),
-      { threshold: 0.15 },
+      { threshold: 0 },
     );
     if (root.current) observer.observe(root.current);
-    preference.addEventListener("change", sync);
     document.addEventListener("visibilitychange", visibility);
     visibility();
     return () => {
       observer.disconnect();
-      preference.removeEventListener("change", sync);
       document.removeEventListener("visibilitychange", visibility);
     };
   }, []);

@@ -402,6 +402,7 @@ img { content-visibility: auto; }
 .logo-gallery-masthead { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; }
 .logo-gallery-masthead .text-accent-ink { font-size: 20px; vertical-align: middle; margin-right: 8px; }
 .logo-gallery-edition { opacity: .45; }
+.logo-gallery--full-width { width: 100vw; max-width: none; margin-left: calc(50% - 50vw); }
 .logo-gallery-stage { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #111; touch-action: pan-y; }
 .logo-gallery-slide { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity 650ms ease; }
 .logo-gallery-slide.is-current { opacity: 1; z-index: 1; }

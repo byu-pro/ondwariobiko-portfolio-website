@@ -33,7 +33,7 @@ function Index() {
             <span className="text-accent-ink inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
           </h1>
           <div className="flex flex-col gap-10 md:gap-12">
-            <LogoShowcase />
+            <LogoShowcase className="logo-gallery--full-width" />
             <div>
               <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-[1.05] max-w-4xl mb-8">
                 Graphic design, custom logos and brand identities for <span className="text-accent-ink">businesses ready for their next chapter</span>. Work directly with John Obiko, a freelance graphic and brand designer in Nairobi serving clients worldwide, from first conversation to final delivery.
