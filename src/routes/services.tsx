@@ -1,4 +1,3 @@
-import { CraftIcon } from "@/components/CraftIcon";
 import { faqSchema, seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
@@ -168,7 +167,6 @@ function ServicesPage() {
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40 group-hover:text-black/60">Scoped per project</span>
                 </div>
 
-                <CraftIcon name={p.t} className="mt-6" />
                 <h3 className="mt-6 font-display uppercase tracking-tighter text-3xl sm:text-4xl leading-[0.9] transition-transform duration-500 group-hover:-translate-y-1">
                   {p.t}
                 </h3>

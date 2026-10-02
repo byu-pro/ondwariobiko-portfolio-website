@@ -21,7 +21,7 @@ export function SiteFooter() {
             <CopyContactButton value="+254702255575" label="phone number" />
           </div>
         </div>
-        <div className="mt-10 pt-6 font-mono text-xs uppercase tracking-widest">
+        <div className="mt-10 border-t border-ink/15 pt-6 font-mono text-xs uppercase tracking-widest">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-ink/80">
             <span>© 2026 ondwariobiko. All Rights Reserved.</span>
             <div className="flex gap-6 text-ink">
@@ -47,7 +47,7 @@ export function PageHero({ index, eyebrow, title, outline }: { index: string; ey
     <section className="pt-32 md:pt-44 pb-12 md:pb-16 px-5 md:px-8">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-wrap gap-3 justify-between font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-8">
-          <span className="flex items-center gap-3"><CraftIcon name={`${title} ${eyebrow}`} className="craft-icon--small" /><span><span className="text-accent-ink">{index}</span> / {eyebrow}</span></span>
+          <span><span className="text-accent-ink">{index}</span> / {eyebrow}</span>
           <span>ondwariobiko®</span>
         </div>
         <h1 className="page-hero-title font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,12rem)]">

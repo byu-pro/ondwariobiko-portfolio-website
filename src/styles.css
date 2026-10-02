@@ -346,11 +346,8 @@ img { content-visibility: auto; }
   .back-to-top { bottom: max(24px, env(safe-area-inset-bottom)); left: max(24px, env(safe-area-inset-left)); }
 }
 
-/* Decorative craft icons: gentle motion only while onscreen. */
-.craft-icon { display: inline-flex; flex: 0 0 auto; color: var(--accent-ink); }
-.craft-icon svg { animation: craft-breathe 5s ease-in-out infinite; animation-play-state: paused; }
-.craft-icon[data-visible="true"] svg { animation-play-state: running; }
-.group:hover .craft-icon { color: inherit; }
-.craft-icon--small svg { width: 20px; height: 20px; }
-@keyframes craft-breathe { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-3px) rotate(-5deg); } }
-@media (prefers-reduced-motion: reduce) { .craft-icon svg { animation: none; } }
+/* Contact cues move only when their link is deliberately hovered or focused. */
+.craft-icon { display: inline-flex; flex: 0 0 auto; color: currentColor; }
+.craft-icon svg { transition: transform 200ms ease; }
+a:hover .craft-icon svg, a:focus-visible .craft-icon svg { transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .craft-icon svg { transition: none; transform: none !important; } }

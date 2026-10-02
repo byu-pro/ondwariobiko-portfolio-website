@@ -1,4 +1,3 @@
-import { CraftIcon } from "@/components/CraftIcon";
 import { faqSchema, seoHead } from "@/lib/seo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
@@ -68,7 +67,7 @@ function FaqPage() {
             <div key={g.title} className="grid md:grid-cols-12 gap-8 md:gap-12" data-reveal>
               <div className="md:col-span-4">
                 <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-3">0{gi + 1}</p>
-                <CraftIcon name={g.title} className="mb-5" />
+
                 <h2 className="font-display text-3xl md:text-5xl uppercase tracking-tighter leading-[0.9]">{g.title}</h2>
               </div>
               <div className="md:col-span-8 divide-y divide-white/10 border-y border-ink/10">

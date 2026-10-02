@@ -1,4 +1,3 @@
-import { CraftIcon } from "@/components/CraftIcon";
 import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
@@ -50,7 +49,7 @@ function ConsultationPage() {
             <div className="mt-10 grid grid-cols-2 gap-px bg-ink/15 border border-ink/15">
               {perks.map(([k, v]) => (
                 <div key={k} className="bg-surface p-5 md:p-6">
-                  <CraftIcon name={k} className="mb-4" />
+
                   <div className="font-display text-2xl md:text-3xl text-accent-ink">{k}</div>
                   <div className="mt-2 text-sm text-ink/60">{v}</div>
                 </div>

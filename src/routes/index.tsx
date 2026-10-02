@@ -1,4 +1,3 @@
-import { CraftIcon } from "@/components/CraftIcon";
 import { seoHead } from "@/lib/seo";
 import { LogoShowcase } from "@/components/LogoShowcase";
 import { ProjectPreview } from "@/components/ProjectPreview";
@@ -160,7 +159,7 @@ function Index() {
                 className="group relative border border-ink/10 p-8 hover:border-neon/60 transition-colors duration-500"
               >
                 <span className="font-display text-6xl md:text-7xl text-stroke group-hover:text-accent-ink group-hover:[-webkit-text-stroke:0] transition-all duration-500">{p.n}</span>
-                <CraftIcon name={p.t} className="mt-5" />
+
                 <h3 className="font-display text-xl md:text-2xl uppercase tracking-tight mt-6 mb-3">{p.t}</h3>
                 <p className="text-sm text-ink/50 leading-relaxed">{p.d}</p>
               </div>
@@ -201,7 +200,7 @@ function Index() {
                 className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-8 border-t border-ink/10 last:border-b hover:bg-ink/[0.02] transition-colors duration-300 px-2 md:px-6"
               >
                 <div className="flex items-baseline gap-6">
-                  <CraftIcon name={o.t} />
+
                   <h3 className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">{o.t}</h3>
                 </div>
                 <p className="text-sm text-ink/50 max-w-sm md:text-right">{o.d}</p>
