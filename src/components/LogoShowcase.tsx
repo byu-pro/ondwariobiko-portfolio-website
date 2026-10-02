@@ -210,7 +210,8 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
               aria-hidden={!isCurrent}
               className={`logo-gallery-slide ${isCurrent ? `is-current ${previous === null ? "is-initial" : ""}` : index === previous ? "is-previous" : ""}`}
             >
-              <picture>
+              {[true, false].map((backdrop) => (
+              <picture key={String(backdrop)} className={backdrop ? "logo-gallery-backdrop" : "logo-gallery-artwork"} aria-hidden={backdrop || undefined}>
                 <source
                   media="(max-width: 767px)"
                   srcSet={`${import.meta.env.BASE_URL}assets/${slide.mobileFile}`}
@@ -219,7 +220,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
                 />
                 <img
                   src={`${import.meta.env.BASE_URL}assets/${slide.file}`}
-                  alt={`${slide.name} logo design`}
+                  alt={backdrop ? "" : `${slide.name} logo design`}
                   width={1920}
                   height={1080}
                   loading={isCurrent ? "eager" : "lazy"}
@@ -228,6 +229,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
                   draggable={false}
                 />
               </picture>
+              ))}
             </div>
           ) : null;
         })}

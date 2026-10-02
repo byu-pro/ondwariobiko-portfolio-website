@@ -281,12 +281,15 @@ img { content-visibility: auto; }
 .logo-gallery-stage { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #111; touch-action: pan-y; }
 .logo-gallery-slide { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
 .logo-gallery-slide.is-previous { opacity: 1; z-index: 0; }
-.logo-gallery-slide.is-current { opacity: 1; z-index: 1; animation: gallery-reveal 1100ms cubic-bezier(.22, 1, .36, 1) both; }
-.logo-gallery-slide.is-current img { animation: gallery-settle 1400ms cubic-bezier(.22, 1, .36, 1) both; }
-.logo-gallery-slide.is-initial, .logo-gallery-slide.is-initial img { animation: none; }
-@keyframes gallery-reveal { from { clip-path: inset(0 0 0 100%); } to { clip-path: inset(0); } }
-@keyframes gallery-settle { from { transform: scale(1.035); } to { transform: scale(1); } }
-.logo-gallery-slide picture, .logo-gallery-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.logo-gallery-slide.is-current { opacity: 1; z-index: 1; animation: gallery-fade 650ms ease both; }
+.logo-gallery-slide.is-current .logo-gallery-artwork img { animation: gallery-zoom 6000ms ease-out both; }
+.logo-gallery-slide.is-initial { animation: none; }
+@keyframes gallery-fade { from { opacity: 0; } to { opacity: 1; } }
+/* Zoom toward full size, never beyond it, so every edge remains visible. */
+@keyframes gallery-zoom { from { transform: scale(.975); } to { transform: scale(1); } }
+.logo-gallery-slide picture { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.logo-gallery-slide img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.logo-gallery-backdrop { pointer-events: none; }
 .logo-gallery-stamp { position: absolute; bottom: 14px; left: 16px; z-index: 2; padding: 6px 9px; background: #000b; color: white; font-size: 9px; letter-spacing: .16em; pointer-events: none; }
 .logo-gallery-caption { display: flex; align-items: center; gap: 18px; padding: 24px 20px; }
 .logo-gallery-number { font-size: clamp(32px, 4vw, 54px); line-height: 1; letter-spacing: -.06em; color: var(--accent-ink); }
