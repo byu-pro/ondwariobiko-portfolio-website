@@ -35,7 +35,7 @@ export function BrandMockupTiles({ placement, images = [] }: Props) {
           return (
             <figure key={slot.id} data-mockup-slot={slot.id}>
               <div
-                className="relative overflow-hidden bg-ink/[0.03] border border-ink/15"
+                className="relative overflow-hidden bg-ink/[0.03]"
                 style={{ aspectRatio: `${slot.width} / ${slot.height}` }}
               >
                 {image ? (

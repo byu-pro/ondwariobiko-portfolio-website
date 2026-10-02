@@ -69,7 +69,7 @@ function WorkPage() {
               style={{ transitionDelay: `${(i % 2) * 120}ms` }}
               className={`group ${i % 2 ? "sm:mt-24" : ""}`}
             >
-              <div className="overflow-hidden mb-6 border border-ink/10 group-hover:border-neon/50 transition-colors duration-500">
+              <div className="overflow-hidden mb-6">
                 <ProjectPreview project={p} />
               </div>
               <div className="flex justify-between items-baseline gap-4">

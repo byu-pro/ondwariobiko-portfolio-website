@@ -1,5 +1,5 @@
 import { creativeWorkSchema, seoHead } from "@/lib/seo";
-import { InteractiveWordmark } from "@/components/InteractiveWordmark";
+import { CaseStudyWordmark } from "@/components/CaseStudyWordmark";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { BrandMockupTiles } from "@/components/BrandMockupTiles";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
@@ -53,7 +53,7 @@ function CaseStudy() {
             <span><span className="text-accent-ink">{p.n}</span> / {p.tag}</span>
           </div>
           {p.wordmarkImage ? (
-            <InteractiveWordmark key={p.slug} src={p.wordmarkImage} title={p.title} slug={p.slug} />
+            <CaseStudyWordmark key={p.slug} src={p.wordmarkImage} title={p.title} slug={p.slug} />
           ) : (
             <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)] text-center">
               <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
