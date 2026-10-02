@@ -150,11 +150,11 @@ function AboutPage() {
       <section className="px-5 md:px-8 pb-20 md:pb-32">
         <div className="max-w-[1400px] mx-auto">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-ink mb-10">⟶ What makes it different</p>
-          <div className="glass-grid grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-px bg-ink/15 border border-ink/15">
             {pillars.map((p) => (
               <div
                 key={p.n}
-                className="glass-card glass-card--lime group p-8 md:p-10 min-h-[280px] flex flex-col transition-colors hover:text-black"
+                className="group bg-surface p-8 md:p-10 min-h-[280px] flex flex-col transition-colors hover:bg-neon hover:text-black"
               >
                 <span className="font-display text-5xl text-accent-ink group-hover:text-black transition-colors mb-6">
                   {p.n}

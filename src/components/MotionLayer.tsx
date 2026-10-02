@@ -31,13 +31,13 @@ export function MotionLayer() {
           }),
         { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
       );
-      // Read geometry together before class/style writes to avoid layout thrashing.
-      const belowFold = Array.from(els).filter((el) => el.getBoundingClientRect().top >= window.innerHeight * 0.9);
-      belowFold.forEach((el, i) => {
+      els.forEach((el, i) => {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.9) return; // already visible
         el.classList.add("reveal");
         el.style.transitionDelay = `${(i % 4) * 70}ms`;
         io?.observe(el);
       });
+      window.scrollTo({ top: 0 });
     };
     // Wait until the page has fully loaded (hydration settled) before
     // mutating any DOM — otherwise React flags hydration mismatches.
@@ -54,19 +54,13 @@ export function MotionLayer() {
   // Scroll progress + parallax (initial tick deferred past hydration)
   useEffect(() => {
     let raf = 0;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const parallax = Array.from(document.querySelectorAll<HTMLElement>("[data-parallax]"));
     const tick = () => {
       raf = 0;
       const h = document.documentElement.scrollHeight - window.innerHeight;
-      const updates = reduce.matches ? [] : parallax.flatMap((el) => {
-        const r = el.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > window.innerHeight) return [];
-        const off = (r.top + r.height / 2 - window.innerHeight / 2) * Number(el.dataset['parallax'] || 0.1);
-        return [{ el, off }];
-      });
       if (bar.current) bar.current.style.transform = `scaleX(${h > 0 ? window.scrollY / h : 0})`;
-      updates.forEach(({ el, off }) => {
+      document.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        const off = (r.top + r.height / 2 - window.innerHeight / 2) * Number(el.dataset['parallax'] || 0.1);
         el.style.transform = `translate3d(0, ${off}px, 0)`;
       });
     };
@@ -78,31 +72,9 @@ export function MotionLayer() {
     return () => { cancelAnimationFrame(raf); window.removeEventListener("scroll", on); window.removeEventListener("resize", on); };
   }, [path]);
 
-  // Decorative loops only run when visible, including when the tab is active.
-  useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLElement>(
-      ".animate-marquee, .animate-marquee-slow, .brand-loop__track, .hero-portrait__image",
-    ));
-    const visible = new Set<Element>();
-    const sync = () => elements.forEach((el) => {
-      el.classList.toggle("motion-paused", document.hidden || !visible.has(el));
-    });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target));
-      sync();
-    });
-    elements.forEach((el) => { el.classList.add("motion-paused"); observer.observe(el); });
-    document.addEventListener("visibilitychange", sync);
-    return () => {
-      observer.disconnect();
-      document.removeEventListener("visibilitychange", sync);
-      elements.forEach((el) => el.classList.remove("motion-paused"));
-    };
-  }, [path]);
-
   // Custom cursor (fine pointers only)
   useEffect(() => {
-    if (!window.matchMedia("(pointer: fine)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return;
     document.documentElement.classList.add("has-cursor");
     let x = innerWidth / 2, y = innerHeight / 2, rx = x, ry = y, raf = 0;
     const move = (e: PointerEvent) => {

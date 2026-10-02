@@ -118,17 +118,11 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
   const [interaction, setInteraction] = useState(0);
   const [visible, setVisible] = useState(false);
   const [pageVisible, setPageVisible] = useState(true);
-  const [autoplay, setAutoplay] = useState(false);
   const root = useRef<HTMLElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
-  const running = visible && pageVisible && autoplay;
+  const running = visible && pageVisible;
 
   useEffect(() => {
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-    const preference = () => setAutoplay(!motion.matches && !connection?.saveData);
-    preference();
-    motion.addEventListener("change", preference);
     const visibility = () => setPageVisible(!document.hidden);
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(Boolean(entry?.isIntersecting)),
@@ -140,7 +134,6 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
     return () => {
       observer.disconnect();
       document.removeEventListener("visibilitychange", visibility);
-      motion.removeEventListener("change", preference);
     };
   }, []);
 
@@ -177,7 +170,6 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
       className={`logo-gallery ${className}`}
       aria-label="Selected logo designs"
       aria-roledescription="carousel"
-      tabIndex={0}
       onKeyDown={(event) => {
         if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
           event.preventDefault();
@@ -207,9 +199,10 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
       >
         {slides.map((slide, index) => {
           const isCurrent = active === index;
-          // Decode the next image in select(); hidden neighbours must not
-          // compete with the visible artwork during initial page loading.
-          const nearby = isCurrent || index === previous;
+          const nearby =
+            isCurrent || index === previous ||
+            index === (active + 1) % slides.length ||
+            index === (active - 1 + slides.length) % slides.length;
           return nearby ? (
             <div
               key={slide.file}
@@ -219,7 +212,8 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
               aria-hidden={!isCurrent}
               className={`logo-gallery-slide ${isCurrent ? `is-current ${previous === null ? "is-initial" : ""}` : index === previous ? "is-previous" : ""}`}
             >
-              <picture className="logo-gallery-artwork">
+              {[true, false].map((backdrop) => (
+              <picture key={String(backdrop)} className={backdrop ? "logo-gallery-backdrop" : "logo-gallery-artwork"} aria-hidden={backdrop || undefined}>
                 <source
                   media="(max-width: 767px)"
                   srcSet={`${import.meta.env.BASE_URL}assets/${slide.mobileFile}`}
@@ -228,7 +222,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
                 />
                 <img
                   src={`${import.meta.env.BASE_URL}assets/${slide.file}`}
-                  alt={`${slide.name} logo design`}
+                  alt={backdrop ? "" : `${slide.name} logo design`}
                   width={1920}
                   height={1080}
                   loading={isCurrent ? "eager" : "lazy"}
@@ -237,6 +231,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
                   draggable={false}
                 />
               </picture>
+              ))}
             </div>
           ) : null;
         })}

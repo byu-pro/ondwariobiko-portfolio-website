@@ -30,7 +30,7 @@ export function SiteNav() {
 
   return (
     <>
-      <header data-menu-open={open} className={`glass-nav fixed top-0 inset-x-0 z-[60] px-5 md:px-8 flex items-center justify-between transition-all duration-500 ${open ? "py-5 bg-transparent" : scrolled ? "py-3" : "py-5"}`}>
+      <header data-menu-open={open} className={`fixed top-0 inset-x-0 z-[60] px-5 md:px-8 flex items-center justify-between transition-all duration-500 ${open ? "py-5 bg-transparent" : scrolled ? "py-3 bg-surface/50 backdrop-blur-xl border-b border-ink/10" : "py-5 bg-transparent border-b border-transparent"}`}>
         <Link to="/" className="flex items-center gap-2 group">
           <img src={`${import.meta.env.BASE_URL}assets/${open ? "logoblack.webp" : "logowhite.webp"}`} alt="ondwariobiko monogram" width={64} height={64} className={`nav-logo object-contain ${open ? "rounded-full" : ""} ${scrolled && !open ? "size-11 md:size-12" : "size-12 md:size-14"}`} style={{ transition: "all 0.6s" }} />
           <span className={`hidden sm:block font-display text-2xl uppercase tracking-tight leading-none ${open ? "text-black" : "text-ink"}`}>
@@ -38,7 +38,7 @@ export function SiteNav() {
           </span>
         </Link>
 
-        <div className={`${open ? "lg:hidden" : ""} hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60 border border-ink/15 rounded-full px-4 py-2 bg-surface/40`}>
+        <div className={`${open ? "lg:hidden" : ""} hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60 border border-ink/15 rounded-full px-4 py-2 backdrop-blur bg-surface/40`}>
           <span className="size-1.5 rounded-full bg-neon animate-pulse" />
           Available Remotely Worldwide
         </div>
@@ -62,7 +62,7 @@ export function SiteNav() {
       </header>
 
       {open && (
-        <div className="glass-menu fixed inset-0 z-[55] bg-neon text-black animate-menu-in flex flex-col overflow-y-auto overscroll-contain" onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
+        <div className="fixed inset-0 z-[55] bg-neon text-black animate-menu-in flex flex-col overflow-y-auto overscroll-contain" onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
           <div className="flex-1 flex flex-col justify-center px-5 md:px-16 pt-32 pb-12">
             <ul>
               {links.map((l, i) => {

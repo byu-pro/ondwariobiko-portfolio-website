@@ -41,7 +41,7 @@ function WorkPage() {
       {/* Filter bar */}
       <section className="px-5 md:px-8 pb-12 md:pb-16 sticky top-[72px] z-30">
         <div className="max-w-[1400px] mx-auto">
-          <div className="glass-card glass-filters inline-flex flex-wrap gap-1 border border-ink/10 p-1">
+          <div className="inline-flex flex-wrap gap-1 bg-surface/60 backdrop-blur-xl border border-ink/10 p-1">
             {filters.map((f) => (
               <button
                 key={f}
@@ -69,11 +69,10 @@ function WorkPage() {
               style={{ transitionDelay: `${(i % 2) * 120}ms` }}
               className={`group ${i % 2 ? "sm:mt-24" : ""}`}
             >
-              <div className="portfolio-artwork overflow-hidden mb-6">
+              <div className="overflow-hidden rounded-xl mb-6">
                 <ProjectPreview project={p} />
               </div>
-              <div className="project-caption flex justify-between items-baseline gap-4">
-                <span className="project-number">{String(i + 1).padStart(2, "0")}</span>
+              <div className="flex justify-between items-baseline gap-4">
                 <h2 className="font-display text-2xl sm:text-3xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">
                   {p.title}
                 </h2>
@@ -89,7 +88,7 @@ function WorkPage() {
 
       {/* Closing CTA */}
       <section className="px-5 md:px-8 pb-24 md:pb-32">
-        <div className="glass-card max-w-[1400px] mx-auto border border-ink/10 p-10 md:p-20 text-center" data-reveal>
+        <div className="max-w-[1400px] mx-auto border border-ink/10 p-10 md:p-20 text-center" data-reveal>
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-6">Have a similar project in mind?</p>
           <h2 className="font-display text-4xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85] mb-10">
             Let's <span className="text-stroke">Talk</span>

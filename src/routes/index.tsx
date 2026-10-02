@@ -2,7 +2,7 @@ import { seoHead } from "@/lib/seo";
 import { LogoShowcase } from "@/components/LogoShowcase";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { projects } from "@/lib/projects";
 import { BudgetField } from "@/components/BudgetField";
 
@@ -22,20 +22,16 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <section className="glass-hero relative pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 overflow-hidden">
+      <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
-          <div className="studio-kicker font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">
-            <span>Independent designer / Nairobi</span><span>Working worldwide · Est. 2016</span>
+          <div className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">
+            <span className="text-accent-ink">●</span> Logo · Brand · UI/UX · Front-end — Est. 2016
           </div>
-          <div className="studio-masthead">
-            <h1 className="studio-name font-display"><span>John</span><span>Obiko<span className="studio-period">.</span></span></h1>
-            <div className="studio-note">
-              <span className="studio-note__index">01 — THE PRACTICE</span>
-              <p>Distinctive marks.<br />Identities with character.<br />Digital experiences<br />with a point of view.</p>
-              <Link to="/work" className="studio-work-link">Explore selected work <span aria-hidden="true">↘</span></Link>
-            </div>
-          </div>
-          <div className="studio-caption"><span>Selected identities</span><span>Original work by John Obiko</span><span aria-hidden="true">↓</span></div>
+          <h1 className="font-display text-[clamp(2.5rem,13.5vw,14rem)] leading-[0.85] tracking-tighter uppercase mb-10 md:mb-12 break-words">
+            <RotatingWord /> <br />
+            <span className="text-stroke">Designer</span>
+            <span className="text-accent-ink inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
+          </h1>
           <div className="flex flex-col gap-16 md:gap-24">
             <LogoShowcase className="logo-gallery--full-width" />
             <div>
@@ -51,7 +47,7 @@ function Index() {
         </div>
       </section>
 
-      <div className="studio-ticker bg-neon text-black py-5 overflow-hidden my-10 md:my-16">
+      <div className="bg-neon text-black py-5 overflow-hidden -rotate-2 my-10 md:my-16 scale-105">
         <div className="flex w-max animate-marquee font-display uppercase text-2xl sm:text-3xl md:text-4xl tracking-tight whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, k) => (
             <span key={k} className="flex">
@@ -72,11 +68,10 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
             {projects.slice(0, 4).map((p, i) => (
               <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i % 2 ? "md:mt-40" : ""}`}>
-                <div className="portfolio-artwork overflow-hidden mb-6">
+                <div className="overflow-hidden rounded-xl mb-6">
                   <ProjectPreview project={p} />
                 </div>
-                <div className="project-caption flex justify-between">
-                  <span className="project-number">0{i + 1}</span>
+                <div className="flex justify-between">
                   <h3 className="font-display text-2xl sm:text-3xl uppercase group-hover:text-accent-ink transition-colors">{p.title}</h3>
 
                 </div>
@@ -126,7 +121,7 @@ function Index() {
                 {testimonials.map((t) => (
                   <figure
                     key={t.name}
-                    className="glass-card w-[calc(100vw-40px)] max-w-[320px] sm:w-[420px] sm:max-w-none shrink-0 mx-2 sm:mx-3 border border-ink/10 p-6 sm:p-8 flex flex-col gap-6 hover:border-neon/60 transition-colors duration-500"
+                    className="w-[calc(100vw-40px)] max-w-[320px] sm:w-[420px] sm:max-w-none shrink-0 mx-2 sm:mx-3 border border-ink/10 p-6 sm:p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-ink/[0.02] transition-colors duration-500"
                   >
                     <span className="font-display text-5xl text-accent-ink leading-none select-none">“</span>
                     <blockquote className="text-base md:text-lg font-light leading-snug flex-1">{t.quote}</blockquote>
@@ -161,7 +156,7 @@ function Index() {
                 key={p.n}
                 data-reveal
                 style={{ transitionDelay: `${i * 100}ms` }}
-                className="glass-card group relative border border-ink/10 p-8 hover:border-neon/60 transition-colors duration-500"
+                className="group relative border border-ink/10 p-8 hover:border-neon/60 transition-colors duration-500"
               >
                 <span className="font-display text-6xl md:text-7xl text-stroke group-hover:text-accent-ink group-hover:[-webkit-text-stroke:0] transition-all duration-500">{p.n}</span>
 
@@ -295,7 +290,7 @@ function BriefForm() {
   };
   const selectCls = "w-full bg-transparent border border-ink/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-ink focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-ink/40 [&>option]:bg-surface";
   return (
-    <div className="glass-card glass-form flex flex-col gap-6" data-reveal>
+    <div className="flex flex-col gap-6" data-reveal>
       <label className="flex flex-col gap-2">
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Project type</span>
         <select value={type} onChange={(e) => setType(e.target.value)} className={selectCls}>
@@ -368,3 +363,20 @@ const testimonials = [
     role: "Product Lead, Savanna OS",
   },
 ];
+
+const words = ["Creative", "Logo", "Brand", "Visual", "UI/UX", "Digital", "Web", "Art"];
+
+function RotatingWord() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setI((n) => (n + 1) % words.length), 2200);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <span className="relative inline-block overflow-hidden align-bottom h-[0.9em] min-w-[5ch]">
+      <span key={words[i]} className="block animate-rise text-accent-ink">
+        {words[i]}
+      </span>
+    </span>
+  );
+}

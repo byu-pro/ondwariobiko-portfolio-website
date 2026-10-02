@@ -100,7 +100,7 @@ function ContactPage() {
             </div>
 
             {/* 5 — what happens next */}
-            <div className="glass-card border border-ink/15 rounded-2xl p-6 md:p-8">
+            <div className="border border-ink/15 rounded-2xl p-6 md:p-8">
               <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-4">What happens next</p>
               <p className="text-ink/80 leading-relaxed">
                 I'll review your project details and follow up within 24–48 hours — either with
@@ -169,7 +169,7 @@ function InquiryForm() {
     "font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50";
 
   return (
-    <form onSubmit={submit} className="glass-card glass-form lg:col-span-7 space-y-8">
+    <form onSubmit={submit} className="lg:col-span-7 space-y-8">
       <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
         Project inquiry
       </p>
