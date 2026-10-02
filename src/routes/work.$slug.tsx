@@ -1,6 +1,7 @@
 import { creativeWorkSchema, seoHead } from "@/lib/seo";
 import { InteractiveWordmark } from "@/components/InteractiveWordmark";
 import { ProjectPreview } from "@/components/ProjectPreview";
+import { BrandMockupTiles } from "@/components/BrandMockupTiles";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { getProject, projects } from "@/lib/projects";
 import { ConsultButton } from "@/components/ConsultButton";
@@ -64,8 +65,8 @@ function CaseStudy() {
         </div>
       </section>
 
-      <section className="mt-12 md:mt-20 px-5 md:px-8">
-        <div className="max-w-[1400px] mx-auto overflow-hidden aspect-[4/3] sm:aspect-[16/10] bg-ink/[0.03]">
+      <section className={`mt-12 md:mt-20 ${p.cat === "Digital" ? "px-5 md:px-8" : ""}`} data-case-study-hero>
+        <div className={`${p.cat === "Digital" ? "max-w-[1400px] mx-auto" : "w-full"} overflow-hidden aspect-[4/3] sm:aspect-[16/10] bg-ink/[0.03]`}>
           <ProjectPreview key={p.slug} project={p} detail />
         </div>
       </section>
@@ -126,6 +127,13 @@ function CaseStudy() {
           </div>
         </div>
       </section>
+
+      {/* Brand scene */}
+      {p.cat !== "Digital" && (
+        <section className="px-5 md:px-8 pb-16 md:pb-24" aria-label="Brand in context">
+          <BrandMockupTiles placement="intro" images={p.mockups} />
+        </section>
+      )}
 
       {/* Insight band */}
       <section className="bg-neon text-black px-5 md:px-8 py-20 md:py-32">
@@ -200,13 +208,23 @@ function CaseStudy() {
       </section>
 
       <section className="px-5 md:px-8">
+        {p.cat !== "Digital" ? (
+          <BrandMockupTiles placement="applications" images={p.mockups} />
+        ) : (
         <figure className="max-w-[1400px] mx-auto">
           <div className="overflow-hidden aspect-[16/9]">
             <img src={g2.src} alt={g2.alt} width={1600} height={900} loading="lazy" decoding="async" className={`w-full h-full object-cover ${g2.caption ? "" : "transition-transform duration-1000 hover:scale-105"}`} />
           </div>
           {g2.caption && <figcaption className="mt-4 text-sm leading-relaxed text-ink/60">{g2.caption}</figcaption>}
         </figure>
+        )}
       </section>
+
+      {p.cat !== "Digital" && (
+        <section className="mt-16 md:mt-28" aria-label="Full-width brand application">
+          <BrandMockupTiles placement="full-width" images={p.mockups} />
+        </section>
+      )}
 
       {/* Results */}
       <section className="px-5 md:px-8 py-16 md:py-28">

@@ -1,5 +1,6 @@
 import processSketches from "@/assets/process-sketches.webp";
 import brandApps from "@/assets/brand-applications.webp";
+import type { BrandMockupImage } from "@/lib/brand-mockups";
 
 export type Project = {
   slug: string;
@@ -32,6 +33,7 @@ export type Project = {
   resultsHeading?: string;
   quote?: { text: string; who: string };
   gallery: { src: string; alt: string; caption?: string }[];
+  mockups?: BrandMockupImage[];
 };
 
 const brandRole = "Brand Strategist & Identity Designer";
