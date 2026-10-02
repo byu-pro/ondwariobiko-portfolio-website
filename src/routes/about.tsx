@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { projects } from "@/lib/projects";
 import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
@@ -39,7 +38,7 @@ const pillars = [
 
 const markers = [
   { value: new Date().getFullYear() - 2016, label: "Years designing · since 2016" },
-  { value: projects.length, label: "Selected portfolio projects" },
+  { value: 350, suffix: "+", label: "Projects completed" },
   { value: 3, label: "Core disciplines · brand, graphic & web" },
   { value: 1, label: "Designer · your direct creative partner" },
 ];
@@ -53,9 +52,9 @@ const skills = [
   { name: "Front-end development", detail: "Responsive websites brought to life in code" },
 ];
 
-const tools = ["Illustrator", "Photoshop", "Pen tool", "React", "CSS", "Framer"];
+const tools = ["Illustrator", "Photoshop", "InDesign", "Affinity", "Figma", "Visual Studio Code", "GitHub", "After Effects", "Canva", "Pen tool", "React", "CSS", "Framer"];
 
-function AnimatedStat({ value, label }: { value: number; label: string }) {
+function AnimatedStat({ value, label, suffix = "" }: { value: number; label: string; suffix?: string }) {
   const root = useRef<HTMLDivElement>(null);
   const [display, setDisplay] = useState(value);
   useEffect(() => {
@@ -77,9 +76,9 @@ function AnimatedStat({ value, label }: { value: number; label: string }) {
     return () => { observer.disconnect(); cancelAnimationFrame(frame); };
   }, [value]);
   return (
-    <div ref={root} className="min-w-0">
-      <div className="font-display font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter text-accent-ink tabular-nums" aria-label={String(value)}>
-        <span aria-hidden="true">{display}</span>
+    <div ref={root} className="min-w-0 text-center flex flex-col items-center">
+      <div className="font-display font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter text-accent-ink tabular-nums" aria-label={`${value}${suffix}`}>
+        <span aria-hidden="true">{display}{suffix}</span>
       </div>
       <p className="font-mono text-xs uppercase tracking-wider mt-4 text-ink/70 leading-relaxed max-w-[26ch]">{label}</p>
     </div>
