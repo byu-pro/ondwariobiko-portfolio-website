@@ -2,7 +2,7 @@ import { seoHead } from "@/lib/seo";
 import { LogoShowcase } from "@/components/LogoShowcase";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { projects } from "@/lib/projects";
 import { BudgetField } from "@/components/BudgetField";
 
@@ -368,12 +368,25 @@ const words = ["Creative", "Logo", "Brand", "Visual", "UI/UX", "Digital", "Web",
 
 function RotatingWord() {
   const [i, setI] = useState(0);
+  const root = useRef<HTMLSpanElement>(null);
   useEffect(() => {
-    const id = setInterval(() => setI((n) => (n + 1) % words.length), 2200);
-    return () => clearInterval(id);
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = false;
+    let timer: ReturnType<typeof setInterval> | undefined;
+    const sync = () => {
+      clearInterval(timer);
+      if (visible && !document.hidden && !motion.matches) {
+        timer = setInterval(() => setI((n) => (n + 1) % words.length), 2200);
+      }
+    };
+    const observer = new IntersectionObserver(([entry]) => { visible = !!entry?.isIntersecting; sync(); });
+    if (root.current) observer.observe(root.current);
+    document.addEventListener("visibilitychange", sync);
+    motion.addEventListener("change", sync);
+    return () => { clearInterval(timer); observer.disconnect(); document.removeEventListener("visibilitychange", sync); motion.removeEventListener("change", sync); };
   }, []);
   return (
-    <span className="relative inline-block overflow-hidden align-bottom h-[0.9em] min-w-[5ch]">
+    <span ref={root} className="relative inline-block overflow-hidden align-bottom h-[0.9em] min-w-[5ch]">
       <span key={words[i]} className="block animate-rise text-accent-ink">
         {words[i]}
       </span>

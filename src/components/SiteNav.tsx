@@ -38,7 +38,7 @@ export function SiteNav() {
           </span>
         </Link>
 
-        <div className={`${open ? "lg:hidden" : ""} hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60 border border-ink/15 rounded-full px-4 py-2 backdrop-blur bg-surface/40`}>
+        <div className={`${open ? "lg:hidden" : ""} hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60 border border-ink/15 rounded-full px-4 py-2 bg-surface/40`}>
           <span className="size-1.5 rounded-full bg-neon animate-pulse" />
           Available Remotely Worldwide
         </div>
