@@ -6,10 +6,10 @@ export function SiteFooter() {
   return (
     <footer className="glass-footer px-5 md:px-8 pt-20 md:pt-32 pb-28 md:pb-24 border-t border-ink/10">
       <div className="max-w-[1400px] mx-auto">
-        <p className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">Have a vision?</p>
+        <p className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">Next / A conversation</p>
         <Link to="/contact" className="group block font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,11vw,10rem)]">
-          <span className="block transition-all duration-500 group-hover:text-accent-ink group-hover:translate-x-4">Let's build</span>
-          <span className="block text-stroke group-hover:text-accent-ink transition-all duration-700 group-hover:translate-x-10">something ✺</span>
+          <span className="block transition-colors duration-300 group-hover:text-accent-ink">Make your</span>
+          <span className="footer-signoff block group-hover:text-accent-ink transition-colors duration-300">mark. ↗</span>
         </Link>
         <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-12 gap-y-2 font-mono text-xs">
           <div className="flex items-center justify-between gap-3 py-2">

@@ -2,7 +2,7 @@ import { seoHead } from "@/lib/seo";
 import { LogoShowcase } from "@/components/LogoShowcase";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { projects } from "@/lib/projects";
 import { BudgetField } from "@/components/BudgetField";
 
@@ -24,14 +24,18 @@ function Index() {
     <>
       <section className="glass-hero relative pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">
-            <span className="text-accent-ink">●</span> Logo · Brand · UI/UX · Front-end — Est. 2016
+          <div className="studio-kicker font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">
+            <span>Independent designer / Nairobi</span><span>Working worldwide · Est. 2016</span>
           </div>
-          <h1 className="font-display text-[clamp(2.5rem,13.5vw,14rem)] leading-[0.85] tracking-tighter uppercase mb-10 md:mb-12 break-words">
-            <RotatingWord /> <br />
-            <span className="text-stroke">Designer</span>
-            <span className="text-accent-ink inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
-          </h1>
+          <div className="studio-masthead">
+            <h1 className="studio-name font-display"><span>John</span><span>Obiko<span className="studio-period">.</span></span></h1>
+            <div className="studio-note">
+              <span className="studio-note__index">01 — THE PRACTICE</span>
+              <p>Distinctive marks.<br />Identities with character.<br />Digital experiences<br />with a point of view.</p>
+              <Link to="/work" className="studio-work-link">Explore selected work <span aria-hidden="true">↘</span></Link>
+            </div>
+          </div>
+          <div className="studio-caption"><span>Selected identities</span><span>Original work by John Obiko</span><span aria-hidden="true">↓</span></div>
           <div className="flex flex-col gap-16 md:gap-24">
             <LogoShowcase className="logo-gallery--full-width" />
             <div>
@@ -47,7 +51,7 @@ function Index() {
         </div>
       </section>
 
-      <div className="bg-neon text-black py-5 overflow-hidden -rotate-2 my-10 md:my-16 scale-105">
+      <div className="studio-ticker bg-neon text-black py-5 overflow-hidden my-10 md:my-16">
         <div className="flex w-max animate-marquee font-display uppercase text-2xl sm:text-3xl md:text-4xl tracking-tight whitespace-nowrap">
           {Array.from({ length: 2 }).map((_, k) => (
             <span key={k} className="flex">
@@ -68,10 +72,11 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
             {projects.slice(0, 4).map((p, i) => (
               <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i % 2 ? "md:mt-40" : ""}`}>
-                <div className="overflow-hidden rounded-xl mb-6">
+                <div className="portfolio-artwork overflow-hidden mb-6">
                   <ProjectPreview project={p} />
                 </div>
-                <div className="flex justify-between">
+                <div className="project-caption flex justify-between">
+                  <span className="project-number">0{i + 1}</span>
                   <h3 className="font-display text-2xl sm:text-3xl uppercase group-hover:text-accent-ink transition-colors">{p.title}</h3>
 
                 </div>
@@ -363,33 +368,3 @@ const testimonials = [
     role: "Product Lead, Savanna OS",
   },
 ];
-
-const words = ["Creative", "Logo", "Brand", "Visual", "UI/UX", "Digital", "Web", "Art"];
-
-function RotatingWord() {
-  const [i, setI] = useState(0);
-  const root = useRef<HTMLSpanElement>(null);
-  useEffect(() => {
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let visible = false;
-    let timer: ReturnType<typeof setInterval> | undefined;
-    const sync = () => {
-      clearInterval(timer);
-      if (visible && !document.hidden && !motion.matches) {
-        timer = setInterval(() => setI((n) => (n + 1) % words.length), 2200);
-      }
-    };
-    const observer = new IntersectionObserver(([entry]) => { visible = !!entry?.isIntersecting; sync(); });
-    if (root.current) observer.observe(root.current);
-    document.addEventListener("visibilitychange", sync);
-    motion.addEventListener("change", sync);
-    return () => { clearInterval(timer); observer.disconnect(); document.removeEventListener("visibilitychange", sync); motion.removeEventListener("change", sync); };
-  }, []);
-  return (
-    <span ref={root} className="relative inline-block overflow-hidden align-bottom h-[0.9em] min-w-[5ch]">
-      <span key={words[i]} className="block animate-rise text-accent-ink">
-        {words[i]}
-      </span>
-    </span>
-  );
-}

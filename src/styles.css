@@ -361,24 +361,19 @@ a:hover .craft-icon svg, a:focus-visible .craft-icon svg { transform: translateY
   --glass-rim: oklch(0.96 0.035 131 / .19);
   --glass-light: oklch(0.98 0.015 131 / .07);
 }
-.glass-site {
-  background-image:
-    radial-gradient(ellipse 65vw 650px at 90% 200px, oklch(0.62 0.16 131 / .16), transparent 75%),
-    radial-gradient(ellipse 70vw 1100px at 0% 40%, oklch(0.5 0.09 160 / .10), transparent 80%),
-    radial-gradient(ellipse 75vw 850px at 100% 85%, oklch(0.62 0.16 131 / .09), transparent 80%);
-}
+.glass-site { background: oklch(0.105 0.003 131); }
 .glass-card, .logo-gallery {
   background: linear-gradient(135deg, var(--glass-light), transparent 48%), var(--glass-solid);
   border: 1px solid var(--glass-rim);
-  border-radius: 22px;
-  box-shadow: inset 0 1px 0 oklch(1 0 0 / .09), inset 0 -1px 0 oklch(0 0 0 / .25), 0 16px 48px oklch(0 0 0 / .18);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / .06);
 }
 .glass-card {
   transition: border-color 200ms ease, background-color 200ms ease;
 }
 .glass-card:hover, .glass-card:focus-within {
   border-color: oklch(0.9 0.24 131 / .4);
-  box-shadow: inset 0 1px 0 oklch(0.95 0.1 131 / .2), 0 18px 48px oklch(0 0 0 / .24);
+  box-shadow: inset 0 1px 0 oklch(0.95 0.1 131 / .2);
 }
 .glass-card--lime:hover {
   background: linear-gradient(135deg, oklch(1 0 0 / .22), transparent 70%), var(--neon);
@@ -461,7 +456,7 @@ a:hover .craft-icon svg, a:focus-visible .craft-icon svg { transform: translateY
 /* Moving testimonials use a painted finish rather than repeated live blurs. */
 .animate-marquee-slow .glass-card { -webkit-backdrop-filter: none; backdrop-filter: none; }
 @media (max-width: 767px) {
-  .glass-card, .logo-gallery { border-radius: 16px; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .glass-card, .logo-gallery { border-radius: 3px; -webkit-backdrop-filter: none; backdrop-filter: none; }
   .glass-filters { border-radius: 22px; }
   .glass-hero::before { top: 145px; right: -35%; }
 }
@@ -476,4 +471,50 @@ a:hover .craft-icon svg, a:focus-visible .craft-icon svg { transform: translateY
 @media (forced-colors: active) {
   .glass-card, .logo-gallery, .glass-nav, .floating-consult, .back-to-top { border: 1px solid CanvasText; }
   .glass-hero::before { display: none; }
+}
+
+/* The studio's editorial system: signature typography, ruled space, artwork. */
+.glass-hero::before { display: none; }
+.studio-kicker { display: flex; justify-content: space-between; gap: 16px; border-top: 1px solid var(--glass-rim); padding-top: 14px; font-size: 10px; letter-spacing: .13em; }
+.studio-masthead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, .35fr); align-items: end; gap: 32px; padding: 20px 0 50px; }
+.studio-name { font-size: clamp(64px, 11.2vw, 174px); font-weight: 800; line-height: .77; letter-spacing: -.075em; text-transform: uppercase; }
+.studio-name > span { display: block; white-space: nowrap; }
+.studio-name > span + span { margin-top: .09em; color: var(--neon); }
+.studio-period { color: var(--ink); }
+.studio-note { padding-bottom: 4px; }
+.studio-note__index { display: block; font: 400 9px var(--font-mono); letter-spacing: .18em; color: oklch(.7 0 0); margin-bottom: 24px; }
+.studio-note p { font-size: clamp(16px, 1.65vw, 24px); letter-spacing: -.035em; line-height: 1.4; }
+.studio-work-link { display: flex; align-items: center; justify-content: space-between; gap: 14px; border-bottom: 1px solid var(--glass-rim); margin-top: 32px; padding-bottom: 12px; font: 400 10px var(--font-mono); text-transform: uppercase; letter-spacing: .1em; }
+.studio-work-link span { font-size: 30px; color: var(--neon); }
+.studio-work-link:hover { color: var(--neon); border-color: var(--neon); }
+.studio-caption { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid var(--glass-rim); padding: 13px 0; font: 400 9px var(--font-mono); letter-spacing: .13em; text-transform: uppercase; color: oklch(.7 0 0); }
+.studio-caption > span:last-child { color: var(--neon); }
+.studio-ticker { border-block: 1px solid var(--glass-rim); background: transparent; color: var(--ink); padding-block: 18px; }
+.studio-ticker > div { font-family: var(--font-mono); font-size: 12px; letter-spacing: .15em; }
+.project-caption { align-items: baseline; border-top: 1px solid var(--glass-rim); padding-top: 14px; gap: 20px; }
+.project-caption h2, .project-caption h3 { flex: 1; }
+.project-number { color: var(--neon); font: 400 10px var(--font-mono); }
+.portfolio-artwork { border-radius: 2px; }
+.glass-grid { gap: 0; border-top: 1px solid var(--glass-rim); }
+.glass-grid > .glass-card { border: 0; border-right: 1px solid var(--glass-rim); border-bottom: 1px solid var(--glass-rim); border-radius: 0; background: transparent; box-shadow: none; }
+.glass-grid > .glass-card--lime:hover { background: var(--neon); }
+.glass-form { border-top: 2px solid var(--neon); }
+.glass-filters, .glass-filters button { border-radius: 2px; }
+.page-hero-title { padding-bottom: 28px; border-bottom: 1px solid var(--glass-rim); }
+.page-hero-title > span:last-child { margin-left: clamp(22px, 9vw, 140px); }
+.page-hero-title .text-stroke { -webkit-text-stroke: 0; -webkit-text-fill-color: currentColor; color: var(--neon); }
+.glass-footer { background: linear-gradient(115deg, oklch(1 0 0 / .025), transparent 70%); }
+.footer-signoff { padding-left: 14%; color: var(--neon); }
+@media (max-width: 767px) {
+  .studio-kicker { font-size: 8px; letter-spacing: .08em; }
+  .studio-kicker > span { max-width: 48%; }
+  .studio-kicker > span:last-child { text-align: right; }
+  .studio-masthead { grid-template-columns: 1fr; gap: 28px; padding: 10px 0 28px; }
+  .studio-name { font-size: clamp(48px, 16vw, 120px); }
+  .studio-note { display: grid; grid-template-columns: 1fr 1.6fr; column-gap: 16px; }
+  .studio-note__index { font-size: 8px; padding-top: 4px; }
+  .studio-note p { font-size: 16px; }
+  .studio-work-link { grid-column: 1 / -1; margin-top: 14px; }
+  .studio-caption { font-size: 8px; letter-spacing: .07em; }
+  .glass-grid > .glass-card { border-right: 0; }
 }

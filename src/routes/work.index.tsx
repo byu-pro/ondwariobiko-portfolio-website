@@ -69,10 +69,11 @@ function WorkPage() {
               style={{ transitionDelay: `${(i % 2) * 120}ms` }}
               className={`group ${i % 2 ? "sm:mt-24" : ""}`}
             >
-              <div className="overflow-hidden rounded-xl mb-6">
+              <div className="portfolio-artwork overflow-hidden mb-6">
                 <ProjectPreview project={p} />
               </div>
-              <div className="flex justify-between items-baseline gap-4">
+              <div className="project-caption flex justify-between items-baseline gap-4">
+                <span className="project-number">{String(i + 1).padStart(2, "0")}</span>
                 <h2 className="font-display text-2xl sm:text-3xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">
                   {p.title}
                 </h2>
