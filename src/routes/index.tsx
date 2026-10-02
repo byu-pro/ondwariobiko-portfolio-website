@@ -86,7 +86,7 @@ function Index() {
       <section className="py-16 md:py-24 px-5 md:px-8 border-y border-ink/10" aria-labelledby="trusted-brands-heading">
         <div className="max-w-[1400px] mx-auto">
           <h2 id="trusted-brands-heading" className="font-mono text-xs uppercase tracking-[0.3em] text-ink/60 text-center mb-10 md:mb-14">
-            Worked on brands and institutions worldwide
+            Worked with Brands and Institutions worldwide
           </h2>
           <div className="brand-loop">
             <div className="brand-loop__track">
