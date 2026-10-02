@@ -32,7 +32,7 @@ function Index() {
             <span className="text-stroke">Designer</span>
             <span className="text-accent-ink inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
           </h1>
-          <div className="flex flex-col gap-10 md:gap-12">
+          <div className="flex flex-col gap-16 md:gap-24">
             <LogoShowcase className="logo-gallery--full-width" />
             <div>
               <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-[1.05] max-w-4xl mb-8">

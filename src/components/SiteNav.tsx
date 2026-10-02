@@ -10,18 +10,6 @@ const links = [
   { to: "/consultation", label: "Free Call", hint: "1 hour, on me" },
 ] as const;
 
-function WorldClock() {
-  const [t, setT] = useState("");
-  useEffect(() => {
-    const tick = () =>
-      setT(new Date().toLocaleTimeString("en-GB", { timeZone: "UTC", hour: "2-digit", minute: "2-digit", second: "2-digit" }));
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-  return <span className="tabular-nums">{t || "--:--:--"}</span>;
-}
-
 export function SiteNav() {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -52,7 +40,7 @@ export function SiteNav() {
 
         <div className={`${open ? "lg:hidden" : ""} hidden lg:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60 border border-ink/15 rounded-full px-4 py-2 backdrop-blur bg-surface/40`}>
           <span className="size-1.5 rounded-full bg-neon animate-pulse" />
-          Available Remotely Worldwide · <WorldClock /> UTC
+          Available Remotely Worldwide
         </div>
 
         <div className="flex items-center gap-3">

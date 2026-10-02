@@ -113,6 +113,8 @@ const slides = [
 
 export function LogoShowcase({ className = "" }: { className?: string }) {
   const [active, setActive] = useState(0);
+  const [previous, setPrevious] = useState<number | null>(null);
+  const request = useRef(0);
   const [interaction, setInteraction] = useState(0);
   const [visible, setVisible] = useState(false);
   const [pageVisible, setPageVisible] = useState(true);
@@ -137,13 +139,26 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
 
   useEffect(() => {
     if (!running) return;
-    const timer = window.setTimeout(() => setActive((value) => (value + 1) % slides.length), 6000);
+    const timer = window.setTimeout(() => { void select(active + 1); }, 6000);
     return () => window.clearTimeout(timer);
   }, [running, active, interaction]);
 
-  function select(index: number) {
-    setActive((index + slides.length) % slides.length);
-    // Give the chosen slide a full interval, then continue the automatic loop.
+  async function select(index: number) {
+    const next = (index + slides.length) % slides.length;
+    const id = ++request.current;
+    // Keep the current artwork visible until the incoming image is fully decoded.
+    const image = new Image();
+    image.src = `${import.meta.env.BASE_URL}assets/${window.matchMedia("(max-width: 767px)").matches ? slides[next].mobileFile : slides[next].file}`;
+    try {
+      await image.decode();
+    } catch {
+      // Retry on the next interval without exposing an empty slide.
+      if (id === request.current) setInteraction((value) => value + 1);
+      return;
+    }
+    if (id !== request.current) return;
+    setPrevious(active);
+    setActive(next);
     setInteraction((value) => value + 1);
   }
 
@@ -183,7 +198,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
         {slides.map((slide, index) => {
           const isCurrent = active === index;
           const nearby =
-            isCurrent ||
+            isCurrent || index === previous ||
             index === (active + 1) % slides.length ||
             index === (active - 1 + slides.length) % slides.length;
           return nearby ? (
@@ -193,7 +208,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
               aria-roledescription="slide"
               aria-label={`${index + 1} of ${slides.length}: ${slide.name}`}
               aria-hidden={!isCurrent}
-              className={`logo-gallery-slide ${isCurrent ? "is-current" : ""}`}
+              className={`logo-gallery-slide ${isCurrent ? `is-current ${previous === null ? "is-initial" : ""}` : index === previous ? "is-previous" : ""}`}
             >
               <picture>
                 <source
