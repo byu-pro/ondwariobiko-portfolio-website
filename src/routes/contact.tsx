@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/SiteFooter";
 import { BudgetField } from "@/components/BudgetField";
+import { CopyContactButton } from "@/components/CopyContactButton";
 
 export const Route = createFileRoute("/contact")({
   head: () =>
@@ -68,16 +69,22 @@ function ContactPage() {
                 Prefer to reach out directly?
               </p>
               <div className="border-t border-ink/15">
-                <a href="mailto:ondwariobiko@gmail.com" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-ink/15">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 border-b border-ink/15 pb-2 sm:pb-0">
+                <a href="mailto:ondwariobiko@gmail.com" className="group relative overflow-hidden flex flex-1 min-w-0 flex-col gap-1 py-5 select-text">
                   <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
                   <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 group-hover:text-black px-2">Email — best way to reach me</span>
                   <span className="relative break-all font-display uppercase tracking-tighter text-xl sm:text-2xl group-hover:text-black px-2 transition-transform duration-500 group-hover:-translate-x-2">ondwariobiko@gmail.com ↗</span>
                 </a>
-                <a href="https://wa.me/254702255575" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-ink/15">
+                <CopyContactButton value="ondwariobiko@gmail.com" label="email address" />
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 border-b border-ink/15 pb-2 sm:pb-0">
+                <a href="https://wa.me/254702255575" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-1 min-w-0 flex-col gap-1 py-5 select-text">
                   <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
                   <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 group-hover:text-black px-2">WhatsApp — easiest for calls & video</span>
                   <span className="relative font-display uppercase tracking-tighter text-xl sm:text-2xl group-hover:text-black px-2 transition-transform duration-500 group-hover:-translate-x-2">+254 702 255 575 ↗</span>
                 </a>
+                <CopyContactButton value="+254702255575" label="phone number" />
+                </div>
                 <a href="https://www.behance.net/johnobiko" target="_blank" rel="noopener noreferrer" className="group relative overflow-hidden flex flex-col gap-1 py-5 border-b border-ink/15">
                   <span className="absolute inset-0 bg-neon translate-y-full transition-transform duration-500 group-hover:translate-y-0" />
                   <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 group-hover:text-black px-2">Behance</span>

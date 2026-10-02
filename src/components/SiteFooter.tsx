@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { CopyContactButton } from "@/components/CopyContactButton";
 
 export function SiteFooter() {
   return (
@@ -9,7 +10,17 @@ export function SiteFooter() {
           <span className="block transition-all duration-500 group-hover:text-accent-ink group-hover:translate-x-4">Let's build</span>
           <span className="block text-stroke group-hover:text-accent-ink transition-all duration-700 group-hover:translate-x-10">something ✺</span>
         </Link>
-        <div className="mt-16 md:mt-24 border-t border-ink/15 pt-6 font-mono text-xs uppercase tracking-widest">
+        <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-12 gap-y-2 font-mono text-xs">
+          <div className="flex items-center justify-between gap-3 py-2 border-b border-ink/15">
+            <a href="mailto:ondwariobiko@gmail.com" className="min-w-0 break-all select-text hover:text-accent-ink">ondwariobiko@gmail.com</a>
+            <CopyContactButton value="ondwariobiko@gmail.com" label="email address" />
+          </div>
+          <div className="flex items-center justify-between gap-3 py-2 border-b border-ink/15">
+            <a href="tel:+254702255575" className="min-w-0 select-text hover:text-accent-ink">+254 702 255 575</a>
+            <CopyContactButton value="+254702255575" label="phone number" />
+          </div>
+        </div>
+        <div className="mt-10 border-t border-ink/15 pt-6 font-mono text-xs uppercase tracking-widest">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-ink/80">
             <span>© 2026 ondwariobiko. All Rights Reserved.</span>
             <div className="flex gap-6 text-ink">
@@ -23,7 +34,6 @@ export function SiteFooter() {
             <a href="https://www.linkedin.com/in/ondwariobiko/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-ink transition-colors">LinkedIn</a>
             <a href="https://www.behance.net/johnobiko" target="_blank" rel="noopener noreferrer" className="hover:text-accent-ink transition-colors">Behance</a>
             <Link to="/faq" className="hover:text-accent-ink transition-colors">FAQ</Link>
-            <Link to="/journal" className="hover:text-accent-ink transition-colors">Journal</Link>
           </div>
         </div>
       </div>
