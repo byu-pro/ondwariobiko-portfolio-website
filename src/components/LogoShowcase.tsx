@@ -113,14 +113,12 @@ const slides = [
 
 export function LogoShowcase({ className = "" }: { className?: string }) {
   const [active, setActive] = useState(0);
-  const [playing, setPlaying] = useState(true);
   const [interaction, setInteraction] = useState(0);
   const [visible, setVisible] = useState(false);
   const [pageVisible, setPageVisible] = useState(true);
   const root = useRef<HTMLElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
-  const current = slides[active]!;
-  const running = playing && visible && pageVisible;
+  const running = visible && pageVisible;
 
   useEffect(() => {
     const visibility = () => setPageVisible(!document.hidden);
@@ -145,7 +143,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
 
   function select(index: number) {
     setActive((index + slides.length) % slides.length);
-    // Give the chosen slide a full interval, then continue unless explicitly paused.
+    // Give the chosen slide a full interval, then continue the automatic loop.
     setInteraction((value) => value + 1);
   }
 
@@ -162,15 +160,6 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
         }
       }}
     >
-      <div className="logo-gallery-masthead font-mono">
-        <span>
-          <span className="text-accent-ink" aria-hidden="true">
-            ✺
-          </span>{" "}
-          The identity collection
-        </span>
-        <span className="logo-gallery-edition">18 marks. Distinct characters.</span>
-      </div>
       <div
         className="logo-gallery-stage"
         onTouchStart={(event) => {
@@ -227,55 +216,6 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
             </div>
           ) : null;
         })}
-        <span className="logo-gallery-stamp font-mono" aria-hidden="true">
-          OB / {String(active + 1).padStart(2, "0")}
-        </span>
-      </div>
-      <div className="logo-gallery-caption">
-        <div className="logo-gallery-number font-display" aria-hidden="true">
-          {String(active + 1).padStart(2, "0")}
-          <span>/18</span>
-        </div>
-        <div
-          className="logo-gallery-title"
-          aria-live={running ? "off" : "polite"}
-          aria-atomic="true"
-        >
-          <p className="font-mono">{current.category}</p>
-          <h2 className="font-display">{current.name}</h2>
-        </div>
-        <div className="logo-gallery-arrows">
-          <button type="button" onClick={() => select(active - 1)} aria-label="Previous logo">
-            ←
-          </button>
-          <button type="button" onClick={() => select(active + 1)} aria-label="Next logo">
-            →
-          </button>
-        </div>
-      </div>
-      <div className="logo-gallery-footer">
-        <div className="logo-gallery-index" aria-label="Choose a logo">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.file}
-              type="button"
-              onClick={() => select(index)}
-              aria-label={`Show ${slide.name}`}
-              aria-pressed={active === index}
-              title={slide.name}
-            >
-              <span className={active === index ? "is-active" : ""} />
-            </button>
-          ))}
-        </div>
-        <button
-          type="button"
-          className="logo-gallery-play font-mono"
-          onClick={() => setPlaying((value) => !value)}
-          aria-label={playing ? "Pause logo slideshow" : "Play logo slideshow"}
-        >
-          {playing ? "Ⅱ Pause" : "▷ Play"}
-        </button>
       </div>
     </section>
   );
