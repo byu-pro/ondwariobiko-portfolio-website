@@ -69,7 +69,7 @@ function WorkPage() {
               style={{ transitionDelay: `${(i % 2) * 120}ms` }}
               className={`group ${i % 2 ? "sm:mt-24" : ""}`}
             >
-              <div className="overflow-hidden mb-6">
+              <div className="overflow-hidden rounded-xl mb-6">
                 <ProjectPreview project={p} />
               </div>
               <div className="flex justify-between items-baseline gap-4">

@@ -68,7 +68,7 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
             {projects.slice(0, 4).map((p, i) => (
               <Link to="/work/$slug" params={{ slug: p.slug }} key={p.title} className={`group ${i % 2 ? "md:mt-40" : ""}`}>
-                <div className="overflow-hidden mb-6">
+                <div className="overflow-hidden rounded-xl mb-6">
                   <ProjectPreview project={p} />
                 </div>
                 <div className="flex justify-between">
