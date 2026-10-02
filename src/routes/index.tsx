@@ -286,7 +286,7 @@ function BriefForm() {
   const [timeline, setTimeline] = useState("Flexible — let's discuss");
   const send = () => {
     const msg = encodeURIComponent(`Hi! I'd like to discuss a project.\n\n• Project: ${type}\n• Budget: ${budget || "To be discussed"}\n• Start: ${timeline}`);
-    window.open(`https://wa.me/254702255575?text=${msg}`, "_blank");
+    window.open(`https://wa.me/254702255575?text=${msg}`, "_blank", "noopener,noreferrer");
   };
   const selectCls = "w-full bg-transparent border border-ink/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-ink focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-ink/40 [&>option]:bg-surface";
   return (

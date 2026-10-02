@@ -145,10 +145,12 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
 
   async function select(index: number) {
     const next = (index + slides.length) % slides.length;
+    const slide = slides[next];
+    if (!slide) return;
     const id = ++request.current;
     // Keep the current artwork visible until the incoming image is fully decoded.
     const image = new Image();
-    image.src = `${import.meta.env.BASE_URL}assets/${window.matchMedia("(max-width: 767px)").matches ? slides[next].mobileFile : slides[next].file}`;
+    image.src = `${import.meta.env.BASE_URL}assets/${window.matchMedia("(max-width: 767px)").matches ? slide.mobileFile : slide.file}`;
     try {
       await image.decode();
     } catch {

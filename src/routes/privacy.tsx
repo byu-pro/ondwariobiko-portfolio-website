@@ -25,7 +25,8 @@ const sections: Section[] = [
       "Name, email address, company / brand name.",
       "Project details you share via the contact / inquiry form (project type, budget, timeline, project description).",
       "Any files, briefs, or content you send me for a project.",
-      "I do not use analytics, tracking, or cookie-based tools on this Site. The only information collected is what you choose to submit directly (e.g. through the contact form or email).",
+      "The Site does not use analytics or advertising cookies. GitHub Pages hosts the Site, and Google Fonts supplies its fonts; these providers receive technical information such as your IP address when your browser requests their services.",
+      "Inquiry forms prepare a WhatsApp message and open WhatsApp with the details in a URL. The Site does not store form submissions in a database. Avoid including passwords, payment details, or other sensitive information in an inquiry.",
     ],
   },
   {
@@ -43,7 +44,7 @@ const sections: Section[] = [
     title: "Third-Party Services",
     body: [
       "I may use third-party tools to operate parts of this Site or deliver services, such as:",
-      "Email / contact form providers.",
+      "GitHub Pages for hosting, Google Fonts for fonts, and WhatsApp or email for inquiries and communication.",
       "Payment processors (e.g. PayPal, Payoneer, Wise) for invoicing, where applicable.",
       "Project platforms, where separate platform privacy policies apply to interactions there.",
       "These third parties have their own privacy policies governing any data they process.",

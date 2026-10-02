@@ -160,7 +160,7 @@ function InquiryForm() {
       `• When to start: ${start || "Flexible"}\n` +
       (source ? `• Found via: ${source}\n` : "") +
       `\nProject:\n${details.trim()}`;
-    window.open(`https://wa.me/254702255575?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    window.open(`https://wa.me/254702255575?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
   };
 
   const fieldClass =

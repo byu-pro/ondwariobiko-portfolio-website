@@ -62,7 +62,7 @@ function AnimatedStat({ value, label, suffix = "" }: { value: number; label: str
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let frame = 0;
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
+      if (!entry?.isIntersecting) return;
       observer.disconnect();
       const start = performance.now();
       const tick = (now: number) => {

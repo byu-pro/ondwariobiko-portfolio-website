@@ -32,7 +32,7 @@ function ConsultationPage() {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
     const msg = `Hi John! I'd like to book a free 1-hour consultation.\n\nName: ${f.get("name")}\nEmail: ${f.get("email")}\nProject: ${type}\nBudget: ${budget || "To be discussed"}\nPreferred time: ${f.get("time") || "Flexible"}\n\n${f.get("message") || ""}`;
-    window.open(`https://wa.me/254702255575?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    window.open(`https://wa.me/254702255575?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
   };
 
   const field = "w-full bg-transparent border-b border-ink/20 py-4 text-lg md:text-xl outline-none focus:border-neon transition-colors placeholder:text-ink/30";

@@ -2,7 +2,7 @@ import { brandMockupSlots, type BrandMockupImage } from "@/lib/brand-mockups";
 
 type Props = {
   placement: "intro" | "applications" | "full-width";
-  images?: BrandMockupImage[];
+  images?: BrandMockupImage[] | undefined;
 };
 
 export function BrandMockupTiles({ placement, images = [] }: Props) {

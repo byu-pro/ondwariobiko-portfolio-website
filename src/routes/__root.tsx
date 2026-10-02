@@ -86,11 +86,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "referrer", content: "strict-origin-when-cross-origin" },
       { name: "author", content: "ondwariobiko" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(identitySchema) }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(identitySchema).replace(/</g, "\\u003c") }],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: `${import.meta.env.BASE_URL}assets/favicon.webp?v=7af9db6e`, type: "image/webp", sizes: "64x64" },
