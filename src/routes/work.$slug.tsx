@@ -1,3 +1,4 @@
+import { CraftIcon } from "@/components/CraftIcon";
 import { creativeWorkSchema, seoHead } from "@/lib/seo";
 import { CaseStudyWordmark } from "@/components/CaseStudyWordmark";
 import { ProjectPreview } from "@/components/ProjectPreview";
@@ -117,7 +118,7 @@ function CaseStudy() {
       {/* Overview + challenge */}
       <section className="px-5 md:px-8 pb-16 md:pb-24">
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-10 md:gap-12">
-          <h2 className="md:col-span-4 font-display uppercase text-4xl md:text-6xl tracking-tighter leading-[0.9]">The<br /><span className="text-stroke">Brief</span></h2>
+          <h2 className="md:col-span-4 font-display uppercase text-4xl md:text-6xl tracking-tighter leading-[0.9]"><span className="block mb-5"><CraftIcon name="brief" /></span>The<br /><span className="text-stroke">Brief</span></h2>
           <div className="md:col-span-8 space-y-10">
             <p className="text-xl md:text-3xl font-light leading-snug">{p.summary}</p>
             <div className="border-l-2 border-neon pl-6">
@@ -151,6 +152,7 @@ function CaseStudy() {
             {p.process.map((s, i) => (
               <div key={s.t} className="group bg-surface p-6 md:p-8 min-h-[260px] flex flex-col transition-colors duration-500 hover:bg-neon hover:text-black">
                 <span className="font-display text-6xl md:text-7xl text-accent-ink group-hover:text-black transition-colors">0{i + 1}</span>
+                <CraftIcon name={s.t} className="mb-5" />
                 <h3 className="mt-auto font-display uppercase text-2xl md:text-3xl tracking-tight">{s.t}</h3>
                 <p className="mt-3 text-sm text-ink/60 group-hover:text-black/70">{s.d}</p>
               </div>

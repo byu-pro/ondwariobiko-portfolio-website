@@ -12,16 +12,16 @@ export function SiteFooter() {
           <span className="block text-stroke group-hover:text-accent-ink transition-all duration-700 group-hover:translate-x-10">something ✺</span>
         </Link>
         <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-12 gap-y-2 font-mono text-xs">
-          <div className="flex items-center justify-between gap-3 py-2 border-b border-ink/15">
+          <div className="flex items-center justify-between gap-3 py-2">
             <a href="mailto:ondwariobiko@gmail.com" className="min-w-0 flex items-center gap-3 select-text hover:text-accent-ink"><CraftIcon name="email" className="craft-icon--small" /><span className="min-w-0 break-all">ondwariobiko@gmail.com</span></a>
             <CopyContactButton value="ondwariobiko@gmail.com" label="email address" />
           </div>
-          <div className="flex items-center justify-between gap-3 py-2 border-b border-ink/15">
+          <div className="flex items-center justify-between gap-3 py-2">
             <a href="tel:+254702255575" className="min-w-0 flex items-center gap-3 select-text hover:text-accent-ink"><CraftIcon name="phone" className="craft-icon--small" /><span>+254 702 255 575</span></a>
             <CopyContactButton value="+254702255575" label="phone number" />
           </div>
         </div>
-        <div className="mt-10 border-t border-ink/15 pt-6 font-mono text-xs uppercase tracking-widest">
+        <div className="mt-10 pt-6 font-mono text-xs uppercase tracking-widest">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-ink/80">
             <span>© 2026 ondwariobiko. All Rights Reserved.</span>
             <div className="flex gap-6 text-ink">
@@ -47,7 +47,7 @@ export function PageHero({ index, eyebrow, title, outline }: { index: string; ey
     <section className="pt-32 md:pt-44 pb-12 md:pb-16 px-5 md:px-8">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-wrap gap-3 justify-between font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-8">
-          <span><span className="text-accent-ink">{index}</span> / {eyebrow}</span>
+          <span className="flex items-center gap-3"><CraftIcon name={`${title} ${eyebrow}`} className="craft-icon--small" /><span><span className="text-accent-ink">{index}</span> / {eyebrow}</span></span>
           <span>ondwariobiko®</span>
         </div>
         <h1 className="page-hero-title font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,12rem)]">
