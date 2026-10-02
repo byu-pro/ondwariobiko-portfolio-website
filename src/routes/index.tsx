@@ -1,3 +1,4 @@
+import { CraftIcon } from "@/components/CraftIcon";
 import { seoHead } from "@/lib/seo";
 import { LogoShowcase } from "@/components/LogoShowcase";
 import { ProjectPreview } from "@/components/ProjectPreview";
@@ -159,6 +160,7 @@ function Index() {
                 className="group relative border border-ink/10 p-8 hover:border-neon/60 transition-colors duration-500"
               >
                 <span className="font-display text-6xl md:text-7xl text-stroke group-hover:text-accent-ink group-hover:[-webkit-text-stroke:0] transition-all duration-500">{p.n}</span>
+                <CraftIcon name={p.t} className="mt-5" />
                 <h3 className="font-display text-xl md:text-2xl uppercase tracking-tight mt-6 mb-3">{p.t}</h3>
                 <p className="text-sm text-ink/50 leading-relaxed">{p.d}</p>
               </div>
@@ -199,7 +201,7 @@ function Index() {
                 className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-8 border-t border-ink/10 last:border-b hover:bg-ink/[0.02] transition-colors duration-300 px-2 md:px-6"
               >
                 <div className="flex items-baseline gap-6">
-                  <span className="font-mono text-xs text-accent-ink">0{i + 1}</span>
+                  <CraftIcon name={o.t} />
                   <h3 className="font-display text-2xl sm:text-3xl md:text-5xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">{o.t}</h3>
                 </div>
                 <p className="text-sm text-ink/50 max-w-sm md:text-right">{o.d}</p>
@@ -272,6 +274,7 @@ function Index() {
 }
 
 const offerings = [
+  { t: "Custom Design Work", d: "Bespoke artwork, campaign graphics and design solutions tailored to your brief." },
   { t: "Logo Design", d: "Hand-drawn, vector-crafted marks built to outlive trends — full logo suite included." },
   { t: "Brand Identity System", d: "Colour, type, voice and guidelines — a complete world your brand can grow into." },
   { t: "Web Design & Build", d: "Designed and developed by the same hands. Fast, responsive, unmistakably yours." },
@@ -292,7 +295,7 @@ function BriefForm() {
       <label className="flex flex-col gap-2">
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Project type</span>
         <select value={type} onChange={(e) => setType(e.target.value)} className={selectCls}>
-          {["Logo Design", "Brand Identity", "Web Design & Build", "UI/UX Design", "Something else"].map((o) => <option key={o}>{o}</option>)}
+          {["Logo Design", "Brand Identity", "Web Design & Build", "UI/UX Design", "Custom Design Work", "Something else"].map((o) => <option key={o}>{o}</option>)}
         </select>
       </label>
       <BudgetField value={budget} onChange={setBudget} />

@@ -1,3 +1,4 @@
+import { CraftIcon } from "@/components/CraftIcon";
 import { Link } from "@tanstack/react-router";
 import { CopyContactButton } from "@/components/CopyContactButton";
 
@@ -12,11 +13,11 @@ export function SiteFooter() {
         </Link>
         <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-12 gap-y-2 font-mono text-xs">
           <div className="flex items-center justify-between gap-3 py-2 border-b border-ink/15">
-            <a href="mailto:ondwariobiko@gmail.com" className="min-w-0 break-all select-text hover:text-accent-ink">ondwariobiko@gmail.com</a>
+            <a href="mailto:ondwariobiko@gmail.com" className="min-w-0 flex items-center gap-3 select-text hover:text-accent-ink"><CraftIcon name="email" className="craft-icon--small" /><span className="min-w-0 break-all">ondwariobiko@gmail.com</span></a>
             <CopyContactButton value="ondwariobiko@gmail.com" label="email address" />
           </div>
           <div className="flex items-center justify-between gap-3 py-2 border-b border-ink/15">
-            <a href="tel:+254702255575" className="min-w-0 select-text hover:text-accent-ink">+254 702 255 575</a>
+            <a href="tel:+254702255575" className="min-w-0 flex items-center gap-3 select-text hover:text-accent-ink"><CraftIcon name="phone" className="craft-icon--small" /><span>+254 702 255 575</span></a>
             <CopyContactButton value="+254702255575" label="phone number" />
           </div>
         </div>

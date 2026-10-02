@@ -1,3 +1,4 @@
+import { CraftIcon } from "@/components/CraftIcon";
 import { useEffect, useRef, useState } from "react";
 import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
@@ -44,6 +45,7 @@ const markers = [
 ];
 
 const skills = [
+  { name: "Custom design work", detail: "Bespoke artwork and design solutions shaped around your brief" },
   { name: "Custom logo design", detail: "Original symbols and hand-drawn letterforms" },
   { name: "Brand identity", detail: "Colour, typography and consistent visual systems" },
   { name: "Mascot illustration", detail: "Expressive characters and vector artwork" },
@@ -158,6 +160,7 @@ function AboutPage() {
                 <span className="font-display text-5xl text-accent-ink group-hover:text-black transition-colors mb-6">
                   {p.n}
                 </span>
+                <CraftIcon name={p.title} className="mb-5" />
                 <h3 className="font-display font-bold text-xl mb-4 leading-tight">{p.title}</h3>
                 <p className="text-sm text-ink/60 group-hover:text-black/80 leading-relaxed transition-colors">
                   {p.body}
@@ -182,6 +185,7 @@ function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
             {skills.map((skill) => (
               <div key={skill.name} className="border-t border-ink/20 pt-6">
+                <CraftIcon name={skill.name} className="mb-5" />
                 <h3 className="font-display font-bold text-2xl md:text-3xl mb-3">{skill.name}</h3>
                 <p className="text-base text-ink/70 leading-relaxed">{skill.detail}</p>
               </div>

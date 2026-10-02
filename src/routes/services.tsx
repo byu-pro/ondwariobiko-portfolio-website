@@ -1,3 +1,4 @@
+import { CraftIcon } from "@/components/CraftIcon";
 import { faqSchema, seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
@@ -93,6 +94,7 @@ const packages = [
     ],
     ideal: "Best for product brands ready to ship",
   },
+  { n: "07", t: "Custom Design Work", blurb: "A specific creative challenge? I shape the design around your brief, whether you need bespoke artwork, campaign graphics or a one-off brand application.", includes: ["Scope and deliverables agreed together", "Original concepts tailored to your brief", "2 rounds of revisions", "Final files prepared for the intended use"], ideal: "Best for projects that need a tailored approach" },
 ];
 
 const addons = [
@@ -166,6 +168,7 @@ function ServicesPage() {
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40 group-hover:text-black/60">Scoped per project</span>
                 </div>
 
+                <CraftIcon name={p.t} className="mt-6" />
                 <h3 className="mt-6 font-display uppercase tracking-tighter text-3xl sm:text-4xl leading-[0.9] transition-transform duration-500 group-hover:-translate-y-1">
                   {p.t}
                 </h3>
