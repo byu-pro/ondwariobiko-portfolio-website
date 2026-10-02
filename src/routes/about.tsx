@@ -86,6 +86,66 @@ function AnimatedStat({ value, label, suffix = "" }: { value: number; label: str
   );
 }
 
+const profileImages = [
+  `${import.meta.env.BASE_URL}assets/johnobiko_profilepic.webp`,
+  `${import.meta.env.BASE_URL}assets/profileimage_2.webp`,
+  `${import.meta.env.BASE_URL}assets/profileimage_3.webp`,
+  `${import.meta.env.BASE_URL}assets/profileimage_4.webp`,
+];
+
+function ProfileImageCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % profileImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative aspect-[4/5] bg-neutral-900 border border-ink/10 overflow-hidden group">
+      {profileImages.map((src, idx) => (
+        <img
+          key={src}
+          src={src}
+          alt={`John Obiko — brand designer and front-end developer photo ${idx + 1}`}
+          sizes="(min-width: 768px) 42vw, 100vw"
+          width={1200}
+          height={1500}
+          loading={idx === 0 ? "eager" : "lazy"}
+          decoding="async"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+            idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        />
+      ))}
+      <div className="absolute inset-0 ring-1 ring-inset ring-neon/20 pointer-events-none z-20" />
+
+      {/* Slide indicators */}
+      <div className="absolute top-4 right-4 z-20 flex gap-1.5 bg-black/50 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-white/10">
+        {profileImages.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentIndex(idx)}
+            aria-label={`Go to photo ${idx + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+              idx === currentIndex ? "w-5 bg-neon" : "w-1.5 bg-white/40 hover:bg-white/70"
+            }`}
+          />
+        ))}
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent z-20 pointer-events-none">
+        <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/80">
+          John Obiko · Nairobi, Kenya · Working worldwide
+        </p>
+      </div>
+    </div>
+  );
+}
+
 /* ── page ───────────────────────────────────────────────── */
 function AboutPage() {
   return (
@@ -112,27 +172,7 @@ function AboutPage() {
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-10 md:gap-16 items-center">
           {/* Portrait */}
           <div className="md:col-span-5">
-            <div className="relative aspect-[4/5] bg-neutral-900 border border-ink/10 overflow-hidden group">
-              <div className="absolute inset-0 grid place-items-center">
-                <img
-                  src={`${import.meta.env.BASE_URL}assets/johnobiko_profilepic.webp`}
-                  srcSet={`${import.meta.env.BASE_URL}assets/johnobiko_profilepic-600.webp 600w, ${import.meta.env.BASE_URL}assets/johnobiko_profilepic.webp 1200w`}
-                  sizes="(min-width: 768px) 42vw, 100vw"
-                  alt="John Obiko — brand designer and front-end developer"
-                  width={1200}
-                  height={1500}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute inset-0 ring-1 ring-inset ring-neon/20" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/80">
-                  John Obiko · Nairobi, Kenya · Working worldwide
-                </p>
-              </div>
-            </div>
+            <ProfileImageCarousel />
           </div>
           <div className="md:col-span-7">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-ink mb-6">⟶ Who I am</p>

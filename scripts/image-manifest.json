@@ -681,5 +681,23 @@
     "outputs": [
       "public/assets/The Church of Jesus Christ Logo.webp"
     ]
+  },
+  "public/assets/profileimage_2.png": {
+    "hash": "70566d30da0a3b85c60647c2b0cf68d23857c5f45a23250a26314394ebae69c8",
+    "outputs": [
+      "public/assets/profileimage_2.webp"
+    ]
+  },
+  "public/assets/profileimage_3.png": {
+    "hash": "c6771cb33847f8fa5408c2a880307cbf7d4218b23793c9619d9d0958d7478374",
+    "outputs": [
+      "public/assets/profileimage_3.webp"
+    ]
+  },
+  "public/assets/profileimage_4.png": {
+    "hash": "588ea7b8031fe964406644d9bbd016cdf5ec16324462f207babfd5bea2e05c3a",
+    "outputs": [
+      "public/assets/profileimage_4.webp"
+    ]
   }
 }
