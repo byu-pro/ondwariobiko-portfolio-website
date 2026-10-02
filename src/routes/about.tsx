@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+import { projects } from "@/lib/projects";
 import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
@@ -36,20 +38,53 @@ const pillars = [
 ];
 
 const markers = [
-  ["10+", "Years in graphic & web design"],
-  ["150+", "Brands launched worldwide"],
-  ["4", "Continents served"],
-  ["∞", "Ideas still in the tank"],
+  { value: new Date().getFullYear() - 2016, label: "Years designing · since 2016" },
+  { value: projects.length, label: "Selected portfolio projects" },
+  { value: 3, label: "Core disciplines · brand, graphic & web" },
+  { value: 1, label: "Designer · your direct creative partner" },
 ];
 
-const platforms = [
-  { name: "99designs", badge: "Top Rated" },
-  { name: "Upwork", badge: "Active" },
-  { name: "Fiverr", badge: "Active" },
-  { name: "Behance", badge: "Featured" },
+const skills = [
+  { name: "Custom logo design", detail: "Original symbols and hand-drawn letterforms" },
+  { name: "Brand identity", detail: "Colour, typography and consistent visual systems" },
+  { name: "Mascot illustration", detail: "Expressive characters and vector artwork" },
+  { name: "Graphic design", detail: "Print, packaging and digital brand applications" },
+  { name: "UI/UX design", detail: "Clear, considered interfaces for web and mobile" },
+  { name: "Front-end development", detail: "Responsive websites brought to life in code" },
 ];
 
-const tools = ["Figma", "Adobe XD", "Illustrator", "Photoshop", "Pen tool", "React", "CSS", "Framer"];
+const tools = ["Illustrator", "Photoshop", "Pen tool", "React", "CSS", "Framer"];
+
+function AnimatedStat({ value, label }: { value: number; label: string }) {
+  const root = useRef<HTMLDivElement>(null);
+  const [display, setDisplay] = useState(value);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let frame = 0;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+      const start = performance.now();
+      const tick = (now: number) => {
+        const progress = Math.min((now - start) / 1400, 1);
+        setDisplay(Math.round(value * (1 - Math.pow(1 - progress, 3))));
+        if (progress < 1) frame = requestAnimationFrame(tick);
+      };
+      setDisplay(0);
+      frame = requestAnimationFrame(tick);
+    }, { threshold: .5 });
+    if (root.current) observer.observe(root.current);
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
+  }, [value]);
+  return (
+    <div ref={root} className="min-w-0">
+      <div className="font-display font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter text-accent-ink tabular-nums" aria-label={String(value)}>
+        <span aria-hidden="true">{display}</span>
+      </div>
+      <p className="font-mono text-xs uppercase tracking-wider mt-4 text-ink/70 leading-relaxed max-w-[26ch]">{label}</p>
+    </div>
+  );
+}
 
 /* ── page ───────────────────────────────────────────────── */
 function AboutPage() {
@@ -134,34 +169,22 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* 4 — Experience / credibility markers + platform badges */}
+      {/* 4 — Experience and skills */}
       <section className="px-5 md:px-8 pb-20 md:pb-32">
         <div className="max-w-[1400px] mx-auto">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-ink mb-10">⟶ Track record</p>
 
           {/* stat band */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16 border-y border-ink/15 py-12">
-            {markers.map(([n, l]) => (
-              <div key={l}>
-                <div className="font-display font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter text-accent-ink">
-                  {n}
-                </div>
-                <div className="font-mono text-[10px] uppercase tracking-widest mt-3 text-ink/50">{l}</div>
-              </div>
-            ))}
+            {markers.map((stat) => <AnimatedStat key={stat.label} {...stat} />)}
           </div>
 
-          {/* platform badges */}
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {platforms.map((pl) => (
-              <div
-                key={pl.name}
-                className="border border-ink/15 p-6 flex items-center justify-between hover:border-neon transition-colors"
-              >
-                <span className="font-display font-bold text-lg">{pl.name}</span>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-accent-ink border border-neon/40 px-2 py-1 rounded-full">
-                  {pl.badge}
-                </span>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent-ink mb-8">⟶ Skills & expertise</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
+            {skills.map((skill) => (
+              <div key={skill.name} className="border-t border-ink/20 pt-6">
+                <h3 className="font-display font-bold text-2xl md:text-3xl mb-3">{skill.name}</h3>
+                <p className="text-base text-ink/70 leading-relaxed">{skill.detail}</p>
               </div>
             ))}
           </div>
@@ -188,12 +211,12 @@ function AboutPage() {
       {/* tools strip */}
       <section className="px-5 md:px-8 pb-20 md:pb-32">
         <div className="max-w-[1400px] mx-auto">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40 mb-6">⟶ Tools of the trade</p>
-          <div className="flex flex-wrap gap-3">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/70 mb-8">⟶ Tools of the trade</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {tools.map((t) => (
               <span
                 key={t}
-                className="font-mono text-sm border border-ink/15 px-4 py-2 rounded-full text-ink/70 hover:border-neon hover:text-accent-ink transition-colors"
+                className="font-display font-semibold text-xl sm:text-2xl md:text-3xl border border-ink/25 px-5 py-6 md:px-8 md:py-8 text-ink hover:border-neon hover:text-accent-ink transition-colors"
               >
                 {t}
               </span>
