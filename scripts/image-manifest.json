@@ -675,5 +675,11 @@
       "public/assets/steplight_thumbnail.webp",
       "public/assets/steplight_thumbnail-600.webp"
     ]
+  },
+  "public/assets/The Church of Jesus Christ Logo.png": {
+    "hash": "86867432984244074b20f41b2a42035442a51b5d7dc6afa84ed95449a74e9f59",
+    "outputs": [
+      "public/assets/The Church of Jesus Christ Logo.webp"
+    ]
   }
 }

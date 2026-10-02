@@ -1,6 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { to: "/", label: "Index", hint: "Where it begins" },
@@ -56,7 +55,7 @@ export function SiteNav() {
           Available Remotely Worldwide · <WorldClock /> UTC
         </div>
 
-        <div className="flex items-center gap-3"><ThemeToggle />
+        <div className="flex items-center gap-3">
         <button
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close menu" : "Open menu"}

@@ -14,7 +14,7 @@
  * All colors MUST use oklch format.
  *
  * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 1. Add the variable to :root (the permanent dark palette)
  * 2. Register it in @theme inline as --color-<name>: var(--<name>)
  */
 
@@ -71,41 +71,6 @@
   --font-display: "Syne", sans-serif;
   --font-sans: "Inter", sans-serif;
   --font-mono: "Space Grotesk", monospace;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-}
-
-.dark {
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
@@ -139,6 +104,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
+
 
 @layer base {
   * {
@@ -248,38 +214,12 @@ img { content-visibility: auto; }
   --color-accent-ink: var(--accent-ink);
 }
 :root { --surface: #000; --ink: #fff; --accent-ink: var(--neon); color-scheme: dark; }
-:root[data-theme="light"] { --surface: #f7f7f2; --ink: #171914; --accent-ink: #000000; color-scheme: light; --background: #f7f7f2; --foreground: #171914; }
 .bg-black { --ink: #fff; --accent-ink: var(--neon); }
 .bg-neon { --accent-ink: #171914; }
-.theme-toggle { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); border-radius: 50%; color: var(--ink); background: var(--surface); cursor: pointer; }
-.theme-toggle:hover { border-color: var(--accent-ink); }
-.theme-toggle:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 4px; }
-[data-menu-open="true"] .theme-toggle { background: transparent; color: black; border-color: #0005; }
-[data-theme="light"] [data-menu-open="false"] .nav-logo { filter: invert(1); }
-[data-theme="light"] .cursor-dot, [data-theme="light"] .cursor-ring { --neon: #000000; }
-/* Increase small-text contrast without changing the dark theme's original hierarchy. */
-[data-theme="light"] [class*="text-ink/3"], [data-theme="light"] [class*="text-ink/4"], [data-theme="light"] [class*="text-ink/5"] { color: color-mix(in srgb, var(--ink) 70%, transparent); }
-[data-theme="light"] input::placeholder, [data-theme="light"] textarea::placeholder { color: #65685f; }
-[data-theme="light"] .brand-intro__panel { background: #f7f7f2; color: #171914; }
-[data-theme="light"] .brand-intro__mark img { filter: invert(1); }
-[data-theme="light"] .brand-intro__top, [data-theme="light"] .brand-intro__bottom, [data-theme="light"] .brand-intro__caption { color: #55594c; }
-[data-theme="light"] .brand-intro__signal, [data-theme="light"] .brand-intro__cross { color: #000000; }
-[data-theme="light"] .brand-intro__ring { border-color: #17191425; }
-[data-theme="light"] .brand-intro__track { background: #17191425; }
-[data-theme="light"] .monogram-passage__aperture { box-shadow: 0 0 0 150vmax #f7f7f2; }
-[data-theme="light"] .monogram-passage__art img { filter: invert(1); }
-[data-theme="light"] .monogram-passage__caption { color: #171914; }
-[data-theme="light"] .monogram-passage__index { color: #000000; }
-[data-theme="light"] .monogram-passage__edition { color: #55594c; }
-[data-theme="light"] .case-study-wordmark { filter: brightness(0); }
 .bg-neutral-900 { --ink: #fff; --accent-ink: var(--neon); }
-[data-theme="light"] [class*="focus:border-neon"]:focus { border-color: #000000; }
-[data-theme="light"] .cursor-ring { mix-blend-mode: normal; }
-[data-theme="light"] .cursor-ring.is-hot { background: #00000015; }
 
-/* Transparent client artwork stays legible in both themes. */
+/* Transparent client artwork stays legible on the dark background. */
 .client-logo { filter: brightness(0) invert(1); opacity: 0.7; }
-[data-theme="light"] .client-logo { filter: brightness(0); opacity: 0.65; }
 
 /* Two identical groups create a seamless, compositor-only logo loop. */
 .brand-loop { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
@@ -330,7 +270,6 @@ img { content-visibility: auto; }
   filter: brightness(0) invert(1);
   transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-[data-theme="light"] .case-study-wordmark { filter: brightness(0); }
 .interactive-wordmark { display: block; width: 100%; padding: 24px 0 8px; cursor: crosshair; touch-action: pan-y; }
 .interactive-wordmark:focus-visible { outline: 2px solid var(--neon); outline-offset: 8px; }
 .wordmark-canvas { display: block; position: relative; width: 100%; max-width: 1200px; margin: auto; }
