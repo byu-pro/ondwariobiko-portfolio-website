@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <section className="relative pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 overflow-hidden">
+      <section className="glass-hero relative pt-32 md:pt-40 pb-12 md:pb-16 px-5 md:px-8 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <div className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">
             <span className="text-accent-ink">●</span> Logo · Brand · UI/UX · Front-end — Est. 2016
@@ -121,7 +121,7 @@ function Index() {
                 {testimonials.map((t) => (
                   <figure
                     key={t.name}
-                    className="w-[calc(100vw-40px)] max-w-[320px] sm:w-[420px] sm:max-w-none shrink-0 mx-2 sm:mx-3 border border-ink/10 p-6 sm:p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-ink/[0.02] transition-colors duration-500"
+                    className="glass-card w-[calc(100vw-40px)] max-w-[320px] sm:w-[420px] sm:max-w-none shrink-0 mx-2 sm:mx-3 border border-ink/10 p-6 sm:p-8 flex flex-col gap-6 hover:border-neon/60 transition-colors duration-500"
                   >
                     <span className="font-display text-5xl text-accent-ink leading-none select-none">“</span>
                     <blockquote className="text-base md:text-lg font-light leading-snug flex-1">{t.quote}</blockquote>
@@ -156,7 +156,7 @@ function Index() {
                 key={p.n}
                 data-reveal
                 style={{ transitionDelay: `${i * 100}ms` }}
-                className="group relative border border-ink/10 p-8 hover:border-neon/60 transition-colors duration-500"
+                className="glass-card group relative border border-ink/10 p-8 hover:border-neon/60 transition-colors duration-500"
               >
                 <span className="font-display text-6xl md:text-7xl text-stroke group-hover:text-accent-ink group-hover:[-webkit-text-stroke:0] transition-all duration-500">{p.n}</span>
 
@@ -290,7 +290,7 @@ function BriefForm() {
   };
   const selectCls = "w-full bg-transparent border border-ink/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-ink focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-ink/40 [&>option]:bg-surface";
   return (
-    <div className="flex flex-col gap-6" data-reveal>
+    <div className="glass-card glass-form flex flex-col gap-6" data-reveal>
       <label className="flex flex-col gap-2">
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Project type</span>
         <select value={type} onChange={(e) => setType(e.target.value)} className={selectCls}>

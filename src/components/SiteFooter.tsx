@@ -4,7 +4,7 @@ import { CopyContactButton } from "@/components/CopyContactButton";
 
 export function SiteFooter() {
   return (
-    <footer className="px-5 md:px-8 pt-20 md:pt-32 pb-28 md:pb-24 border-t border-ink/10">
+    <footer className="glass-footer px-5 md:px-8 pt-20 md:pt-32 pb-28 md:pb-24 border-t border-ink/10">
       <div className="max-w-[1400px] mx-auto">
         <p className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">Have a vision?</p>
         <Link to="/contact" className="group block font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,11vw,10rem)]">
@@ -44,7 +44,7 @@ export function SiteFooter() {
 
 export function PageHero({ index, eyebrow, title, outline }: { index: string; eyebrow: string; title: string; outline: string }) {
   return (
-    <section className="pt-32 md:pt-44 pb-12 md:pb-16 px-5 md:px-8">
+    <section className="glass-hero pt-32 md:pt-44 pb-12 md:pb-16 px-5 md:px-8">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-wrap gap-3 justify-between font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-8">
           <span><span className="text-accent-ink">{index}</span> / {eyebrow}</span>

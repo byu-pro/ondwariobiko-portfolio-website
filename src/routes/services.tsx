@@ -155,12 +155,12 @@ function ServicesPage() {
       {/* Core service packages */}
       <section className="px-5 md:px-8 pb-24">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/15 border border-ink/15">
+          <div className="glass-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {packages.map((p) => (
               <div
                 key={p.t}
                 data-reveal
-                className="group bg-surface p-6 sm:p-8 flex flex-col transition-colors duration-500 hover:bg-neon hover:text-black sm:min-h-[460px]"
+                className="glass-card glass-card--lime group p-6 sm:p-8 flex flex-col transition-colors duration-500 hover:text-black sm:min-h-[460px]"
               >
                 <div className="flex justify-between items-start font-mono text-xs">
                   <span className="text-accent-ink group-hover:text-black">{p.n}</span>
@@ -339,7 +339,7 @@ function InquiryForm() {
     "w-full bg-transparent border border-ink/15 px-5 py-4 font-mono text-sm uppercase tracking-widest text-ink focus:border-neon outline-none transition-colors appearance-none cursor-pointer hover:border-ink/40 [&>option]:bg-surface";
 
   return (
-    <div className="flex flex-col gap-6" data-reveal>
+    <div className="glass-card glass-form flex flex-col gap-6" data-reveal>
       <label className="flex flex-col gap-2">
         <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Which service?</span>
         <select value={pkg} onChange={(e) => setPkg(e.target.value)} className={selectCls}>

@@ -130,7 +130,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <div className="min-h-screen bg-surface text-ink font-sans selection:bg-neon selection:text-black overflow-x-hidden">
+      <div className="glass-site min-h-screen bg-surface text-ink font-sans selection:bg-neon selection:text-black overflow-x-hidden">
         <Preloader />
         <PageTransition />
         <MotionLayer />

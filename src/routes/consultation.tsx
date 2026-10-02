@@ -57,7 +57,7 @@ function ConsultationPage() {
             </div>
           </div>
 
-          <form onSubmit={submit} className="lg:col-span-7 space-y-8">
+          <form onSubmit={submit} className="glass-card glass-form lg:col-span-7 space-y-8">
             <div className="grid sm:grid-cols-2 gap-8">
               <input required name="name" placeholder="Your name *" className={field} />
               <input required type="email" name="email" placeholder="Email *" className={field} />
