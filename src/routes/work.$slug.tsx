@@ -47,7 +47,7 @@ function CaseStudy() {
       {/* Hero */}
       <section className="pt-32 md:pt-44 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-wrap gap-3 justify-between font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-8 animate-page-in">
+          <div className="flex flex-wrap gap-3 justify-between font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-8 md:mb-16 animate-page-in">
             <Link to="/work" className="hover:text-accent-ink transition-colors">← All work</Link>
             <span><span className="text-accent-ink">{p.n}</span> / {p.tag}</span>
           </div>
