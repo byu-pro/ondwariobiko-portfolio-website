@@ -54,21 +54,29 @@ export function MotionLayer() {
   // Scroll progress + parallax (initial tick deferred past hydration)
   useEffect(() => {
     let raf = 0;
+    let parallaxEls: HTMLElement[] = [];
+
+    const getEls = () => {
+      parallaxEls = Array.from(document.querySelectorAll<HTMLElement>("[data-parallax]"));
+    };
+    getEls();
+
     const tick = () => {
       raf = 0;
       const h = document.documentElement.scrollHeight - window.innerHeight;
       if (bar.current) bar.current.style.transform = `scaleX(${h > 0 ? window.scrollY / h : 0})`;
-      document.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
+      const vh = window.innerHeight;
+      for (let i = 0; i < parallaxEls.length; i++) {
+        const el = parallaxEls[i];
+        if (!el) continue;
         const r = el.getBoundingClientRect();
-        const off = (r.top + r.height / 2 - window.innerHeight / 2) * Number(el.dataset['parallax'] || 0.1);
-        el.style.transform = `translate3d(0, ${off}px, 0)`;
-      });
+        const off = (r.top + r.height / 2 - vh / 2) * Number(el.dataset["parallax"] || 0.1);
+        el.style.transform = `translate3d(0, ${off.toFixed(2)}px, 0)`;
+      }
     };
     const on = () => { if (!raf) raf = requestAnimationFrame(tick); };
-    // No initial tick — mutating style before hydration settles causes
-    // hydration-mismatch warnings. Initial states are set inline in markup.
     window.addEventListener("scroll", on, { passive: true });
-    window.addEventListener("resize", on);
+    window.addEventListener("resize", () => { getEls(); on(); }, { passive: true });
     return () => { cancelAnimationFrame(raf); window.removeEventListener("scroll", on); window.removeEventListener("resize", on); };
   }, [path]);
 

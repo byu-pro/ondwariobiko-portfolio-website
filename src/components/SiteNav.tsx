@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const links = [
   { to: "/", label: "Index", hint: "Where it begins" },
@@ -21,8 +21,15 @@ export function SiteNav() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
+  const scrolledRef = useRef(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      const isPast = window.scrollY > 20;
+      if (isPast !== scrolledRef.current) {
+        scrolledRef.current = isPast;
+        setScrolled(isPast);
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);

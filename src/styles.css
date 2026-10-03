@@ -121,8 +121,8 @@
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes menu-in { from { clip-path: circle(0% at calc(100% - 3rem) 3rem); } to { clip-path: circle(150% at calc(100% - 3rem) 3rem); } }
 @keyframes rise { from { transform: translateY(110%); } to { transform: translateY(0); } }
-@utility animate-marquee { animation: marquee 28s linear infinite; }
-@utility animate-marquee-slow { animation: marquee 48s linear infinite; }
+@utility animate-marquee { animation: marquee 28s linear infinite; will-change: transform; transform: translateZ(0); }
+@utility animate-marquee-slow { animation: marquee 48s linear infinite; will-change: transform; transform: translateZ(0); }
 @utility pause-on-hover { &:hover { animation-play-state: paused; } }
 @utility animate-menu-in { animation: menu-in 0.7s cubic-bezier(0.76, 0, 0.24, 1) both; }
 @utility animate-rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
@@ -223,7 +223,7 @@ img { content-visibility: auto; }
 
 /* Two identical groups create a seamless, compositor-only logo loop. */
 .brand-loop { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
-.brand-loop__track { display: flex; width: max-content; animation: marquee 55s linear infinite; }
+.brand-loop__track { display: flex; width: max-content; animation: marquee 55s linear infinite; will-change: transform; transform: translateZ(0); }
 .brand-loop__group { display: flex; flex-shrink: 0; list-style: none; padding: 0; margin: 0; }
 .brand-loop__item { width: 224px; height: 128px; padding: 24px 32px; display: flex; align-items: center; justify-content: center; }
 .brand-loop__item .client-logo { width: 160px; height: 80px; object-fit: contain; transition: transform 250ms ease, opacity 250ms ease; }
