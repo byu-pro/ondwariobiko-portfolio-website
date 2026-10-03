@@ -54,7 +54,7 @@ const skills = [
   { name: "Front-end development", detail: "Responsive websites brought to life in code" },
 ];
 
-const tools = ["Illustrator", "Photoshop", "InDesign", "Affinity", "Figma", "Visual Studio Code", "GitHub", "After Effects", "Canva", "Pen tool", "React", "CSS", "Framer"];
+const tools = ["Illustrator", "Photoshop", "InDesign", "Affinity", "Figma", "VS Code", "GitHub", "After Effects", "Canva", "Pen tool", "React", "CSS", "TypeScript", "Tailwind CSS", "Framer"];
 
 function AnimatedStat({ value, label, suffix = "" }: { value: number; label: string; suffix?: string }) {
   const root = useRef<HTMLDivElement>(null);
