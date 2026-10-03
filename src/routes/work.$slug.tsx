@@ -1,5 +1,4 @@
 import { creativeWorkSchema, seoHead } from "@/lib/seo";
-import { CaseStudyWordmark } from "@/components/CaseStudyWordmark";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { BrandMockupTiles } from "@/components/BrandMockupTiles";
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
@@ -52,13 +51,9 @@ function CaseStudy() {
             <Link to="/work" className="hover:text-accent-ink transition-colors">← All work</Link>
             <span><span className="text-accent-ink">{p.n}</span> / {p.tag}</span>
           </div>
-          {p.wordmarkImage ? (
-            <CaseStudyWordmark key={p.slug} src={p.wordmarkImage} title={p.title} slug={p.slug} />
-          ) : (
-            <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)] text-center">
-              <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
-            </h1>
-          )}
+          <h1 className="font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.15rem,12vw,11rem)] text-center">
+            <span className="block overflow-hidden"><span className="block animate-rise">{p.title}</span></span>
+          </h1>
           <p className="mt-8 max-w-3xl font-display uppercase tracking-tight text-xl sm:text-2xl md:text-4xl font-bold leading-tight text-accent-ink text-center mx-auto animate-headline-glide">
             {p.headline}
           </p>
