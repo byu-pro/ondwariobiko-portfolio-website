@@ -3,6 +3,7 @@ import { seoHead } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
+import { LogoAnimation } from "@/components/LogoAnimation";
 
 export const Route = createFileRoute("/about")({
   head: () =>
@@ -151,6 +152,7 @@ function AboutPage() {
   return (
     <>
       <PageHero index="04" eyebrow="The designer" title="Designer" outline="Developer" />
+      <LogoAnimation />
 
       {/* 1 — Opening hook: philosophy, not a bio dump */}
       <section className="px-5 md:px-8 pt-16 md:pt-28 pb-20 md:pb-32">
