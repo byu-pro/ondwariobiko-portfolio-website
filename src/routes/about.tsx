@@ -125,7 +125,7 @@ function ProfileImageCarousel() {
       <div className="absolute inset-0 ring-1 ring-inset ring-neon/20 pointer-events-none z-20" />
 
       {/* Slide indicators */}
-      <div className="absolute top-4 right-4 z-20 flex gap-1.5 bg-black/50 backdrop-blur-sm px-2.5 py-1.5 rounded-full border border-white/10">
+      <div className="hidden">
         {profileImages.map((_, idx) => (
           <button
             key={idx}
