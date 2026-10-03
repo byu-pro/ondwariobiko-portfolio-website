@@ -21,7 +21,7 @@ export function PageTransition() {
     const segment = path.replace(/\/$/, "").split("/").pop() || "Home";
     const label = segment === "ondwariobiko-portfolio-website" ? "Home" : segment.replaceAll("-", " ");
     setTransition({ path, label, chapter: chapters[label] || "↗" });
-    const timer = window.setTimeout(() => setTransition(null), 1100);
+    const timer = window.setTimeout(() => setTransition(null), 400);
     return () => window.clearTimeout(timer);
   }, [path]);
 
