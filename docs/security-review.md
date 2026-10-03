@@ -70,9 +70,9 @@ The latter is preventative: current identity data is hardcoded, not user input.
    under the shared byu-pro.github.io origin is part of that trust boundary.
    [CSP reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy).
 4. **Other deployments.** The hash policy runs only when GITHUB_PAGES=true.
-   Lovable preview and future dynamic SSR deployments need separate header and
+   Future dynamic SSR deployments need separate header and
    per-response nonce integration; they were not certified by this review.
-5. **Account controls.** GitHub/Lovable account MFA, repository protection rules,
+5. **Account controls.** GitHub account MFA, repository protection rules,
    collaborators, deployment environments, secret-scanning settings, and domain
    registrar controls were not inspected. Those require a separate account-level
    review. Workflow actions are now pinned to verified immutable commit SHAs;

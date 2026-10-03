@@ -1,13 +1,7 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-<!-- LOVABLE:END -->
+## Project ownership and workflow
+- Manage all website work through Codex and this local repository, with GitHub as the source of truth and GitHub Pages for deployment.
+- Do not use Lovable for editing, builds, or synchronization.
+- Preserve published Git history: do not force-push or rewrite already-pushed commits. Keep `main` in a working state.
 
 ## Design system
 - Portfolio is a multi-page site: /, /work, /services, /about, /contact with shared SiteNav + SiteFooter in __root.

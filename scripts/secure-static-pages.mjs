@@ -49,9 +49,9 @@ export async function secureDirectory(directory) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  // SSR and Lovable preview need their own response-header/nonce integration.
+  // Dynamic SSR deployments need their own response-header/nonce integration.
   if (process.env.GITHUB_PAGES === "true") {
-    const count = await secureDirectory(path.resolve(".output/public"));
+    const count = await secureDirectory(path.resolve("dist/client"));
     if (!count) throw new Error("No static HTML found to secure");
     console.info(`[security] Protected ${count} static HTML documents`);
   }
