@@ -4,10 +4,12 @@ import { LogoAnimation } from "@/components/LogoAnimation";
 export function SiteFooter() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isAboutPage = pathname === "/about" || pathname === "/about/";
+  const isCaseStudyPage = pathname.startsWith("/work/") && pathname !== "/work/" && pathname !== "/work";
+  const hideAnimation = isAboutPage || isCaseStudyPage;
 
   return (
     <>
-      {!isAboutPage && <LogoAnimation />}
+      {!hideAnimation && <LogoAnimation />}
       <footer className="px-5 md:px-8 pt-20 md:pt-32 pb-28 md:pb-24 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">Have a vision?</p>
