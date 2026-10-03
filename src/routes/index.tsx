@@ -1,6 +1,5 @@
 import { seoHead } from "@/lib/seo";
 import { LogoShowcase } from "@/components/LogoShowcase";
-import { LogoAnimation } from "@/components/LogoAnimation";
 import { ProjectPreview } from "@/components/ProjectPreview";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
@@ -48,7 +47,6 @@ function Index() {
         </div>
       </section>
 
-      <LogoAnimation />
 
       <div className="bg-neon text-black py-5 overflow-hidden -rotate-2 my-10 md:my-16 scale-105">
         <div className="flex w-max animate-marquee font-display uppercase text-2xl sm:text-3xl md:text-4xl tracking-tight whitespace-nowrap">

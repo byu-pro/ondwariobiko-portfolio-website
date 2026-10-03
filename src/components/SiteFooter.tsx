@@ -1,14 +1,20 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { LogoAnimation } from "@/components/LogoAnimation";
 
 export function SiteFooter() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isAboutPage = pathname === "/about" || pathname === "/about/";
+
   return (
-    <footer className="px-5 md:px-8 pt-20 md:pt-32 pb-28 md:pb-24 border-t border-ink/10">
-      <div className="max-w-[1400px] mx-auto">
-        <p className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">Have a vision?</p>
-        <Link to="/contact" className="group block font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,11vw,10rem)]">
-          <span className="block transition-all duration-500 group-hover:text-accent-ink group-hover:translate-x-4">Let's build</span>
-          <span className="block text-stroke group-hover:text-accent-ink transition-all duration-700 group-hover:translate-x-10">something ✺</span>
-        </Link>
+    <>
+      {!isAboutPage && <LogoAnimation />}
+      <footer className="px-5 md:px-8 pt-20 md:pt-32 pb-28 md:pb-24 border-t border-ink/10">
+        <div className="max-w-[1400px] mx-auto">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-6">Have a vision?</p>
+          <Link to="/contact" className="group block font-display uppercase tracking-tighter leading-[0.85] text-[clamp(2.5rem,11vw,10rem)]">
+            <span className="block transition-all duration-500 group-hover:text-accent-ink group-hover:translate-x-4">Let's build</span>
+            <span className="block text-stroke group-hover:text-accent-ink transition-all duration-700 group-hover:translate-x-10">something ✺</span>
+          </Link>
         <div className="mt-10 border-t border-ink/15 pt-6 font-mono text-xs uppercase tracking-widest">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-ink/80">
             <span>© 2026 ondwariobiko. All Rights Reserved.</span>
@@ -27,6 +33,7 @@ export function SiteFooter() {
         </div>
       </div>
     </footer>
+    </>
   );
 }
 
