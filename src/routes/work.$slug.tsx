@@ -60,8 +60,8 @@ function CaseStudy() {
         </div>
       </section>
 
-      <section className={`mt-12 md:mt-20 ${p.cat === "Digital" ? "px-5 md:px-8" : ""}`} data-case-study-hero>
-        <div className={`${p.cat === "Digital" ? "max-w-[1400px] mx-auto" : "w-full"} overflow-hidden aspect-[4/3] sm:aspect-[16/10] bg-ink/[0.03]`}>
+      <section className="mt-12 md:mt-20" data-case-study-hero>
+        <div className="w-full overflow-hidden aspect-[4/3] sm:aspect-[16/10] bg-ink/[0.03]">
           <ProjectPreview key={p.slug} project={p} detail />
         </div>
       </section>
