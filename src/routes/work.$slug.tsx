@@ -203,6 +203,12 @@ function CaseStudy() {
         </div>
       </section>
 
+      {p.cat !== "Digital" && (
+        <section className="px-5 md:px-8 pb-16 md:pb-24" aria-label="Logo pattern">
+          <BrandMockupTiles placement="brand-elements" images={p.mockups} />
+        </section>
+      )}
+
       <section className="px-5 md:px-8">
         {p.cat !== "Digital" ? (
           <BrandMockupTiles placement="applications" images={p.mockups} />

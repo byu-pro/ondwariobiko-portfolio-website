@@ -1,7 +1,7 @@
 import { brandMockupSlots, type BrandMockupImage } from "@/lib/brand-mockups";
 
 type Props = {
-  placement: "intro" | "applications" | "full-width";
+  placement: (typeof brandMockupSlots)[number]["placement"];
   images?: BrandMockupImage[] | undefined;
 };
 

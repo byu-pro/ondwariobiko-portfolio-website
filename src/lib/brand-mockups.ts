@@ -36,6 +36,13 @@ export const brandMockupSlots = [
     height: 1800,
     placement: "full-width",
   },
+  {
+    id: "brand-pattern",
+    title: "Logo pattern",
+    width: 2400,
+    height: 1600,
+    placement: "brand-elements",
+  },
 ] as const;
 
 export type BrandMockupImage = {
