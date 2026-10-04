@@ -14,7 +14,7 @@ const sections: Section[] = [
     n: "01",
     title: "Overview",
     body: [
-      "These Terms of Service (\"Terms\") govern all design and development services provided by ondwariobiko (\"I,\" \"me,\" \"my\") to clients (\"you,\" \"the Client\") through ondwariobiko.com. By engaging my services — via this website, email, or a project platform — you agree to these Terms.",
+      "These Terms of Service (\"Terms\") govern all design and development services provided by ondwariobiko (\"I,\" \"me,\" \"my\") to clients (\"you,\" \"the Client\") through the portfolio website. By engaging my services — via this website, email, or a project platform — you agree to these Terms.",
     ],
   },
   {

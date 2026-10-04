@@ -48,6 +48,25 @@ test("thumbnail keeps full resolution and responsive image preserves aspect rati
   assert.deepEqual([small.width, small.height], [600,400]);
 });
 
+test("carousel previews are added to existing manifests without changing full-size artwork", async () => {
+  const root = await fixture();
+  const dir = path.join(root, "public/assets/otherworkcarousel");
+  await mkdir(dir, { recursive: true });
+  const source = path.join(dir, "logo_mobile.png");
+  await sharp({ create: { width: 1200, height: 1500, channels: 3, background: "#a6ff00" } }).png().toFile(source);
+  await optimizeImages(root);
+  const full = await readFile(path.join(dir, "logo_mobile.webp"));
+  const small = await sharp(await readFile(path.join(dir, "logo_mobile-600.webp"))).metadata();
+  assert.deepEqual([small.width, small.height], [600, 750]);
+  const manifestPath = path.join(root, "scripts/image-manifest.json");
+  const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+  manifest["public/assets/otherworkcarousel/logo_mobile.png"].outputs.pop();
+  await writeFile(manifestPath, JSON.stringify(manifest));
+  assert.equal((await optimizeImages(root)).length, 1);
+  assert.deepEqual(await readFile(path.join(dir, "logo_mobile.webp")), full);
+  assert.deepEqual(await optimizeImages(root), []);
+});
+
 test("ambiguous filenames fail rather than overwriting artwork", async () => {
   const root = await fixture();
   await writeFile(path.join(root,'public/assets/logo.png'), 'one');

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/about")({
   head: () =>
     seoHead(
       "about",
-      "About John Obiko | Freelance Graphic Designer & Custom Logo Designer",
+      "About John Obiko | Independent Logo & Brand Designer",
       "Meet John Obiko: an independent graphic designer, custom logo designer, and brand identity specialist with 10+ years of experience working remotely for clients worldwide.",
       "assets/johnobiko_profilepic.webp",
       [],
@@ -79,7 +79,7 @@ function AnimatedStat({ value, label, suffix = "" }: { value: number; label: str
   }, [value]);
   return (
     <div ref={root} className="min-w-0 text-center flex flex-col items-center">
-      <div className="font-display font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter text-accent-ink tabular-nums" aria-label={`${value}${suffix}`}>
+      <div role="img" className="font-display font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter text-accent-ink tabular-nums" aria-label={`${value}${suffix}`}>
         <span aria-hidden="true">{display}{suffix}</span>
       </div>
       <p className="font-mono text-xs uppercase tracking-wider mt-4 text-ink/70 leading-relaxed max-w-[26ch]">{label}</p>

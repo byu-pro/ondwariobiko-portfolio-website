@@ -137,6 +137,17 @@
 
 .reveal { opacity: 0; transform: translate3d(0,40px,0); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
 .reveal.is-in { opacity: 1; transform: none; }
+/* Keep keyboard navigation visible in the existing lime and black palette. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-ink, var(--neon));
+  outline-offset: 4px;
+}
+:where(button, input, select, summary) { min-height: 44px; }
+footer a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
+main a.font-mono { display: inline-flex; align-items: center; min-height: 44px; }
+.skip-link { position: fixed; left: 20px; top: 12px; z-index: 110; padding: 12px 20px; background: var(--neon); color: black; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+#main-content { scroll-margin-top: 100px; }
 img { content-visibility: auto; }
 [data-parallax] { will-change: transform; }
 

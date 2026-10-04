@@ -53,7 +53,7 @@ export function BrandMockupTiles({ placement, images = [] }: Props) {
                     className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center"
                     aria-label={`${slot.title} mockup placeholder. Recommended image size ${slot.width} by ${slot.height} pixels.`}
                   >
-                    <span className="absolute left-4 top-4 md:left-6 md:top-6 font-mono text-[10px] tracking-[0.2em] text-ink/45">
+                    <span className="absolute left-4 top-4 md:left-6 md:top-6 font-mono text-[10px] tracking-[0.2em] text-ink/60">
                       0{number} / MOCKUP
                     </span>
                     <span className="font-display text-[clamp(1.4rem,3vw,3rem)] tracking-tight leading-tight text-ink/70">

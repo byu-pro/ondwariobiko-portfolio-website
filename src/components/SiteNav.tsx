@@ -12,14 +12,36 @@ const links = [
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   useEffect(() => setOpen(false), [pathname]);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    if (!open || !menu.current) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const background = Array.from(menu.current.parentElement?.children ?? [])
+      .filter((element): element is HTMLElement => element instanceof HTMLElement && element !== menu.current && element.tagName !== "HEADER")
+      .map((element) => ({ element, inert: element.inert }));
+    background.forEach(({ element }) => { element.inert = true; });
+    menu.current.querySelector<HTMLAnchorElement>("a")?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+      if (e.key !== "Tab") return;
+      const items = [toggle.current, ...Array.from(menu.current?.querySelectorAll<HTMLElement>("a[href], button") ?? [])].filter((item): item is HTMLElement => !!item);
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+    };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previousOverflow;
+      background.forEach(({ element, inert }) => { element.inert = inert; });
+      toggle.current?.focus();
+    };
   }, [open]);
   const scrolledRef = useRef(false);
   useEffect(() => {
@@ -52,6 +74,9 @@ export function SiteNav() {
 
         <div className="flex items-center gap-3">
         <button
+          ref={toggle}
+          aria-expanded={open}
+          aria-controls="site-menu"
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close menu" : "Open menu"}
           className="relative z-[60] flex items-center gap-3 group"
@@ -69,8 +94,9 @@ export function SiteNav() {
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-[55] bg-neon text-black animate-menu-in flex flex-col overflow-y-auto overscroll-contain" onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
+        <div ref={menu} id="site-menu" className="fixed inset-0 z-[55] bg-neon text-black animate-menu-in flex flex-col overflow-y-auto overscroll-contain" onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
           <div className="flex-1 flex flex-col justify-center px-5 md:px-16 pt-32 pb-12">
+            <nav aria-label="Main navigation">
             <ul>
               {links.map((l, i) => {
                 const active = pathname === l.to;
@@ -78,6 +104,7 @@ export function SiteNav() {
                   <li key={l.to} className="overflow-hidden border-b border-black/15">
                     <Link
                       to={l.to}
+                      aria-current={active ? "page" : undefined}
                       onClick={() => setOpen(false)}
                       className="group flex items-baseline gap-6 py-2 md:py-3 animate-rise"
                       style={{ animationDelay: `${200 + i * 70}ms` }}
@@ -94,6 +121,7 @@ export function SiteNav() {
                 );
               })}
             </ul>
+            </nav>
           </div>
           <div className="shrink-0 overflow-hidden bg-black text-accent-ink py-4">
             <div className="flex w-max animate-marquee font-display uppercase text-2xl tracking-tight whitespace-nowrap">

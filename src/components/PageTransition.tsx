@@ -31,7 +31,7 @@ export function PageTransition() {
     <div key={transition.path} className="monogram-passage" aria-hidden="true">
       <div className="monogram-passage__aperture" />
       <div className="monogram-passage__art">
-        <img src={`${import.meta.env.BASE_URL}assets/logowhite.webp`} alt="" />
+        <img src={`${import.meta.env.BASE_URL}assets/logowhite.webp`} alt="" width={512} height={512} />
       </div>
       <div className="monogram-passage__orbit" />
       <div className="monogram-passage__caption">
