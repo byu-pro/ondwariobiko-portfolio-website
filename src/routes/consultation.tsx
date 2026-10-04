@@ -8,7 +8,7 @@ export const Route = createFileRoute("/consultation")({
   head: () =>
     seoHead(
       "consultation",
-      "Free Logo & Brand Design Consultation | John Obiko",
+      "Free Logo & Brand Design Consultation | Book 1-on-1 with John Obiko",
       "Schedule a free 60-minute brand identity and logo design consultation with graphic designer John Obiko to discuss project scope, timeline, and strategy.",
       "assets/pelicansocial_thumbnail.webp",
       [],
@@ -35,7 +35,7 @@ function ConsultationPage() {
     window.open(`https://wa.me/254702255575?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
   };
 
-  const field = "w-full bg-transparent border-b border-ink/20 py-4 text-lg md:text-xl outline-none focus:border-neon transition-colors placeholder:text-ink/60";
+  const field = "w-full bg-transparent border-b border-ink/20 py-4 text-lg md:text-xl outline-none focus:border-neon transition-colors placeholder:text-ink/30";
 
   return (
     <>
@@ -59,18 +59,18 @@ function ConsultationPage() {
 
           <form onSubmit={submit} className="lg:col-span-7 space-y-8">
             <div className="grid sm:grid-cols-2 gap-8">
-              <label className="block"><span className="font-mono text-xs text-ink/60">Name *</span><input required name="name" autoComplete="name" maxLength={100} placeholder="Your name" className={field} /></label>
-              <label className="block"><span className="font-mono text-xs text-ink/60">Email *</span><input required type="email" name="email" autoComplete="email" maxLength={255} placeholder="you@brand.com" className={field} /></label>
+              <input required name="name" placeholder="Your name *" className={field} />
+              <input required type="email" name="email" placeholder="Email *" className={field} />
             </div>
             <Chips label="What do you need?" options={types} value={type} onChange={setType} />
             <BudgetField value={budget} onChange={setBudget} />
-            <label className="block"><span className="font-mono text-xs text-ink/60">Preferred day, time & timezone</span><input name="time" maxLength={150} placeholder="For example, Tuesday at 10am EAT" className={field} /></label>
-            <label className="block"><span className="font-mono text-xs text-ink/60">About your project (optional)</span><textarea name="message" maxLength={1000} rows={4} placeholder="Tell me a little about your project…" className={`${field} resize-none`} /></label>
+            <input name="time" placeholder="Preferred day & time (your timezone)" className={field} />
+            <textarea name="message" rows={4} placeholder="Tell me a little about your project…" className={`${field} resize-none`} />
             <button type="submit" className="group w-full sm:w-auto inline-flex items-center justify-between gap-6 rounded-full bg-neon text-black pl-8 pr-2 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-transform hover:scale-[1.02]">
               Request via WhatsApp
               <span className="size-12 rounded-full bg-black text-accent-ink grid place-items-center transition-transform duration-500 group-hover:rotate-45">↗</span>
             </button>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60">Opens WhatsApp with your details · Or email ondwariobiko@gmail.com</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-ink/40">Opens WhatsApp with your details · Or email ondwariobiko@gmail.com</p>
           </form>
         </div>
       </section>
@@ -84,7 +84,7 @@ function Chips({ label, options, value, onChange }: { label: string; options: st
       <legend className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-4">{label}</legend>
       <div className="flex flex-wrap gap-2">
         {options.map((o) => (
-          <button type="button" key={o} aria-pressed={value === o} onClick={() => onChange(o)} className={`rounded-full border px-4 py-2 text-sm transition-colors ${value === o ? "bg-neon text-black border-neon" : "border-ink/20 hover:border-neon hover:text-accent-ink"}`}>
+          <button type="button" key={o} onClick={() => onChange(o)} className={`rounded-full border px-4 py-2 text-sm transition-colors ${value === o ? "bg-neon text-black border-neon" : "border-ink/20 hover:border-neon hover:text-accent-ink"}`}>
             {o}
           </button>
         ))}

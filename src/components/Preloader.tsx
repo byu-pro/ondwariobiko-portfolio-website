@@ -4,8 +4,8 @@ const LOGO = `${import.meta.env.BASE_URL}assets/logowhite.webp`;
 
 /** Shared by every route; plays on entry or refresh, not internal navigation. */
 export function Preloader() {
-  // Static HTML stays visible without JavaScript; the short entrance starts after hydration.
-  const [phase, setPhase] = useState<"idle" | "enter" | "exit" | "done">("idle");
+  // Initialized to 'enter' so the preloader panel covers the viewport on first paint.
+  const [phase, setPhase] = useState<"idle" | "enter" | "exit" | "done">("enter");
 
   useEffect(() => {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -17,11 +17,11 @@ export function Preloader() {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     setPhase("enter");
-    const leave = window.setTimeout(() => setPhase("exit"), 500);
+    const leave = window.setTimeout(() => setPhase("exit"), 1650);
     const finish = window.setTimeout(() => {
       setPhase("done");
       document.body.style.overflow = previousOverflow;
-    }, 1300);
+    }, 2450);
     const skip = () => {
       setPhase("done");
       window.clearTimeout(leave);
@@ -56,8 +56,8 @@ export function Preloader() {
             <span className="brand-intro__cross brand-intro__cross--left">+</span>
             <span className="brand-intro__cross brand-intro__cross--right">+</span>
             <div className="brand-intro__mark">
-              <img src={LOGO} alt="" width={512} height={512} decoding="async" />
-              <img className="brand-intro__echo" src={LOGO} alt="" width={512} height={512} />
+              <img src={LOGO} alt="" fetchPriority="high" decoding="async" />
+              <img className="brand-intro__echo" src={LOGO} alt="" />
             </div>
           </div>
         </div>

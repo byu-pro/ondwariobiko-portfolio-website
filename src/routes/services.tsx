@@ -9,7 +9,7 @@ export const Route = createFileRoute("/services")({
   head: () =>
     seoHead(
       "services",
-      "Logo, Brand & Web Design Services | John Obiko",
+      "Logo Design, Brand Identity & Graphic Design Services | John Obiko",
       "Comprehensive freelance graphic design services: custom logo design, brand identity systems, mascot illustration, brand guidelines, and web design for growing businesses.",
       "assets/pelicansocial_thumbnail.webp",
       [faqSchema(serviceFaqs)],
@@ -164,7 +164,7 @@ function ServicesPage() {
               >
                 <div className="flex justify-between items-start font-mono text-xs">
                   <span className="text-accent-ink group-hover:text-black">{p.n}</span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/60 group-hover:text-black/60">Scoped per project</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/40 group-hover:text-black/60">Scoped per project</span>
                 </div>
 
                 <h3 className="mt-6 font-display uppercase tracking-tighter text-3xl sm:text-4xl leading-[0.9] transition-transform duration-500 group-hover:-translate-y-1">
@@ -341,7 +341,7 @@ function InquiryForm() {
   return (
     <div className="flex flex-col gap-6" data-reveal>
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60">Which service?</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Which service?</span>
         <select value={pkg} onChange={(e) => setPkg(e.target.value)} className={selectCls}>
           {packages.map((p) => <option key={p.t}>{p.t}</option>)}
           <option>Something else</option>
@@ -349,19 +349,19 @@ function InquiryForm() {
       </label>
       <BudgetField value={budget} onChange={setBudget} />
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60">When would you like to start?</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">When would you like to start?</span>
         <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>
           {["As soon as possible", "In the coming weeks", "In the next few months", "Flexible — let's discuss"].map((o) => <option key={o}>{o}</option>)}
         </select>
       </label>
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60">Anything else? (optional)</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Anything else? (optional)</span>
         <textarea
           value={scope}
           onChange={(e) => setScope(e.target.value)}
           rows={3}
           placeholder="A line about your project, audience, or references…"
-          className="w-full bg-transparent border border-ink/15 px-5 py-4 font-sans text-sm text-ink placeholder:text-ink/60 focus:border-neon outline-none transition-colors resize-none"
+          className="w-full bg-transparent border border-ink/15 px-5 py-4 font-sans text-sm text-ink placeholder:text-ink/25 focus:border-neon outline-none transition-colors resize-none"
         />
       </label>
       <button

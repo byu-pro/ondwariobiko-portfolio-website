@@ -29,7 +29,6 @@ export function BudgetField({
         {(["USD", "KSh"] as const).map((c) => (
           <button
             type="button"
-            aria-pressed={currency === c}
             key={c}
             onClick={() => {
               setCurrency(c);
@@ -43,7 +42,6 @@ export function BudgetField({
           </button>
         ))}
         <input
-          aria-label={`${label} amount in ${currency}`}
           type="text"
           inputMode="numeric"
           value={amount}
@@ -53,10 +51,10 @@ export function BudgetField({
             emit(currency, v);
           }}
           placeholder={currency === "USD" ? "e.g. 1,500" : "e.g. 80,000"}
-          className={`flex-1 min-w-[140px] bg-transparent border-b border-ink/20 py-2 text-lg outline-none focus:border-neon transition-colors placeholder:text-ink/60 ${dark ? "text-ink" : ""}`}
+          className={`flex-1 min-w-[140px] bg-transparent border-b border-ink/20 py-2 text-lg outline-none focus:border-neon transition-colors placeholder:text-ink/30 ${dark ? "text-ink" : ""}`}
         />
       </div>
-      <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-ink/60">
+      <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-ink/35">
         A rough range is fine — I scope to fit, and I'll be honest if a brief isn't a match
       </p>
     </fieldset>

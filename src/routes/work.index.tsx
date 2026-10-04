@@ -9,7 +9,7 @@ export const Route = createFileRoute("/work/")({
   head: () =>
     seoHead(
       "work",
-      "Logo, Brand & Web Design Portfolio | John Obiko",
+      "Logo & Brand Identity Portfolio | John Obiko — Graphic Designer",
       "Explore recent custom logo design, brand identity systems, packaging, and digital design projects by freelance graphic designer John Obiko.",
       "assets/pelicansocial_thumbnail.webp",
       [],
@@ -76,7 +76,7 @@ function WorkPage() {
                 <h2 className="font-display text-2xl sm:text-3xl uppercase tracking-tight group-hover:text-accent-ink transition-colors duration-300">
                   {p.title}
                 </h2>
-                <span className="font-mono text-xs text-ink/60 shrink-0">↗</span>
+                <span className="font-mono text-xs text-ink/40 shrink-0">↗</span>
               </div>
               <p className="font-mono text-xs uppercase tracking-widest text-ink/50 mt-2">
                 {p.client} — {p.tag}

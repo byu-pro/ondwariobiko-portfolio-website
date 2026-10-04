@@ -47,9 +47,7 @@ export async function optimizeImages(root: string): Promise<string[]> {
     const input = await readFile(path.join(root, file));
     const hash = digest(input);
     const previous = manifest[file];
-    const carousel = file.includes("/otherworkcarousel/");
-    const needsCarouselPreview = carousel && !previous?.outputs.includes(file.replace(raster, "-600.webp"));
-    if (previous?.hash === hash && !needsCarouselPreview && (await Promise.all(previous.outputs.map((output) => exists(path.join(root, output))))).every(Boolean)) continue;
+    if (previous?.hash === hash && (await Promise.all(previous.outputs.map((output) => exists(path.join(root, output))))).every(Boolean)) continue;
     const output = file.replace(raster, ".webp");
     if (!previous && await exists(path.join(root, output))) {
       throw new Error(`Unmanaged WebP already exists: ${output}. Rename it before converting ${file}.`);
@@ -72,12 +70,11 @@ export async function optimizeImages(root: string): Promise<string[]> {
       continue;
     }
     const pipeline = () => sharp(input, { animated: true }).rotate().keepIccProfile();
-    const unchangedFullSize = previous?.hash === hash && await exists(path.join(root, output));
-    const webp = unchangedFullSize ? await readFile(path.join(root, output)) : await pipeline().webp({ lossless: true, exact: true, effort: 6 }).toBuffer();
-    if (!unchangedFullSize) await writeFile(path.join(root, output), webp);
+    const webp = await pipeline().webp({ lossless: true, exact: true, effort: 6 }).toBuffer();
+    await writeFile(path.join(root, output), webp);
     const outputs = [output];
     // Optional responsive derivative; the main WebP retains full resolution.
-    if ((carousel || file.includes("_thumbnail") || file.includes("_profilepic") || file.includes("_banner") || file.includes("banner")) && (metadata.pages ?? 1) === 1) {
+    if ((file.includes("_thumbnail") || file.includes("_profilepic") || file.includes("_banner") || file.includes("banner")) && (metadata.pages ?? 1) === 1) {
       const small = file.replace(raster, "-600.webp");
       await pipeline().resize({ width: 600, withoutEnlargement: true }).webp({ lossless: true, exact: true, effort: 6 }).toFile(path.join(root, small));
       outputs.push(small);

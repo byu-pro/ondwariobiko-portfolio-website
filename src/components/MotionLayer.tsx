@@ -53,7 +53,6 @@ export function MotionLayer() {
 
   // Scroll progress + parallax (initial tick deferred past hydration)
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let raf = 0;
     let parallaxEls: HTMLElement[] = [];
 
@@ -77,9 +76,8 @@ export function MotionLayer() {
     };
     const on = () => { if (!raf) raf = requestAnimationFrame(tick); };
     window.addEventListener("scroll", on, { passive: true });
-    const resize = () => { getEls(); on(); };
-    window.addEventListener("resize", resize, { passive: true });
-    return () => { cancelAnimationFrame(raf); window.removeEventListener("scroll", on); window.removeEventListener("resize", resize); };
+    window.addEventListener("resize", () => { getEls(); on(); }, { passive: true });
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("scroll", on); window.removeEventListener("resize", on); };
   }, [path]);
 
   // Custom cursor (fine pointers only)

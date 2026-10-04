@@ -118,19 +118,9 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
   const [interaction, setInteraction] = useState(0);
   const [visible, setVisible] = useState(false);
   const [pageVisible, setPageVisible] = useState(true);
-  const [paused, setPaused] = useState(true);
-  const [reducedMotion, setReducedMotion] = useState(false);
   const root = useRef<HTMLElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
-  const running = visible && pageVisible && !paused && !reducedMotion;
-
-  useEffect(() => {
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReducedMotion(motion.matches);
-    update();
-    motion.addEventListener("change", update);
-    return () => motion.removeEventListener("change", update);
-  }, []);
+  const running = visible && pageVisible;
 
   useEffect(() => {
     const visibility = () => setPageVisible(!document.hidden);
@@ -160,7 +150,7 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
     const id = ++request.current;
     // Keep the current artwork visible until the incoming image is fully decoded.
     const image = new Image();
-    image.src = `${import.meta.env.BASE_URL}assets/${window.matchMedia("(max-width: 767px)").matches ? slide.mobileFile.replace(".webp", "-600.webp") : slide.file}`;
+    image.src = `${import.meta.env.BASE_URL}assets/${window.matchMedia("(max-width: 767px)").matches ? slide.mobileFile : slide.file}`;
     try {
       await image.decode();
     } catch {
@@ -180,7 +170,6 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
       className={`logo-gallery ${className}`}
       aria-label="Selected logo designs"
       aria-roledescription="carousel"
-      onFocusCapture={() => setPaused(true)}
       onKeyDown={(event) => {
         if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
           event.preventDefault();
@@ -210,7 +199,10 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
       >
         {slides.map((slide, index) => {
           const isCurrent = active === index;
-          const nearby = isCurrent || index === previous;
+          const nearby =
+            isCurrent || index === previous ||
+            index === (active + 1) % slides.length ||
+            index === (active - 1 + slides.length) % slides.length;
           return nearby ? (
             <div
               key={slide.file}
@@ -224,13 +216,13 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
               <picture key={String(backdrop)} className={backdrop ? "logo-gallery-backdrop" : "logo-gallery-artwork"} aria-hidden={backdrop || undefined}>
                 <source
                   media="(max-width: 767px)"
-                  srcSet={`${import.meta.env.BASE_URL}assets/${slide.mobileFile.replace(".webp", "-600.webp")}`}
+                  srcSet={`${import.meta.env.BASE_URL}assets/${slide.mobileFile}`}
                   width={1200}
                   height={1500}
                 />
                 <img
                   src={`${import.meta.env.BASE_URL}assets/${slide.file}`}
-                  alt={backdrop ? "" : `Logo for ${slide.name}, ${slide.category.toLowerCase()}`}
+                  alt={backdrop ? "" : `${slide.name} logo design`}
                   width={1920}
                   height={1080}
                   loading={isCurrent ? "eager" : "lazy"}
@@ -243,14 +235,6 @@ export function LogoShowcase({ className = "" }: { className?: string }) {
             </div>
           ) : null;
         })}
-      </div>
-      <div className="logo-gallery-caption font-mono">
-        <p className="flex-1 text-xs text-ink/70" aria-live={paused ? "polite" : "off"}>{slides[active]?.name}</p>
-        <div className="logo-gallery-arrows">
-          <button type="button" aria-label="Previous logo" onClick={() => { setPaused(true); void select(active - 1); }}>←</button>
-          <button type="button" aria-label={paused || reducedMotion ? "Play logo slideshow" : "Pause logo slideshow"} aria-pressed={paused || reducedMotion} onClick={() => { setPaused(!(paused || reducedMotion)); setReducedMotion(false); }}>{paused || reducedMotion ? "▷" : "Ⅱ"}</button>
-          <button type="button" aria-label="Next logo" onClick={() => { setPaused(true); void select(active + 1); }}>→</button>
-        </div>
       </div>
     </section>
   );

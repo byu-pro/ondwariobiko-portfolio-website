@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
   head: () =>
     seoHead(
       "",
-      "John Obiko | Logo, Brand & Web Designer in Nairobi",
+      "John Obiko | Freelance Graphic Designer, Logo Designer & Brand Specialist",
       "Independent graphic designer & custom logo designer John Obiko crafts concept-driven brand identities, vector mascot illustrations, and websites for clients worldwide.",
       "assets/pelicansocial_thumbnail.webp",
       [],
@@ -32,7 +32,6 @@ function Index() {
             <span className="text-stroke">Designer</span>
             <span className="text-accent-ink inline-block animate-[spin-slow_8s_linear_infinite]">*</span>
           </h1>
-          <p className="mb-8 max-w-2xl text-sm sm:text-base text-ink/70">John Obiko · Independent logo, brand and web designer in Nairobi. Working worldwide. <Link to="/contact" className="inline-flex min-h-11 items-center text-accent-ink underline underline-offset-4">Start a project ↗</Link></p>
           <div className="flex flex-col gap-16 md:gap-24">
             <LogoShowcase className="logo-gallery--full-width" />
             <div>
@@ -90,7 +89,7 @@ function Index() {
           <h2 id="trusted-brands-heading" className="font-mono text-xs uppercase tracking-[0.3em] text-ink/60 text-center mb-10 md:mb-14">
             Worked with Brands and Institutions worldwide
           </h2>
-          <div className="brand-loop" tabIndex={0} role="region" aria-label="Client logos">
+          <div className="brand-loop">
             <div className="brand-loop__track">
               {[0, 1].map((copy) => (
                 <ul key={copy} className="brand-loop__group" aria-hidden={copy === 1 ? true : undefined}>
@@ -106,6 +105,44 @@ function Index() {
         </div>
       </section>
 
+      {/* Testimonials — auto-scrolling */}
+      <section className="py-24 md:py-32 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8 mb-12 md:mb-16" data-reveal>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent-ink mb-4">Word on the street</p>
+          <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.85]">
+            Clients<br /><span className="text-stroke">Talk</span>
+          </h2>
+        </div>
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-surface to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-surface to-transparent z-10" />
+          <div className="flex w-max animate-marquee-slow pause-on-hover">
+            {Array.from({ length: 2 }).map((_, k) => (
+              <div key={k} className="flex">
+                {testimonials.map((t) => (
+                  <figure
+                    key={t.name}
+                    className="w-[calc(100vw-40px)] max-w-[320px] sm:w-[420px] sm:max-w-none shrink-0 mx-2 sm:mx-3 border border-ink/10 p-6 sm:p-8 flex flex-col gap-6 hover:border-neon/60 hover:bg-ink/[0.02] transition-colors duration-500"
+                  >
+                    <span className="font-display text-5xl text-accent-ink leading-none select-none">“</span>
+                    <blockquote className="text-base md:text-lg font-light leading-snug flex-1">{t.quote}</blockquote>
+                    <div className="border-t border-ink/10 pt-5">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent-ink mb-2">{t.result}</p>
+                      <figcaption>
+                        <p className="font-display uppercase tracking-tight text-sm">{t.name}</p>
+                        <p className="font-mono text-[10px] uppercase tracking-widest text-ink/40 mt-1">{t.role}</p>
+                      </figcaption>
+                    </div>
+                  </figure>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+
+
+      </section>
       <section className="py-24 md:py-32 px-5 md:px-8 border-t border-ink/10">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-12 md:mb-16" data-reveal>
@@ -256,14 +293,14 @@ function BriefForm() {
   return (
     <div className="flex flex-col gap-6" data-reveal>
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60">Project type</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">Project type</span>
         <select value={type} onChange={(e) => setType(e.target.value)} className={selectCls}>
           {["Logo Design", "Brand Identity", "Web Design & Build", "UI/UX Design", "Custom Design Work", "Something else"].map((o) => <option key={o}>{o}</option>)}
         </select>
       </label>
       <BudgetField value={budget} onChange={setBudget} />
       <label className="flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/60">When would you like to start?</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/40">When would you like to start?</span>
         <select value={timeline} onChange={(e) => setTimeline(e.target.value)} className={selectCls}>
           {["As soon as possible", "In the coming weeks", "In the next few months", "Flexible — let's discuss"].map((o) => <option key={o}>{o}</option>)}
         </select>
@@ -307,12 +344,32 @@ const clients = [
   { name: "Paluxy River Potties", src: `${import.meta.env.BASE_URL}assets/paluxyriver.webp`, width: 1536, height: 1024 },
 ];
 
+const testimonials = [
+  {
+    quote: "He didn't just design a logo — he rebuilt how we see ourselves. Investors noticed before our customers did.",
+    result: "+38% investor meetings after rebrand",
+    name: "Amara N.",
+    role: "CEO, Aura Finance",
+  },
+  {
+    quote: "The identity system works everywhere: a coffee bag, a billboard, an app icon. Nothing ever looks off-brand.",
+    result: "3 new retail partnerships in 6 months",
+    name: "David K.",
+    role: "Founder, Kilele Coffee",
+  },
+  {
+    quote: "Design and code from one brain. Our site shipped faster than our last agency's first draft.",
+    result: "2.1× conversion on the new platform",
+    name: "Lena M.",
+    role: "Product Lead, Savanna OS",
+  },
+];
+
 const words = ["Creative", "Logo", "Brand", "Visual", "UI/UX", "Digital", "Web", "Art"];
 
 function RotatingWord() {
   const [i, setI] = useState(0);
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setInterval(() => setI((n) => (n + 1) % words.length), 2200);
     return () => clearInterval(id);
   }, []);

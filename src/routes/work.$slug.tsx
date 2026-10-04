@@ -18,7 +18,7 @@ export const Route = createFileRoute("/work/$slug")({
     const p = loaderData.project;
     return seoHead(
       `work/${p.slug}`,
-      `${p.title} | ${p.cat === "Digital" ? "Web Design" : "Brand Design"} | John Obiko`,
+      `${p.title} — ${p.cat === "Digital" ? "Web & UI/UX Design" : "Logo & Brand Design Case Study"} | John Obiko Graphic Designer`,
       p.summary,
       p.image,
       [creativeWorkSchema(p.title, p.summary, p.image, p.slug, p.cat)],
@@ -48,7 +48,7 @@ function CaseStudy() {
       <section className="pt-32 md:pt-44 px-5 md:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-wrap gap-3 justify-between font-mono text-xs uppercase tracking-[0.25em] text-ink/50 mb-8 md:mb-16 animate-page-in">
-            <Link to="/work" className="inline-flex items-center min-h-11 hover:text-accent-ink transition-colors">← All work</Link>
+            <Link to="/work" className="hover:text-accent-ink transition-colors">← All work</Link>
             <span><span className="text-accent-ink">{p.n}</span> / {p.tag}</span>
           </div>
           <h1 className="font-display uppercase tracking-tighter leading-[0.9] text-[clamp(2.25rem,5.5vw,5.5rem)] text-left md:text-center">
@@ -198,7 +198,7 @@ function CaseStudy() {
               <div className="flex justify-between border-b border-ink/15 pb-2"><span className="text-ink/50">Display</span><span>{p.type.display}</span></div>
               <div className="flex justify-between border-b border-ink/15 pb-2"><span className="text-ink/50">Body</span><span>{p.type.body}</span></div>
             </div>
-            <p className="mt-6 font-mono text-xs break-all text-ink/60">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</p>
+            <p className="mt-6 font-mono text-xs break-all text-ink/40">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</p>
           </div>
         </div>
       </section>

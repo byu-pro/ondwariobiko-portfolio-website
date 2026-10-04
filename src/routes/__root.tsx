@@ -66,7 +66,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             Try again
           </button>
           <a
-            href={import.meta.env.BASE_URL}
+            href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
             Go home
@@ -131,8 +131,7 @@ function RootComponent() {
         <PageTransition />
         <MotionLayer />
         <SiteNav />
-        <a href="#main-content" className="skip-link">Skip to content</a>
-        <main id="main-content" tabIndex={-1} key={path} className="route-stage">
+        <main key={path} className="route-stage">
           <Outlet />
         </main>
         <SiteFooter />

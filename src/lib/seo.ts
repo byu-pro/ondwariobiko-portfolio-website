@@ -1,7 +1,6 @@
 import site from "./site-config.json";
 
 export const siteUrl = (path = "") => new URL(path.replace(/^\/+/, ""), site.url).href;
-export const assetUrl = (image: string) => siteUrl(image.startsWith(import.meta.env.BASE_URL) ? image.slice(import.meta.env.BASE_URL.length) : image);
 
 export const defaultKeywords = [
   "Graphic Designer",
@@ -29,7 +28,7 @@ export function seoHead(
   keywords?: string,
 ) {
   const url = siteUrl(path ? `${path.replace(/^\/+|\/+$/g, "")}/` : "");
-  const imageUrl = assetUrl(image);
+  const imageUrl = siteUrl(image.startsWith(import.meta.env.BASE_URL) ? image.slice(import.meta.env.BASE_URL.length) : image);
   const kw = keywords ? `${keywords}, ${defaultKeywords}` : defaultKeywords;
 
   const pageSchema = {
@@ -72,6 +71,8 @@ export function seoHead(
       { property: "og:site_name", content: "John Obiko — Graphic, Logo & Brand Designer" },
       { property: "og:type", content: path.startsWith("work/") ? "article" : "website" },
       { property: "og:image", content: imageUrl },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: title },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
@@ -137,7 +138,7 @@ export const identitySchema = {
       },
     },
     {
-      "@type": "ProfessionalService",
+      "@type": ["ProfessionalService", "GraphicDesigner"],
       "@id": siteUrl("#business"),
       name: "John Obiko — Graphic Design & Brand Identity Studio",
       alternateName: "ondwariobiko Graphic Design",
@@ -252,7 +253,7 @@ export function creativeWorkSchema(title: string, description: string, image: st
     headline: title,
     description,
     genre: category,
-    image: assetUrl(image),
+    image: siteUrl(image),
     author: { "@id": siteUrl("#person") },
     creator: { "@id": siteUrl("#person") },
     publisher: { "@id": siteUrl("#business") },

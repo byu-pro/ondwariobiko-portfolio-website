@@ -11,7 +11,7 @@ export const Route = createFileRoute("/contact")({
     seoHead(
       "contact",
       "Hire a Graphic Designer & Logo Designer | Contact John Obiko",
-      "Get in touch with freelance graphic designer and logo designer John Obiko to discuss custom logo design, brand identity systems, or website projects. Replies within 24–48 hours.",
+      "Get in touch with freelance graphic designer and logo designer John Obiko to discuss custom logo design, brand identity systems, or website projects. 24-hour response.",
       "assets/pelicansocial_thumbnail.webp",
       [],
       "hire graphic designer, hire logo designer, hire brand designer, contact John Obiko, freelance designer for hire"
@@ -108,6 +108,15 @@ function ContactPage() {
               </p>
             </div>
 
+            {/* 6 — social proof */}
+            <figure className="border-l-2 border-neon pl-6">
+              <blockquote className="font-display uppercase tracking-tighter text-2xl sm:text-3xl leading-[0.95]">
+                "Helped us launch a fintech brand now serving customers in 12 countries."
+              </blockquote>
+              <figcaption className="mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50">
+                — Founder, Aura Finance <span className="text-accent-ink">*</span>
+              </figcaption>
+            </figure>
           </aside>
         </div>
       </div>
@@ -155,7 +164,7 @@ function InquiryForm() {
   };
 
   const fieldClass =
-    "w-full bg-transparent border-b border-ink/20 py-3 text-lg text-ink outline-none focus:border-neon transition-colors placeholder:text-ink/60";
+    "w-full bg-transparent border-b border-ink/20 py-3 text-lg text-ink outline-none focus:border-neon transition-colors placeholder:text-ink/30";
   const labelClass =
     "font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50";
 
@@ -259,12 +268,12 @@ function InquiryForm() {
           value={details}
           onChange={(e) => setDetails(e.target.value)}
           placeholder="What are you building, and what problem should this design solve?"
-          className="w-full bg-transparent border-b border-ink/20 py-3 text-lg text-ink outline-none focus:border-neon transition-colors placeholder:text-ink/60 resize-none"
+          className="w-full bg-transparent border-b border-ink/20 py-3 text-lg text-ink outline-none focus:border-neon transition-colors placeholder:text-ink/30 resize-none"
         />
       </label>
 
       {error && (
-        <p role="alert" className="font-mono text-xs text-accent-ink">{error}</p>
+        <p className="font-mono text-xs text-accent-ink">{error}</p>
       )}
 
       <button
@@ -274,7 +283,7 @@ function InquiryForm() {
         <span>Continue in WhatsApp</span>
         <span className="size-12 rounded-full bg-black text-accent-ink grid place-items-center transition-transform duration-500 group-hover:rotate-45">↗</span>
       </button>
-      <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60">
+      <p className="font-mono text-[10px] uppercase tracking-widest text-ink/35">
         Opens WhatsApp with your details pre-typed — or email ondwariobiko@gmail.com directly.
       </p>
     </form>

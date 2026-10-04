@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => seoHead("privacy", "Privacy Policy — ondwariobiko", "Privacy Policy for the portfolio website — what information is collected, how it's used, and your rights."),
+  head: () => seoHead("privacy", "Privacy Policy — ondwariobiko", "Privacy Policy for ondwariobiko.com — what information is collected, how it's used, and your rights."),
   component: PrivacyPage,
 });
 
@@ -14,7 +14,7 @@ const sections: Section[] = [
     n: "01",
     title: "Introduction",
     body: [
-      "This Privacy Policy explains how ondwariobiko (\"I,\" \"me,\" \"my\") collects, uses, and protects information when you visit the portfolio website (\"the Site\") or contact me regarding design and development services.",
+      "This Privacy Policy explains how ondwariobiko (\"I,\" \"me,\" \"my\") collects, uses, and protects information when you visit ondwariobiko.com (\"the Site\") or contact me regarding design and development services.",
     ],
   },
   {
@@ -114,7 +114,7 @@ function PrivacyPage() {
       <section className="px-5 md:px-8 pb-24">
         <div className="max-w-[900px] mx-auto">
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/50 mb-14">
-            Last updated: October 4, 2026
+            Last updated: October 3, 2026
           </p>
 
           <div className="space-y-12">

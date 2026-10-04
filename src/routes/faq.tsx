@@ -47,7 +47,7 @@ export const Route = createFileRoute("/faq")({
   head: () =>
     seoHead(
       "faq",
-      "Logo & Graphic Design FAQ | John Obiko",
+      "Graphic & Logo Design FAQ | Frequently Asked Questions | John Obiko",
       "Find answers to common questions about hiring freelance graphic designer John Obiko: logo design pricing, process, revisions, file deliverables, and remote collaboration.",
       "assets/pelicansocial_thumbnail.webp",
       [faqSchema(flatFaqs)],
